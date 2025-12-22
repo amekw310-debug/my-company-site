@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>会社名｜公式サイト</title>
+  <meta name="description" content="会社の簡単な説明文をここに入れます。">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="inner">
+    <h1 class="logo">会社名</h1>
+    <nav class="nav">
+      <a href="#about">会社概要</a>
+      <a href="#service">事業内容</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="inner">
+      <h2>街の未来を、確かな技術で。</h2>
+      <p>道づくりを通して社会に貢献する会社です。</p>
+    </div>
+  </section>
+
+  <!-- 会社概要 -->
+  <section id="about" class="section">
+    <div class="inner">
+      <h3>会社概要</h3>
+      <p>
+        私たちは〇〇県を中心に、土木・舗装・外構工事を行っています。<br>
+        長年培った技術と信頼で、地域に根ざした仕事を大切にしています。
+      </p>
+    </div>
+  </section>
+
+  <!-- 事業内容 -->
+  <section id="service" class="section bg">
+    <div class="inner">
+      <h3>事業内容</h3>
+      <ul class="service-list">
+        <li>道路舗装工事</li>
+        <li>外構・エクステリア工事</li>
+        <li>造成・基礎工事</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="section">
+    <div class="inner">
+      <h3>お問い合わせ</h3>
+      <p>
+        ご相談・お見積りはお気軽にお問い合わせください。
+      </p>
+      <p class="contact">
+        TEL：000-0000-0000<br>
+        受付時間：9:00〜17:00
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2025 会社名</p>
+</footer>
+
+</body>
+</html>
