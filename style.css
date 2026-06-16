@@ -98,6 +98,13 @@ img {
   aspect-ratio: 4 / 3;
 }
 
+.menu-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
 .dummy-img--map {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
