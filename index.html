@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Tavola｜カジュアルイタリアン</title>
+  <meta name="description" content="本格イタリアンを気軽に楽しめるレストラン、La Tavola。東京・表参道にて旬の素材とイタリア直輸入食材をご提供しています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header" id="top">
+  <div class="inner header-inner">
+    <div class="logo">
+      <span class="logo-main">La Tavola</span>
+      <span class="logo-sub">Casual Italian</span>
+    </div>
+    <nav class="nav">
+      <a href="#concept">コンセプト</a>
+      <a href="#menu">メニュー</a>
+      <a href="#info">店舗情報</a>
+      <a href="#reserve" class="nav-reserve">予約する</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#concept">コンセプト</a>
+    <a href="#menu">メニュー</a>
+    <a href="#info">店舗情報</a>
+    <a href="#reserve">予約する</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ヒーロー -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-label">Casual Italian Restaurant</p>
+      <h1 class="hero-title">La Tavola</h1>
+      <p class="hero-sub">素材の声を聞き、情熱を皿へ。<br>日常に寄り添う、本格の味。</p>
+      <a href="#reserve" class="btn btn-hero">ご予約はこちら</a>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- コンセプト -->
+  <section class="section" id="concept">
+    <div class="inner">
+      <div class="section-header">
+        <p class="section-label">Concept</p>
+        <h2 class="section-title">私たちのこだわり</h2>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-img-wrap">
+          <div class="dummy-img dummy-img--tall">
+            <span class="dummy-label">Image</span>
+          </div>
+        </div>
+        <div class="concept-body">
+          <h3 class="concept-heading">素材への敬意と<br>イタリアの魂</h3>
+          <p>
+            La Tavolaは「テーブル」を意味するイタリア語。食卓を囲む喜びを、誰もが気軽に味わえる場所でありたいという想いからこの名が生まれました。
+          </p>
+          <p>
+            シェフが直接買い付ける国産野菜と、イタリアから直輸入した食材を組み合わせ、本場の技法でひと皿ひと皿を丁寧に仕上げています。
+          </p>
+          <p>
+            堅苦しくなく、でも妥協しない。そんなカジュアルだけど本物の味を、あなたの日常に届けたいのです。
+          </p>
+          <div class="features">
+            <div class="feature">
+              <div class="feature-icon">🌿</div>
+              <p class="feature-label">旬の国産野菜</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🫒</div>
+              <p class="feature-label">直輸入食材</p>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🍷</div>
+              <p class="feature-label">厳選ワイン</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- メニュー -->
+  <section class="section section--dark" id="menu">
+    <div class="inner">
+      <div class="section-header section-header--light">
+        <p class="section-label">Menu</p>
+        <h2 class="section-title">メニュー</h2>
+        <p class="section-desc">料金はすべて税込み表示です。仕入れ状況により内容が変わる場合がございます。</p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="tab active" data-tab="antipasto">前菜</button>
+        <button class="tab" data-tab="pasta">パスタ</button>
+        <button class="tab" data-tab="pizza">ピッツァ</button>
+        <button class="tab" data-tab="dolce">ドルチェ</button>
+      </div>
+
+      <!-- 前菜 -->
+      <div class="menu-panel active" id="antipasto">
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>本日の生ハムの盛り合わせ</h4>
+              <p>パルマ産プロシュット・クルード、ルコラ添え</p>
+              <span class="price">¥1,480</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>カプレーゼ</h4>
+              <p>水牛モッツァレラと完熟トマト、バジルオイル</p>
+              <span class="price">¥1,280</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ブルスケッタ 3種</h4>
+              <p>トマト・きのこクリーム・アボカドのアソート</p>
+              <span class="price">¥980</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>本日のスープ</h4>
+              <p>旬の野菜を使ったスープ（内容は日替わり）</p>
+              <span class="price">¥680</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- パスタ -->
+      <div class="menu-panel" id="pasta">
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>カルボナーラ</h4>
+              <p>グアンチャーレ、ペコリーノ・ロマーノ、卵黄</p>
+              <span class="price">¥1,680</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ボロネーゼ</h4>
+              <p>牛豚合挽き肉、完熟トマト、リガトーニ</p>
+              <span class="price">¥1,780</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ペスカトーレ</h4>
+              <p>魚介たっぷり、トマトベースのリングイネ</p>
+              <span class="price">¥1,980</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ジェノベーゼ</h4>
+              <p>自家製バジルソース、松の実、パルミジャーノ</p>
+              <span class="price">¥1,580</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ピッツァ -->
+      <div class="menu-panel" id="pizza">
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>マルゲリータ</h4>
+              <p>トマト、水牛モッツァレラ、バジル</p>
+              <span class="price">¥1,480</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>クワトロ・フォルマッジ</h4>
+              <p>4種のチーズと蜂蜜のハーモニー</p>
+              <span class="price">¥1,880</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ビアンカ</h4>
+              <p>生ハム、ルコラ、パルミジャーノのホワイトピッツァ</p>
+              <span class="price">¥1,980</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ディアボラ</h4>
+              <p>ピリ辛サラミ、トマト、オリーブ</p>
+              <span class="price">¥1,680</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ドルチェ -->
+      <div class="menu-panel" id="dolce">
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ティラミス</h4>
+              <p>マスカルポーネたっぷりの自家製ティラミス</p>
+              <span class="price">¥780</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>パンナコッタ</h4>
+              <p>季節のフルーツソース添え</p>
+              <span class="price">¥680</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>ジェラート</h4>
+              <p>本日のフレーバー 2種盛り</p>
+              <span class="price">¥580</span>
+            </div>
+          </article>
+          <article class="menu-card">
+            <div class="dummy-img dummy-img--menu"><span class="dummy-label">Photo</span></div>
+            <div class="menu-card-body">
+              <h4>カッサータ</h4>
+              <p>シチリア伝統の濃厚チーズケーキ</p>
+              <span class="price">¥780</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="section" id="info">
+    <div class="inner">
+      <div class="section-header">
+        <p class="section-label">Store Info</p>
+        <h2 class="section-title">店舗情報</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-table-wrap">
+          <table class="info-table">
+            <tbody>
+              <tr>
+                <th scope="row">店名</th>
+                <td>La Tavola（ラ・タヴォラ）</td>
+              </tr>
+              <tr>
+                <th scope="row">住所</th>
+                <td>〒150-0001<br>東京都渋谷区神宮前 3-12-8 1F</td>
+              </tr>
+              <tr>
+                <th scope="row">電話</th>
+                <td><a href="tel:0312345678">03-1234-5678</a></td>
+              </tr>
+              <tr>
+                <th scope="row">営業時間</th>
+                <td>
+                  ランチ　11:30 – 14:30（L.O. 14:00）<br>
+                  ディナー　17:30 – 22:30（L.O. 22:00）
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">定休日</th>
+                <td>火曜日（祝日の場合は翌水曜日）</td>
+              </tr>
+              <tr>
+                <th scope="row">席数</th>
+                <td>36席（テラス 8席含む）</td>
+              </tr>
+              <tr>
+                <th scope="row">アクセス</th>
+                <td>
+                  東京メトロ銀座線「表参道駅」A2出口より徒歩 5分<br>
+                  JR「原宿駅」より徒歩 10分
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-map-wrap">
+          <div class="dummy-img dummy-img--map">
+            <span class="dummy-label">Map</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 予約 CTA -->
+  <section class="reserve" id="reserve">
+    <div class="reserve-inner">
+      <p class="section-label">Reservation</p>
+      <h2 class="reserve-title">ご予約・お問い合わせ</h2>
+      <p class="reserve-text">
+        ご予約はお電話またはオンラインフォームにてお受けしております。<br>
+        特別なご要望もお気軽にご相談ください。
+      </p>
+      <div class="reserve-btns">
+        <a href="tel:0312345678" class="btn btn-outline">
+          📞&nbsp; 03-1234-5678
+        </a>
+        <a href="#" class="btn btn-primary">
+          オンライン予約
+        </a>
+      </div>
+      <p class="reserve-note">受付時間：11:00 〜 22:00（定休日を除く）</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="inner footer-inner">
+    <p class="footer-logo">La Tavola</p>
+    <nav class="footer-nav">
+      <a href="#concept">コンセプト</a>
+      <a href="#menu">メニュー</a>
+      <a href="#info">店舗情報</a>
+      <a href="#reserve">ご予約</a>
+    </nav>
+    <p class="footer-copy">© 2026 La Tavola. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navMobile.classList.toggle('open');
+  });
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navMobile.classList.remove('open');
+    });
+  });
+
+  // メニュータブ
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.menu-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // スクロール時ヘッダー背景
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  });
+</script>
+
+</body>
+</html>
