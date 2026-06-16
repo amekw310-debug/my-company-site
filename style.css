@@ -519,9 +519,14 @@ img {
   flex: 1;
 }
 
-.feature-icon {
-  font-size: 28px;
-  margin-bottom: 8px;
+.feature-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .feature-label {
@@ -1171,8 +1176,9 @@ img {
     gap: 12px;
   }
 
-  .feature-icon {
-    font-size: 22px;
+  .feature-img {
+    width: 60px;
+    height: 60px;
   }
 
   /* Menu */
