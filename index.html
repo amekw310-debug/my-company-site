@@ -339,7 +339,7 @@
         <a href="tel:0312345678" class="btn btn-outline">
           📞&nbsp; 03-1234-5678
         </a>
-        <a href="#" class="btn btn-primary">
+        <a href="#" class="btn btn-primary" id="reserve-btn">
           オンライン予約
         </a>
       </div>
@@ -361,6 +361,16 @@
     <p class="footer-copy">© 2026 La Tavola. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- 予約完了モーダル -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+  <div class="modal">
+    <div class="modal-icon">✓</div>
+    <h3 class="modal-heading" id="modal-heading">予約が完了しました</h3>
+    <p class="modal-text">ご予約ありがとうございます。<br>確認メールをお送りしましたのでご確認ください。</p>
+    <button class="btn btn-primary modal-close" id="modal-close">閉じる</button>
+  </div>
+</div>
 
 <script>
   // ハンバーガーメニュー
@@ -394,6 +404,21 @@
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 60);
   });
+
+  // 予約完了モーダル
+  const overlay = document.getElementById('modal-overlay');
+  document.getElementById('reserve-btn').addEventListener('click', e => {
+    e.preventDefault();
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  const closeModal = () => {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 
 </body>
