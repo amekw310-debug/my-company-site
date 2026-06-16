@@ -86,6 +86,14 @@ img {
   aspect-ratio: 4 / 5;
 }
 
+.concept-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
 .dummy-img--menu {
   aspect-ratio: 4 / 3;
 }
@@ -93,6 +101,14 @@ img {
 .dummy-img--map {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
+}
+
+.info-map-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
 }
 
 .dummy-label {
@@ -379,6 +395,9 @@ img {
   height: 100svh;
   min-height: 600px;
   background: var(--black);
+  background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -390,26 +409,10 @@ img {
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(30, 30, 30, 0.7) 0%,
-    rgba(10, 10, 10, 0.5) 100%
+    rgba(10, 10, 10, 0.65) 0%,
+    rgba(10, 10, 10, 0.45) 100%
   );
   z-index: 1;
-}
-
-/* Subtle texture pattern instead of image */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 80px,
-      rgba(255, 255, 255, 0.015) 80px,
-      rgba(255, 255, 255, 0.015) 81px
-    );
-  z-index: 0;
 }
 
 .hero-content {
