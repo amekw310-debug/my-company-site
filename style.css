@@ -800,9 +800,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px 16px;
   opacity: 0;
   visibility: hidden;
+  overflow-y: auto;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -893,42 +894,53 @@ img {
 
 /* 予約ステップモーダル */
 .modal--wide {
-  max-width: 520px;
-  padding: 40px 36px 36px;
+  max-width: 480px;
+  width: 100%;
+  padding: 32px 28px 28px;
   text-align: left;
+  margin: auto;
 }
 
 .step-label {
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: var(--white);
+  background: #2563eb;
+  border-radius: 999px;
+  padding: 3px 12px;
   font-weight: 600;
   margin-bottom: 20px;
 }
 
 .step-date-display {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--near-black);
+  background: var(--off-white);
+  border-radius: 8px;
+  padding: 10px 14px;
   margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--light-gray);
+  letter-spacing: 0.04em;
 }
 
-/* カレンダー */
-.calendar { user-select: none; }
+/* ====== カレンダー ====== */
+.calendar {
+  user-select: none;
+  width: 100%;
+}
 
 .calendar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .cal-month-label {
   font-family: var(--font-serif);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--near-black);
   letter-spacing: 0.04em;
@@ -938,96 +950,153 @@ img {
   background: none;
   border: 1px solid var(--light-gray);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
-  line-height: 1;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
   cursor: pointer;
   color: var(--dark-gray);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background var(--transition), border-color var(--transition);
+  flex-shrink: 0;
 }
 .cal-nav:hover { background: var(--off-white); border-color: var(--mid-gray); }
 
+/* 曜日ヘッダー */
 .calendar-weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 4px;
+  border-bottom: 1px solid var(--light-gray);
+  margin-bottom: 6px;
 }
 
 .calendar-weekdays span {
   text-align: center;
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  padding: 6px 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 0 10px;
   color: var(--mid-gray);
 }
-.calendar-weekdays .sun { color: #e04040; }
-.calendar-weekdays .tue { color: var(--light-gray); }
-.calendar-weekdays .sat { color: #3b82f6; }
+.calendar-weekdays .sun { color: #dc2626; }
+.calendar-weekdays .tue { color: #c4c4c4; }
+.calendar-weekdays .sat { color: #2563eb; }
 
+/* 日付グリッド本体 */
 .calendar-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
+  row-gap: 4px;
+  column-gap: 2px;
 }
 
 .cal-day {
-  aspect-ratio: 1;
-  border: none;
-  background: none;
-  border-radius: 50%;
-  font-size: 13px;
-  cursor: pointer;
-  color: var(--near-black);
-  transition: background var(--transition), color var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 44px;
+  width: 100%;
+  border: none;
+  background: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  color: var(--near-black);
+  font-weight: 500;
+  transition: background 0.18s ease, color 0.18s ease;
+  box-sizing: border-box;
 }
-.cal-day:hover:not(.cal-day--disabled) { background: #eff6ff; color: #2563eb; }
-.cal-day--today { background: #dbeafe; color: #1d4ed8; font-weight: 700; }
-.cal-day--disabled { color: var(--light-gray); cursor: default; }
-.cal-day--empty { pointer-events: none; }
+
+.cal-day:hover:not([disabled]) {
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.cal-day--today {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 700;
+  border: 1.5px solid #93c5fd;
+}
+
+.cal-day--selected {
+  background: #2563eb;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.cal-day[disabled] {
+  color: #d1d5db;
+  cursor: default;
+  font-weight: 400;
+}
+
+.cal-day--empty {
+  pointer-events: none;
+}
 
 .cal-note {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 12px;
   color: var(--mid-gray);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cal-note::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  flex-shrink: 0;
 }
 
-/* 時間スロット */
-.time-sections { margin-bottom: 20px; }
+/* ====== 時間スロット ====== */
+.time-sections { margin-bottom: 8px; }
 
 .time-section-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--mid-gray);
-  margin: 16px 0 8px;
+  margin: 20px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .time-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
 }
 
 .time-slot {
-  padding: 9px 16px;
-  border: 1px solid var(--light-gray);
-  border-radius: 999px;
-  background: none;
-  font-size: 13px;
+  height: 44px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: 10px;
+  background: var(--off-white);
+  font-size: 14px;
   font-family: var(--font-sans);
+  font-weight: 500;
   color: var(--near-black);
   cursor: pointer;
-  transition: background var(--transition), border-color var(--transition), color var(--transition);
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.time-slot:hover { background: #2563eb; border-color: #2563eb; color: var(--white); }
+.time-slot:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: var(--white);
+  font-weight: 700;
+}
 
 .step-back {
   background: none;
@@ -1036,24 +1105,33 @@ img {
   color: var(--mid-gray);
   cursor: pointer;
   padding: 0;
-  margin-top: 4px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   transition: color var(--transition);
 }
 .step-back:hover { color: var(--near-black); }
 
-/* 予約完了（ステップ内） */
-#step-complete { text-align: center; padding: 8px 0; }
+/* ====== 予約完了（ステップ内） ====== */
+#step-complete {
+  text-align: center;
+  padding: 16px 0 8px;
+}
 #step-complete .modal-icon { margin-bottom: 20px; }
 
 .booking-summary {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: #2563eb;
-  margin-bottom: 8px;
+  background: #eff6ff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
   letter-spacing: 0.04em;
 }
 #step-complete .modal-text { margin-bottom: 28px; }
-#step-complete .btn { padding: 12px 40px; }
+#step-complete .btn { padding: 13px 40px; }
 
 /* ============================
    Responsive – Mobile
