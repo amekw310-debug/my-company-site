@@ -111,6 +111,15 @@ img {
   display: block;
 }
 
+.info-map-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 8px;
+  display: block;
+  filter: grayscale(15%);
+}
+
 .dummy-label {
   font-size: 13px;
   color: var(--mid-gray);
