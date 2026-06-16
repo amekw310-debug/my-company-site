@@ -107,13 +107,14 @@ img {
 .btn {
   display: inline-block;
   padding: 14px 36px;
-  border-radius: var(--radius);
+  border-radius: 999px;
   font-family: var(--font-sans);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.08em;
   cursor: pointer;
-  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  transition: background var(--transition), color var(--transition), border-color var(--transition),
+              transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-hero {
@@ -126,16 +127,22 @@ img {
 .btn-hero:hover {
   background: transparent;
   color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.15);
 }
 
 .btn-primary {
-  background: var(--near-black);
+  background: #2563eb;
   color: var(--white);
-  border: 2px solid var(--near-black);
+  border: 2px solid #2563eb;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
 .btn-primary:hover {
-  background: var(--black);
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45);
 }
 
 .btn-outline {
@@ -147,6 +154,8 @@ img {
 .btn-outline:hover {
   border-color: var(--white);
   background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================
