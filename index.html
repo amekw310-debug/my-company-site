@@ -336,12 +336,12 @@
         特別なご要望もお気軽にご相談ください。
       </p>
       <div class="reserve-btns">
-        <a href="tel:0312345678" class="btn btn-outline">
-          📞&nbsp; 03-1234-5678
-        </a>
-        <a href="#" class="btn btn-primary" id="reserve-btn">
+        <button class="btn btn-outline" id="phone-btn">
+          📞&nbsp; 電話で予約する
+        </button>
+        <button class="btn btn-primary" id="reserve-btn">
           オンライン予約
-        </a>
+        </button>
       </div>
       <p class="reserve-note">受付時間：11:00 〜 22:00（定休日を除く）</p>
     </div>
@@ -362,13 +362,62 @@
   </div>
 </footer>
 
-<!-- 予約完了モーダル -->
-<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+<!-- 電話モーダル -->
+<div class="modal-overlay" id="phone-overlay" role="dialog" aria-modal="true">
   <div class="modal">
-    <div class="modal-icon">✓</div>
-    <h3 class="modal-heading" id="modal-heading">予約が完了しました</h3>
-    <p class="modal-text">ご予約ありがとうございます。<br>確認メールをお送りしましたのでご確認ください。</p>
-    <button class="btn btn-primary modal-close" id="modal-close">閉じる</button>
+    <button class="modal-x" id="phone-close" aria-label="閉じる">✕</button>
+    <div class="modal-icon">📞</div>
+    <h3 class="modal-heading">お電話でご予約</h3>
+    <p class="modal-phone-num">03-1234-5678</p>
+    <p class="modal-text">受付時間：11:00 〜 22:00<br>（定休日・火曜日を除く）</p>
+    <a href="tel:0312345678" class="btn btn-primary">電話をかける</a>
+  </div>
+</div>
+
+<!-- オンライン予約モーダル（3ステップ） -->
+<div class="modal-overlay" id="reserve-overlay" role="dialog" aria-modal="true">
+  <div class="modal modal--wide">
+    <button class="modal-x" id="reserve-close" aria-label="閉じる">✕</button>
+
+    <!-- Step 1: カレンダー -->
+    <div class="step" id="step-calendar">
+      <p class="step-label">STEP 1 / 3 &nbsp;—&nbsp; 日付を選択</p>
+      <div class="calendar">
+        <div class="calendar-header">
+          <button class="cal-nav" id="cal-prev">‹</button>
+          <span class="cal-month-label" id="cal-month-label"></span>
+          <button class="cal-nav" id="cal-next">›</button>
+        </div>
+        <div class="calendar-weekdays">
+          <span class="sun">日</span><span>月</span><span class="tue">火</span>
+          <span>水</span><span>木</span><span>金</span><span class="sat">土</span>
+        </div>
+        <div class="calendar-days" id="calendar-days"></div>
+      </div>
+      <p class="cal-note">※ 火曜日は定休日です</p>
+    </div>
+
+    <!-- Step 2: 時間選択 -->
+    <div class="step" id="step-time" hidden>
+      <p class="step-label">STEP 2 / 3 &nbsp;—&nbsp; 時間を選択</p>
+      <p class="step-date-display" id="selected-date-display"></p>
+      <div class="time-sections">
+        <p class="time-section-label">ランチ</p>
+        <div class="time-grid" id="time-grid-lunch"></div>
+        <p class="time-section-label">ディナー</p>
+        <div class="time-grid" id="time-grid-dinner"></div>
+      </div>
+      <button class="step-back" id="back-to-calendar">← 日付を変更する</button>
+    </div>
+
+    <!-- Step 3: 完了 -->
+    <div class="step" id="step-complete" hidden>
+      <div class="modal-icon">✓</div>
+      <h3 class="modal-heading">予約が完了しました</h3>
+      <p class="booking-summary" id="booking-summary"></p>
+      <p class="modal-text">ご予約ありがとうございます。<br>確認メールをお送りしましたのでご確認ください。</p>
+      <button class="btn btn-primary" id="reserve-done">閉じる</button>
+    </div>
   </div>
 </div>
 
@@ -405,20 +454,135 @@
     header.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // 予約完了モーダル
-  const overlay = document.getElementById('modal-overlay');
-  document.getElementById('reserve-btn').addEventListener('click', e => {
-    e.preventDefault();
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  // ===== 共通モーダル制御 =====
+  const lockScroll   = () => { document.body.style.overflow = 'hidden'; };
+  const unlockScroll = () => { document.body.style.overflow = ''; };
+
+  function openOverlay(el)  { el.classList.add('open');    lockScroll(); }
+  function closeOverlay(el) { el.classList.remove('open'); unlockScroll(); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    [phoneOverlay, reserveOverlay].forEach(o => closeOverlay(o));
   });
-  const closeModal = () => {
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  };
-  document.getElementById('modal-close').addEventListener('click', closeModal);
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ===== 電話モーダル =====
+  const phoneOverlay = document.getElementById('phone-overlay');
+  document.getElementById('phone-btn').addEventListener('click', () => openOverlay(phoneOverlay));
+  document.getElementById('phone-close').addEventListener('click', () => closeOverlay(phoneOverlay));
+  phoneOverlay.addEventListener('click', e => { if (e.target === phoneOverlay) closeOverlay(phoneOverlay); });
+
+  // ===== オンライン予約（3ステップ） =====
+  const reserveOverlay = document.getElementById('reserve-overlay');
+  const stepCalendar   = document.getElementById('step-calendar');
+  const stepTime       = document.getElementById('step-time');
+  const stepComplete   = document.getElementById('step-complete');
+
+  let calYear, calMonth, selectedDate;
+
+  function showStep(step) {
+    [stepCalendar, stepTime, stepComplete].forEach(s => s.hidden = true);
+    step.hidden = false;
+  }
+
+  // カレンダー生成
+  function renderCalendar(year, month) {
+    calYear = year; calMonth = month;
+    const label = document.getElementById('cal-month-label');
+    label.textContent = `${year}年 ${month + 1}月`;
+
+    const grid = document.getElementById('calendar-days');
+    grid.innerHTML = '';
+
+    const today  = new Date(); today.setHours(0,0,0,0);
+    const first  = new Date(year, month, 1);
+    const last   = new Date(year, month + 1, 0);
+    const offset = first.getDay(); // 0=Sun
+
+    for (let i = 0; i < offset; i++) {
+      const blank = document.createElement('span');
+      blank.className = 'cal-day cal-day--empty';
+      grid.appendChild(blank);
+    }
+
+    for (let d = 1; d <= last.getDate(); d++) {
+      const date = new Date(year, month, d);
+      const btn  = document.createElement('button');
+      btn.className = 'cal-day';
+      btn.textContent = d;
+
+      const isTue  = date.getDay() === 2;
+      const isPast = date < today;
+
+      if (isTue || isPast) {
+        btn.classList.add('cal-day--disabled');
+        btn.disabled = true;
+      } else {
+        if (date.toDateString() === today.toDateString()) btn.classList.add('cal-day--today');
+        btn.addEventListener('click', () => onDateSelect(date));
+      }
+      grid.appendChild(btn);
+    }
+  }
+
+  function onDateSelect(date) {
+    selectedDate = date;
+    const fmt = `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日（${'日月火水木金土'[date.getDay()]}）`;
+    document.getElementById('selected-date-display').textContent = fmt;
+
+    const lunchSlots  = ['11:30', '12:00', '12:30', '13:00', '13:30'];
+    const dinnerSlots = ['17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30'];
+
+    renderTimeGrid('time-grid-lunch',  lunchSlots);
+    renderTimeGrid('time-grid-dinner', dinnerSlots);
+    showStep(stepTime);
+  }
+
+  function renderTimeGrid(containerId, slots) {
+    const grid = document.getElementById(containerId);
+    grid.innerHTML = '';
+    slots.forEach(t => {
+      const btn = document.createElement('button');
+      btn.className = 'time-slot';
+      btn.textContent = t;
+      btn.addEventListener('click', () => onTimeSelect(t));
+      grid.appendChild(btn);
+    });
+  }
+
+  function onTimeSelect(time) {
+    const fmt = `${selectedDate.getFullYear()}年${selectedDate.getMonth()+1}月${selectedDate.getDate()}日（${'日月火水木金土'[selectedDate.getDay()]}）${time}`;
+    document.getElementById('booking-summary').textContent = fmt;
+    showStep(stepComplete);
+  }
+
+  // カレンダーナビゲーション
+  document.getElementById('cal-prev').addEventListener('click', () => {
+    calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; }
+    renderCalendar(calYear, calMonth);
+  });
+  document.getElementById('cal-next').addEventListener('click', () => {
+    calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; }
+    renderCalendar(calYear, calMonth);
+  });
+
+  // 日付に戻る
+  document.getElementById('back-to-calendar').addEventListener('click', () => showStep(stepCalendar));
+
+  // 完了→閉じる
+  document.getElementById('reserve-done').addEventListener('click', () => closeOverlay(reserveOverlay));
+
+  // 予約ボタン押下
+  document.getElementById('reserve-btn').addEventListener('click', () => {
+    const now = new Date();
+    renderCalendar(now.getFullYear(), now.getMonth());
+    showStep(stepCalendar);
+    openOverlay(reserveOverlay);
+  });
+
+  // 閉じるボタン / 背景クリック
+  document.getElementById('reserve-close').addEventListener('click', () => closeOverlay(reserveOverlay));
+  reserveOverlay.addEventListener('click', e => { if (e.target === reserveOverlay) closeOverlay(reserveOverlay); });
 </script>
 
 </body>
