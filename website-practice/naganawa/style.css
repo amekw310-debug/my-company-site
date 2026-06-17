@@ -1497,6 +1497,18 @@ ul {
   border-radius: 999px;
 }
 
+.recruit-nav .btn-ghost {
+  color: var(--navy-dark);
+  border-color: var(--navy-dark);
+  border-width: 2px;
+}
+
+.recruit-nav .btn-ghost:hover {
+  background: var(--navy-dark);
+  color: var(--white);
+  border-color: var(--navy-dark);
+}
+
 /* ============================
    Recruit Sections
    ============================ */
