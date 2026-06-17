@@ -212,7 +212,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 96px;
 }
 
 .logo {
@@ -223,7 +223,7 @@ ul {
 }
 
 .logo-img {
-  height: 60px;
+  height: 88px;
   width: auto;
   object-fit: contain;
   border-radius: 4px;
