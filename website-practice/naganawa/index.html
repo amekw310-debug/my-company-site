@@ -94,6 +94,66 @@
     </div>
   </section>
 
+  <!-- 施工実績フォトスライダー -->
+  <section class="photo-slider-section" id="gallery">
+    <div class="slider-wrap" id="sliderWrap">
+      <div class="slider" id="slider">
+
+        <div class="slide active">
+          <div class="slide-bg slide-bg--1"></div>
+          <div class="slide-caption">
+            <span class="slide-num">01</span>
+            <p class="slide-text">舗装工事 — 春日井市内 幹線道路アスファルト舗装</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-bg slide-bg--2"></div>
+          <div class="slide-caption">
+            <span class="slide-num">02</span>
+            <p class="slide-text">土木工事 — 宅地造成・排水設備整備工事</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-bg slide-bg--3"></div>
+          <div class="slide-caption">
+            <span class="slide-num">03</span>
+            <p class="slide-text">ICT施工 — ドローン測量・3Dデータ活用</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-bg slide-bg--4"></div>
+          <div class="slide-caption">
+            <span class="slide-num">04</span>
+            <p class="slide-text">区画線工事 — 駐車場ライン・交通安全施設</p>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="slide-bg slide-bg--5"></div>
+          <div class="slide-caption">
+            <span class="slide-num">05</span>
+            <p class="slide-text">完成風景 — 地域の暮らしを支えるインフラ</p>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="slider-btn slider-btn--prev" id="sliderPrev" aria-label="前へ">&#8249;</button>
+      <button class="slider-btn slider-btn--next" id="sliderNext" aria-label="次へ">&#8250;</button>
+
+      <div class="slider-dots" id="sliderDots">
+        <button class="slider-dot active" aria-label="1枚目"></button>
+        <button class="slider-dot" aria-label="2枚目"></button>
+        <button class="slider-dot" aria-label="3枚目"></button>
+        <button class="slider-dot" aria-label="4枚目"></button>
+        <button class="slider-dot" aria-label="5枚目"></button>
+      </div>
+    </div>
+  </section>
+
   <!-- 会社案内 -->
   <section class="section" id="about">
     <div class="inner">
@@ -426,6 +486,35 @@
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
+
+  // Photo Slider
+  (function () {
+    const slides = document.querySelectorAll('.slide');
+    const dots   = document.querySelectorAll('.slider-dot');
+    const wrap   = document.getElementById('sliderWrap');
+    let current  = 0;
+    let timer;
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
+    function stopAuto()  { clearInterval(timer); }
+
+    document.getElementById('sliderNext').addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+    document.getElementById('sliderPrev').addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); }));
+
+    wrap.addEventListener('mouseenter', stopAuto);
+    wrap.addEventListener('mouseleave', startAuto);
+
+    startAuto();
+  })();
 </script>
 
 </body>
