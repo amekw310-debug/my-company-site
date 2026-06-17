@@ -1497,16 +1497,28 @@ ul {
   border-radius: 999px;
 }
 
-.recruit-nav .btn-ghost {
+.btn-recruit-mid {
+  display: block;
+  width: 100%;
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: var(--font);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  border: 2px solid var(--navy-dark);
+  background: transparent;
   color: var(--navy-dark);
-  border-color: var(--navy-dark);
-  border-width: 2px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  box-sizing: border-box;
 }
 
-.recruit-nav .btn-ghost:hover {
+.btn-recruit-mid:hover {
   background: var(--navy-dark);
   color: var(--white);
-  border-color: var(--navy-dark);
 }
 
 /* ============================
