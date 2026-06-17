@@ -1125,26 +1125,46 @@ ul {
 .reason-card {
   background: var(--white);
   border-radius: 12px;
-  padding: 36px 24px 28px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.reason-photo {
   position: relative;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.reason-photo--1 {
+  background: linear-gradient(135deg, #2a4a7f 0%, #1a3060 40%, #3a6090 100%);
+}
+
+.reason-photo--2 {
+  background: linear-gradient(135deg, #3a5a30 0%, #2a4a20 40%, #4a7040 100%);
+}
+
+.reason-photo--3 {
+  background: linear-gradient(135deg, #5a3a20 0%, #4a2a10 40%, #7a5030 100%);
 }
 
 .reason-number {
   position: absolute;
-  top: -16px;
-  left: 24px;
-  font-size: 42px;
+  bottom: 12px;
+  left: 16px;
+  font-size: 56px;
   font-weight: 900;
-  color: var(--navy-dark);
-  opacity: 0.06;
+  color: var(--accent);
   line-height: 1;
   letter-spacing: -0.04em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.reason-icon-wrap {
-  font-size: 40px;
-  margin-bottom: 16px;
+.reason-body {
+  padding: 24px 24px 28px;
+  flex: 1;
 }
 
 .reason-title {
