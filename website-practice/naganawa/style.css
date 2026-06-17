@@ -1080,6 +1080,66 @@ ul {
 }
 
 /* ============================
+   News
+   ============================ */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.news-item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--gray-mid);
+}
+
+.news-item:first-child {
+  border-top: 1px solid var(--gray-mid);
+}
+
+.news-date {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.news-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.news-tag--info {
+  background: var(--gray-mid);
+  color: var(--text-main);
+}
+
+.news-title {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.news-title:hover {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+/* ============================
    Recruit Table
    ============================ */
 .recruit-wrap {
@@ -1439,6 +1499,12 @@ ul {
   /* Voice */
   .voice-card {
     flex-direction: column;
+  }
+
+  /* News */
+  .news-item {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   /* Recruit table – stack th/td */
