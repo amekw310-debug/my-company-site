@@ -411,8 +411,18 @@ ul {
   font-size: clamp(14px, 1.8vw, 17px);
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.9;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   max-width: 560px;
+}
+
+.hero-slider-block {
+  margin: 0 -20px 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-slider-block .slider-wrap {
+  height: 380px;
 }
 
 .hero-tags {
