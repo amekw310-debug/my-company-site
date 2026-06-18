@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テクノリンク株式会社 | テクノロジーで、ビジネスの未来をひらく。</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header" id="header">
+    <div class="header-inner container">
+      <div class="logo">
+        <a href="#top">
+          <span class="logo-mark">TL</span>
+          <span class="logo-text">テクノリンク<span>株式会社</span></span>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="#services">事業内容</a></li>
+          <li><a href="#strengths">選ばれる理由</a></li>
+          <li><a href="#testimonials">お客様の声</a></li>
+          <li><a href="#about">会社概要</a></li>
+          <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <section class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <p class="hero-label">Innovation × Technology</p>
+      <h1 class="hero-title">
+        テクノロジーで、<br>
+        ビジネスの未来を<span class="hero-title-accent">ひらく。</span>
+      </h1>
+      <p class="hero-desc">
+        テクノリンクは、クラウド・システム開発・DXコンサルティングを通じて<br class="pc-only">
+        お客様のビジネス変革を全力でサポートします。
+      </p>
+      <div class="hero-btns">
+        <a href="#services" class="btn btn-primary">サービスを見る</a>
+        <a href="#contact" class="btn btn-outline">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- 事業内容 -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">SERVICES</p>
+        <h2 class="section-title">事業内容</h2>
+        <p class="section-desc">テクノリンクが提供する3つのコアサービスで、企業の成長を強力に後押しします。</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="16" width="56" height="36" rx="4" stroke="currentColor" stroke-width="3"/>
+              <path d="M16 28h8M16 36h16M40 36h8M40 28h8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="46" cy="12" r="6" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="3"/>
+              <path d="M20 8h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">クラウドソリューション</h3>
+          <p class="service-text">AWS・Azure・GCPを活用したクラウド基盤の設計・構築・運用を一貫して提供。コスト最適化から高可用性アーキテクチャまで、貴社の課題に最適なクラウド戦略を実現します。</p>
+          <ul class="service-tags">
+            <li>クラウド移行</li>
+            <li>インフラ最適化</li>
+            <li>セキュリティ強化</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="3"/>
+              <path d="M20 26l-6 6 6 6M44 26l6 6-6 6M30 20l4 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">システム開発</h3>
+          <p class="service-text">業務システム・Webアプリ・スマートフォンアプリの受託開発。要件定義から設計・開発・テスト・保守まで、経験豊富なエンジニアがアジャイルで高品質なシステムを構築します。</p>
+          <ul class="service-tags">
+            <li>業務システム</li>
+            <li>Webアプリ</li>
+            <li>スマートフォンアプリ</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="3"/>
+              <path d="M32 16v16l10 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 44l4-8M44 44l-4-8M32 52v-4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="service-title">DXコンサルティング</h3>
+          <p class="service-text">デジタルトランスフォーメーションの戦略立案から実行支援まで伴走。業務プロセスの可視化・自動化、データ活用推進により、競争力のある組織づくりを支援します。</p>
+          <ul class="service-tags">
+            <li>DX戦略立案</li>
+            <li>業務自動化</li>
+            <li>データ活用</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 選ばれる理由 -->
+  <section class="strengths section" id="strengths">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <p class="section-label">WHY CHOOSE US</p>
+        <h2 class="section-title">選ばれる理由</h2>
+        <p class="section-desc">数字が証明するテクノリンクの実績と信頼。</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number"><span class="count">15</span><span class="stat-unit">年</span></div>
+          <p class="stat-label">IT業界での実績</p>
+          <p class="stat-desc">2010年の創業以来、一貫してお客様のIT課題に向き合ってきました。</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span class="count">500</span><span class="stat-unit">社以上</span></div>
+          <p class="stat-label">累計導入実績</p>
+          <p class="stat-desc">大手企業から中小企業まで、幅広い業種のDX推進を支援しています。</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span class="count">98</span><span class="stat-unit">%</span></div>
+          <p class="stat-label">顧客満足度</p>
+          <p class="stat-desc">年次アンケートで高い満足度を継続して維持しています。</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number"><span class="count">250</span><span class="stat-unit">名</span></div>
+          <p class="stat-label">専門エンジニア数</p>
+          <p class="stat-desc">各分野の認定資格を持つエキスパートが課題解決にあたります。</p>
+        </div>
+      </div>
+      <div class="strengths-features">
+        <div class="feature-item">
+          <div class="feature-icon">✓</div>
+          <div>
+            <h4 class="feature-title">一気通貫のサポート体制</h4>
+            <p class="feature-text">戦略立案・開発・運用まで、ワンストップで対応。窓口が一本化されることで、スムーズなプロジェクト推進が可能です。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">✓</div>
+          <div>
+            <h4 class="feature-title">セキュリティへの徹底したこだわり</h4>
+            <p class="feature-text">ISMSおよびプライバシーマーク取得済み。情報セキュリティを最優先に、安全なシステム運用を実現します。</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">✓</div>
+          <div>
+            <h4 class="feature-title">スピードと柔軟性</h4>
+            <p class="feature-text">アジャイル開発を標準採用し、変化するビジネス要件に素早く対応。最短2週間でのプロトタイプ提供も可能です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">TESTIMONIALS</p>
+        <h2 class="section-title">お客様の声</h2>
+        <p class="section-desc">テクノリンクにご依頼いただいたお客様からの生の声をご紹介します。</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">老朽化した基幹システムのクラウド移行を依頼しましたが、綿密なヒアリングと丁寧なプロジェクト管理のおかげでトラブルなく完了。運用コストが約35%削減できました。担当チームの技術力と誠実さに感動しています。</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar">A</div>
+            <div class="testimonial-info">
+              <p class="testimonial-name">田中 誠一 様</p>
+              <p class="testimonial-company">製造業 A社 / 情報システム部長</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">EC事業の拡大に伴い、受注管理システムの刷新を依頼。短納期・高品質で期待以上のシステムを納品していただきました。リリース後も迅速なサポートで安心して運用できています。</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar">B</div>
+            <div class="testimonial-info">
+              <p class="testimonial-name">鈴木 恵子 様</p>
+              <p class="testimonial-company">小売業 B社 / 代表取締役</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">DX推進の戦略立案から伴走いただき、社内の意識変革まで丁寧にサポートしていただきました。現場スタッフへの研修も含め、組織全体でデジタル活用が進んでいます。頼れるパートナーです。</p>
+          <div class="testimonial-footer">
+            <div class="testimonial-avatar">C</div>
+            <div class="testimonial-info">
+              <p class="testimonial-name">中村 健太 様</p>
+              <p class="testimonial-company">医療法人 C / 理事長</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 会社概要 -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">COMPANY</p>
+        <h2 class="section-title">会社概要</h2>
+      </div>
+      <div class="about-wrapper">
+        <table class="about-table">
+          <tbody>
+            <tr>
+              <th>会社名</th>
+              <td>テクノリンク株式会社</td>
+            </tr>
+            <tr>
+              <th>英語表記</th>
+              <td>TechnoLink Co., Ltd.</td>
+            </tr>
+            <tr>
+              <th>設立</th>
+              <td>2010年4月1日</td>
+            </tr>
+            <tr>
+              <th>代表取締役</th>
+              <td>山田 太郎</td>
+            </tr>
+            <tr>
+              <th>資本金</th>
+              <td>1億円</td>
+            </tr>
+            <tr>
+              <th>従業員数</th>
+              <td>250名（2025年4月現在）</td>
+            </tr>
+            <tr>
+              <th>所在地</th>
+              <td>〒150-0001 東京都渋谷区神宮前1-2-3 テクノリンクビル7F</td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td>03-1234-5678</td>
+            </tr>
+            <tr>
+              <th>事業内容</th>
+              <td>クラウドソリューション、システム開発、DXコンサルティング</td>
+            </tr>
+            <tr>
+              <th>認証・資格</th>
+              <td>ISO/IEC 27001（ISMS）、プライバシーマーク取得</td>
+            </tr>
+            <tr>
+              <th>取引銀行</th>
+              <td>みずほ銀行 渋谷支店</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">CONTACT</p>
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="section-desc">サービスに関するご質問・ご相談は、お気軽にお問い合わせください。<br>営業時間内（平日9:00〜18:00）に担当者よりご返信いたします。</p>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name" class="form-label">お名前 <span class="required">必須</span></label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="例）山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label for="company" class="form-label">会社名</label>
+          <input type="text" id="company" name="company" class="form-input" placeholder="例）株式会社サンプル">
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">メールアドレス <span class="required">必須</span></label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="例）info@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="service" class="form-label">お問い合わせ種別</label>
+          <select id="service" name="service" class="form-select">
+            <option value="">選択してください</option>
+            <option value="cloud">クラウドソリューション</option>
+            <option value="dev">システム開発</option>
+            <option value="dx">DXコンサルティング</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">お問い合わせ内容 <span class="required">必須</span></label>
+          <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary btn-large">送信する</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <span class="logo-mark">TL</span>
+        <span class="logo-text">テクノリンク<span>株式会社</span></span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#services">事業内容</a>
+        <a href="#strengths">選ばれる理由</a>
+        <a href="#testimonials">お客様の声</a>
+        <a href="#about">会社概要</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+      <p class="footer-copy">&copy; 2025 TechnoLink Co., Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ハンバーガーメニュー
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        nav.classList.remove('open');
+      });
+    });
+
+    // スクロールでヘッダー背景変化
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // スムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerH = header.offsetHeight;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerH;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // フォーム送信
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = '送信完了しました！';
+      btn.disabled = true;
+      btn.style.background = '#2ecc71';
+    });
+
+    // スクロールアニメーション
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.service-card, .stat-item, .testimonial-card, .feature-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
