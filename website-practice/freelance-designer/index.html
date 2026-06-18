@@ -197,6 +197,30 @@
     </div>
   </section>
 
+  <!-- 実績数字 -->
+  <section class="stats section" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat__item">
+          <div class="stat__number"><span class="count">50</span><span class="stat__unit">+</span></div>
+          <p class="stat__label">制作実績</p>
+        </div>
+        <div class="stat__item">
+          <div class="stat__number"><span class="count">98</span><span class="stat__unit">%</span></div>
+          <p class="stat__label">顧客満足度</p>
+        </div>
+        <div class="stat__item">
+          <div class="stat__number"><span class="count">5</span><span class="stat__unit">年</span></div>
+          <p class="stat__label">フリーランス歴</p>
+        </div>
+        <div class="stat__item">
+          <div class="stat__number"><span class="count">12</span><span class="stat__unit">業種</span></div>
+          <p class="stat__label">対応業種</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 料金プラン -->
   <section class="pricing section section--gray" id="pricing">
     <div class="container">
@@ -260,6 +284,27 @@
         お仕事のご依頼・ご相談はお気軽にどうぞ。<br>
         2営業日以内にご返信いたします。
       </p>
+      <form class="contact__form" id="contactForm" novalidate>
+        <div class="contact__form-group">
+          <label for="contactName" class="contact__label">お名前 <span class="contact__required">必須</span></label>
+          <input type="text" id="contactName" name="name" class="contact__input" placeholder="例）佐藤 花子" required>
+          <span class="contact__error" id="nameError">お名前を入力してください</span>
+        </div>
+        <div class="contact__form-group">
+          <label for="contactEmail" class="contact__label">メールアドレス <span class="contact__required">必須</span></label>
+          <input type="email" id="contactEmail" name="email" class="contact__input" placeholder="例）hanako@example.com" required>
+          <span class="contact__error" id="emailError">メールアドレスを入力してください</span>
+        </div>
+        <div class="contact__form-group">
+          <label for="contactMessage" class="contact__label">お問い合わせ内容 <span class="contact__required">必須</span></label>
+          <textarea id="contactMessage" name="message" class="contact__textarea" rows="5" placeholder="ご依頼内容・ご予算・納期などをお気軽にご記入ください" required></textarea>
+          <span class="contact__error" id="messageError">お問い合わせ内容を入力してください</span>
+        </div>
+        <div class="contact__form-submit">
+          <button type="submit" class="btn btn--primary">送信する</button>
+        </div>
+      </form>
+      <div class="contact__divider">or</div>
       <a href="mailto:yuki@sato-design.jp" class="contact__email">yuki@sato-design.jp</a>
       <div class="contact__sns">
         <a href="#" class="sns-link" aria-label="Twitter">
@@ -277,7 +322,24 @@
 
   <!-- フッター -->
   <footer class="footer">
-    <p>© 2024 Yuki Sato. All rights reserved.</p>
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__logo">YS.</div>
+        <p class="footer__desc">フリーランスWebデザイナー<br>佐藤 由紀</p>
+        <a href="mailto:yuki@sato-design.jp" class="footer__mail">yuki@sato-design.jp</a>
+        <p class="footer__copy">© 2024 Yuki Sato. All rights reserved.</p>
+      </div>
+      <div class="footer__right">
+        <p class="footer__nav-title">NAVIGATION</p>
+        <nav class="footer__nav">
+          <a href="#about">About</a>
+          <a href="#works">Works</a>
+          <a href="#skills">Skills</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
