@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuki Sato — Freelance Web Designer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav class="nav">
+    <div class="nav__logo">YS.</div>
+    <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ファーストビュー -->
+  <section class="hero" id="top">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Freelance Web Designer</p>
+      <h1 class="hero__name">Yuki Sato</h1>
+      <p class="hero__tagline">美しいデザインで、<br>あなたのビジョンを形にします。</p>
+      <a href="#works" class="btn btn--primary">実績を見る</a>
+    </div>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- 自己紹介 -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label">About</div>
+      <div class="about__grid">
+        <div class="about__photo-wrap">
+          <div class="about__photo">
+            <div class="about__photo-placeholder">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="45" r="22" fill="#e0e0e0"/>
+                <ellipse cx="60" cy="95" rx="35" ry="22" fill="#e0e0e0"/>
+              </svg>
+            </div>
+          </div>
+          <div class="about__photo-deco"></div>
+        </div>
+        <div class="about__body">
+          <h2 class="section-title">こんにちは、<br>佐藤 由紀です。</h2>
+          <p class="about__text">
+            東京を拠点に活動するフリーランスWebデザイナーです。UI/UXデザインからコーディングまで一気通貫で対応。
+            「シンプルで機能的、かつ美しい」デザインをモットーに、スタートアップから中小企業まで幅広いクライアントのWeb制作をサポートしています。
+          </p>
+          <p class="about__text">
+            デザインエージェンシーに5年間勤務後、2021年に独立。これまでに50社以上のWebサイト・アプリのデザインに携わりました。
+          </p>
+          <ul class="about__tags">
+            <li>UI / UX Design</li>
+            <li>Web Coding</li>
+            <li>Figma</li>
+            <li>Responsive Design</li>
+            <li>Brand Identity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 制作実績 -->
+  <section class="works section section--dark" id="works">
+    <div class="container">
+      <div class="section-label section-label--light">Works</div>
+      <h2 class="section-title section-title--light">制作実績</h2>
+      <div class="works__grid">
+        <article class="work-card">
+          <div class="work-card__thumb work-card__thumb--1">
+            <span class="work-card__category">Corporate</span>
+          </div>
+          <div class="work-card__info">
+            <h3>株式会社ノバテック</h3>
+            <p>コーポレートサイトリニューアル</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__thumb work-card__thumb--2">
+            <span class="work-card__category">EC</span>
+          </div>
+          <div class="work-card__info">
+            <h3>BLOOM Botanicals</h3>
+            <p>ECサイト / ブランディング</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__thumb work-card__thumb--3">
+            <span class="work-card__category">App UI</span>
+          </div>
+          <div class="work-card__info">
+            <h3>TaskFlow</h3>
+            <p>タスク管理アプリ UI設計</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__thumb work-card__thumb--4">
+            <span class="work-card__category">Portfolio</span>
+          </div>
+          <div class="work-card__info">
+            <h3>Hiroshi Yamada Photo</h3>
+            <p>写真家ポートフォリオ</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__thumb work-card__thumb--5">
+            <span class="work-card__category">Restaurant</span>
+          </div>
+          <div class="work-card__info">
+            <h3>Bistro Lumière</h3>
+            <p>レストランWebサイト</p>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__thumb work-card__thumb--6">
+            <span class="work-card__category">Landing Page</span>
+          </div>
+          <div class="work-card__info">
+            <h3>MindfulDay</h3>
+            <p>健康アプリ ランディングページ</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- スキルセット -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">スキルセット</h2>
+      <div class="skills__grid">
+        <div class="skills__col">
+          <div class="skill-item">
+            <div class="skill-item__head">
+              <span class="skill-item__name">Figma / XD</span>
+              <span class="skill-item__pct">95%</span>
+            </div>
+            <div class="skill-item__bar"><div class="skill-item__fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__head">
+              <span class="skill-item__name">HTML / CSS</span>
+              <span class="skill-item__pct">92%</span>
+            </div>
+            <div class="skill-item__bar"><div class="skill-item__fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__head">
+              <span class="skill-item__name">JavaScript</span>
+              <span class="skill-item__pct">78%</span>
+            </div>
+            <div class="skill-item__bar"><div class="skill-item__fill" data-width="78"></div></div>
+          </div>
+        </div>
+        <div class="skills__col">
+          <div class="skill-item">
+            <div class="skill-item__head">
+              <span class="skill-item__name">WordPress</span>
+              <span class="skill-item__pct">85%</span>
+            </div>
+            <div class="skill-item__bar"><div class="skill-item__fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__head">
+              <span class="skill-item__name">Illustrator / Photoshop</span>
+              <span class="skill-item__pct">88%</span>
+            </div>
+            <div class="skill-item__bar"><div class="skill-item__fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__head">
+              <span class="skill-item__name">React (基礎)</span>
+              <span class="skill-item__pct">55%</span>
+            </div>
+            <div class="skill-item__bar"><div class="skill-item__fill" data-width="55"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金プラン -->
+  <section class="pricing section section--gray" id="pricing">
+    <div class="container">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">料金プラン</h2>
+      <p class="pricing__note">すべての料金は税込表示です。制作内容によりお見積もりします。</p>
+      <div class="pricing__grid">
+        <div class="pricing-card">
+          <div class="pricing-card__tag">Light</div>
+          <div class="pricing-card__price">¥150,000<span>〜</span></div>
+          <p class="pricing-card__desc">ランディングページや小規模サイト向け</p>
+          <ul class="pricing-card__list">
+            <li>1〜3ページ</li>
+            <li>レスポンシブ対応</li>
+            <li>お問い合わせフォーム</li>
+            <li>納期：約3週間</li>
+            <li class="disabled">CMSセットアップ</li>
+            <li class="disabled">SEO基本設定</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">相談する</a>
+        </div>
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__badge">人気</div>
+          <div class="pricing-card__tag">Standard</div>
+          <div class="pricing-card__price">¥300,000<span>〜</span></div>
+          <p class="pricing-card__desc">コーポレートサイト・ポートフォリオ向け</p>
+          <ul class="pricing-card__list">
+            <li>4〜10ページ</li>
+            <li>レスポンシブ対応</li>
+            <li>お問い合わせフォーム</li>
+            <li>納期：約6週間</li>
+            <li>CMSセットアップ</li>
+            <li>SEO基本設定</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary">相談する</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__tag">Premium</div>
+          <div class="pricing-card__price">¥600,000<span>〜</span></div>
+          <p class="pricing-card__desc">ECサイト・大規模サイト向け</p>
+          <ul class="pricing-card__list">
+            <li>ページ数無制限</li>
+            <li>レスポンシブ対応</li>
+            <li>お問い合わせフォーム</li>
+            <li>納期：応相談</li>
+            <li>CMSセットアップ</li>
+            <li>SEO・アクセス解析</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline">相談する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="contact section section--dark" id="contact">
+    <div class="container container--narrow">
+      <div class="section-label section-label--light">Contact</div>
+      <h2 class="section-title section-title--light">お問い合わせ</h2>
+      <p class="contact__text">
+        お仕事のご依頼・ご相談はお気軽にどうぞ。<br>
+        2営業日以内にご返信いたします。
+      </p>
+      <a href="mailto:yuki@sato-design.jp" class="contact__email">yuki@sato-design.jp</a>
+      <div class="contact__sns">
+        <a href="#" class="sns-link" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="sns-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="sns-link" aria-label="Behance">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.72zm-7.726-3h3.543c-.161-1.6-1.119-2.199-1.78-2.199-.77 0-1.57.57-1.763 2.199zM15 5h-5v3.5h5V5zm-1.714 8.714c-.77.649-2.001.592-2.286-.071V8.714H8.857v9.572h2.143V17.5c.661.723 2.054.695 3.143-.071.875-.621 1.286-1.714 1.286-2.929 0-1.214-.411-2.143-1.143-2.786z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <p>© 2024 Yuki Sato. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
