@@ -1149,15 +1149,18 @@ ul {
 }
 
 .reason-photo--1 {
-  background-image: url('https://images.unsplash.com/photo-1601628828688-632f38a5a7d0?auto=format&fit=crop&w=800&q=80');
+  background-color: #2a4a7f;
+  background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80');
 }
 
 .reason-photo--2 {
+  background-color: #3a5a30;
   background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80');
 }
 
 .reason-photo--3 {
-  background-image: url('https://images.unsplash.com/photo-1522202176988-66273989f6d8?auto=format&fit=crop&w=800&q=80');
+  background-color: #5a3a20;
+  background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80');
 }
 
 .reason-number {
