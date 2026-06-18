@@ -1883,6 +1883,15 @@ ul {
   gap: 10px;
 }
 
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  background: var(--white);
+  border-radius: 6px;
+  padding: 3px 8px;
+  display: block;
+}
+
 .footer-logo-mark {
   display: flex;
   align-items: center;
