@@ -8,18 +8,18 @@
 }
 
 :root {
-  --primary:      #A67892;
-  --primary-dark: #7E5570;
-  --primary-light:#FAF0F5;
-  --accent:       #A67892;
-  --accent-dark:  #7E5570;
-  --text:         #4A3E45;
-  --text-sub:     #7A6B72;
-  --text-light:   #B0A0A8;
-  --bg:           #FDFAFB;
-  --bg-section:   #FDF3F8;
+  --primary:      #9478AA;
+  --primary-dark: #705888;
+  --primary-light:#F4EFF8;
+  --accent:       #9478AA;
+  --accent-dark:  #705888;
+  --text:         #4E4458;
+  --text-sub:     #7A6E85;
+  --text-light:   #AFA0BC;
+  --bg:           #FDFBFE;
+  --bg-section:   #F7F2FB;
   --white:        #FFFFFF;
-  --border:       #EDE0E8;
+  --border:       #E8E0EF;
   --line-green:   #06C755;
 
   --radius:    8px;
@@ -43,8 +43,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, .hero__title, .section-title, .contact__title {
-  font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
+h1, h2, h3,
+.hero__title, .section-title, .contact__title,
+.reason-card__title, .service-card__title, .work-card__title {
+  font-family: 'Shippori Mincho', 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+.logo__text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: .06em;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -293,7 +303,7 @@ ul, ol { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #4A2840 0%, #A67892 55%, #C4A0B4 100%);
+  background: linear-gradient(135deg, #2E1E40 0%, #705888 50%, #9478AA 100%);
   z-index: 0;
 }
 .hero__bg::after {
@@ -828,7 +838,7 @@ ul, ol { list-style: none; }
    ⑥ お問い合わせ
    ============================ */
 .contact {
-  background: linear-gradient(135deg, #4A2840 0%, #A67892 100%);
+  background: linear-gradient(135deg, #2E1E40 0%, #9478AA 100%);
   padding: 88px 0;
 }
 
@@ -999,7 +1009,7 @@ ul, ol { list-style: none; }
    フッター
    ============================ */
 .footer {
-  background: #3A2030;
+  background: #221830;
   padding: 48px 0 32px;
 }
 
