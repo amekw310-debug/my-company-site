@@ -308,8 +308,9 @@ ul, ol { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 65% 45%, rgba(255,188,229,.55) 0%, rgba(255,188,229,.15) 45%, transparent 65%),
-    radial-gradient(ellipse at 15% 75%, rgba(230,164,204,.3) 0%, transparent 40%);
+    radial-gradient(ellipse at 62% 42%, rgba(255,210,240,.75) 0%, rgba(255,220,245,.35) 40%, transparent 65%),
+    radial-gradient(ellipse at 20% 70%, rgba(255,200,238,.4) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(255,215,242,.3) 0%, transparent 35%);
 }
 
 /* 装飾ダイヤ */
