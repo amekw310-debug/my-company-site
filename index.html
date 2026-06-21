@@ -733,14 +733,23 @@
     .price-card{ border: 1px solid var(--line); border-bottom: none; }
     .price-card:last-child{ border-bottom: 1px solid var(--line); }
     .price-card.featured{ transform: none; }
-    .flow-row{ flex-direction: row; align-items: center; }
-    .flow-row::before{ display: block; left: 8px; right: 8px; }
-    .flow-node{ padding: 4px 2px; font-size: 11px; gap: 4px; }
-    .flow-node:last-child{ padding-bottom: 4px; }
-    .flow-node.center{ margin: 0; padding: 8px 8px; font-size: 12px; }
-    .flow-node:not(:last-child)::after{ display: none; }
-    .flow-node.center::after{ display: none; }
-    .node-label{ writing-mode: vertical-rl; letter-spacing: 0.08em; }
+    .flow-row{ flex-direction: column; align-items: center; gap: 20px; }
+    .flow-row::before{ display: none; }
+    .flow-node{ border: 1.5px solid var(--gold); border-radius: 100px; min-width: 200px; padding: 14px 28px; flex-direction: row; justify-content: center; gap: 0; font-size: 17px; font-family: 'Noto Serif JP', serif; letter-spacing: 0.04em; color: var(--ink); }
+    .flow-node:not(.center){ background: rgba(255,248,250,0.85); }
+    .flow-node .dot{ display: none; }
+    .flow-node.center{ margin: 0; padding: 14px 32px; font-size: 17px; }
+    .flow-node:not(:last-child)::after{
+      content:"";
+      position: absolute;
+      bottom: -20px; left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 20px;
+      background: repeating-linear-gradient(to bottom, var(--gold) 0, var(--gold) 4px, transparent 4px, transparent 9px);
+      z-index: 0;
+    }
+    .flow-node.center{ z-index: 6; }
     .hero{ padding: 76px 0 64px; }
     .service, .flow-strength, .process, .works, .pricing, .faq{ padding: 72px 0; }
   }
