@@ -564,6 +564,7 @@ ul, ol { list-style: none; }
 .about__title {
   font-size: 12px;
   color: var(--text-sub);
+  white-space: nowrap;
 }
 
 .about__greeting {
@@ -1127,7 +1128,7 @@ ul, ol { list-style: none; }
     grid-template-columns: 1fr;
   }
   .about__photo-wrap {
-    max-width: 220px;
+    max-width: 260px;
     margin: 0 auto;
   }
   .services__grid {
