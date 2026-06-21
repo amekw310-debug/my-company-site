@@ -8,18 +8,19 @@
 }
 
 :root {
-  --primary:      #9478AA;
-  --primary-dark: #705888;
-  --primary-light:#F4EFF8;
-  --accent:       #9478AA;
-  --accent-dark:  #705888;
-  --text:         #4E4458;
-  --text-sub:     #7A6E85;
-  --text-light:   #AFA0BC;
-  --bg:           #FDFBFE;
-  --bg-section:   #F7F2FB;
+  --primary:      #C48AAE;
+  --primary-dark: #A06890;
+  --primary-light:#FBF0F6;
+  --accent:       #C48AAE;
+  --accent-dark:  #A06890;
+  --base-pink:    #E6BAD5;
+  --text:         #4A3840;
+  --text-sub:     #806878;
+  --text-light:   #BCA8B4;
+  --bg:           #FEFCFD;
+  --bg-section:   #FBF3F8;
   --white:        #FFFFFF;
-  --border:       #E8E0EF;
+  --border:       #EDD8E6;
   --line-green:   #06C755;
 
   --radius:    8px;
@@ -303,7 +304,7 @@ ul, ol { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #2E1E40 0%, #705888 50%, #9478AA 100%);
+  background: linear-gradient(135deg, #5A2845 0%, #A06890 50%, #E6BAD5 100%);
   z-index: 0;
 }
 .hero__bg::after {
@@ -447,7 +448,7 @@ ul, ol { list-style: none; }
 
 .mockup__img-demo {
   height: 100px;
-  background: linear-gradient(135deg, #FAF0F5 0%, #EDD0E0 100%);
+  background: linear-gradient(135deg, #FBF0F6 0%, #E6BAD5 100%);
   border-radius: 8px;
   border: 1px solid #D0DFF0;
 }
@@ -838,7 +839,7 @@ ul, ol { list-style: none; }
    ⑥ お問い合わせ
    ============================ */
 .contact {
-  background: linear-gradient(135deg, #2E1E40 0%, #9478AA 100%);
+  background: linear-gradient(135deg, #5A2845 0%, #C48AAE 100%);
   padding: 88px 0;
 }
 
@@ -1009,7 +1010,7 @@ ul, ol { list-style: none; }
    フッター
    ============================ */
 .footer {
-  background: #221830;
+  background: #3A1E30;
   padding: 48px 0 32px;
 }
 
