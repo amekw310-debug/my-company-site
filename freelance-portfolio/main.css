@@ -304,7 +304,7 @@ ul, ol { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #5A2845 0%, #A06890 50%, #E6BAD5 100%);
+  background: linear-gradient(135deg, #7A4865 0%, #B878A0 55%, #D8A0C0 100%);
   z-index: 0;
 }
 .hero__bg::after {
@@ -348,7 +348,7 @@ ul, ol { list-style: none; }
 }
 
 .hero__title--accent {
-  color: #FFD166;
+  color: #F9DFF0;
 }
 
 .hero__desc {
