@@ -8,18 +8,18 @@
 }
 
 :root {
-  --primary:      #1E6FA5;
-  --primary-dark: #165a87;
-  --primary-light:#EBF4FF;
-  --accent:       #F6882B;
-  --accent-dark:  #e07720;
-  --text:         #2C2C2C;
-  --text-sub:     #666;
-  --text-light:   #999;
-  --bg:           #FAFAFA;
-  --bg-section:   #F4F8FC;
+  --primary:      #A67892;
+  --primary-dark: #7E5570;
+  --primary-light:#FAF0F5;
+  --accent:       #A67892;
+  --accent-dark:  #7E5570;
+  --text:         #4A3E45;
+  --text-sub:     #7A6B72;
+  --text-light:   #B0A0A8;
+  --bg:           #FDFAFB;
+  --bg-section:   #FDF3F8;
   --white:        #FFFFFF;
-  --border:       #E5EAF0;
+  --border:       #EDE0E8;
   --line-green:   #06C755;
 
   --radius:    8px;
@@ -41,6 +41,10 @@ body {
   color: var(--text);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .hero__title, .section-title, .contact__title {
+  font-family: 'Cormorant Garamond', 'Noto Sans JP', serif;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -289,7 +293,7 @@ ul, ol { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0D3B6E 0%, #1E6FA5 55%, #2A8BBF 100%);
+  background: linear-gradient(135deg, #4A2840 0%, #A67892 55%, #C4A0B4 100%);
   z-index: 0;
 }
 .hero__bg::after {
@@ -297,7 +301,7 @@ ul, ol { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 80% 20%, rgba(246,136,43,.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,200,220,.18) 0%, transparent 60%),
     radial-gradient(ellipse at 20% 80%, rgba(255,255,255,.06) 0%, transparent 50%);
 }
 
@@ -420,7 +424,7 @@ ul, ol { list-style: none; }
   margin-bottom: 10px;
 }
 .mockup__line--title { background: var(--primary); width: 75%; height: 18px; }
-.mockup__line--sub   { background: #CDD8E8; width: 60%; }
+.mockup__line--sub   { background: #E8D0DC; width: 60%; }
 .mockup__line.short  { width: 40%; }
 
 .mockup__btn-demo {
@@ -433,7 +437,7 @@ ul, ol { list-style: none; }
 
 .mockup__img-demo {
   height: 100px;
-  background: linear-gradient(135deg, #EBF4FF 0%, #D6E8F8 100%);
+  background: linear-gradient(135deg, #FAF0F5 0%, #EDD0E0 100%);
   border-radius: 8px;
   border: 1px solid #D0DFF0;
 }
@@ -824,7 +828,7 @@ ul, ol { list-style: none; }
    ⑥ お問い合わせ
    ============================ */
 .contact {
-  background: linear-gradient(135deg, #0D3B6E 0%, #1E6FA5 100%);
+  background: linear-gradient(135deg, #4A2840 0%, #A67892 100%);
   padding: 88px 0;
 }
 
@@ -995,7 +999,7 @@ ul, ol { list-style: none; }
    フッター
    ============================ */
 .footer {
-  background: #0A2540;
+  background: #3A2030;
   padding: 48px 0 32px;
 }
 
