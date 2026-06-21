@@ -733,23 +733,14 @@
     .price-card{ border: 1px solid var(--line); border-bottom: none; }
     .price-card:last-child{ border-bottom: 1px solid var(--line); }
     .price-card.featured{ transform: none; }
-    .flow-row{ flex-direction: column; gap: 0; }
-    .flow-row::before{ display:none; }
-    .flow-node{ padding: 10px 10px 32px; position: relative; }
-    .flow-node:last-child{ padding-bottom: 10px; }
-    .flow-node.center{ margin: 28px 0 18px; }
-    .flow-node:not(:last-child)::after{
-      content:"";
-      position: absolute;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 26px;
-      background: repeating-linear-gradient(to bottom, var(--gold) 0, var(--gold) 4px, transparent 4px, transparent 9px);
-      z-index: 0;
-    }
-    .flow-node.center{ z-index: 6; }
-    .flow-node.center::after{ bottom: -26px; }
+    .flow-row{ flex-direction: row; align-items: center; }
+    .flow-row::before{ display: block; left: 8px; right: 8px; }
+    .flow-node{ padding: 4px 2px; font-size: 11px; gap: 4px; }
+    .flow-node:last-child{ padding-bottom: 4px; }
+    .flow-node.center{ margin: 0; padding: 8px 8px; font-size: 12px; }
+    .flow-node:not(:last-child)::after{ display: none; }
+    .flow-node.center::after{ display: none; }
+    .node-label{ writing-mode: vertical-rl; letter-spacing: 0.08em; }
     .hero{ padding: 76px 0 64px; }
     .service, .flow-strength, .process, .works, .pricing, .faq{ padding: 72px 0; }
   }
@@ -1014,11 +1005,11 @@
 
     <div class="flow-diagram stagger-parent">
       <div class="flow-row">
-        <div class="flow-node stagger-item"><span class="dot"></span>TikTok</div>
-        <div class="flow-node stagger-item"><span class="dot"></span>Instagram</div>
+        <div class="flow-node stagger-item"><span class="dot"></span><span class="node-label">TikTok</span></div>
+        <div class="flow-node stagger-item"><span class="dot"></span><span class="node-label">Instagram</span></div>
         <div class="flow-node center stagger-item">ホームページ</div>
-        <div class="flow-node stagger-item"><span class="dot"></span>Googleフォーム</div>
-        <div class="flow-node stagger-item"><span class="dot"></span>LINE</div>
+        <div class="flow-node stagger-item"><span class="dot"></span><span class="node-label">Googleフォーム</span></div>
+        <div class="flow-node stagger-item"><span class="dot"></span><span class="node-label">LINE</span></div>
       </div>
     </div>
 
