@@ -8,25 +8,25 @@
 }
 
 :root {
-  --primary:      #E880C8;
-  --primary-dark: #C860A8;
-  --primary-light:#FFF0FA;
-  --accent:       #E880C8;
-  --accent-dark:  #C860A8;
-  --base-pink:    #FFBCE5;
-  --text:         #3E2A38;
-  --text-sub:     #8A6880;
-  --text-light:   #C4A8BC;
-  --bg:           #FFFCFE;
-  --bg-section:   #FFFFFF;
+  --primary:      #9C5570;   /* くすみローズ */
+  --primary-dark: #7A3A55;
+  --primary-light:#F0E6EC;
+  --accent:       #C49060;   /* シャンパンゴールド */
+  --accent-dark:  #A07048;
+  --base-pink:    #D8ACBC;
+  --text:         #241620;   /* ウォームほぼ黒 */
+  --text-sub:     #7A6070;
+  --text-light:   #B89AA8;
+  --bg:           #FAF8F5;   /* ウォームオフホワイト */
+  --bg-section:   #F4EBE2;   /* ウォームクリーム */
   --white:        #FFFFFF;
-  --border:       #F5D5ED;
+  --border:       #DDD0D8;
   --line-green:   #06C755;
 
-  --radius:    8px;
-  --radius-lg: 16px;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
-  --shadow-md: 0 4px 24px rgba(0,0,0,.10);
+  --radius:    6px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.05);
+  --shadow-md: 0 6px 28px rgba(0,0,0,.09);
 
   --container: 1100px;
 }
@@ -40,7 +40,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   color: var(--text);
-  background: var(--white);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -49,7 +49,7 @@ h1, h2, h3,
 .reason-card__title, .service-card__title, .work-card__title {
   font-family: 'Shippori Mincho', 'Cormorant Garamond', Georgia, serif;
   font-weight: 600;
-  letter-spacing: .04em;
+  letter-spacing: .07em;
 }
 
 .logo__text {
@@ -85,20 +85,24 @@ ul, ol { list-style: none; }
 
 .section-label {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: .14em;
+  letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--primary);
-  background: var(--primary-light);
+  background: transparent;
+  border: 1px solid var(--primary);
   padding: 4px 14px;
   border-radius: 40px;
   margin-bottom: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
 }
 
 .section-label--white {
   color: var(--white);
-  background: rgba(255,255,255,.18);
+  background: transparent;
+  border-color: rgba(255,255,255,.4);
 }
 
 .section-title {
@@ -143,7 +147,7 @@ ul, ol { list-style: none; }
   background: var(--accent-dark);
   border-color: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(246,136,43,.35);
+  box-shadow: 0 6px 20px rgba(196,144,96,.35);
 }
 
 .btn--outline {
@@ -160,12 +164,14 @@ ul, ol { list-style: none; }
 /* タグ */
 .tag {
   display: inline-block;
-  padding: 5px 12px;
-  background: var(--primary-light);
-  color: var(--primary);
-  border-radius: 40px;
-  font-size: 13px;
-  font-weight: 500;
+  padding: 4px 12px;
+  background: transparent;
+  color: var(--text-sub);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .04em;
 }
 
 /* ============================
@@ -300,7 +306,7 @@ ul, ol { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: #FFFFFF;
+  background: #FAF8F5;
   z-index: 0;
 }
 .hero__bg::after {
@@ -308,21 +314,20 @@ ul, ol { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 62% 42%, rgba(255,210,240,.75) 0%, rgba(255,220,245,.35) 40%, transparent 65%),
-    radial-gradient(ellipse at 20% 70%, rgba(255,200,238,.4) 0%, transparent 45%),
-    radial-gradient(ellipse at 85% 80%, rgba(255,215,242,.3) 0%, transparent 35%);
+    radial-gradient(ellipse at 75% 25%, rgba(196,144,96,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 80%, rgba(156,85,112,.05) 0%, transparent 45%);
 }
 
-/* 装飾ダイヤ */
+/* 装飾ライン */
 .hero__bg::before {
-  content: '◇';
+  content: '';
   position: absolute;
-  color: rgba(232,128,200,.25);
-  font-size: 18px;
-  top: 30%;
-  right: 8%;
+  width: 1px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, rgba(156,85,112,.2), transparent);
+  top: 18%;
+  right: 9%;
   z-index: 1;
-  animation: float 5s ease-in-out infinite;
 }
 
 .hero__inner {
@@ -368,7 +373,7 @@ ul, ol { list-style: none; }
 }
 
 .hero__title--accent {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .hero__desc {
@@ -388,8 +393,10 @@ ul, ol { list-style: none; }
 }
 
 .hero__btns .btn {
-  border-radius: 50px;
-  padding: 14px 36px;
+  border-radius: 6px;
+  padding: 15px 40px;
+  letter-spacing: .06em;
+  font-size: 14px;
 }
 
 .hero__btns .btn--outline {
@@ -474,9 +481,9 @@ ul, ol { list-style: none; }
 
 .mockup__img-demo {
   height: 100px;
-  background: linear-gradient(135deg, #FFF0FA 0%, #FFBCE5 100%);
+  background: linear-gradient(135deg, #F5EDE6 0%, #E8D4C0 100%);
   border-radius: 8px;
-  border: 1px solid #D0DFF0;
+  border: 1px solid #E0D4C8;
 }
 
 /* スクロールインジケーター */
@@ -489,7 +496,7 @@ ul, ol { list-style: none; }
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: rgba(255,255,255,.5);
+  color: rgba(36,22,32,.3);
   font-size: 11px;
   letter-spacing: .1em;
   z-index: 1;
@@ -497,7 +504,7 @@ ul, ol { list-style: none; }
 .hero__scroll-line {
   width: 1px;
   height: 40px;
-  background: rgba(255,255,255,.3);
+  background: rgba(36,22,32,.15);
   animation: scrollLine 2s ease-in-out infinite;
 }
 @keyframes scrollLine {
@@ -511,7 +518,7 @@ ul, ol { list-style: none; }
    ② 自己紹介
    ============================ */
 .about {
-  background: var(--white);
+  background: var(--bg);
 }
 
 .about__grid {
@@ -647,7 +654,7 @@ ul, ol { list-style: none; }
    ④ サービス内容
    ============================ */
 .services {
-  background: var(--white);
+  background: var(--bg);
 }
 
 .services__grid {
@@ -852,7 +859,7 @@ ul, ol { list-style: none; }
   font-weight: 600;
   color: var(--accent-dark);
   padding: 8px 12px;
-  background: #FFF7EF;
+  background: #F5EBE0;
   border-radius: 6px;
 }
 
@@ -866,7 +873,7 @@ ul, ol { list-style: none; }
    ⑥ お問い合わせ
    ============================ */
 .contact {
-  background: linear-gradient(135deg, #7A2858 0%, #E880C8 100%);
+  background: linear-gradient(135deg, #1E1018 0%, #5C2840 55%, #9C5570 100%);
   padding: 88px 0;
 }
 
@@ -1037,7 +1044,7 @@ ul, ol { list-style: none; }
    フッター
    ============================ */
 .footer {
-  background: #2E1228;
+  background: #170E12;
   padding: 48px 0 32px;
 }
 
