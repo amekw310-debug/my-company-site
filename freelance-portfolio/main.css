@@ -372,17 +372,12 @@ ul, ol { list-style: none; }
 }
 
 .hero__desc {
-  font-size: clamp(10px, 2.65vw, 15px);
+  font-size: 15px;
   color: var(--text-sub);
   line-height: 2;
   margin-bottom: 40px;
-  letter-spacing: -.01em;
 }
 .hero__desc strong { color: var(--text); }
-.hero__desc-line {
-  display: block;
-  white-space: nowrap;
-}
 
 .hero__btns {
   display: flex;
