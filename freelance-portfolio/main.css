@@ -1074,11 +1074,24 @@ ul, ol { list-style: none; }
    フッター
    ============================ */
 .footer {
-  background: #2A1C1C;
+  position: relative;
+  background: #FAF7F2;
   padding: 48px 0 32px;
+  overflow: hidden;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(240,168,130,.13) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 60%, rgba(212,132,154,.10) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .footer__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1089,7 +1102,7 @@ ul, ol { list-style: none; }
 .footer__logo {
   font-size: 16px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--text);
 }
 
 .footer__nav {
@@ -1100,15 +1113,15 @@ ul, ol { list-style: none; }
 }
 .footer__nav a {
   font-size: 13px;
-  color: rgba(255,255,255,.5);
+  color: var(--text-sub);
   padding: 6px 12px;
   transition: color .2s;
 }
-.footer__nav a:hover { color: rgba(255,255,255,.9); }
+.footer__nav a:hover { color: var(--primary); }
 
 .footer__copy {
   font-size: 12px;
-  color: rgba(255,255,255,.3);
+  color: var(--text-light);
 }
 
 /* ページトップボタン */
