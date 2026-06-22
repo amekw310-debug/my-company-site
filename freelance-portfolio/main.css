@@ -829,9 +829,9 @@ ul, ol { list-style: none; }
   overflow: hidden;
 }
 
-.work-card__img--1 { background: linear-gradient(135deg, #A0BECE 0%, #7898B0 100%); }
-.work-card__img--2 { background: linear-gradient(135deg, #9ABCA8 0%, #6E9480 100%); }
-.work-card__img--3 { background: linear-gradient(135deg, #D4A0B8 0%, #B07898 100%); }
+.work-card__img--1 { background: linear-gradient(135deg, #C8DDE8 0%, #A8C4D8 100%); }
+.work-card__img--2 { background: linear-gradient(135deg, #C0D8C8 0%, #98BCA8 100%); }
+.work-card__img--3 { background: linear-gradient(135deg, #E8C8D8 0%, #D0A8C0 100%); }
 
 .work-card__overlay {
   position: absolute;
