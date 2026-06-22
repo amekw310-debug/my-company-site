@@ -213,7 +213,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 .logo-sub {
   font-family: var(--font-head); font-size: 8px; font-weight: 600;
   letter-spacing: .17em; text-transform: uppercase;
-  color: rgba(255,255,255,.52); transition: color var(--ease);
+  color: var(--white); transition: color var(--ease);
 }
 .header.scrolled .logo-sub { color: var(--text-light); }
 
@@ -305,12 +305,12 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 }
 .hero-kana {
   font-family: var(--font-head); font-size: clamp(12px, 2vw, 17px); font-weight: 300;
-  color: rgba(255,255,255,.56); letter-spacing: .30em; margin-bottom: 20px;
+  color: var(--white); letter-spacing: .30em; margin-bottom: 20px;
 }
 .hero-sub {
   font-family: var(--font-body);
   font-size: clamp(12px, 1.6vw, 14px); font-weight: 300;
-  color: rgba(255,255,255,.72); letter-spacing: .10em; line-height: 2.4;
+  color: var(--white); letter-spacing: .10em; line-height: 2.4;
 }
 .hero-scroll-indicator {
   position: absolute; bottom: 36px; left: 50%;
