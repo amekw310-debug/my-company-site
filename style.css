@@ -343,6 +343,18 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   gap: 80px; align-items: center;
 }
 .concept-img-wrap { position: relative; }
+.concept-img-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    158deg,
+    rgba(221,185,200,.52) 0%,
+    rgba(234,198,198,.40) 52%,
+    rgba(200,160,170,.30) 100%
+  );
+  border-radius: var(--r-lg);
+  pointer-events: none;
+}
 .concept-badge {
   position: absolute; bottom: -16px; right: -16px;
   background: var(--spring-mauve); color: var(--white);
