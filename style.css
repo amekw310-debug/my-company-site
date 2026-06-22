@@ -507,7 +507,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 .reserve-note { margin-top: 28px; font-family: var(--font-head); font-size: 11px; color: var(--text); letter-spacing: .10em; opacity: .70; }
 
 /* ── Footer ──────────────────────────── */
-.footer { background: var(--bg-warm); color: var(--text-mid); padding: 52px 0; border-top: 1px solid rgba(58,49,45,.08); }
+.footer { background: var(--bg-warm); color: var(--text-mid); padding: 52px 0; }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .footer-logo { font-family: var(--font-kr); font-size: 23px; font-weight: 300; color: var(--text); letter-spacing: .08em; }
 .footer-sub { font-family: var(--font-head); font-size: 9.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--text-light); }
