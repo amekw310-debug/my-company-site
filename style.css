@@ -34,7 +34,7 @@
 
   --font-head:   'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
   --font-body:   'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
-  --font-kr:     'Noto Sans KR', 'Zen Kaku Gothic New', sans-serif;
+  --font-kr:     'Gowun Dodum', 'Zen Kaku Gothic New', sans-serif;
   --font-serif:  'Shippori Mincho', 'Noto Serif JP', serif;
   --font-script: 'Dancing Script', cursive;
 
@@ -206,8 +206,8 @@ ruby { ruby-align: center; }
 rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-spacing: .02em; }
 .logo { display: flex; flex-direction: column; line-height: 1.2; }
 .logo-main {
-  font-family: var(--font-kr); font-size: 20px; font-weight: 700;
-  color: var(--white); transition: color var(--ease); letter-spacing: .02em;
+  font-family: var(--font-kr); font-size: 21px; font-weight: 400;
+  color: var(--white); transition: color var(--ease); letter-spacing: .06em;
 }
 .header.scrolled .logo-main { color: var(--text); }
 .logo-sub {
@@ -300,7 +300,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 }
 .hero-title {
   font-family: var(--font-kr); font-size: clamp(58px, 11vw, 118px);
-  font-weight: 700; letter-spacing: .04em; line-height: 1.05;
+  font-weight: 400; letter-spacing: .08em; line-height: 1.05;
   margin-bottom: 12px; text-shadow: 0 2px 20px rgba(0,0,0,.14);
 }
 .hero-kana {
@@ -494,7 +494,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 /* ── Footer ──────────────────────────── */
 .footer { background: var(--bg-warm); color: var(--text-mid); padding: 52px 0; border-top: 1px solid rgba(58,49,45,.08); }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.footer-logo { font-family: var(--font-kr); font-size: 21px; font-weight: 700; color: var(--text); letter-spacing: .04em; }
+.footer-logo { font-family: var(--font-kr); font-size: 22px; font-weight: 400; color: var(--text); letter-spacing: .06em; }
 .footer-sub { font-family: var(--font-head); font-size: 9.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--text-light); }
 .footer-nav { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
 .footer-nav a { font-family: var(--font-head); font-size: 11.5px; font-weight: 500; letter-spacing: .07em; color: var(--text-mid); transition: color var(--ease); }
