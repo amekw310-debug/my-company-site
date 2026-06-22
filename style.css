@@ -481,7 +481,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 
 /* ── Reserve CTA ─────────────────────── */
 .reserve {
-  background: linear-gradient(155deg, #DDB9C8 0%, #EAC6C6 54%, #F8F2EE 100%);
+  background: var(--bg-warm);
   color: var(--text); padding: 112px 24px;
   text-align: center; position: relative; overflow: hidden;
 }
