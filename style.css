@@ -338,6 +338,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   box-shadow: 0 4px 18px rgba(30,26,20,.22);
 }
 .concept-body p { margin-bottom: 20px; font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 2.1; letter-spacing: .06em; }
+.concept-spacer { margin-bottom: 0 !important; height: 1em; }
 .concept-heading {
   font-family: var(--font-serif); font-size: clamp(20px, 2.6vw, 27px);
   font-weight: 500; line-height: 1.7; letter-spacing: .06em; margin-bottom: 28px; color: var(--text);
