@@ -126,7 +126,7 @@ img { max-width: 100%; display: block; }
 /* Reserve override — white pill on colour bg */
 .reserve .btn-primary {
   background: rgba(255,255,255,.95);
-  color: var(--strawberry-deep);
+  color: #5C2E0A;
   border-color: transparent;
   box-shadow: 0 4px 18px rgba(0,0,0,.15);
 }
@@ -441,7 +441,7 @@ img { max-width: 100%; display: block; }
 
 /* ── Reserve CTA ─────────────────────── */
 .reserve {
-  background: linear-gradient(155deg, #B83858 0%, #7A5090 54%, #5A4898 100%);
+  background: linear-gradient(155deg, #3D1F0A 0%, #7A4A28 54%, #C4956A 100%);
   color: var(--white); padding: 112px 24px;
   text-align: center; position: relative; overflow: hidden;
 }
