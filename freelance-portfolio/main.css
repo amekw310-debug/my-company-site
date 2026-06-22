@@ -869,20 +869,13 @@ ul, ol { list-style: none; }
    ============================ */
 .contact {
   position: relative;
-  background: #FDF8FB;
+  background: linear-gradient(135deg, #F5DCE8 0%, #FAE8D8 55%, #FDF3E4 100%);
   overflow: hidden;
   padding: 88px 0;
 }
 
 .contact::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 15% 25%, rgba(232,160,200,.40) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 75%, rgba(196,144,96,.18) 0%, transparent 50%),
-    radial-gradient(ellipse at 55% 5%,  rgba(220,140,180,.25) 0%, transparent 45%);
-  pointer-events: none;
+  display: none;
 }
 
 .contact__inner {
