@@ -28,9 +28,9 @@
 
   --peach:            #E8A080;
 
-  --font-head:   'Noto Sans JP', sans-serif;
-  --font-body:   'Noto Sans JP', sans-serif;
-  --font-kr:     'Noto Sans KR', 'Noto Sans JP', sans-serif;
+  --font-head:   'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+  --font-body:   'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+  --font-kr:     'Noto Sans KR', 'Zen Kaku Gothic New', sans-serif;
   --font-serif:  'Shippori Mincho', 'Noto Serif JP', serif;
   --font-script: 'Dancing Script', cursive;
 
@@ -294,8 +294,9 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   color: rgba(255,255,255,.56); letter-spacing: .30em; margin-bottom: 20px;
 }
 .hero-sub {
+  font-family: var(--font-body);
   font-size: clamp(12px, 1.6vw, 14px); font-weight: 300;
-  color: rgba(255,255,255,.72); letter-spacing: .10em; line-height: 2.2;
+  color: rgba(255,255,255,.72); letter-spacing: .10em; line-height: 2.4;
 }
 .hero-scroll-indicator {
   position: absolute; bottom: 36px; left: 50%;
@@ -336,7 +337,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   white-space: nowrap; letter-spacing: .09em;
   box-shadow: 0 4px 18px rgba(30,26,20,.22);
 }
-.concept-body p { margin-bottom: 20px; font-size: 14px; color: var(--text-mid); line-height: 2.0; }
+.concept-body p { margin-bottom: 20px; font-size: 13.5px; font-weight: 300; color: var(--text-mid); line-height: 2.1; letter-spacing: .06em; }
 .concept-heading {
   font-family: var(--font-serif); font-size: clamp(20px, 2.6vw, 27px);
   font-weight: 500; line-height: 1.7; letter-spacing: .06em; margin-bottom: 28px; color: var(--text);
@@ -412,13 +413,17 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 .menu-tag--purple { background: var(--grape); }
 .menu-tag--green  { background: var(--melon); }
 .menu-card-body h4 {
-  font-family: var(--font-head); font-size: 14px; font-weight: 700;
-  margin-bottom: 6px; color: var(--white); letter-spacing: .02em; line-height: 1.35;
+  font-family: var(--font-head); font-size: 14px; font-weight: 500;
+  margin-bottom: 6px; color: var(--white); letter-spacing: .06em; line-height: 1.5;
 }
-.menu-card-body p { font-size: 11px; color: rgba(255,255,255,.40); line-height: 1.6; margin-bottom: 12px; }
+.menu-card-body p {
+  font-size: 11px; font-weight: 300;
+  color: rgba(255,255,255,.46); line-height: 1.9;
+  letter-spacing: .06em; margin-bottom: 12px;
+}
 .price {
-  font-family: var(--font-head); font-size: 15.5px; font-weight: 700;
-  color: var(--tangerine); letter-spacing: .04em;
+  font-family: var(--font-head); font-size: 14.5px; font-weight: 400;
+  color: var(--tangerine); letter-spacing: .08em;
 }
 
 /* ── Store Info ──────────────────────── */
@@ -463,9 +468,10 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   font-weight: 500; margin: 14px 0 20px; letter-spacing: .06em;
 }
 .reserve-text {
+  font-family: var(--font-body);
   font-size: 13.5px; font-weight: 300;
-  color: rgba(255,255,255,.68); line-height: 2.1;
-  margin-bottom: 44px; letter-spacing: .04em;
+  color: rgba(255,255,255,.68); line-height: 2.2;
+  margin-bottom: 44px; letter-spacing: .07em;
 }
 .reserve-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .reserve-note { margin-top: 28px; font-family: var(--font-head); font-size: 11px; color: rgba(255,255,255,.38); letter-spacing: .10em; }
