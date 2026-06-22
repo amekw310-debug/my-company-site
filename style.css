@@ -275,7 +275,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 .hero {
   position: relative; height: 100svh; min-height: 600px;
   background: var(--bg-deep);
-  background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://images.unsplash.com/photo-1612112318562-efbf7f052330?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=kwon-junho-H6QJDohwopk-unsplash.jpg');
   background-size: cover; background-position: center;
   display: flex; align-items: center; justify-content: center; overflow: hidden;
 }
