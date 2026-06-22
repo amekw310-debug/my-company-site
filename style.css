@@ -633,7 +633,9 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 
 /* ── Mobile ──────────────────────────── */
 @media (max-width: 600px) {
-  .section { padding: 72px 0; }
+  .section { padding: 52px 0; }
+  .section-header { margin-bottom: 36px; }
+  .menu-tabs { margin-bottom: 28px; }
   .nav { display: none; }
   .hamburger { display: flex; }
   .nav-mobile { display: flex; }
