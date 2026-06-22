@@ -869,7 +869,7 @@ ul, ol { list-style: none; }
    ============================ */
 .contact {
   position: relative;
-  background: linear-gradient(135deg, #F5DCE8 0%, #FAE8D8 55%, #FDF3E4 100%);
+  background: linear-gradient(135deg, #FADADD 0%, #FAE8D8 50%, #FFF5E4 100%) !important;
   overflow: hidden;
   padding: 88px 0;
 }
