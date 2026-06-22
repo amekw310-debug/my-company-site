@@ -112,10 +112,10 @@ ul, ol { list-style: none; }
 .section-title::after {
   content: '';
   display: block;
-  width: 52px;
-  height: 7px;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 52 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3.5 Q6.5 0 13 3.5 Q19.5 7 26 3.5 Q32.5 0 39 3.5 Q45.5 7 52 3.5' stroke='%23D4849A' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
-  background-size: 52px 7px;
+  width: 56px;
+  height: 8px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 56 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 7 A 13 13 0 0 0 19 7 A 13 13 0 0 0 38 7 A 13 13 0 0 0 56 7' stroke='%23D4849A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 56px 8px;
   margin: 14px auto 0;
 }
 
@@ -368,10 +368,10 @@ ul, ol { list-style: none; }
   margin: 0 auto;
 }
 
-/* 手描き風オーガニックフレーム */
+/* ウェーブミラー風フレーム（全辺均等アーク r=80） */
 .hero__content {
   position: relative;
-  padding: 52px 48px 44px;
+  padding: 58px 52px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -379,8 +379,8 @@ ul, ol { list-style: none; }
 .hero__content::before {
   content: '';
   position: absolute;
-  inset: -4px -6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280' preserveAspectRatio='none'%3E%3Cpath d='M 32 20 C 50 3,96 3,116 20 C 136 3,180 3,200 20 C 220 3,264 3,284 20 C 305 3,350 3,368 20 C 384 3,396 16,380 38 C 396 52,396 84,380 100 C 396 116,396 150,380 166 C 396 182,396 216,380 232 C 396 248,376 272,360 260 C 342 276,298 276,280 260 C 262 276,218 276,200 260 C 182 276,138 276,120 260 C 102 276,58 276,40 260 C 22 274,4 258,20 240 C 4 226,4 188,20 173 C 4 159,4 122,20 107 C 4 94,4 55,20 40 C 4 24,18 3,32 20 Z' fill='%23F4A08A' fill-opacity='0.08' stroke='%23F28C72' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  inset: -8px -10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280' preserveAspectRatio='none'%3E%3Cpath d='M 32 32 A 80 80 0 0 0 144 32 A 80 80 0 0 0 256 32 A 80 80 0 0 0 368 32 A 80 80 0 0 1 368 140 A 80 80 0 0 1 368 248 A 80 80 0 0 1 256 248 A 80 80 0 0 1 144 248 A 80 80 0 0 1 32 248 A 80 80 0 0 1 32 140 A 80 80 0 0 1 32 32 Z' fill='%23F4A08A' fill-opacity='0.07' stroke='%23F28C72' stroke-width='2.5'/%3E%3C/svg%3E");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 0;
@@ -737,8 +737,18 @@ ul, ol { list-style: none; }
 
 .service-card--featured {
   background: linear-gradient(160deg, #FAE8EE 0%, #FDF3E8 100%);
-  border: 2px solid rgba(212,132,154,.25) !important;
+  border: none !important;
   box-shadow: var(--shadow-md);
+}
+.service-card--featured::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 280' preserveAspectRatio='none'%3E%3Cpath d='M 32 32 A 80 80 0 0 0 144 32 A 80 80 0 0 0 256 32 A 80 80 0 0 0 368 32 A 80 80 0 0 1 368 140 A 80 80 0 0 1 368 248 A 80 80 0 0 1 256 248 A 80 80 0 0 1 144 248 A 80 80 0 0 1 32 248 A 80 80 0 0 1 32 140 A 80 80 0 0 1 32 32 Z' fill='none' stroke='%23D4849A' stroke-opacity='0.4' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: var(--radius-lg);
 }
 
 .service-card__badge {
@@ -850,6 +860,20 @@ ul, ol { list-style: none; }
   position: relative;
   height: 180px;
   overflow: hidden;
+}
+
+/* カード画像の底部ウェーブ装飾（ヒーローと同じ曲率 r=80相当） */
+.work-card__img::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 28 A 80 80 0 0 0 100 28 A 80 80 0 0 0 200 28 A 80 80 0 0 0 300 28 A 80 80 0 0 0 400 28' stroke='white' stroke-opacity='0.55' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .work-card__img--1 { background: linear-gradient(135deg, #C8DDE8 0%, #A8C4D8 100%); }
@@ -1237,7 +1261,7 @@ ul, ol { list-style: none; }
     font-size: 28px;
   }
   .hero__content {
-    padding: 44px 28px 36px;
+    padding: 48px 28px 40px;
   }
 
   .hero__btns {
