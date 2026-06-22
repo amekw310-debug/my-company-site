@@ -702,11 +702,6 @@ ul, ol { list-style: none; }
   border-radius: 40px;
 }
 
-.service-card__icon {
-  font-size: 36px;
-  margin-bottom: 14px;
-}
-
 .service-card__title {
   font-size: 20px;
   font-weight: 700;
@@ -927,10 +922,6 @@ ul, ol { list-style: none; }
 .contact-card--line {
   background: rgba(6,199,85,.15);
   border-color: rgba(6,199,85,.4);
-}
-
-.contact-card__icon {
-  font-size: 40px;
 }
 
 .contact-card__title {
