@@ -28,9 +28,11 @@
 
   --peach:            #E8A080;
 
-  --font-head: 'Nunito', sans-serif;
-  --font-body: 'Noto Sans JP', sans-serif;
-  --font-kr:   'Noto Sans KR', 'Noto Sans JP', sans-serif;
+  --font-head:   'Noto Sans JP', sans-serif;
+  --font-body:   'Noto Sans JP', sans-serif;
+  --font-kr:     'Noto Sans KR', 'Noto Sans JP', sans-serif;
+  --font-serif:  'Shippori Mincho', 'Noto Serif JP', serif;
+  --font-script: 'Dancing Script', cursive;
 
   --ease:      0.28s ease;
   --r-sm:      10px;
@@ -46,7 +48,8 @@ body {
   font-weight: 300;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.85;
+  line-height: 2.0;
+  letter-spacing: .04em;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -140,9 +143,9 @@ img { max-width: 100%; display: block; }
 .section-header { text-align: center; margin-bottom: 72px; }
 
 .section-label {
-  font-family: var(--font-head);
-  font-size: 10.5px; font-weight: 600;
-  letter-spacing: .24em; text-transform: uppercase;
+  font-family: var(--font-script);
+  font-size: 15px; font-weight: 400;
+  letter-spacing: .04em; text-transform: none;
   color: var(--strawberry);
   margin-bottom: 14px; display: block;
 }
@@ -151,9 +154,9 @@ img { max-width: 100%; display: block; }
 .reserve-label        { color: rgba(255,255,255,.52) !important; }
 
 .section-title {
-  font-family: var(--font-head);
+  font-family: var(--font-serif);
   font-size: clamp(24px, 3.4vw, 37px);
-  font-weight: 800; letter-spacing: .01em; line-height: 1.3;
+  font-weight: 500; letter-spacing: .06em; line-height: 1.5;
   color: var(--text);
 }
 .section--plum .section-title { color: var(--white); }
@@ -277,9 +280,9 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   text-align: center; color: var(--white); padding: 0 24px;
 }
 .hero-label {
-  font-family: var(--font-head); font-size: 10.5px; font-weight: 600;
-  letter-spacing: .32em; text-transform: uppercase;
-  color: rgba(255,255,255,.60); margin-bottom: 24px;
+  font-family: var(--font-script); font-size: 16px; font-weight: 400;
+  letter-spacing: .06em; text-transform: none;
+  color: rgba(255,255,255,.72); margin-bottom: 24px;
 }
 .hero-title {
   font-family: var(--font-kr); font-size: clamp(58px, 11vw, 118px);
@@ -335,8 +338,8 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 }
 .concept-body p { margin-bottom: 20px; font-size: 14px; color: var(--text-mid); line-height: 2.0; }
 .concept-heading {
-  font-family: var(--font-head); font-size: clamp(20px, 2.6vw, 27px);
-  font-weight: 800; line-height: 1.5; margin-bottom: 28px; color: var(--text);
+  font-family: var(--font-serif); font-size: clamp(20px, 2.6vw, 27px);
+  font-weight: 500; line-height: 1.7; letter-spacing: .06em; margin-bottom: 28px; color: var(--text);
 }
 .features {
   display: flex; gap: 20px; margin-top: 40px; padding-top: 36px;
@@ -456,8 +459,8 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
 }
 .reserve-inner { max-width: 560px; margin: 0 auto; position: relative; z-index: 1; }
 .reserve-title {
-  font-family: var(--font-head); font-size: clamp(22px, 3.6vw, 34px);
-  font-weight: 800; margin: 14px 0 20px; letter-spacing: .02em;
+  font-family: var(--font-serif); font-size: clamp(22px, 3.6vw, 34px);
+  font-weight: 500; margin: 14px 0 20px; letter-spacing: .06em;
 }
 .reserve-text {
   font-size: 13.5px; font-weight: 300;
