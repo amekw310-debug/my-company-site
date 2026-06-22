@@ -868,24 +868,39 @@ ul, ol { list-style: none; }
    ⑥ お問い合わせ
    ============================ */
 .contact {
-  background: linear-gradient(145deg, #5A2A40 0%, #9C5570 60%, #C49060 100%);
+  position: relative;
+  background: #FDF8FB;
+  overflow: hidden;
   padding: 88px 0;
 }
 
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 25%, rgba(232,160,200,.40) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 75%, rgba(196,144,96,.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 55% 5%,  rgba(220,140,180,.25) 0%, transparent 45%);
+  pointer-events: none;
+}
+
 .contact__inner {
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
 .contact__title {
   font-size: clamp(24px, 3.5vw, 36px);
   font-weight: 700;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 20px;
   line-height: 1.35;
 }
 
 .contact__desc {
-  color: rgba(255,255,255,.8);
+  color: var(--text-sub);
   font-size: 15px;
   line-height: 1.9;
   margin-bottom: 48px;
@@ -904,34 +919,36 @@ ul, ol { list-style: none; }
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(156,85,112,.18);
   border-radius: var(--radius-lg);
   padding: 32px 24px;
-  color: var(--white);
+  color: var(--text);
   text-align: center;
   transition: all .25s;
   cursor: pointer;
+  backdrop-filter: blur(8px);
 }
 .contact-card:hover {
-  background: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.92);
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+  box-shadow: 0 8px 32px rgba(156,85,112,.15);
 }
 
 .contact-card--line {
-  background: rgba(6,199,85,.15);
-  border-color: rgba(6,199,85,.4);
+  background: rgba(6,199,85,.07);
+  border-color: rgba(6,199,85,.3);
 }
 
 .contact-card__title {
   font-size: 17px;
   font-weight: 700;
+  color: var(--text);
 }
 
 .contact-card__desc {
   font-size: 13px;
-  color: rgba(255,255,255,.75);
+  color: var(--text-sub);
   line-height: 1.7;
 }
 
@@ -939,15 +956,15 @@ ul, ol { list-style: none; }
   display: inline-block;
   margin-top: 8px;
   padding: 10px 24px;
-  background: var(--white);
-  color: var(--primary);
+  background: var(--primary);
+  color: var(--white);
   border-radius: var(--radius);
   font-size: 14px;
   font-weight: 700;
   transition: background .2s;
 }
 .contact-card:hover .contact-card__btn {
-  background: #f0f7ff;
+  background: var(--primary-dark);
 }
 
 .contact-card__btn--line {
@@ -968,7 +985,7 @@ ul, ol { list-style: none; }
 .contact__flow-title {
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255,255,255,.7);
+  color: var(--text-sub);
   text-align: center;
   margin-bottom: 24px;
   letter-spacing: .06em;
@@ -986,7 +1003,7 @@ ul, ol { list-style: none; }
   align-items: flex-start;
   gap: 20px;
   padding: 20px 0;
-  border-bottom: 1px solid rgba(255,255,255,.12);
+  border-bottom: 1px solid var(--border);
   opacity: 0;
   transform: translateX(-20px);
 }
@@ -1000,7 +1017,7 @@ ul, ol { list-style: none; }
 .flow-step__num {
   font-size: 24px;
   font-weight: 800;
-  color: rgba(255,255,255,.25);
+  color: rgba(156,85,112,.2);
   line-height: 1;
   flex-shrink: 0;
   min-width: 40px;
@@ -1010,24 +1027,24 @@ ul, ol { list-style: none; }
   display: block;
   font-size: 15px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--text);
   margin-bottom: 4px;
 }
 
 .flow-step div p {
   font-size: 13px;
-  color: rgba(255,255,255,.7);
+  color: var(--text-sub);
   line-height: 1.7;
 }
 
 .contact__faq {
   font-size: 13px;
-  color: rgba(255,255,255,.6);
+  color: var(--text-light);
   line-height: 1.8;
 }
 .contact__faq span {
   display: block;
-  color: rgba(255,255,255,.8);
+  color: var(--text-sub);
   margin-top: 4px;
 }
 
