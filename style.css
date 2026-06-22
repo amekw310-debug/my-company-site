@@ -126,11 +126,20 @@ img { max-width: 100%; display: block; }
 }
 .btn-outline:hover {
   border-color: var(--white);
-  background: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.10);
   transform: translateY(-2px);
 }
 
 /* Reserve override — on spring gradient bg */
+.reserve .btn-outline {
+  color: var(--text);
+  border: 1.5px solid var(--text);
+  background: transparent;
+}
+.reserve .btn-outline:hover {
+  background: rgba(58,49,45,.06);
+  border-color: var(--text);
+}
 .reserve .btn-primary {
   background: var(--text);
   color: var(--white);
@@ -479,7 +488,7 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   margin-bottom: 44px; letter-spacing: .07em;
 }
 .reserve-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.reserve-note { margin-top: 28px; font-family: var(--font-head); font-size: 11px; color: var(--text-light); letter-spacing: .10em; }
+.reserve-note { margin-top: 28px; font-family: var(--font-head); font-size: 11px; color: var(--text-mid); letter-spacing: .10em; }
 
 /* ── Footer ──────────────────────────── */
 .footer { background: var(--bg-warm); color: var(--text-mid); padding: 52px 0; border-top: 1px solid rgba(58,49,45,.08); }
