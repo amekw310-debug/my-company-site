@@ -868,7 +868,7 @@ ul, ol { list-style: none; }
    ⑥ お問い合わせ
    ============================ */
 .contact {
-  background: linear-gradient(135deg, #1E1018 0%, #5C2840 55%, #9C5570 100%);
+  background: linear-gradient(145deg, #5A2A40 0%, #9C5570 60%, #C49060 100%);
   padding: 88px 0;
 }
 
