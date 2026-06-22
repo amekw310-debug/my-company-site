@@ -283,9 +283,9 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   position: absolute; inset: 0;
   background: linear-gradient(
     158deg,
-    rgba(200,155,160,.52) 0%,
-    rgba(180,140,155,.32) 52%,
-    rgba(100,80,70,.38) 100%
+    rgba(221,185,200,.62) 0%,
+    rgba(234,198,198,.48) 50%,
+    rgba(200,160,170,.38) 100%
   );
   z-index: 1;
 }
