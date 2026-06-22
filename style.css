@@ -348,9 +348,9 @@ rt { font-size: .5em; font-family: var(--font-body); font-weight: 400; letter-sp
   position: absolute; inset: 0;
   background: linear-gradient(
     158deg,
-    rgba(221,185,200,.52) 0%,
-    rgba(234,198,198,.40) 52%,
-    rgba(200,160,170,.30) 100%
+    rgba(221,185,200,.70) 0%,
+    rgba(234,198,198,.58) 52%,
+    rgba(200,160,170,.48) 100%
   );
   border-radius: var(--r-lg);
   pointer-events: none;
