@@ -710,7 +710,7 @@ ul, ol { list-style: none; }
 .service-card {
   background: var(--white);
   border-radius: var(--radius-lg);
-  padding: 32px 28px;
+  padding: 36px 40px 48px 40px;
   border: none;
   box-shadow: var(--shadow-sm);
   position: relative;
