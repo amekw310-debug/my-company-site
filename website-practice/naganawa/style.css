@@ -1889,8 +1889,8 @@ ul {
    Footer
    ============================ */
 .footer {
-  background: transparent;
-  border-top: 1px solid var(--gray-light);
+  background: rgba(255,255,255,0.92);
+  border-top: 2px solid var(--gray-mid);
   padding: 40px 0;
 }
 
@@ -1941,8 +1941,8 @@ ul {
 
 .footer-address {
   font-size: 12px;
-  font-weight: 500;
-  color: #aab0bb;
+  font-weight: 600;
+  color: #374151;
 }
 
 .footer-nav {
@@ -1953,9 +1953,9 @@ ul {
 }
 
 .footer-nav a {
-  font-size: 12px;
-  font-weight: 600;
-  color: #c8ccd4;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
   transition: color var(--transition);
 }
 
@@ -1965,7 +1965,8 @@ ul {
 
 .footer-copy {
   font-size: 11px;
-  color: var(--gray-mid);
+  font-weight: 500;
+  color: #6b7280;
 }
 
 /* ============================
