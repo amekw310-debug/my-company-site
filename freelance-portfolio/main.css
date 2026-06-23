@@ -378,8 +378,8 @@ ul, ol { list-style: none; }
 .hero__content::before {
   content: '';
   position: absolute;
-  inset: -14px -16px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 320' preserveAspectRatio='none'%3E%3Cpath d='M 44 44 A 44 44 0 0 0 132 44 A 44 44 0 0 0 220 44 A 44 44 0 0 0 308 44 A 44 44 0 0 0 396 44 A 58 58 0 0 1 396 160 A 58 58 0 0 1 396 276 A 44 44 0 0 1 308 276 A 44 44 0 0 1 220 276 A 44 44 0 0 1 132 276 A 44 44 0 0 1 44 276 A 58 58 0 0 1 44 160 A 58 58 0 0 1 44 44 Z' fill='%23FFF0F4' fill-opacity='0.55' stroke='%23F05878' stroke-opacity='0.82' stroke-width='5'/%3E%3C/svg%3E");
+  inset: -10px -12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 340' preserveAspectRatio='none'%3E%3Cpath d='M 40 40 A 25 25 0 0 0 85 40 A 25 25 0 0 0 130 40 A 25 25 0 0 0 175 40 A 25 25 0 0 0 220 40 A 25 25 0 0 0 265 40 A 25 25 0 0 0 310 40 A 25 25 0 0 0 355 40 A 25 25 0 0 0 400 40 A 30 30 0 0 1 400 92 A 30 30 0 0 1 400 144 A 30 30 0 0 1 400 196 A 30 30 0 0 1 400 248 A 30 30 0 0 1 400 300 A 25 25 0 0 1 355 300 A 25 25 0 0 1 310 300 A 25 25 0 0 1 265 300 A 25 25 0 0 1 220 300 A 25 25 0 0 1 175 300 A 25 25 0 0 1 130 300 A 25 25 0 0 1 85 300 A 25 25 0 0 1 40 300 A 30 30 0 0 1 40 248 A 30 30 0 0 1 40 196 A 30 30 0 0 1 40 144 A 30 30 0 0 1 40 92 A 30 30 0 0 1 40 40 Z' fill='%23FFF0F4' fill-opacity='0.60' stroke='%23F05878' stroke-opacity='0.85' stroke-width='5'/%3E%3C/svg%3E");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 0;
@@ -388,8 +388,8 @@ ul, ol { list-style: none; }
 .hero__content::after {
   content: '';
   position: absolute;
-  inset: -25px -27px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 320' preserveAspectRatio='none'%3E%3Cpath d='M 44 44 A 44 44 0 0 0 132 44 A 44 44 0 0 0 220 44 A 44 44 0 0 0 308 44 A 44 44 0 0 0 396 44 A 58 58 0 0 1 396 160 A 58 58 0 0 1 396 276 A 44 44 0 0 1 308 276 A 44 44 0 0 1 220 276 A 44 44 0 0 1 132 276 A 44 44 0 0 1 44 276 A 58 58 0 0 1 44 160 A 58 58 0 0 1 44 44 Z' fill='none' stroke='%23E83050' stroke-opacity='0.62' stroke-width='2'/%3E%3C/svg%3E");
+  inset: -18px -20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 340' preserveAspectRatio='none'%3E%3Cpath d='M 40 40 A 25 25 0 0 0 85 40 A 25 25 0 0 0 130 40 A 25 25 0 0 0 175 40 A 25 25 0 0 0 220 40 A 25 25 0 0 0 265 40 A 25 25 0 0 0 310 40 A 25 25 0 0 0 355 40 A 25 25 0 0 0 400 40 A 30 30 0 0 1 400 92 A 30 30 0 0 1 400 144 A 30 30 0 0 1 400 196 A 30 30 0 0 1 400 248 A 30 30 0 0 1 400 300 A 25 25 0 0 1 355 300 A 25 25 0 0 1 310 300 A 25 25 0 0 1 265 300 A 25 25 0 0 1 220 300 A 25 25 0 0 1 175 300 A 25 25 0 0 1 130 300 A 25 25 0 0 1 85 300 A 25 25 0 0 1 40 300 A 30 30 0 0 1 40 248 A 30 30 0 0 1 40 196 A 30 30 0 0 1 40 144 A 30 30 0 0 1 40 92 A 30 30 0 0 1 40 40 Z' fill='none' stroke='%23E83050' stroke-opacity='0.65' stroke-width='2'/%3E%3C/svg%3E");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   z-index: 0;
