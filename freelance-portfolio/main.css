@@ -367,7 +367,7 @@ ul, ol { list-style: none; }
   margin: 0 auto;
 }
 
-/* 韓国文具風ダブルウェーブフレーム */
+/* 韓国文具風スカラップフレーム（インラインSVG） */
 .hero__content {
   position: relative;
   padding: 58px 52px 50px;
@@ -375,25 +375,18 @@ ul, ol { list-style: none; }
   flex-direction: column;
   align-items: center;
 }
-.hero__content::before {
-  content: '';
-  position: absolute;
-  inset: -10px -12px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 340' preserveAspectRatio='none'%3E%3Cpath d='M 40 40 A 25 25 0 0 0 85 40 A 25 25 0 0 0 130 40 A 25 25 0 0 0 175 40 A 25 25 0 0 0 220 40 A 25 25 0 0 0 265 40 A 25 25 0 0 0 310 40 A 25 25 0 0 0 355 40 A 25 25 0 0 0 400 40 A 30 30 0 0 1 400 92 A 30 30 0 0 1 400 144 A 30 30 0 0 1 400 196 A 30 30 0 0 1 400 248 A 30 30 0 0 1 400 300 A 25 25 0 0 1 355 300 A 25 25 0 0 1 310 300 A 25 25 0 0 1 265 300 A 25 25 0 0 1 220 300 A 25 25 0 0 1 175 300 A 25 25 0 0 1 130 300 A 25 25 0 0 1 85 300 A 25 25 0 0 1 40 300 A 30 30 0 0 1 40 248 A 30 30 0 0 1 40 196 A 30 30 0 0 1 40 144 A 30 30 0 0 1 40 92 A 30 30 0 0 1 40 40 Z' fill='%23FFF0F4' fill-opacity='0.60' stroke='%23F05878' stroke-opacity='0.85' stroke-width='5'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  z-index: 0;
-  pointer-events: none;
-}
+.hero__content::before,
 .hero__content::after {
-  content: '';
+  display: none;
+}
+.hero__frame {
   position: absolute;
-  inset: -18px -20px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 340' preserveAspectRatio='none'%3E%3Cpath d='M 40 40 A 25 25 0 0 0 85 40 A 25 25 0 0 0 130 40 A 25 25 0 0 0 175 40 A 25 25 0 0 0 220 40 A 25 25 0 0 0 265 40 A 25 25 0 0 0 310 40 A 25 25 0 0 0 355 40 A 25 25 0 0 0 400 40 A 30 30 0 0 1 400 92 A 30 30 0 0 1 400 144 A 30 30 0 0 1 400 196 A 30 30 0 0 1 400 248 A 30 30 0 0 1 400 300 A 25 25 0 0 1 355 300 A 25 25 0 0 1 310 300 A 25 25 0 0 1 265 300 A 25 25 0 0 1 220 300 A 25 25 0 0 1 175 300 A 25 25 0 0 1 130 300 A 25 25 0 0 1 85 300 A 25 25 0 0 1 40 300 A 30 30 0 0 1 40 248 A 30 30 0 0 1 40 196 A 30 30 0 0 1 40 144 A 30 30 0 0 1 40 92 A 30 30 0 0 1 40 40 Z' fill='none' stroke='%23E83050' stroke-opacity='0.65' stroke-width='2'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  z-index: 0;
+  inset: -20px -22px;
+  width: calc(100% + 44px);
+  height: calc(100% + 40px);
   pointer-events: none;
+  z-index: 0;
+  overflow: visible;
 }
 .hero__content > * {
   position: relative;
