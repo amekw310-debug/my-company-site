@@ -729,18 +729,16 @@ ul, ol { list-style: none; }
 }
 
 .service-card--featured {
-  background: linear-gradient(160deg, #FFE8F0 0%, #FFF0E8 100%);
+  background: transparent !important;
   border: none !important;
   box-shadow: none;
   overflow: visible;
 }
 .service-card__frame {
   position: absolute;
-  inset: -14px;
-  width: calc(100% + 28px);
-  height: calc(100% + 28px);
+  inset: -16px;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 .service-card__badge {
