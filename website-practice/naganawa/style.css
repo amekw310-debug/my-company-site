@@ -414,7 +414,8 @@ ul {
 
 .hero-desc {
   font-size: clamp(14px, 1.8vw, 17px);
-  color: var(--text-sub);
+  font-weight: 700;
+  color: #0a0a0a;
   line-height: 1.9;
   margin-bottom: 28px;
   max-width: 560px;
@@ -784,7 +785,8 @@ ul {
 
 .about-feature p {
   font-size: 13px;
-  color: var(--gray);
+  font-weight: 600;
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
@@ -1524,7 +1526,8 @@ ul {
 
 .news-title {
   font-size: 0.95rem;
-  color: var(--text-main);
+  font-weight: 700;
+  color: #0a0a0a;
   text-decoration: none;
   line-height: 1.6;
 }
@@ -1755,7 +1758,8 @@ ul {
 .apply-note {
   margin-top: 28px;
   font-size: 13px;
-  color: var(--gray);
+  font-weight: 500;
+  color: #374151;
   letter-spacing: 0.04em;
   line-height: 1.7;
 }
@@ -1937,7 +1941,8 @@ ul {
 
 .footer-address {
   font-size: 12px;
-  color: var(--gray);
+  font-weight: 500;
+  color: #aab0bb;
 }
 
 .footer-nav {
@@ -1949,7 +1954,8 @@ ul {
 
 .footer-nav a {
   font-size: 12px;
-  color: var(--text-sub);
+  font-weight: 600;
+  color: #c8ccd4;
   transition: color var(--transition);
 }
 
