@@ -1781,6 +1781,43 @@ ul {
 }
 
 /* ============================
+   Access Section
+   ============================ */
+.access-info {
+  margin-bottom: 24px;
+}
+
+.access-address {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 10px;
+}
+
+.access-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.access-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+}
+
+.access-map iframe {
+  display: block;
+  width: 100%;
+}
+
+/* ============================
    News Article Page
    ============================ */
 .news-page-wrap {
