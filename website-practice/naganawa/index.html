@@ -341,6 +341,32 @@
 
     startAuto();
   })();
+
+  // 動画自動再生（ブラウザのブロック対策）
+  (function() {
+    var video = document.querySelector('.hero-video');
+    if (!video) return;
+
+    function tryPlay() {
+      video.muted = true;
+      var p = video.play();
+      if (p !== undefined) p.catch(function() {});
+    }
+
+    tryPlay();
+
+    // スクロールで表示されたとき再生
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) tryPlay();
+      }, { threshold: 0.1 });
+      io.observe(video);
+    }
+
+    // 最初のタップ・クリックで再生（iOS Safari フォールバック）
+    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    document.addEventListener('click', tryPlay, { once: true });
+  })();
 </script>
 
 <!-- 固定下部バー -->
