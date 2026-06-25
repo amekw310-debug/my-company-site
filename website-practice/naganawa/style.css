@@ -2350,6 +2350,7 @@ ul {
    ============================ */
 .company-table-section {
   background: var(--gray-light);
+  padding-top: 100px;
 }
 
 .company-table {
