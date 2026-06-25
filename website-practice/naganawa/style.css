@@ -2738,14 +2738,12 @@ body::before {
   padding: 0 24px;
 }
 
-.loading-catchphrase {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(32px, 5vw, 56px);
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 36px;
+.loading-catchphrase-img {
+  display: block;
+  width: clamp(280px, 50vw, 520px);
+  margin: 0 auto 32px;
   opacity: 0;
-  animation: loading-glow 1.2s ease 0.1s forwards;
-  text-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+  animation: loading-glow 1.4s ease 0.1s forwards;
 }
 
 @keyframes loading-glow {
