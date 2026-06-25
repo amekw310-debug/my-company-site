@@ -40,6 +40,20 @@
 </head>
 <body>
 
+<!-- ローディング画面 -->
+<div id="loading-overlay" class="loading-overlay">
+  <div class="loading-video-bg"></div>
+  <div class="loading-overlay-dark"></div>
+  <div class="loading-content">
+    <p class="loading-label">株式会社 長縄工務店</p>
+    <h2 class="loading-title">地域のインフラを、<br><span>誠実に創る。</span></h2>
+    <p class="loading-sub">愛知県春日井市 ／ 舗装・土木工事</p>
+  </div>
+  <div class="loading-bar-wrap">
+    <div class="loading-bar-inner"></div>
+  </div>
+</div>
+
 <!-- ヘッダー -->
 <header class="header" id="top">
   <div class="inner header-inner">
@@ -311,6 +325,19 @@
 </footer>
 
 <script>
+  // ローディング画面
+  (function () {
+    document.body.style.overflow = 'hidden';
+    const overlay = document.getElementById('loading-overlay');
+    setTimeout(function () {
+      overlay.classList.add('loading-overlay--hidden');
+      document.body.style.overflow = '';
+      overlay.addEventListener('transitionend', function () {
+        overlay.remove();
+      }, { once: true });
+    }, 3400);
+  })();
+
   const hamburger = document.getElementById('hamburger');
   const navMobile = document.getElementById('nav-mobile');
   hamburger.addEventListener('click', () => {
