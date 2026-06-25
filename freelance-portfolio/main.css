@@ -686,6 +686,10 @@ ul, ol { list-style: none; }
 .hw-glass__icon {
   font-size: 18px;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 .hw-glass__check {
   font-size: 13px;
