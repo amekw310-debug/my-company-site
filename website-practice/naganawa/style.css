@@ -2701,7 +2701,7 @@ body::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: opacity 0.9s ease, visibility 0.9s ease;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
 }
 
 .loading-overlay--hidden {
@@ -2746,7 +2746,7 @@ body::before {
   margin-bottom: 24px;
   opacity: 0;
   transform: translateY(16px);
-  animation: loading-rise 0.7s ease 0.4s forwards;
+  animation: loading-rise 0.6s ease 0.2s forwards;
 }
 
 .loading-title {
@@ -2757,7 +2757,7 @@ body::before {
   color: #fff;
   opacity: 0;
   transform: translateY(20px);
-  animation: loading-rise 0.8s ease 0.8s forwards;
+  animation: loading-rise 0.7s ease 0.5s forwards;
 }
 
 .loading-title span {
@@ -2771,7 +2771,7 @@ body::before {
   color: rgba(255, 255, 255, 0.45);
   margin-top: 24px;
   opacity: 0;
-  animation: loading-rise 0.7s ease 1.4s forwards;
+  animation: loading-rise 0.6s ease 0.9s forwards;
 }
 
 @keyframes loading-rise {
@@ -2795,7 +2795,7 @@ body::before {
   height: 100%;
   width: 0%;
   background: var(--accent);
-  animation: loading-progress 3.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: loading-progress 2.0s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes loading-progress {
