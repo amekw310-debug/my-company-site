@@ -369,7 +369,6 @@ ul {
   background-color: transparent;
   display: flex;
   align-items: center;
-  overflow: hidden;
 }
 
 .hero-overlay {
@@ -425,6 +424,7 @@ ul {
   margin: 0 -20px 36px;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 
 .hero-video-block {
@@ -473,7 +473,7 @@ ul {
 
 .hero-scroll {
   position: absolute;
-  bottom: 36px;
+  bottom: -52px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
