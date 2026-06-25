@@ -59,105 +59,50 @@
     </div>
   </section>
 
-  <!-- お問い合わせ方法 -->
-  <section class="section section--gray">
+  <!-- お問い合わせ -->
+  <section class="section section--gray" id="contact">
     <div class="inner">
       <div class="section-header">
-        <p class="section-label">Contact Methods</p>
-        <h2 class="section-title">お問い合わせ方法</h2>
+        <p class="section-label">Contact Us</p>
+        <h2 class="section-title">お問い合わせ</h2>
       </div>
-      <div class="contact-methods">
-        <div class="contact-method-card">
-          <div class="contact-method-icon">✉️</div>
-          <h3 class="contact-method-title">フォームで送る</h3>
-          <p class="contact-method-desc">24時間受付。2営業日以内にご返信します。</p>
-        </div>
-        <div class="contact-method-card">
-          <div class="contact-method-icon">📞</div>
-          <h3 class="contact-method-title">お電話</h3>
-          <p class="contact-method-desc">平日 8:00〜17:00受付。直接ご相談いただけます。</p>
-        </div>
-        <div class="contact-method-card">
-          <div class="contact-method-icon">📧</div>
-          <h3 class="contact-method-title">メールで送る</h3>
-          <p class="contact-method-desc">info@naganawa-kensetsu.jpへ直接メール。</p>
-        </div>
-      </div>
-
-      <!-- フォーム + 会社情報 -->
-      <div class="contact-grid">
-        <div>
-          <form class="contact-form" onsubmit="return false;">
-            <div class="form-group">
-              <label class="form-label">お名前<span class="form-required">必須</span></label>
-              <input type="text" class="form-input" placeholder="山田 太郎">
-            </div>
-            <div class="form-group">
-              <label class="form-label">会社名・団体名</label>
-              <input type="text" class="form-input" placeholder="株式会社○○">
-            </div>
-            <div class="form-group">
-              <label class="form-label">メールアドレス<span class="form-required">必須</span></label>
-              <input type="email" class="form-input" placeholder="example@mail.com">
-            </div>
-            <div class="form-group">
-              <label class="form-label">電話番号</label>
-              <input type="tel" class="form-input" placeholder="000-0000-0000">
-            </div>
-            <div class="form-group">
-              <label class="form-label">お問い合わせ種別<span class="form-required">必須</span></label>
-              <div class="form-select-wrap">
-                <select class="form-select">
-                  <option value="">選択してください</option>
-                  <option>工事・施工のご相談</option>
-                  <option>お見積りのご依頼</option>
-                  <option>採用に関するご質問</option>
-                  <option>その他</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">お問い合わせ内容<span class="form-required">必須</span></label>
-              <textarea class="form-textarea" placeholder="お問い合わせ内容をご記入ください。"></textarea>
-            </div>
-            <p class="form-note">※ このフォームはデモです。実際の送信は行われません。</p>
-            <button type="submit" class="btn btn-accent btn-lg" style="width:100%;margin-top:20px;">送信する</button>
-          </form>
-        </div>
-        <div class="contact-info-box">
-          <h3 class="contact-info-title">会社情報</h3>
-          <div class="contact-info-item">
-            <span class="contact-info-icon">📍</span>
-            <div>
-              <span class="contact-info-label">所在地</span>
-              <span class="contact-info-value">〒000-0000<br>愛知県春日井市○○町○−○−○</span>
+      <div style="max-width:640px;margin:0 auto;">
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label">お名前<span class="form-required">必須</span></label>
+            <input type="text" class="form-input" placeholder="山田 太郎">
+          </div>
+          <div class="form-group">
+            <label class="form-label">会社名・団体名</label>
+            <input type="text" class="form-input" placeholder="株式会社○○">
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス<span class="form-required">必須</span></label>
+            <input type="email" class="form-input" placeholder="example@mail.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話番号</label>
+            <input type="tel" class="form-input" placeholder="000-0000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ種別<span class="form-required">必須</span></label>
+            <div class="form-select-wrap">
+              <select class="form-select">
+                <option value="">選択してください</option>
+                <option>工事・施工のご相談</option>
+                <option>お見積りのご依頼</option>
+                <option>採用に関するご質問</option>
+                <option>その他</option>
+              </select>
             </div>
           </div>
-          <div class="contact-info-item">
-            <span class="contact-info-icon">📞</span>
-            <div>
-              <span class="contact-info-label">電話番号</span>
-              <span class="contact-info-value"><a href="tel:0568816099">000-000-0000</a></span>
-            </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ内容<span class="form-required">必須</span></label>
+            <textarea class="form-textarea" placeholder="お問い合わせ内容をご記入ください。"></textarea>
           </div>
-          <div class="contact-info-item">
-            <span class="contact-info-icon">📧</span>
-            <div>
-              <span class="contact-info-label">メールアドレス</span>
-              <span class="contact-info-value"><a href="mailto:info@naganawa-kensetsu.jp">info@naganawa-kensetsu.jp</a></span>
-            </div>
-          </div>
-          <div class="contact-hours">
-            <strong>受付時間</strong><br>
-            平日 8:00〜17:00<br>
-            メールは24時間受付（2営業日以内にご返信）<br>
-            土日祝・年末年始はお休みです
-          </div>
-          <!-- アクセスマップ（ダミー） -->
-          <div style="margin-top:24px;background:#e5e7eb;border-radius:8px;height:180px;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:14px;">
-            📍 地図（Googleマップ埋め込み予定）
-          </div>
-        </div>
+          <p class="form-note">※ このフォームはデモです。実際の送信は行われません。</p>
+          <button type="submit" class="btn btn-accent btn-lg" style="width:100%;margin-top:20px;">送信する</button>
+        </form>
       </div>
     </div>
   </section>
@@ -172,7 +117,7 @@
       <a href="technology.html">技術・強み</a>
       <a href="recruit.html">採用情報</a>
       <a href="about.html">会社情報</a>
-      <a href="about.html#contact">お問い合わせ</a>
+      <a href="contact.html">お問い合わせ</a>
     </nav>
     <p class="footer-copy">© 2026 長縄工務店. All rights reserved.</p>
   </div>
@@ -206,7 +151,7 @@
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
     <span>採用情報</span>
   </a>
-  <a href="about.html#contact" class="fbb-item fbb-item--accent">
+  <a href="contact.html" class="fbb-item fbb-item--accent">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     <span>お問い合わせ</span>
   </a>
