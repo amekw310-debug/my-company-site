@@ -2738,6 +2738,21 @@ body::before {
   padding: 0 24px;
 }
 
+.loading-catchphrase {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(32px, 5vw, 56px);
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: loading-glow 1.2s ease 0.1s forwards;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.25);
+}
+
+@keyframes loading-glow {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .loading-label {
   font-size: 12px;
   font-weight: 700;
