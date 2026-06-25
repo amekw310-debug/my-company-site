@@ -45,54 +45,141 @@
 
   <!-- ========== ① ヒーローセクション ========== -->
   <section class="hero" id="hero">
-    <div class="hero__bg">
-      <div class="hero__blob hero__blob--1"></div>
-      <div class="hero__blob hero__blob--2"></div>
-      <div class="hero__blob hero__blob--3"></div>
+
+    <!-- 背景: 淡いオーブ -->
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+      <div class="hero__orb hero__orb--4"></div>
     </div>
+
     <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="hero__label">AI × スピード × 採用・集客導線</p>
+
+      <!-- 左: コピー -->
+      <div class="hero__copy">
+        <p class="hero__eyebrow">
+          <span class="hero__eyebrow-dot"></span>
+          Web Design ＆ AI Production
+        </p>
         <h1 class="hero__title">
           ホームページで、<br>
-          <span class="hero__title--accent">採用と集客を</span><br>
+          <span class="hero__accent">採用と集客を</span><br>
           変えませんか。
         </h1>
-        <p class="hero__desc">
-          最短<strong>1週間</strong>で公開対応。<br>
-          専門用語がわからなくても、丁寧にご相談に乗ります。<br>
-          作って終わりではなく、<br>
-          <strong>応募・問い合わせにつながる</strong>導線を一緒に考えます。
+        <p class="hero__body">
+          AIを活用した最短1週間の制作フロー。<br>
+          デザインから公開まで、丁寧にサポートします。
         </p>
-        <div class="hero__btns">
-          <a href="#contact" class="btn btn--primary">無料で相談する</a>
-          <a href="#works" class="btn btn--outline">制作実績を見る</a>
+        <div class="hero__cta">
+          <a href="#contact" class="cta-primary">無料で相談する</a>
+          <a href="#works" class="cta-ghost">
+            制作実績を見る
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
-        <ul class="hero__tags">
-          <li># 最短1週間で公開</li>
-          <li># 採用ページ得意</li>
-          <li># AI活用でスピード対応</li>
-        </ul>
+        <div class="hero__stats">
+          <div class="hstat">
+            <span class="hstat__val">1w〜</span>
+            <span class="hstat__key">最短納期</span>
+          </div>
+          <span class="hstat__sep"></span>
+          <div class="hstat">
+            <span class="hstat__val">SP</span>
+            <span class="hstat__key">完全対応</span>
+          </div>
+          <span class="hstat__sep"></span>
+          <div class="hstat">
+            <span class="hstat__val">AI</span>
+            <span class="hstat__key">活用制作</span>
+          </div>
+        </div>
       </div>
+
+      <!-- 右: デバイスモックアップ -->
       <div class="hero__visual">
-        <div class="hero__mockup">
-          <div class="mockup__bar">
-            <span></span><span></span><span></span>
+        <div class="hero__stage">
+
+          <!-- ブラウザ -->
+          <div class="hw-browser">
+            <div class="hw-browser__bar">
+              <div class="hw-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="hw-url">amekw310-debug.github.io / my-company-site</div>
+            </div>
+            <div class="hw-browser__screen">
+              <div class="hw-site">
+                <div class="hw-nav">
+                  <div class="hw-nav__logo"></div>
+                  <div class="hw-nav__links"><span></span><span></span><span></span></div>
+                </div>
+                <div class="hw-hero-row">
+                  <div class="hw-hero-text">
+                    <div class="hw-line hw-line--h1"></div>
+                    <div class="hw-line hw-line--h1 w55"></div>
+                    <div class="hw-line hw-line--p"></div>
+                    <div class="hw-line hw-line--p w45"></div>
+                    <div class="hw-cta-bar"></div>
+                  </div>
+                  <div class="hw-hero-img"></div>
+                </div>
+                <div class="hw-cards-row">
+                  <div class="hw-card"></div>
+                  <div class="hw-card"></div>
+                  <div class="hw-card"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mockup__screen">
-            <div class="mockup__line mockup__line--title"></div>
-            <div class="mockup__line mockup__line--sub"></div>
-            <div class="mockup__line mockup__line--sub short"></div>
-            <div class="mockup__btn-demo"></div>
-            <div class="mockup__img-demo"></div>
+
+          <!-- スマホ -->
+          <div class="hw-phone">
+            <div class="hw-phone__frame">
+              <div class="hw-phone__island"></div>
+              <div class="hw-phone__screen">
+                <div class="hw-ph-header"></div>
+                <div class="hw-ph-body">
+                  <div class="hw-pm-line hw-pm-line--h"></div>
+                  <div class="hw-pm-line w65"></div>
+                  <div class="hw-pm-btn"></div>
+                  <div class="hw-pm-card"></div>
+                  <div class="hw-pm-card hw-pm-card--sm"></div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- ガラスタグ 1 -->
+          <div class="hw-glass hw-glass--1">
+            <span class="hw-glass__icon">⚡</span>
+            <div class="hw-glass__info">
+              <p class="hw-glass__main">最短 1 週間</p>
+              <p class="hw-glass__sub">公開まで丁寧サポート</p>
+            </div>
+          </div>
+
+          <!-- ガラスタグ 2 -->
+          <div class="hw-glass hw-glass--2">
+            <span class="hw-glass__check">✓</span>
+            <div class="hw-glass__info">
+              <p class="hw-glass__main">スマホ完全対応</p>
+              <p class="hw-glass__sub">レスポンシブデザイン</p>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
+
     <div class="hero__scroll">
       <span>Scroll</span>
       <div class="hero__scroll-line"></div>
     </div>
+
   </section>
 
   <!-- ========== ② 自己紹介 ========== -->
