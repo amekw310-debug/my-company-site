@@ -2678,6 +2678,217 @@ ul {
   border-radius: 4px;
 }
 
+/* ============================
+   About Page (about.html)
+   ============================ */
+
+/* President message */
+.president-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.president-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.president-text {
+  font-size: 0.95rem;
+  line-height: 1.95;
+  color: var(--text-sub);
+  margin-bottom: 20px;
+}
+
+.president-sig {
+  margin-top: 36px;
+  text-align: right;
+  line-height: 1.8;
+}
+
+.president-company {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.president-name {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  letter-spacing: 0.04em;
+}
+
+/* Vision cards */
+.about-vision-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.about-vision-card {
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-vision-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent);
+}
+
+.about-vision-num {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 2.8rem;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.about-vision-text {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* About CTA */
+.about-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.about-cta-card {
+  display: block;
+  padding: 40px 36px;
+  border-radius: 8px;
+  border: 2px solid var(--gray-mid);
+  background: var(--white);
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+}
+
+.about-cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26, 47, 94, 0.1);
+}
+
+.about-cta-card--contact {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: white;
+}
+
+.about-cta-card--contact:hover {
+  box-shadow: 0 8px 24px rgba(26, 47, 94, 0.28);
+}
+
+.about-cta-card--recruit {
+  border-color: var(--accent);
+}
+
+.about-cta-card--recruit:hover {
+  border-color: var(--navy);
+}
+
+.about-cta-icon {
+  margin-bottom: 20px;
+  color: var(--accent);
+  line-height: 0;
+}
+
+.about-cta-sublabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.about-cta-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.about-cta-card--recruit .about-cta-title {
+  color: var(--navy-dark);
+}
+
+.about-cta-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.about-cta-card--recruit .about-cta-desc {
+  color: var(--gray);
+}
+
+.about-cta-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.about-cta-card--recruit .about-cta-link {
+  color: var(--navy);
+}
+
+@media (max-width: 767px) {
+  .president-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .president-img-wrap {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .about-vision-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .about-cta-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-vision-card {
+    padding: 28px 22px;
+  }
+
+  .about-cta-card {
+    padding: 32px 24px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 767px) {
   .about-teaser-cols {
