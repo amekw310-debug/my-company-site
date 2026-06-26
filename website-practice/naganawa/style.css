@@ -382,6 +382,7 @@ ul {
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
   padding-top: 120px;
   padding-bottom: 60px;
 }
