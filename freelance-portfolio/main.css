@@ -1061,7 +1061,7 @@ ul, ol { list-style: none; }
 .work-card__img--3 { background: linear-gradient(135deg, #FFB0C8 0%, #F07898 100%); }
 .work-card__img--4 { background: linear-gradient(135deg, #FFE890 0%, #FFD050 100%); }
 .work-card__img--cafe { background: linear-gradient(135deg, #FFCCD5 0%, #FF8FA3 100%); }
-.work-card__img--corp { background: linear-gradient(135deg, #1a2f5e 0%, #2563eb 100%); }
+.work-card__img--corp { background: url('./images/thumb-it-corporate.jpg') center top / cover no-repeat; }
 
 .work-card__link {
   display: inline-block;
