@@ -2732,6 +2732,9 @@ ul {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 8px 40px rgba(0,0,0,.12);
+  background: var(--gray-light);
+  max-width: 500px;
+  width: 100%;
 }
 
 .about-teaser-img {
@@ -2740,6 +2743,11 @@ ul {
   object-fit: cover;
   display: block;
   border-radius: 4px;
+}
+
+.about-teaser-img[src=""] ,
+.about-teaser-img:not([src]) {
+  min-height: 300px;
 }
 
 /* ============================
