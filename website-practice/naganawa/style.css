@@ -2023,6 +2023,66 @@ ul {
 }
 
 /* ============================
+   News List Page (news/index.html)
+   ============================ */
+.news-list {
+  list-style: none;
+  border-top: 1px solid var(--gray-mid);
+  margin-top: 48px;
+}
+
+.news-list__item {
+  border-bottom: 1px solid var(--gray-mid);
+}
+
+.news-list__link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 8px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background var(--transition), padding-left var(--transition);
+}
+
+.news-list__link:hover {
+  background: var(--gray-light);
+  padding-left: 20px;
+}
+
+.news-list__date {
+  font-size: 13px;
+  color: var(--gray);
+  white-space: nowrap;
+  min-width: 82px;
+}
+
+.news-list__tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--navy);
+  background: rgba(26,47,94,.08);
+  border: 1px solid rgba(26,47,94,.15);
+  border-radius: 3px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.news-list__title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .news-list__link {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+/* ============================
    Responsive – Tablet (≤900px)
    ============================ */
 @media (max-width: 900px) {
