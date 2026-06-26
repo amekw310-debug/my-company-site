@@ -1313,9 +1313,15 @@ ul {
 }
 
 .biz-card-icon {
-  font-size: 40px;
-  margin-bottom: 16px;
   display: block;
+  margin-bottom: 16px;
+  color: var(--navy);
+  line-height: 0;
+}
+
+.biz-card-icon svg {
+  width: 48px;
+  height: 48px;
 }
 
 .biz-card-title {
