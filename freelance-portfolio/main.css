@@ -713,9 +713,6 @@ ul, ol { list-style: none; }
   color: #f59e0b;
   font-size: 13px;
 }
-.hw-glass__info--center {
-  text-align: center;
-}
 .hw-glass__sub {
   font-size: 10px;
   color: var(--text-light);
