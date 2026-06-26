@@ -2694,6 +2694,53 @@ ul {
    About Page (about.html)
    ============================ */
 
+/* Company intro (about.html top section) */
+.company-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.company-intro-body {
+  /* text column */
+}
+
+.company-intro-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.company-intro-img-wrap {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,.12);
+  background: var(--gray-light);
+}
+
+.company-intro-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .company-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .company-intro-img-wrap {
+    max-width: 100%;
+  }
+}
+
 /* President message */
 .president-grid {
   display: grid;
