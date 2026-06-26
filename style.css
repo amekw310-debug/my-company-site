@@ -736,8 +736,10 @@ ul {
 
 .dummy-icon-text {
   font-size: 52px;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
+  line-height: 0;
 }
 
 .dummy-label-wrap p {
@@ -1216,8 +1218,10 @@ ul {
 
 .dummy-icon-text {
   font-size: 2.5rem;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin-bottom: 8px;
+  line-height: 0;
 }
 
 .dummy-label-wrap p {
