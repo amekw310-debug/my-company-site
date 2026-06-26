@@ -57,6 +57,23 @@
 </head>
 <body>
 
+  <!-- ローディング画面 -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-logo-mark">TL</span>
+        <span class="loader-logo-text">TechnoLink</span>
+      </div>
+      <div class="loader-ticker">
+        <span class="loader-ticker-text" id="loaderTicker"></span>
+        <span class="loader-cursor">|</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-bar-fill" id="loaderBarFill"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ヘッダー -->
   <header class="header" id="header">
     <div class="header-inner container">
@@ -403,6 +420,63 @@
   </footer>
 
   <script>
+    // ローディングアニメーション
+    (function() {
+      const loader = document.getElementById('loader');
+      const ticker = document.getElementById('loaderTicker');
+      const barFill = document.getElementById('loaderBarFill');
+
+      const messages = [
+        'テクノロジーで未来をひらく...',
+        'クラウド基盤を構築中...',
+        'システムを最適化中...',
+        'DX戦略を立案中...',
+        'テクノリンクへようこそ。',
+      ];
+
+      let msgIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let tickerTimer;
+
+      function typeTicker() {
+        const current = messages[msgIndex];
+        if (!isDeleting) {
+          ticker.textContent = current.slice(0, charIndex + 1);
+          charIndex++;
+          if (charIndex === current.length) {
+            if (msgIndex === messages.length - 1) return;
+            isDeleting = true;
+            tickerTimer = setTimeout(typeTicker, 700);
+            return;
+          }
+        } else {
+          ticker.textContent = current.slice(0, charIndex - 1);
+          charIndex--;
+          if (charIndex === 0) {
+            isDeleting = false;
+            msgIndex++;
+          }
+        }
+        const speed = isDeleting ? 40 : 65;
+        tickerTimer = setTimeout(typeTicker, speed);
+      }
+
+      typeTicker();
+
+      barFill.style.transition = 'width 2.8s cubic-bezier(0.4, 0, 0.2, 1)';
+      setTimeout(() => { barFill.style.width = '100%'; }, 50);
+
+      setTimeout(() => {
+        clearTimeout(tickerTimer);
+        ticker.textContent = 'テクノリンクへようこそ。';
+        loader.classList.add('loader--hidden');
+        loader.addEventListener('transitionend', () => {
+          loader.style.display = 'none';
+        }, { once: true });
+      }, 3000);
+    })();
+
     // ハンバーガーメニュー
     const navToggle = document.getElementById('navToggle');
     const nav = document.getElementById('nav');
