@@ -452,21 +452,25 @@ ul, ol { list-style: none; }
 .hstat {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  align-items: flex-start;
+  gap: 2px;
+}
+.hstat__icon {
+  font-size: 16px;
+  line-height: 1;
+  margin-bottom: 2px;
 }
 .hstat__val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 600;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--text);
-  letter-spacing: -.01em;
-  line-height: 1;
+  line-height: 1.2;
 }
 .hstat__key {
   font-size: 10px;
   color: var(--text-light);
-  letter-spacing: .1em;
-  text-transform: uppercase;
+  letter-spacing: .03em;
 }
 .hstat__sep {
   width: 1px;
