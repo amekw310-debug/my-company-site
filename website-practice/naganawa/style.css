@@ -2677,17 +2677,13 @@ ul {
   width: 100%;
 }
 
-.about-teaser-img {
+.about-image {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center;
   display: block;
-  border-radius: 4px;
-}
-
-.about-teaser-img[src=""] ,
-.about-teaser-img:not([src]) {
-  min-height: 300px;
+  border-radius: 6px;
 }
 
 /* ============================
@@ -2723,12 +2719,7 @@ ul {
   background: var(--gray-light);
 }
 
-.company-intro-img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
+/* .company-intro-img は .about-image に統合 */
 
 @media (max-width: 767px) {
   .company-intro-grid {
@@ -2958,10 +2949,6 @@ ul {
 
   .about-teaser-header {
     text-align: center;
-  }
-
-  .about-teaser-img-wrap {
-    order: -1;
   }
 
   .contact-grid {
