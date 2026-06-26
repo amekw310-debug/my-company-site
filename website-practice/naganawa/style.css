@@ -2963,6 +2963,8 @@ ul {
   padding: 36px 28px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-vision-card::before {
@@ -2990,6 +2992,8 @@ ul {
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+  text-wrap: balance;
+  flex: 1;
 }
 
 /* About CTA */
