@@ -19,6 +19,7 @@
   --text-light:    #B4A4B4;
   --bg:            #FFFCFA;
   --bg-section:    #F9F5F3;
+  --bg-alt:        #F9F5F3;
   --white:         #FFFFFF;
   --border:        rgba(255,79,122,.1);
 
@@ -80,6 +81,34 @@ h1, h2, h3,
 img { max-width: 100%; height: auto; display: block; }
 a   { text-decoration: none; color: inherit; }
 ul, ol { list-style: none; }
+
+/* スキップリンク（キーボード操作用） */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 12px 20px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 0 0 8px 0;
+  z-index: 9999;
+  transition: top .2s;
+}
+.skip-link:focus { top: 0; }
+
+/* フォーカス表示（キーボード操作用） */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.hamburger:focus-visible,
+.page-top:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
 
 /* ============================
    レイアウト
@@ -705,14 +734,6 @@ ul, ol { list-style: none; }
   0%,100% { transform: translateY(0); }
   50%     { transform: translateY(-7px); }
 }
-.hw-glass__icon {
-  font-size: 18px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
 .hw-glass__check {
   font-size: 13px;
   font-weight: 700;
@@ -797,17 +818,6 @@ ul, ol { list-style: none; }
   object-position: center top;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
-}
-
-.about__photo-placeholder {
-  aspect-ratio: 3/4;
-  background: linear-gradient(160deg, #FFD0DC 0%, #FFB0C8 100%);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  font-size: 14px;
 }
 
 .about__name-card {
@@ -1075,10 +1085,6 @@ ul, ol { list-style: none; }
   pointer-events: none;
 }
 
-.work-card__img--1 { background: linear-gradient(135deg, #FFB8C8 0%, #F08898 100%); }
-.work-card__img--2 { background: linear-gradient(135deg, #FFD8A0 0%, #FFB870 100%); }
-.work-card__img--3 { background: linear-gradient(135deg, #FFB0C8 0%, #F07898 100%); }
-.work-card__img--4 { background: linear-gradient(135deg, #FFE890 0%, #FFD050 100%); }
 .work-card__img--cafe { background: url('./images/thumb-korea-cafe.jpg') center top / cover no-repeat; }
 .work-card__img--corp { background: url('./images/thumb-it-corporate.jpg') center top / cover no-repeat; }
 
@@ -1136,15 +1142,6 @@ ul, ol { list-style: none; }
   color: var(--text-sub);
   margin-bottom: 14px;
   line-height: 1.8;
-}
-
-.work-card__result {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--primary-dark);
-  padding: 8px 12px;
-  background: #FFE0EC;
-  border-radius: 6px;
 }
 
 .works__note {

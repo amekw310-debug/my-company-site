@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FF4F7A">
   <title>A@Web Works｜ホームページ制作・採用ページ制作・SNS運用</title>
   <meta name="description" content="AIを活用したホームページ制作・採用ページ制作・SNS運用を行っています。最短1週間で公開可能。初めての方でも安心してご相談いただけます。">
+
+  <link rel="canonical" href="https://amekw310-debug.github.io/my-company-site/freelance-portfolio/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4F7A'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='13' font-weight='800' fill='white' font-family='sans-serif'%3EA%40%3C/text%3E%3C/svg%3E">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -12,6 +16,8 @@
   <meta property="og:description" content="AIを活用したホームページ制作・採用ページ制作・SNS運用を行っています。最短1週間で公開可能。初めての方でも安心してご相談いただけます。">
   <meta property="og:url" content="https://amekw310-debug.github.io/my-company-site/freelance-portfolio/">
   <meta property="og:image" content="https://amekw310-debug.github.io/my-company-site/freelance-portfolio/images/thumb-korea-cafe.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="A@Web Works">
 
@@ -24,9 +30,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=2">
+  <link rel="stylesheet" href="main.css?v=3">
+
+  <!-- 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "A@Web Works",
+    "description": "AIを活用したホームページ制作・採用ページ制作・SNS運用。最短1週間で公開可能。初めての方でも安心してご相談いただけます。",
+    "url": "https://amekw310-debug.github.io/my-company-site/freelance-portfolio/",
+    "image": "https://amekw310-debug.github.io/my-company-site/freelance-portfolio/images/thumb-korea-cafe.jpg",
+    "priceRange": "¥25,000〜",
+    "areaServed": { "@type": "Country", "name": "Japan" },
+    "knowsLanguage": "ja",
+    "founder": { "@type": "Person", "name": "天海" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Webサービス",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ホームページ制作", "description": "会社・店舗・個人事業主向けのシンプルで見やすいホームページ制作" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "採用ページ制作", "description": "採用に特化したページ制作とGoogleフォームを使った応募導線構築" } }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
+
+<a href="#main" class="skip-link">本文へジャンプ</a>
 
 <!-- ========== ヘッダー ========== -->
 <header class="header" id="top">
@@ -35,7 +67,7 @@
       <span class="logo__mark">A@</span>
       <span class="logo__text">Web Works</span>
     </a>
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="メインナビゲーション">
       <a href="#about" class="nav__link">自己紹介</a>
       <a href="#reasons" class="nav__link">こだわり</a>
       <a href="#services" class="nav__link">サービス</a>
@@ -43,23 +75,23 @@
       <a href="#works" class="nav__link">実績</a>
       <a href="#contact" class="nav__link nav__link--cta">お問い合わせ</a>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-mobile">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
-  <div class="nav-mobile" id="nav-mobile">
+  <nav class="nav-mobile" id="nav-mobile" aria-label="モバイルナビゲーション">
     <a href="#about">自己紹介</a>
     <a href="#reasons">こだわり</a>
     <a href="#services">サービス</a>
     <a href="#pricing">料金</a>
     <a href="#works">実績</a>
     <a href="#contact">お問い合わせ</a>
-  </div>
+  </nav>
 </header>
 
-<main>
+<main id="main">
 
   <!-- ========== ① ヒーローセクション ========== -->
   <section class="hero" id="hero">
@@ -569,7 +601,7 @@
         </div>
 
         <div class="faq">
-          <h2 class="faq__title">よくある質問</h2>
+          <h3 class="faq__title">よくある質問</h3>
 
           <details class="faq-item">
             <summary class="faq-item__q">料金はどれくらいですか？</summary>
@@ -623,7 +655,7 @@
 <footer class="footer">
   <div class="container footer__inner">
     <p class="footer__logo">A@Web Works</p>
-    <nav class="footer__nav">
+    <nav class="footer__nav" aria-label="フッターナビゲーション">
       <a href="#about">自己紹介</a>
       <a href="#reasons">こだわり</a>
       <a href="#services">サービス</a>
@@ -652,13 +684,17 @@
   const hamburger = document.getElementById('hamburger');
   const navMobile = document.getElementById('nav-mobile');
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
+    const isOpen = hamburger.classList.toggle('open');
     navMobile.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   });
   navMobile.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       hamburger.classList.remove('open');
       navMobile.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'メニューを開く');
     });
   });
 

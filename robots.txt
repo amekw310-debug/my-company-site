@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amekw310-debug.github.io/my-company-site/freelance-portfolio/sitemap.xml
