@@ -136,14 +136,15 @@ ul, ol { list-style: none; }
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
   color: var(--white);
   border-color: transparent;
+  box-shadow: 0 4px 14px rgba(240,88,120,.28);
 }
 .btn--primary:hover {
-  background: linear-gradient(135deg, #FF80A8 0%, #F04870 100%);
+  background: linear-gradient(90deg, #FF6B92 0%, #FF7E5A 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(240,88,120,.45);
+  box-shadow: 0 8px 22px rgba(240,88,120,.4);
 }
 
 .btn--outline {
@@ -1669,6 +1670,12 @@ ul, ol { list-style: none; }
 
   .section-header {
     margin-bottom: 40px;
+  }
+
+  /* ボタンが画面からはみ出さないように */
+  .btn {
+    max-width: 100%;
+    padding: 14px 28px;
   }
 
   /* スマホでは手動改行を無効化し、自然な折り返し＋広めの行間で読みやすく */
