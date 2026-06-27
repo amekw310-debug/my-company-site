@@ -828,6 +828,7 @@ ul, ol { list-style: none; }
   color: var(--text-sub);
   margin-bottom: 16px;
   font-size: 15px;
+  line-height: 1.8;
 }
 .about__body strong { color: var(--text); }
 
@@ -1668,5 +1669,17 @@ ul, ol { list-style: none; }
 
   .section-header {
     margin-bottom: 40px;
+  }
+
+  /* スマホでは手動改行を無効化し、自然な折り返し＋広めの行間で読みやすく */
+  .br-pc {
+    display: none;
+  }
+  .about__greeting {
+    line-height: 1.9;
+  }
+  .about__body p {
+    line-height: 2;
+    margin-bottom: 20px;
   }
 }
