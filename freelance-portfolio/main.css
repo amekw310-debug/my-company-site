@@ -1684,10 +1684,7 @@ ul, ol { list-style: none; }
     padding: 14px 28px;
   }
 
-  /* スマホでは手動改行を無効化し、自然な折り返し＋広めの行間で読みやすく */
-  .br-pc {
-    display: none;
-  }
+  /* スマホでは行間広め・段落間ゆとりで読みやすく */
   .about__greeting {
     line-height: 1.9;
   }
