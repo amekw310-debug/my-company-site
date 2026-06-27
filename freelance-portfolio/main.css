@@ -1482,7 +1482,9 @@ ul, ol { list-style: none; }
 .flow-step div p {
   font-size: 13px;
   color: var(--text-sub);
-  line-height: 1.7;
+  line-height: 1.8;
+  /* 日本語を文節単位で折り返し、語中での不自然な改行を防ぐ */
+  word-break: auto-phrase;
 }
 
 /* ── FAQ アコーディオン ── */
