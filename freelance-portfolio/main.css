@@ -1356,6 +1356,11 @@ ul, ol { list-style: none; }
   margin: 0 auto 56px;
 }
 
+.contact__cards--single {
+  grid-template-columns: 1fr;
+  max-width: 420px;
+}
+
 .contact-card {
   display: flex;
   flex-direction: column;
