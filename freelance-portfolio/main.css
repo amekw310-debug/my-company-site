@@ -42,6 +42,26 @@ body {
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  /* スマホで横スクロールが出ないように */
+  overflow-x: hidden;
+}
+
+/* 日本語本文は文節（フレーズ）単位で折り返し、語中での不自然な改行を防ぐ */
+.hero__body,
+.section-desc,
+.reason-card__desc,
+.service-card__desc,
+.work-card__desc,
+.about__greeting,
+.about__body p,
+.pricing-card__list li,
+.contact__desc,
+.faq-item__q,
+.faq-item__a p,
+.services__note p,
+.pricing__note p,
+.flow-step div p {
+  word-break: auto-phrase;
 }
 
 h1, h2, h3,
