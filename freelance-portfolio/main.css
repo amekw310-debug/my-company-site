@@ -1485,15 +1485,107 @@ ul, ol { list-style: none; }
   line-height: 1.7;
 }
 
-.contact__faq {
-  font-size: 13px;
-  color: var(--text-light);
-  line-height: 1.8;
+/* ── FAQ アコーディオン ── */
+.faq {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
 }
-.contact__faq span {
-  display: block;
+.faq__title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+  letter-spacing: .04em;
+}
+
+.faq-item {
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(255,79,122,.16);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.faq-item[open] {
+  border-color: rgba(255,79,122,.3);
+  box-shadow: 0 6px 20px rgba(255,79,122,.1);
+}
+
+.faq-item__q {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.6;
+}
+.faq-item__q::-webkit-details-marker { display: none; }
+
+/* Q バッジ */
+.faq-item__q::before {
+  content: 'Q';
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 開閉アイコン */
+.faq-item__q::after {
+  content: '';
+  flex-shrink: 0;
+  margin-left: auto;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  transform: rotate(45deg);
+  transition: transform .25s ease;
+}
+.faq-item[open] .faq-item__q::after {
+  transform: rotate(-135deg);
+}
+
+.faq-item__a {
+  padding: 0 20px 20px 58px;
+}
+.faq-item__a p {
+  font-size: 14px;
   color: var(--text-sub);
-  margin-top: 4px;
+  line-height: 1.9;
+  margin: 0;
+}
+.faq-item__a strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .faq-item__q {
+    padding: 16px 16px;
+    font-size: 14px;
+    gap: 10px;
+  }
+  .faq-item__a {
+    padding: 0 16px 18px 48px;
+  }
+  .faq-item__a p {
+    line-height: 2;
+  }
 }
 
 /* ============================
