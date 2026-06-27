@@ -1294,19 +1294,52 @@ ul, ol { list-style: none; }
 }
 
 .pricing__note {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.pricing__note-basic {
   font-size: 12px;
   color: var(--text-sub);
   background: #fff;
   border: 1.5px solid #e8ddd9;
   border-radius: 10px;
-  padding: 16px 24px;
-  max-width: 640px;
-  margin: 0 auto;
+  padding: 14px 24px;
 }
 
-.pricing__note p {
+.pricing__note-basic p {
   margin: 0;
   line-height: 1.9;
+}
+
+.pricing__note-special {
+  margin-top: 14px;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFF8F5 100%);
+  border: 1.5px solid rgba(255, 79, 122, 0.22);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pricing__note-special-icon {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pricing__note-special p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.pricing__note-special strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
