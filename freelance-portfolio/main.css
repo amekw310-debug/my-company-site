@@ -136,15 +136,16 @@ ul, ol { list-style: none; }
 }
 
 .btn--primary {
-  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  background: linear-gradient(90deg, #EF4069 0%, #F37A5E 52%, #F7AC55 100%);
   color: var(--white);
+  font-weight: 700;
   border-color: transparent;
-  box-shadow: 0 4px 14px rgba(240,88,120,.28);
+  box-shadow: 0 10px 26px rgba(239,80,120,.32);
 }
 .btn--primary:hover {
-  background: linear-gradient(90deg, #FF6B92 0%, #FF7E5A 100%);
+  background: linear-gradient(90deg, #F2547A 0%, #F58A66 52%, #F9B863 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(240,88,120,.4);
+  box-shadow: 0 14px 32px rgba(239,80,120,.42);
 }
 
 .btn--outline {
