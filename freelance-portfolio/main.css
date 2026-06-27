@@ -1638,10 +1638,16 @@ ul, ol { list-style: none; }
   .hamburger { display: flex; }
 
   .hero {
-    padding: 100px 0 72px;
+    padding: 100px 0 96px;
   }
   .hero__title {
     font-size: 30px;
+  }
+  .hero__scroll {
+    bottom: 14px;
+  }
+  .hero__scroll-line {
+    height: 24px;
   }
   .hero__cta {
     flex-direction: column;
