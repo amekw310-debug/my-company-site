@@ -2925,9 +2925,10 @@ ul {
 
 .president-text {
   font-size: 0.95rem;
-  line-height: 1.95;
+  line-height: 2;
   color: var(--text-sub);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  text-wrap: pretty;
 }
 
 .president-sig {
