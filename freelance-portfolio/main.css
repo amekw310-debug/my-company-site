@@ -21,7 +21,6 @@
   --bg-section:    #F9F5F3;
   --white:         #FFFFFF;
   --border:        rgba(255,79,122,.1);
-  --line-green:    #06C755;
 
   --radius:    20px;
   --radius-lg: 28px;
@@ -115,11 +114,6 @@ ul, ol { list-style: none; }
   padding: 5px 18px;
   border-radius: 100px;
   margin-bottom: 14px;
-}
-
-.section-label--white {
-  color: var(--primary);
-  background: var(--primary-light);
 }
 
 .section-title {
@@ -1403,11 +1397,6 @@ ul, ol { list-style: none; }
   box-shadow: 0 8px 32px rgba(156,85,112,.15);
 }
 
-.contact-card--line {
-  background: rgba(6,199,85,.07);
-  border-color: rgba(6,199,85,.3);
-}
-
 .contact-card__title {
   font-size: 17px;
   font-weight: 700;
@@ -1433,14 +1422,6 @@ ul, ol { list-style: none; }
 }
 .contact-card:hover .contact-card__btn {
   background: linear-gradient(135deg, #FF80A8 0%, #F04870 100%);
-}
-
-.contact-card__btn--line {
-  background: var(--line-green);
-  color: var(--white);
-}
-.contact-card:hover .contact-card__btn--line {
-  background: #05b34a;
 }
 
 /* ご相談の流れ */
@@ -1774,7 +1755,11 @@ ul, ol { list-style: none; }
   .hero__cta {
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
+  }
+  /* セカンダリリンクもタップしやすい高さに */
+  .cta-ghost {
+    padding: 12px 16px;
   }
 
   .reasons__grid {
