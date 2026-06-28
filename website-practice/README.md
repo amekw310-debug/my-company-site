@@ -10,25 +10,28 @@ GitHub Pages: `https://amekw310-debug.github.io/my-company-site/website-practice
 
 ```
 website-practice/
-├── naganawa/          ★ メイン制作中（長縄工務店）
 ├── freelance-designer/  制作済み・完成扱い
 ├── it-corporate/        制作済み・完成扱い
 └── restaurant/          制作済み・完成扱い
 ```
 
+> 長縄工務店サイトは独立リポジトリ `amekw310-debug/naganawa-website` に移転しました。  
+> 公開URL: https://amekw310-debug.github.io/naganawa-website/
+
 ---
 
 ## 各サイト概要
 
-### ★ naganawa／長縄工務店（メイン・制作中）
+### naganawa／長縄工務店（独立リポジトリに移転済み）
 
 | 項目 | 内容 |
 |------|------|
 | 種別 | コーポレートサイト |
 | 会社名 | 株式会社 長縄工務店 |
 | 業種 | 舗装工事・土木工事・ICT施工（愛知県春日井市） |
-| 公開URL | https://amekw310-debug.github.io/my-company-site/website-practice/naganawa/ |
-| ステータス | **制作中**（詳細は後述） |
+| リポジトリ | amekw310-debug/naganawa-website |
+| 公開URL | https://amekw310-debug.github.io/naganawa-website/ |
+| ステータス | 移転完了 |
 
 ### freelance-designer／Yuki Sato
 
@@ -181,10 +184,9 @@ naganawa/
 
 【プロジェクト概要】
 - 株式会社 長縄工務店（愛知県春日井市・舗装工事/土木工事/ICT施工）のコーポレートサイト
-- GitHub Pages で公開中: https://amekw310-debug.github.io/my-company-site/website-practice/naganawa/
-- リポジトリ: amekw310-debug/my-company-site
-- ファイルパス: website-practice/naganawa/
-- 作業ブランチ: claude/naganawa-recruitment-site-7j2i30（このブランチで作業してください）
+- GitHub Pages で公開中: https://amekw310-debug.github.io/naganawa-website/
+- リポジトリ: amekw310-debug/naganawa-website
+- 作業ブランチ: claude/naganawa-pexels-photos-dbaldo（このブランチで作業してください）
 
 【技術スタック】
 - 純粋なHTML/CSS（フレームワークなし）
@@ -198,15 +200,6 @@ naganawa/
   → GitHub Pages では Unsplash（images.unsplash.com）が読み込まれない
   → Pexels URL形式: https://images.pexels.com/photos/{id}/pexels-photo-{id}.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop
 
-【現在の未完了タスク（優先度順）】
-1. recruit.html の入社理由写真3枚をPexelsに差し替え
-   - style.css の .reason-photo--1 / --2 / --3（約1165〜1177行）が Unsplash URLのまま
-   - テーマ: 建設現場・チームワーク・技術作業
-2. 実際の会社情報の記入（住所・電話番号・設立年が現在ダミー）
-3. ダミー画像の実素材への差し替え（dummy-img--construction クラス部分）
-4. ファビコン設定
-5. お問い合わせフォームのバックエンド連携
-
-詳細は website-practice/README.md または website-practice/naganawa/README.md を読んでください。
+詳細は README.md を読んでください。
 今日は何から進めますか？
 ```
