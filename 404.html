@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FF4F7A">
+  <meta name="robots" content="noindex">
+  <title>404 ページが見つかりません | A@Web Works</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4F7A'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='13' font-weight='800' fill='white' font-family='sans-serif'%3EA%40%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink: #FF4F7A;
+      --pink-light: #FFF0F3;
+      --text: #2D2D2D;
+      --text-sub: #888;
+      --bg: #FDFAF8;
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 3rem;
+    }
+    .logo__mark { color: var(--pink); }
+    .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 600;
+      color: var(--pink-light);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+    .num::after {
+      content: '404';
+      position: absolute;
+      inset: 0;
+      color: var(--pink);
+      opacity: 0.15;
+    }
+    h1 {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    p {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.85rem 2.5rem;
+      background: var(--pink);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <a href="/freelance-portfolio/" class="logo">
+    <span class="logo__mark">A@</span>Web Works
+  </a>
+  <div class="num">404</div>
+  <h1>ページが見つかりません</h1>
+  <p>お探しのページは移動・削除されたか、<br>URLが間違っている可能性があります。</p>
+  <a href="/freelance-portfolio/" class="btn">トップページへ戻る</a>
+</body>
+</html>
