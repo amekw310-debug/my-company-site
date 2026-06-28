@@ -17,9 +17,10 @@ my-company-site/
     ├── freelance-designer/    フリーランスデザイナー向けLP
     ├── homepage-lp/           ホームページ制作LP
     ├── it-corporate/          ITコーポレートサイト（テクノリンク株式会社）
-    ├── naganawa/              建設会社（株式会社 長縄工務店）
     └── restaurant/            レストラン
 ```
+
+> 株式会社 長縄工務店サイトは独立リポジトリ `amekw310-debug/naganawa-website` に移転しました。
 
 ---
 
@@ -52,7 +53,7 @@ A@Web Works のメインポートフォリオサイトです。
 |---|---|
 | 韓国カフェ「카페 봄」 | https://amekw310-debug.github.io/my-company-site/website-practice/korea-cafe/ |
 | テクノリンク株式会社 | https://amekw310-debug.github.io/my-company-site/website-practice/it-corporate/ |
-| 株式会社 長縄工務店 | https://amekw310-debug.github.io/my-company-site/website-practice/naganawa/ |
+| 株式会社 長縄工務店 | https://amekw310-debug.github.io/naganawa-website/ （独立リポジトリに移転）|
 
 ### テクノリンク株式会社（ITコーポレートサイト）
 
@@ -68,13 +69,15 @@ A@Web Works のメインポートフォリオサイトです。
 
 ### 株式会社 長縄工務店（建設業コーポレートサイト）
 
-愛知県春日井市を拠点とする建設会社のコーポレートサイト。舗装工事・土木工事・ICT施工を主力事業とする架空の工務店。
+愛知県春日井市を拠点とする建設会社のコーポレートサイト。舗装工事・土木工事・ICT施工を主力事業とする。
+
+> **移転済み** — リポジトリ `amekw310-debug/naganawa-website`、公開URL: https://amekw310-debug.github.io/naganawa-website/
 
 | 項目 | 内容 |
 |---|---|
-| カラー | グリーン系（#2D6A3F ほか） |
+| カラー | ネイビー（#1a2f5e）・アクセント黄緑（#c8d400） |
 | フォント | Noto Sans JP（Google Fonts） |
-| 構成 | 5ページ（トップ・事業内容・会社概要・採用情報・お問い合わせ）＋ニュース記事 |
+| 構成 | 5ページ（トップ・事業内容・ICT施工・採用情報・会社情報・お問い合わせ）＋ニュース記事 |
 | 対応 | レスポンシブ・フォトスライダー・固定ボトムバー |
 | SEO | meta description・OGP・JSON-LD構造化データ・見出し最適化 |
 
