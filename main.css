@@ -127,6 +127,8 @@ ul, ol { list-style: none; }
 .bg-watermark__img {
   width: 520px;
   max-width: 75vw;
+  height: auto;
+  display: block;
   opacity: 0.05;
   flex-shrink: 0;
 }
