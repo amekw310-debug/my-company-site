@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=12">
+  <link rel="stylesheet" href="main.css?v=13">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -72,6 +72,32 @@
     </symbol>
   </defs>
 </svg>
+
+<!-- スプラッシュスクリーン（同タブ内初回のみ表示） -->
+<div id="splash" aria-hidden="true">
+  <svg class="splash__logo" viewBox="0 0 90 100" xmlns="http://www.w3.org/2000/svg">
+    <use href="#logo-mark-shape"/>
+  </svg>
+  <div class="splash__text">
+    <p class="splash__name">A@Web Works</p>
+    <p class="splash__sub">Web Design / AI / SNS</p>
+  </div>
+</div>
+<script>
+(function(){
+  var s=document.getElementById('splash');
+  if(sessionStorage.getItem('aww_splash')){s.remove();return;}
+  sessionStorage.setItem('aww_splash','1');
+  document.documentElement.style.overflow='hidden';
+  setTimeout(function(){
+    s.classList.add('splash--out');
+    setTimeout(function(){
+      s.remove();
+      document.documentElement.style.overflow='';
+    },800);
+  },2800);
+})();
+</script>
 
 <!-- 背景ウォーターマーク -->
 <div class="bg-watermark" aria-hidden="true" role="presentation">
