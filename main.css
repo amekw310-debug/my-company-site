@@ -67,9 +67,9 @@ body {
 h1, h2, h3,
 .hero__title, .section-title, .contact__title,
 .reason-card__title, .service-card__title, .work-card__title {
-  font-family: 'Shippori Mincho', 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
-  letter-spacing: .05em;
+  letter-spacing: .06em;
 }
 
 .logo__text {
@@ -250,14 +250,8 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: var(--accent);
-  color: var(--white);
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: .02em;
+  width: 40px;
+  height: 40px;
   flex-shrink: 0;
 }
 
