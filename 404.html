@@ -32,23 +32,30 @@
       text-align: center;
     }
     .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
       color: var(--text);
       text-decoration: none;
       letter-spacing: 0.05em;
-      display: block;
-      margin-bottom: 3rem;
-    }
-    .logo__mark {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      width: 32px; height: 32px;
-      vertical-align: middle;
-      margin-right: 4px;
+      gap: 8px;
+      margin-bottom: 3rem;
     }
+    .logo__img {
+      width: 30px;
+      height: 33px;
+      flex-shrink: 0;
+      display: block;
+    }
+    .logo__name {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .logo__text { font-size: 15px; font-weight: 700; line-height: 1.2; }
+    .logo__sub  { font-size: 9.5px; font-weight: 400; opacity: .55; letter-spacing: .10em; text-transform: uppercase; line-height: 1.2; }
     .num {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(6rem, 20vw, 10rem);
@@ -95,7 +102,11 @@
 </head>
 <body>
   <a href="/" class="logo">
-    <span class="logo__mark"><svg width="32" height="32" viewBox="0 0 90 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="38,8 52,8 22,90 2,90" fill="#4A4A4A"/><polygon points="38,8 52,8 88,90 68,90" fill="#4A4A4A"/><text x="45" y="82" text-anchor="middle" font-size="28" font-style="italic" font-family="Georgia,serif" fill="#FF6F8F">a</text></svg></span>Web Works
+    <img src="images/logo-mark.svg" alt="" class="logo__img" width="30" height="33" aria-hidden="true">
+    <span class="logo__name">
+      <span class="logo__text">A@Web Works</span>
+      <span class="logo__sub">Web Design / AI / SNS</span>
+    </span>
   </a>
   <div class="num">404</div>
   <h1>ページが見つかりません</h1>

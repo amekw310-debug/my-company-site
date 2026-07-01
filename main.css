@@ -246,17 +246,21 @@ ul, ol { list-style: none; }
   color: var(--text);
 }
 
-.logo__mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
+.logo__img {
+  width: 36px;
   height: 40px;
   flex-shrink: 0;
+  display: block;
 }
 
-.logo__text { font-size: 16px; font-weight: 700; }
-.logo__sub  { font-size: 11px; font-weight: 400; opacity: .7; margin-left: 2px; }
+.logo__name {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logo__text { font-size: 15px; font-weight: 700; line-height: 1.2; }
+.logo__sub  { font-size: 9.5px; font-weight: 400; opacity: .55; letter-spacing: .10em; text-transform: uppercase; line-height: 1.2; }
 
 .nav {
   display: flex;
@@ -1640,6 +1644,13 @@ ul, ol { list-style: none; }
   font-size: 16px;
   font-weight: 700;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer__logo-img {
+  flex-shrink: 0;
+  display: block;
 }
 
 .footer__nav {
