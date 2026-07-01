@@ -244,11 +244,13 @@ ul, ol { list-style: none; }
   gap: 10px;
   font-weight: 700;
   color: var(--text);
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .logo__img {
-  width: 36px;
-  height: 40px;
+  width: 32px;
+  height: 36px;
   flex-shrink: 0;
   display: block;
 }
@@ -257,10 +259,24 @@ ul, ol { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 0;
+  min-width: 0;
 }
 
-.logo__text { font-size: 16px; font-weight: 600; line-height: 1.2; }
-.logo__sub  { font-size: 9px; font-weight: 400; opacity: .55; letter-spacing: .13em; text-transform: uppercase; line-height: 1.2; }
+.logo__text {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.logo__sub {
+  font-size: 8.5px;
+  font-weight: 400;
+  opacity: .55;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  white-space: nowrap;
+}
 
 .nav {
   display: flex;
@@ -1765,7 +1781,23 @@ ul, ol { list-style: none; }
   .service-card { padding: 40px 36px; }
 
   .nav { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex; flex-shrink: 0; }
+
+  .logo {
+    gap: 7px;
+    max-width: 230px;
+  }
+  .logo__img {
+    width: 26px;
+    height: 29px;
+  }
+  .logo__text {
+    font-size: 13px;
+  }
+  .logo__sub {
+    font-size: 7.5px;
+    letter-spacing: .10em;
+  }
 
   .hero {
     padding: 100px 0 96px;
