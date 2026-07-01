@@ -123,7 +123,7 @@ ul, ol { list-style: none; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: 44px;
   animation: splashIn 0.7s ease-out both;
 }
 #splash.splash--out {
@@ -139,7 +139,7 @@ ul, ol { list-style: none; }
   to   { opacity: 0; }
 }
 .splash__logo {
-  width: 96px;
+  width: 192px;
   height: auto;
   display: block;
 }
@@ -147,23 +147,23 @@ ul, ol { list-style: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 .splash__name {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.06em;
+  font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #7A7A7A;
+  letter-spacing: 0.10em;
   line-height: 1;
 }
 .splash__sub {
-  font-size: 9.5px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
   color: var(--text-sub);
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 /* ============================
@@ -180,8 +180,8 @@ ul, ol { list-style: none; }
   overflow: hidden;
 }
 .bg-watermark__img {
-  width: 520px;
-  max-width: 75vw;
+  width: 1000px;
+  max-width: 92vw;
   height: auto;
   display: block;
   opacity: 0.05;
