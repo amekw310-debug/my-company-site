@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://a-webworks.jp/freelance-portfolio/sitemap.xml
+Sitemap: https://a-webworks.jp/sitemap.xml
