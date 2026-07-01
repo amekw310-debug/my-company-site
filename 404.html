@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#FF4F7A">
+  <meta name="theme-color" content="#4A4A4A">
   <meta name="robots" content="noindex">
   <title>404 ページが見つかりません | A@Web Works</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FF4F7A'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='13' font-weight='800' fill='white' font-family='sans-serif'%3EA%40%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234A4A4A'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-size='14' font-weight='800' fill='%23FF6F8F' font-family='sans-serif'%3Ea%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --pink: #FF4F7A;
-      --pink-light: #FFF0F3;
-      --text: #2D2D2D;
+      --pink: #FF6F8F;
+      --pink-light: #FFE8EF;
+      --text: #2D2A30;
       --text-sub: #888;
-      --bg: #FDFAF8;
+      --bg: #FAF7F5;
     }
     body {
       font-family: 'Noto Sans JP', sans-serif;
@@ -41,7 +41,16 @@
       display: block;
       margin-bottom: 3rem;
     }
-    .logo__mark { color: var(--pink); }
+    .logo__mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: #4A4A4A;
+      border-radius: 8px;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
     .num {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(6rem, 20vw, 10rem);
@@ -88,7 +97,7 @@
 </head>
 <body>
   <a href="/" class="logo">
-    <span class="logo__mark">A@</span>Web Works
+    <span class="logo__mark"><svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 2L16 14.5H2L9 2Z" fill="#FF6F8F"/><text x="9" y="13" text-anchor="middle" font-size="7" font-weight="600" fill="white" font-family="serif" font-style="italic">a</text></svg></span>Web Works
   </a>
   <div class="num">404</div>
   <h1>ページが見つかりません</h1>
