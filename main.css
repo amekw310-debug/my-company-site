@@ -124,17 +124,12 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 44px;
-  /* opacity:0 をベースに置き、forwards で完了後も opacity:1 を維持 */
-  opacity: 0;
-  animation: splashIn 0.65s ease-out 0.1s forwards;
+  /* 背景は即座にページを覆う。ロゴ・テキストのみフェードイン */
+  opacity: 1;
 }
 #splash.splash--out {
   animation: splashOut 0.8s ease-in forwards;
   pointer-events: none;
-}
-@keyframes splashIn {
-  from { opacity: 0; transform: scale(1.02); }
-  to   { opacity: 1; transform: scale(1); }
 }
 @keyframes splashOut {
   from { opacity: 1; }
@@ -142,19 +137,27 @@ ul, ol { list-style: none; }
 }
 /* アニメーション無効環境でも即座に表示 */
 @media (prefers-reduced-motion: reduce) {
-  #splash { opacity: 1; animation: none; }
   #splash.splash--out { animation: none; transition: opacity 0.3s; opacity: 0; }
+  .splash__logo, .splash__text { opacity: 1; animation: none; }
 }
 .splash__logo {
   width: 192px;
   height: auto;
   display: block;
+  opacity: 0;
+  animation: splashContentIn 0.6s ease-out 0.15s forwards;
 }
 .splash__text {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  opacity: 0;
+  animation: splashContentIn 0.6s ease-out 0.3s forwards;
+}
+@keyframes splashContentIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .splash__name {
   font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
