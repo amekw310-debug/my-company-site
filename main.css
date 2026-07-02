@@ -1161,19 +1161,6 @@ ul, ol { list-style: none; }
   overflow: hidden;
 }
 
-/* カード画像の底部ウェーブ装飾（ヒーローと同じ曲率 r=80相当） */
-.work-card__img::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 28px;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 28 A 80 80 0 0 0 100 28 A 80 80 0 0 0 200 28 A 80 80 0 0 0 300 28 A 80 80 0 0 0 400 28' stroke='%23FFE8F0' stroke-opacity='0.75' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  z-index: 2;
-  pointer-events: none;
-}
 
 .work-card__img--cafe { background: url('./images/thumb-korea-cafe.jpg') center top / cover no-repeat; }
 .work-card__img--corp { background: url('./images/thumb-it-corporate.jpg') center top / cover no-repeat; }
