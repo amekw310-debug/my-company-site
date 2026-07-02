@@ -299,12 +299,12 @@ ul { list-style: none; }
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px;
 }
 
 .nav-list a {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   transition: color var(--transition);
   position: relative;
@@ -1173,4 +1173,774 @@ ul { list-style: none; }
 
   .service-card { padding: 28px 20px; }
   .testimonial-card { padding: 28px 20px; }
+}
+
+/* ===========================
+   サブページ共通：ページヒーロー
+=========================== */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  padding: 140px 0 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-en {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.page-hero-title {
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+}
+
+.breadcrumb a {
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
+.breadcrumb a:hover { color: var(--white); }
+.breadcrumb-sep { font-size: 10px; }
+
+/* ===========================
+   お知らせ
+=========================== */
+.news-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.news-filter-btn {
+  padding: 7px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-light);
+  background: var(--white);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.news-filter-btn.active,
+.news-filter-btn:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 110px auto 1fr;
+  align-items: center;
+  gap: 16px 20px;
+  padding: 22px 16px;
+  border-bottom: 1px solid var(--gray-light);
+  color: inherit;
+  transition: all var(--transition);
+  border-radius: 8px;
+}
+
+.news-item:first-child { border-top: 1px solid var(--gray-light); }
+
+.news-item:hover {
+  background: var(--gray-bg);
+  padding-left: 24px;
+}
+
+.news-item:hover .news-title { color: var(--accent); }
+
+.news-date {
+  font-size: 13px;
+  color: var(--gray-mid);
+  white-space: nowrap;
+  font-feature-settings: "tnum";
+}
+
+.news-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.news-badge--press   { background: rgba(58,143,213,0.12); color: var(--accent); }
+.news-badge--info    { background: rgba(30,58,95,0.08); color: var(--navy); }
+.news-badge--recruit { background: rgba(46,204,113,0.12); color: #27ae60; }
+.news-badge--award   { background: rgba(243,156,18,0.12); color: #d68910; }
+
+.news-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+  transition: color var(--transition);
+}
+
+/* ===========================
+   事業内容（詳細）
+=========================== */
+.services-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.service-detail-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.service-detail-item:nth-child(even) .service-detail-visual {
+  order: -1;
+}
+
+.service-detail-num {
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(30,58,95,0.06);
+  line-height: 1;
+  margin-bottom: -20px;
+}
+
+.service-detail-en {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.service-detail-title {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 900;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.service-detail-text {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.service-detail-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.service-detail-points li {
+  font-size: 14px;
+  color: var(--text-light);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.service-detail-points li::before {
+  content: '▸';
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-detail-visual {
+  background: linear-gradient(135deg, rgba(30,58,95,0.06) 0%, rgba(58,143,213,0.1) 100%);
+  border-radius: 20px;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gray-light);
+}
+
+.service-detail-icon {
+  width: 96px;
+  height: 96px;
+  color: var(--navy);
+  opacity: 0.25;
+}
+
+.tech-stack {
+  background: var(--gray-bg);
+}
+
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.tech-item {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+}
+
+.tech-item:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   実績
+=========================== */
+.works-filter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.works-filter-btn {
+  padding: 9px 24px;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  background: var(--white);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.works-filter-btn.active,
+.works-filter-btn:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.works-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-light);
+  transition: all var(--transition);
+}
+
+.works-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.works-card-thumb {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.works-thumb-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.works-card-body {
+  padding: 24px;
+}
+
+.works-card-cat {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.works-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.works-card-desc {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.works-card-result {
+  font-size: 13px;
+  font-weight: 700;
+  color: #27ae60;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-light);
+}
+
+/* ===========================
+   採用情報
+=========================== */
+.recruit-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+.recruit-value-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.recruit-value-num {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.recruit-value-unit {
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.recruit-value-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 8px;
+}
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-light);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.job-card-header {
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.job-card-header:hover { background: var(--gray-bg); }
+
+.job-card-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.job-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.job-badge--eng     { background: rgba(58,143,213,0.12); color: var(--accent); }
+.job-badge--consult { background: rgba(30,58,95,0.08); color: var(--navy); }
+.job-badge--biz     { background: rgba(46,204,113,0.12); color: #27ae60; }
+.job-badge--mgr     { background: rgba(243,156,18,0.12); color: #d68910; }
+
+.job-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.job-card-sub {
+  font-size: 13px;
+  color: var(--gray-mid);
+  margin-top: 2px;
+}
+
+.job-arrow { color: var(--gray-mid); font-size: 18px; flex-shrink: 0; }
+
+.job-card-body {
+  padding: 0 28px 28px;
+  border-top: 1px solid var(--gray-light);
+}
+
+.job-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.job-table tr { border-bottom: 1px solid var(--gray-light); }
+.job-table tr:last-child { border-bottom: none; }
+
+.job-table th {
+  width: 26%;
+  padding: 13px 0;
+  text-align: left;
+  font-weight: 700;
+  color: var(--navy);
+  vertical-align: top;
+}
+
+.job-table td {
+  padding: 13px 0 13px 16px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.benefit-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.benefit-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.benefit-text {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--gray-light);
+  z-index: 0;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.flow-step-num {
+  width: 54px;
+  height: 54px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.flow-step-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+}
+
+.flow-step-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ===========================
+   お客様の声（詳細）
+=========================== */
+.testimonials-full-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.testimonial-full-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  border: 1px solid var(--gray-light);
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+}
+
+.testimonial-full-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(58,143,213,0.2);
+}
+
+.tf-quote {
+  font-size: 72px;
+  color: var(--accent);
+  opacity: 0.15;
+  line-height: 0.6;
+  font-family: Georgia, serif;
+  margin-bottom: 16px;
+}
+
+.tf-industry {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.tf-text {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.tf-result {
+  font-size: 13px;
+  font-weight: 700;
+  color: #27ae60;
+  background: rgba(46,204,113,0.08);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+
+.tf-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.tf-avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.tf-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.tf-company { font-size: 12px; color: var(--gray-mid); }
+
+/* ===========================
+   お問い合わせ（ページ）
+=========================== */
+.contact-page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-info-box {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  color: var(--white);
+  position: sticky;
+  top: 90px;
+}
+
+.contact-info-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.contact-info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-info-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.ci-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+.ci-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.ci-value {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+.ci-value a { color: var(--white); }
+
+/* ===========================
+   レスポンシブ（サブページ）
+=========================== */
+@media (max-width: 900px) {
+  .service-detail-item {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .service-detail-item:nth-child(even) .service-detail-visual {
+    order: 0;
+  }
+  .works-grid { grid-template-columns: repeat(2, 1fr); }
+  .tech-list { grid-template-columns: repeat(3, 1fr); }
+  .testimonials-full-grid { grid-template-columns: 1fr; }
+  .contact-page-wrapper { grid-template-columns: 1fr; }
+  .contact-info-box { position: static; }
+  .recruit-values { grid-template-columns: repeat(2, 1fr); }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 120px 0 48px; }
+  .works-grid { grid-template-columns: 1fr; }
+  .tech-list { grid-template-columns: repeat(2, 1fr); }
+  .flow-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .flow-steps::before { display: none; }
+  .news-item { grid-template-columns: 1fr auto; }
+  .news-date { grid-column: 1 / -1; margin-bottom: -8px; }
+}
+
+@media (max-width: 480px) {
+  .recruit-values { grid-template-columns: repeat(2, 1fr); }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .flow-steps { grid-template-columns: repeat(2, 1fr); }
+  .works-card-body { padding: 18px; }
+  .job-card-header { padding: 18px 20px; }
+  .job-card-body { padding: 0 20px 20px; }
 }
