@@ -1776,4 +1776,8 @@ ul, ol { list-style: none; }
   .hero__inner {
     padding-left: clamp(80px, 15%, 200px);
   }
+  .hero__devices {
+    transform: scale(1.22);
+    transform-origin: left center;
+  }
 }
