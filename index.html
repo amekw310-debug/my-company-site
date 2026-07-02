@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=16">
+  <link rel="stylesheet" href="main.css?v=17">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -86,14 +86,15 @@
 <script>
 (function(){
   var s=document.getElementById('splash');
-  if(sessionStorage.getItem('aww_splash')){s.remove();return;}
-  sessionStorage.setItem('aww_splash','1');
-  document.documentElement.style.overflow='hidden';
+  if(!s)return;
+  /* ページ読み込みごとに確実に表示（sessionStorage チェックなし） */
+  document.documentElement.style.setProperty('overflow','hidden');
   setTimeout(function(){
     s.classList.add('splash--out');
     setTimeout(function(){
       s.remove();
-      document.documentElement.style.overflow='';
+      /* インライン overflow を除去し、CSS の overflow-x:hidden を復元 */
+      document.documentElement.style.removeProperty('overflow');
     },800);
   },2800);
 })();
