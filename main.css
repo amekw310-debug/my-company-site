@@ -686,6 +686,75 @@ ul, ol { list-style: none; }
 }
 
 /* ============================
+   ショーケース（ヒーロー直下）
+   ============================ */
+.showcase {
+  background: var(--bg-section);
+}
+.showcase__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
+}
+.showcase__visual {
+  width: 100%;
+  max-width: 780px;
+}
+.showcase__visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.showcase__points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.showcase__point {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 20px;
+  gap: 8px;
+}
+.showcase__point-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+.showcase__point-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: .02em;
+}
+.showcase__point-sub {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 300;
+  letter-spacing: .04em;
+}
+.showcase__sep {
+  width: 1px;
+  height: 72px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.showcase__cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================
    ② 自己紹介
    ============================ */
 .about {
@@ -1651,6 +1720,18 @@ ul, ol { list-style: none; }
 @media (max-width: 640px) {
   .section { padding: 64px 0; }
   .container { padding: 0 16px; }
+
+  /* ショーケース: スマホは縦並び */
+  .showcase__inner { gap: 36px; }
+  .showcase__points {
+    flex-direction: column;
+    max-width: 320px;
+  }
+  .showcase__point { padding: 24px 20px; }
+  .showcase__sep {
+    width: 60%;
+    height: 1px;
+  }
 
   .service-card { padding: 40px 36px; }
 
