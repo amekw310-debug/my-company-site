@@ -1487,7 +1487,7 @@ ul, ol { list-style: none; }
 
 .contact__cards--single {
   grid-template-columns: 1fr;
-  max-width: 420px;
+  max-width: 580px;
 }
 
 .contact-card {
