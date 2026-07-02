@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>카페 봄｜韓国スタイルカフェ</title>
   <meta name="description" content="카페 봄（カフェ ボム）は、本場韓国のドリンクとスイーツが楽しめる韓国スタイルカフェ。東京・原宿で韓国グルメとスイーツをご提供しています。">
+  <link rel="preload" as="image" href="./images/hero-bg.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Gaegu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Gaegu:wght@300;400;700&display=block" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -118,8 +119,8 @@
           スイーツ
         </button>
         <button class="tab" data-tab="sets">
-          <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-          セット
+          <svg class="tab-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          テイクアウト
         </button>
       </div>
 
@@ -166,17 +167,18 @@
       <div class="menu-panel" id="food">
         <div class="menu-grid">
           <article class="menu-card">
-            <img src="./images/croffle.jpg" alt="クロッフル" class="menu-card-img" loading="lazy">
+            <img src="./images/yangnyeom-chicken-v2.jpg" alt="ヤンニョムチキン" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
-              <span class="menu-tag menu-tag--purple">おすすめ</span>
-              <h4>クロッフル</h4>
-              <p>크로플 · サクサクのクロワッサン生地を焼き上げた韓国カフェの定番</p>
-              <span class="price">¥ 780</span>
+              <span class="menu-tag" aria-hidden="true" style="visibility:hidden">dummy</span>
+              <h4>ヤンニョムチキン</h4>
+              <p>양념치킨 · 甘辛タレで味付けした韓国式フライドチキン</p>
+              <span class="price">¥ 980</span>
             </div>
           </article>
           <article class="menu-card">
             <img src="./images/kimbap.jpg" alt="キンパ" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
+              <span class="menu-tag" aria-hidden="true" style="visibility:hidden">dummy</span>
               <h4>キンパ</h4>
               <p>김밥 · 具だくさんの韓国海苔巻き、6カット</p>
               <span class="price">¥ 850</span>
@@ -194,6 +196,7 @@
           <article class="menu-card">
             <img src="./images/bibimbap.jpg" alt="ビビンバ" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
+              <span class="menu-tag" aria-hidden="true" style="visibility:hidden">dummy</span>
               <h4>石焼きビビンバ</h4>
               <p>돌솥 비빔밥 · カラフル野菜たっぷり、コチュジャン添え</p>
               <span class="price">¥ 980</span>
@@ -215,69 +218,71 @@
             </div>
           </article>
           <article class="menu-card">
-            <img src="./images/hotteok.jpg" alt="ホットク" class="menu-card-img" loading="lazy">
+            <img src="./images/pancake-v2.jpg" alt="パンケーキ" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
-              <h4>ホットク</h4>
-              <p>호떡 · 黒糖＆クルミ入り、もちもち韓国スイーツパン</p>
-              <span class="price">¥ 480</span>
+              <h4>パンケーキ</h4>
+              <p>팬케이크 · ふわふわ生地にバターとメープルシロップをたっぷり</p>
+              <span class="price">¥ 680</span>
             </div>
           </article>
           <article class="menu-card">
             <img src="./images/strawberry-cake.jpg" alt="イチゴショートケーキ" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
               <span class="menu-tag menu-tag--purple">おすすめ</span>
-              <h4>딸기 케이크</h4>
-              <p>イチゴショートケーキ · ふわふわスポンジと生クリームの特製ケーキ</p>
+              <h4>チーズケーキ</h4>
+              <p>치즈 케이크 · なめらかでコクのある濃厚チーズケーキ</p>
               <span class="price">¥ 780</span>
             </div>
           </article>
           <article class="menu-card">
-            <img src="./images/yakgwa.jpg" alt="ヤクグァ" class="menu-card-img" loading="lazy">
+            <img src="./images/croffle.jpg" alt="クロッフル" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
-              <h4>ヤクグァ</h4>
-              <p>약과 · 韓国伝統の蜂蜜揚げ菓子、2個入り</p>
-              <span class="price">¥ 380</span>
+              <span class="menu-tag menu-tag--purple">おすすめ</span>
+              <h4>クロッフル</h4>
+              <p>크로플 · サクサクのクロワッサン生地を焼き上げた韓国カフェの定番</p>
+              <span class="price">¥ 780</span>
             </div>
           </article>
         </div>
       </div>
 
-      <!-- セット -->
+      <!-- テイクアウト -->
       <div class="menu-panel" id="sets">
         <div class="menu-grid">
           <article class="menu-card">
-            <img src="./images/morning-set.jpg" alt="モーニングセット" class="menu-card-img" loading="lazy">
+            <img src="./images/financier.jpg" alt="フィナンシェ" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
-              <span class="menu-tag">10:00〜11:30限定</span>
-              <h4>모닝 세트 A</h4>
-              <p>モーニングセット · ドリンク1杯 ＋ ホットク1枚</p>
-              <span class="price">¥ 1,050</span>
+              <span class="menu-tag" aria-hidden="true" style="visibility:hidden">dummy</span>
+              <h4>フィナンシェ</h4>
+              <p>피낭시에 · バターの香り豊かなフランス焼き菓子、2個入り</p>
+              <span class="price">¥ 480</span>
             </div>
           </article>
           <article class="menu-card">
-            <img src="./images/lunch-set.jpg" alt="ランチセット" class="menu-card-img" loading="lazy">
+            <img src="./images/macaron.jpg" alt="マカロン" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
-              <span class="menu-tag menu-tag--green">お得</span>
-              <h4>런치 세트 B</h4>
-              <p>ランチセット · キンパ ＋ スープ ＋ ドリンク1杯</p>
-              <span class="price">¥ 1,580</span>
+              <span class="menu-tag" aria-hidden="true" style="visibility:hidden">dummy</span>
+              <h4>マカロン</h4>
+              <p>마카롱 · カラフルなフランス菓子、3個入り</p>
+              <span class="price">¥ 580</span>
             </div>
           </article>
           <article class="menu-card">
-            <img src="./images/sweets-set.jpg" alt="スイーツセット" class="menu-card-img" loading="lazy">
+            <img src="./images/egg-tart.jpg" alt="エッグタルト" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
-              <h4>스윗 세트 C</h4>
-              <p>スイーツセット · スイーツ2種 ＋ ドリンク1杯</p>
-              <span class="price">¥ 1,380</span>
+              <span class="menu-tag" aria-hidden="true" style="visibility:hidden">dummy</span>
+              <h4>エッグタルト</h4>
+              <p>에그 타르트 · サクサクのパイ生地にとろける卵クリーム</p>
+              <span class="price">¥ 380</span>
             </div>
           </article>
           <article class="menu-card">
-            <img src="./images/pair-set.jpg" alt="ペアセット" class="menu-card-img" loading="lazy">
+            <img src="./images/fruit-sand.jpg" alt="フルーツサンド" class="menu-card-img" loading="lazy">
             <div class="menu-card-body">
-              <span class="menu-tag menu-tag--purple">2名様</span>
-              <h4>커플 세트 D</h4>
-              <p>ペアセット · ドリンク2杯 ＋ フード1品 ＋ スイーツ1品</p>
-              <span class="price">¥ 2,480</span>
+              <span class="menu-tag" aria-hidden="true" style="visibility:hidden">dummy</span>
+              <h4>フルーツサンド</h4>
+              <p>과일 샌드 · 季節のフルーツとたっぷりクリームのサンドイッチ</p>
+              <span class="price">¥ 680</span>
             </div>
           </article>
         </div>
@@ -314,17 +319,17 @@
           </table>
         </div>
         <div class="info-map-wrap">
-          <div class="info-map-placeholder">
-            <svg class="info-map-pin" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <ellipse cx="24" cy="60" rx="10" ry="4" fill="rgba(0,0,0,.12)"/>
-              <path d="M24 0C13.5 0 5 8.5 5 19c0 13.5 19 41 19 41S43 32.5 43 19C43 8.5 34.5 0 24 0z" fill="#DDB9C8"/>
-              <circle cx="24" cy="19" r="8" fill="white"/>
-            </svg>
-            <p class="info-map-address">東京都渋谷区神宮前 4-25-1 1F</p>
-            <a href="https://maps.google.com/?q=東京都渋谷区神宮前4丁目25" target="_blank" rel="noopener noreferrer" class="info-map-btn">
-              Google マップで見る →
-            </a>
-          </div>
+          <iframe
+            src="https://maps.google.com/maps?q=東京都渋谷区神宮前4-25-1&output=embed&hl=ja&z=16"
+            class="info-map-iframe"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="カフェ봄 地図">
+          </iframe>
+          <a href="https://maps.google.com/?q=東京都渋谷区神宮前4丁目25-1" target="_blank" rel="noopener noreferrer" class="info-map-btn">
+            Google マップで見る →
+          </a>
         </div>
       </div>
     </div>

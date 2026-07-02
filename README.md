@@ -1,9 +1,9 @@
 # my-company-site
 
 A@Web Works のポートフォリオ・制作実績をまとめたリポジトリです。  
-GitHub Pages にてすべてのページを公開しています。
+GitHub Pages + 独自ドメインにて公開しています。
 
-**公開URL**: https://amekw310-debug.github.io/my-company-site/
+**公開URL**: https://a-webworks.jp/
 
 ---
 
@@ -11,23 +11,29 @@ GitHub Pages にてすべてのページを公開しています。
 
 ```
 my-company-site/
-├── freelance-portfolio/   # フリーランスポートフォリオサイト（メイン）
-└── website-practice/      # 制作実績・練習サイト集
+├── index.html             # ポートフォリオ本体（メインページ）
+├── main.css               # スタイルシート
+├── profile.jpg            # プロフィール写真
+├── images/                # OGP・実績サムネイル画像
+├── sitemap.xml            # サイトマップ
+├── robots.txt             # クローラー設定
+├── 404.html               # カスタム404ページ
+├── CNAME                  # 独自ドメイン設定（a-webworks.jp）
+├── freelance-portfolio/   # 旧URLからのリダイレクト用
+└── website-practice/      # 制作実績サンプルサイト
     ├── korea-cafe/            韓国スタイルカフェ「카페 봄」
-    ├── freelance-designer/    フリーランスデザイナー向けLP
-    ├── homepage-lp/           ホームページ制作LP
-    ├── it-corporate/          ITコーポレートサイト（テクノリンク株式会社）
-    ├── naganawa/              建設会社（株式会社 長縄工務店）
-    └── restaurant/            レストラン
+    └── it-corporate/          ITコーポレートサイト（テクノリンク株式会社）
 ```
+
+> 株式会社 長縄工務店サイトは独立リポジトリ `amekw310-debug/naganawa-website` に移転済みです。
 
 ---
 
-## freelance-portfolio
+## ポートフォリオ（メイン）
 
 A@Web Works のメインポートフォリオサイトです。
 
-- **URL**: https://amekw310-debug.github.io/my-company-site/freelance-portfolio/
+- **URL**: https://a-webworks.jp/
 - **技術**: HTML / CSS（Vanilla）
 - **フォント**: Shippori Mincho, Cormorant Garamond, Noto Sans JP（Google Fonts）
 
@@ -36,47 +42,22 @@ A@Web Works のメインポートフォリオサイトです。
 | セクション | 内容 |
 |---|---|
 | Hero | キャッチコピー・CTAボタン・デバイスモックアップ |
+| Works | 制作実績サンプルサイト |
 | About | 自己紹介・スキルタグ |
-| Why Choose Me | 選ばれる理由（6項目） |
+| My Commitment | こだわり（6項目） |
 | Services | サービス内容（4種） |
-| Works | 制作実績（4件） |
-| Contact | お問い合わせフォーム・LINE誘導 |
+| Pricing | 料金プラン（3プラン） |
+| Contact | お問い合わせフォーム・相談の流れ・FAQ |
 
 ---
 
-## website-practice
-
-制作実績として公開しているサンプルサイト集です。
+## website-practice（制作実績サンプル）
 
 | サイト | URL |
 |---|---|
-| 韓国カフェ「카페 봄」 | https://amekw310-debug.github.io/my-company-site/website-practice/korea-cafe/ |
-| テクノリンク株式会社 | https://amekw310-debug.github.io/my-company-site/website-practice/it-corporate/ |
-| 株式会社 長縄工務店 | https://amekw310-debug.github.io/my-company-site/website-practice/naganawa/ |
-
-### テクノリンク株式会社（ITコーポレートサイト）
-
-架空のIT企業のコーポレートサイト。クラウド・システム開発・DXコンサルティングを主力事業とする。
-
-| 項目 | 内容 |
-|---|---|
-| カラー | ネイビー（#1E3A5F）・ホワイト基調 |
-| フォント | Noto Sans JP（Google Fonts） |
-| 構成 | 1ページ完結型（全7セクション） |
-| 対応 | レスポンシブ・ハンバーガーメニュー・スクロールアニメーション |
-| SEO | meta description・OGP・Twitter Card・JSON-LD構造化データ |
-
-### 株式会社 長縄工務店（建設業コーポレートサイト）
-
-愛知県春日井市を拠点とする建設会社のコーポレートサイト。舗装工事・土木工事・ICT施工を主力事業とする架空の工務店。
-
-| 項目 | 内容 |
-|---|---|
-| カラー | グリーン系（#2D6A3F ほか） |
-| フォント | Noto Sans JP（Google Fonts） |
-| 構成 | 5ページ（トップ・事業内容・会社概要・採用情報・お問い合わせ）＋ニュース記事 |
-| 対応 | レスポンシブ・フォトスライダー・固定ボトムバー |
-| SEO | meta description・OGP・JSON-LD構造化データ・見出し最適化 |
+| 韓国カフェ「카페 봄」 | https://a-webworks.jp/website-practice/korea-cafe/ |
+| テクノリンク株式会社 | https://a-webworks.jp/website-practice/it-corporate/ |
+| 株式会社 長縄工務店 | https://amekw310-debug.github.io/naganawa-website/（独立リポジトリ）|
 
 ---
 

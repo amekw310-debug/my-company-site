@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 580" fill="none">
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#2C2C2E"/>
+      <stop offset="100%" stop-color="#161618"/>
+    </linearGradient>
+    <linearGradient id="photo-m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#EDE9E4"/>
+      <stop offset="100%" stop-color="#D8D4CE"/>
+    </linearGradient>
+    <clipPath id="psc">
+      <rect x="14" y="14" width="252" height="552" rx="36"/>
+    </clipPath>
+  </defs>
+
+  <!-- ===== PHONE FRAME ===== -->
+  <rect x="0" y="0" width="280" height="580" rx="46" fill="url(#frame)"/>
+  <!-- inner metallic edge -->
+  <rect x="1" y="1" width="278" height="578" rx="45" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+  <!-- side sheen left -->
+  <rect x="0" y="80" width="3" height="80" rx="1.5" fill="rgba(255,255,255,0.06)"/>
+  <!-- screen glass -->
+  <rect x="10" y="10" width="260" height="560" rx="40" fill="#1A1A1C"/>
+  <!-- screen surface -->
+  <rect x="14" y="14" width="252" height="552" rx="36" fill="#FAF7F5"/>
+  <!-- Dynamic Island -->
+  <rect x="100" y="22" width="80" height="28" rx="14" fill="#141416"/>
+
+  <!-- ===== SCREEN CONTENT ===== -->
+  <g clip-path="url(#psc)">
+
+    <!-- Status bar area -->
+    <rect x="14" y="14" width="252" height="58" fill="rgba(250,247,245,0.97)"/>
+    <line x1="14" y1="72" x2="266" y2="72" stroke="#E8E4E0" stroke-width="0.8"/>
+    <!-- Logo A mark (small) -->
+    <polygon points="28,33 34,33 22,52 16,52" fill="#7A7570"/>
+    <polygon points="28,33 34,33 40,52 34,52" fill="#7A7570"/>
+    <!-- Logo text -->
+    <rect x="48" y="35" width="46" height="6"  rx="3" fill="#2D2A30" opacity="0.68"/>
+    <rect x="48" y="45" width="34" height="4"  rx="2" fill="#7A7570" opacity="0.45"/>
+    <!-- Hamburger menu -->
+    <rect x="228" y="37" width="24" height="2.5" rx="1.25" fill="#2D2A30" opacity="0.45"/>
+    <rect x="228" y="43" width="24" height="2.5" rx="1.25" fill="#2D2A30" opacity="0.45"/>
+    <rect x="233" y="49" width="19" height="2.5" rx="1.25" fill="#2D2A30" opacity="0.45"/>
+
+    <!-- Hero: interior photo (right side of hero, fades to bg) -->
+    <rect x="100" y="72" width="166" height="258" fill="url(#photo-m)"/>
+    <!-- Sofa suggestion (small) -->
+    <rect x="106" y="256" width="156" height="64"  rx="8"  fill="#D6D2CE" opacity="0.88"/>
+    <rect x="112" y="234" width="34" height="30"   rx="6"  fill="#CCCAC6" opacity="0.85"/>
+    <rect x="216" y="234" width="34" height="30"   rx="6"  fill="#CCCAC6" opacity="0.85"/>
+    <!-- Pampas stem -->
+    <rect x="238" y="100" width="5" height="160"   rx="2"  fill="#BEBAB4" opacity="0.65"/>
+    <ellipse cx="240" cy="92" rx="22" ry="42"  fill="#CCC4B8" opacity="0.32"/>
+    <ellipse cx="228" cy="86" rx="14" ry="28"  fill="#C6BEB2" opacity="0.30"/>
+
+    <!-- Hero copy (left side) -->
+    <!-- Eyebrow -->
+    <rect x="18" y="82" width="60" height="14" rx="7" fill="rgba(255,111,143,0.10)"/>
+    <rect x="26" y="86" width="44" height="4"  rx="2" fill="#FF6F8F" opacity="0.80"/>
+    <!-- H1 line 1 -->
+    <rect x="18" y="106" width="130" height="11" rx="3" fill="#2D2A30" opacity="0.84"/>
+    <!-- H1 line 2 (pink) -->
+    <rect x="18" y="124" width="108" height="11" rx="3" fill="#FF6F8F" opacity="0.88"/>
+    <!-- H1 line 3 -->
+    <rect x="18" y="142" width="118" height="11" rx="3" fill="#2D2A30" opacity="0.84"/>
+    <!-- Body text -->
+    <rect x="18" y="162" width="130" height="5" rx="2.5" fill="#9A8A9A" opacity="0.64"/>
+    <rect x="18" y="172" width="110" height="5" rx="2.5" fill="#9A8A9A" opacity="0.58"/>
+    <rect x="18" y="182" width="90"  height="5" rx="2.5" fill="#9A8A9A" opacity="0.52"/>
+    <!-- CTA primary -->
+    <rect x="18" y="200" width="112" height="28" rx="14" fill="#FF6F8F"/>
+    <rect x="28"  y="210" width="92"  height="6"  rx="3"  fill="white" opacity="0.76"/>
+    <!-- Secondary CTA -->
+    <rect x="18" y="240" width="72"  height="6"  rx="3"  fill="#2D2A30" opacity="0.28"/>
+
+    <!-- Stats row (3 tiny badges) -->
+    <rect x="18"  y="264" width="66" height="46" rx="8" fill="white" opacity="0.68"/>
+    <rect x="96"  y="264" width="66" height="46" rx="8" fill="white" opacity="0.68"/>
+    <rect x="174" y="264" width="66" height="46" rx="8" fill="white" opacity="0.68"/>
+    <rect x="26"  y="274" width="12" height="12" rx="3" fill="#FF6F8F" opacity="0.36"/>
+    <rect x="104" y="274" width="12" height="12" rx="3" fill="#4A4A4A" opacity="0.18"/>
+    <rect x="182" y="274" width="12" height="12" rx="3" fill="#FF6F8F" opacity="0.28"/>
+    <rect x="26"  y="291" width="38" height="4"  rx="2" fill="#2D2A30" opacity="0.58"/>
+    <rect x="26"  y="299" width="46" height="3"  rx="1.5" fill="#9A9A9A" opacity="0.48"/>
+    <rect x="104" y="291" width="38" height="4"  rx="2" fill="#2D2A30" opacity="0.58"/>
+    <rect x="104" y="299" width="46" height="3"  rx="1.5" fill="#9A9A9A" opacity="0.48"/>
+    <rect x="182" y="291" width="38" height="4"  rx="2" fill="#2D2A30" opacity="0.58"/>
+    <rect x="182" y="299" width="46" height="3"  rx="1.5" fill="#9A9A9A" opacity="0.48"/>
+
+    <!-- Section divider (faint) -->
+    <rect x="14" y="326" width="252" height="0.8" fill="#E8E4E0"/>
+
+    <!-- Works cards section -->
+    <rect x="18" y="338" width="60" height="5"  rx="2.5" fill="#2D2A30" opacity="0.65"/>
+    <rect x="18" y="348" width="220" height="3.5" rx="1.75" fill="#9A9A9A" opacity="0.40"/>
+    <!-- Card 1 -->
+    <rect x="18"  y="360" width="110" height="82" rx="8" fill="white" opacity="0.80"/>
+    <rect x="18"  y="360" width="110" height="52" rx="8" fill="#E4E0DB"/>
+    <rect x="24"  y="418" width="68" height="5"  rx="2.5" fill="#2D2A30" opacity="0.60"/>
+    <rect x="24"  y="428" width="90" height="4"  rx="2" fill="#9A9A9A" opacity="0.48"/>
+    <!-- Card 2 -->
+    <rect x="140" y="360" width="110" height="82" rx="8" fill="white" opacity="0.80"/>
+    <rect x="140" y="360" width="110" height="52" rx="8" fill="#DDDBD5"/>
+    <rect x="146" y="418" width="68" height="5"  rx="2.5" fill="#2D2A30" opacity="0.60"/>
+    <rect x="146" y="428" width="90" height="4"  rx="2" fill="#9A9A9A" opacity="0.48"/>
+
+    <!-- Footer / CTA band -->
+    <rect x="14" y="460" width="252" height="106" fill="#F3EFEC" opacity="0.95"/>
+    <rect x="18" y="470" width="96" height="7"   rx="3.5" fill="#2D2A30" opacity="0.70"/>
+    <rect x="18" y="484" width="230" height="5"  rx="2.5" fill="#9A9A9A" opacity="0.48"/>
+    <rect x="18" y="494" width="200" height="5"  rx="2.5" fill="#9A9A9A" opacity="0.40"/>
+    <rect x="18" y="510" width="120" height="28" rx="14" fill="#FF6F8F" opacity="0.88"/>
+    <rect x="30"  y="520" width="96"  height="6"  rx="3"  fill="white" opacity="0.72"/>
+
+  </g>
+
+  <!-- Home indicator -->
+  <rect x="100" y="554" width="80" height="4" rx="2" fill="rgba(0,0,0,0.22)"/>
+</svg>

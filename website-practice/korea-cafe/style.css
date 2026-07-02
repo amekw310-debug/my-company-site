@@ -76,7 +76,8 @@ img { max-width: 100%; display: block; }
 /* 画像プレースホルダー — 実画像差し替えまでのグラデーション仮表示 */
 .menu-card-placeholder--croffle    { background: linear-gradient(135deg, #B8720A 0%, #D4A040 45%, #F5E0A0 100%); }
 .menu-card-placeholder--strawberry { background: linear-gradient(135deg, #C04060 0%, #E07888 45%, #FAD0D8 100%); }
-.info-map-frame {
+.info-map-wrap { display: flex; flex-direction: column; gap: 12px; }
+.info-map-frame, .info-map-iframe {
   width: 100%; aspect-ratio: 4/3; border: none;
   border-radius: var(--r); display: block;
   box-shadow: 0 8px 32px rgba(30,26,20,.09);
