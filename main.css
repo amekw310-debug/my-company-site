@@ -1709,3 +1709,10 @@ ul, ol { list-style: none; }
     margin-bottom: 20px;
   }
 }
+
+/* PC: ヒーロー左コンテンツを右へオフセット（ロゴと「自己紹介」の中間付近に合わせる） */
+@media (min-width: 901px) {
+  .hero__inner {
+    padding-left: clamp(160px, 25%, 320px);
+  }
+}
