@@ -403,9 +403,12 @@ ul, ol { list-style: none; }
   color: var(--white) !important;
   padding: 8px 18px;
   border-radius: 100px;
+  border: 1.5px solid var(--accent);
+  transition: background .25s ease, color .25s ease;
 }
 .nav__link--cta:hover {
-  background: var(--accent-dark) !important;
+  background: var(--white) !important;
+  color: var(--accent) !important;
 }
 
 .hamburger {
