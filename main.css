@@ -124,19 +124,26 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 44px;
-  animation: splashIn 0.7s ease-out both;
+  /* opacity:0 をベースに置き、forwards で完了後も opacity:1 を維持 */
+  opacity: 0;
+  animation: splashIn 0.65s ease-out 0.1s forwards;
 }
 #splash.splash--out {
   animation: splashOut 0.8s ease-in forwards;
   pointer-events: none;
 }
 @keyframes splashIn {
-  from { opacity: 0; transform: scale(1.03); }
+  from { opacity: 0; transform: scale(1.02); }
   to   { opacity: 1; transform: scale(1); }
 }
 @keyframes splashOut {
   from { opacity: 1; }
   to   { opacity: 0; }
+}
+/* アニメーション無効環境でも即座に表示 */
+@media (prefers-reduced-motion: reduce) {
+  #splash { opacity: 1; animation: none; }
+  #splash.splash--out { animation: none; transition: opacity 0.3s; opacity: 0; }
 }
 .splash__logo {
   width: 192px;
