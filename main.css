@@ -496,7 +496,7 @@ ul, ol { list-style: none; }
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -637,6 +637,7 @@ ul, ol { list-style: none; }
   height: auto;
   display: block;
   object-fit: contain;
+  object-position: left center;
 }
 
 /* スクロールインジケーター */
