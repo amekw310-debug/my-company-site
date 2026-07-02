@@ -637,8 +637,6 @@ ul, ol { list-style: none; }
   height: auto;
   display: block;
   object-fit: contain;
-  /* multiply: 白(255)×背景色=背景色になり、画像の白背景が完全に透過して消える */
-  mix-blend-mode: multiply;
 }
 
 /* スクロールインジケーター */
