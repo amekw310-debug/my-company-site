@@ -654,9 +654,15 @@ ul, ol { list-style: none; }
   gap: 2px;
 }
 .hstat__icon {
-  font-size: 15px;
-  line-height: 1;
-  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255,111,143,.1);
+  color: var(--primary);
+  margin-bottom: 6px;
 }
 .hstat__val {
   font-family: 'Inter', 'Noto Sans JP', sans-serif;
@@ -1700,7 +1706,8 @@ ul, ol { list-style: none; }
   .hstat__val  { font-size: 12px; }
   .hstat__key  { font-size: 9px; }
   .hstat__sep  { height: 26px; }
-  .hstat__icon { font-size: 13px; }
+  .hstat__icon { width: 30px; height: 30px; border-radius: 8px; }
+  .hstat__icon svg { width: 16px; height: 16px; }
 
   .service-card { padding: 40px 36px; }
 
