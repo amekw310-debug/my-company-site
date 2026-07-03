@@ -1596,13 +1596,53 @@ ul, ol { list-style: none; }
   font-weight: 600;
   color: var(--text);
   line-height: 1.6;
+  transition: color .2s ease;
 }
+a.news-item__title:hover { color: var(--primary); }
 .news-item__body {
   font-size: 13px;
   color: #888;
   line-height: 1.8;
   margin-top: 2px;
 }
+.news-detail {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  min-height: 60vh;
+}
+.news-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.news-detail__title {
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.news-detail__body {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text);
+}
+.news-detail__body p { margin-bottom: 1.4em; }
+.news-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 48px;
+  font-size: 13px;
+  color: #aaa;
+  transition: color .2s ease;
+}
+.news-detail__back:hover { color: var(--primary); }
 
 /* ============================
    フッター
