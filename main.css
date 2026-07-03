@@ -473,6 +473,7 @@ ul, ol { list-style: none; }
 .nav-mobile.open a:nth-child(4) { transition-delay: .21s; }
 .nav-mobile.open a:nth-child(5) { transition-delay: .26s; }
 .nav-mobile.open a:nth-child(6) { transition-delay: .31s; }
+.nav-mobile.open a:nth-child(7) { transition-delay: .36s; }
 @media (prefers-reduced-motion: reduce) {
   .nav-mobile, .nav-mobile a { transition: none; transform: none; }
   .nav-mobile.open a { opacity: 1; transform: none; }
