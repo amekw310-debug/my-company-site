@@ -88,7 +88,7 @@
         <article class="news-item">
           <div class="news-item__meta">
             <time class="news-item__date" datetime="2026-07-03">2026.07.03</time>
-            <span class="news-item__tag">お知らせ</span>
+            <span class="news-item__tag news-badge-new">NEW</span>
           </div>
           <a href="news/renewal.html" class="news-item__title">ホームページをリニューアルしました</a>
         </article>
@@ -96,7 +96,7 @@
         <article class="news-item">
           <div class="news-item__meta">
             <time class="news-item__date" datetime="2026-06-24">2026.06.24</time>
-            <span class="news-item__tag">お知らせ</span>
+            <span class="news-item__tag news-badge-new">NEW</span>
           </div>
           <a href="news/lancers.html" class="news-item__title">ランサーズ掲載始めました。</a>
         </article>
@@ -104,7 +104,7 @@
         <article class="news-item">
           <div class="news-item__meta">
             <time class="news-item__date" datetime="2026-06-23">2026.06.23</time>
-            <span class="news-item__tag">お知らせ</span>
+            <span class="news-item__tag news-badge-new">NEW</span>
           </div>
           <a href="news/instagram.html" class="news-item__title">Instagram開設しました！</a>
         </article>
@@ -172,6 +172,15 @@
   });
   pageTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 1週間以内の記事のみNEWバッジを表示
+  document.querySelectorAll('.news-item').forEach(item => {
+    const time = item.querySelector('time');
+    const badge = item.querySelector('.news-badge-new');
+    if (!time || !badge) return;
+    const days = (Date.now() - new Date(time.getAttribute('datetime'))) / 86400000;
+    if (days > 7) badge.style.display = 'none';
   });
 </script>
 

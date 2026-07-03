@@ -62,7 +62,7 @@
     <article class="news-detail">
       <div class="news-detail__meta">
         <time class="news-item__date" datetime="2026-06-24">2026.06.24</time>
-        <span class="news-item__tag">お知らせ</span>
+        <span class="news-item__tag news-badge-new">NEW</span>
       </div>
       <h1 class="news-detail__title">ランサーズ掲載始めました。</h1>
       <div class="news-detail__body">
@@ -104,6 +104,8 @@
   const pt=document.getElementById('page-top');
   window.addEventListener('scroll',()=>pt.classList.toggle('visible',window.scrollY>400));
   pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const t=document.querySelector('time'),b=document.querySelector('.news-badge-new');
+  if(t&&b&&(Date.now()-new Date(t.getAttribute('datetime')))/86400000>7)b.style.display='none';
 </script>
 </body>
 </html>
