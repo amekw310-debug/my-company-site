@@ -1321,11 +1321,15 @@ ul, ol { list-style: none; }
   text-align: center;
 }
 
+.contact__inner .section-label {
+  margin-bottom: 6px;
+}
+
 .contact__title {
   font-size: clamp(17px, 2.2vw, 22px);
   font-weight: 500;
   color: var(--text-sub);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 1.5;
 }
 
@@ -1333,7 +1337,7 @@ ul, ol { list-style: none; }
   color: var(--text-sub);
   font-size: 15px;
   line-height: 1.9;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .contact__cards {
