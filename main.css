@@ -1333,7 +1333,7 @@ ul, ol { list-style: none; }
   color: var(--text-sub);
   font-size: 15px;
   line-height: 1.9;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .contact__cards {
@@ -1341,7 +1341,7 @@ ul, ol { list-style: none; }
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   max-width: 640px;
-  margin: 0 auto 56px;
+  margin: 0 auto 40px;
 }
 
 .contact__cards--single {
