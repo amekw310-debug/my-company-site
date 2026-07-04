@@ -1644,6 +1644,11 @@ a.news-item__title:hover { color: var(--primary); }
 }
 .news-detail__back:hover { color: var(--primary); }
 
+.section__detail-link {
+  text-align: center;
+  margin-top: 40px;
+}
+
 /* ============================
    フッター
    ============================ */

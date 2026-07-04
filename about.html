@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#4A4A4A">
-  <title>Instagram開設しました！｜A@Web Works</title>
+  <title>自己紹介｜A@Web Works</title>
+  <meta name="description" content="A@Web Works 制作者・天海のプロフィールです。AIを活用したホームページ制作・SNS運用サポートを行っています。">
   <meta name="robots" content="index, follow">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWDC3SLBV3"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PWDC3SLBV3');</script>
@@ -12,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../main.css?v=51">
+  <link rel="stylesheet" href="main.css?v=51">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -58,20 +59,44 @@
   </nav>
 </header>
 <main id="main">
-  <div class="container">
-    <article class="news-detail">
-      <div class="news-detail__meta">
-        <time class="news-item__date" datetime="2026-06-23">2026.06.23</time>
-        <span class="news-item__tag news-badge-new">NEW</span>
+  <section class="section about" style="padding-top: 140px; min-height: 60vh;">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">About</p>
+        <h1 class="section-title">はじめまして</h1>
       </div>
-      <h1 class="news-detail__title">Instagram開設しました！</h1>
-      <div class="news-detail__body">
-        <p>フォローして頂けると嬉しいです。<br>今後はこちらも定期的に更新していきます🌷<br>宜しくお願い致します🙇‍♀️</p>
-        <p><a href="https://www.instagram.com/a.at.webworks" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline; text-underline-offset: 3px;">https://www.instagram.com/a.at.webworks</a></p>
+      <div class="about__grid">
+        <div class="about__photo-wrap">
+          <div class="about__photo">
+            <img src="./profile.jpg" alt="A@Web Works 制作者 天海 のプロフィール写真" class="about__photo-img" width="640" height="853" loading="lazy" decoding="async">
+          </div>
+          <div class="about__name-card">
+            <p class="about__name">天海</p>
+            <p class="about__title">A@Web Works / Webクリエイター</p>
+          </div>
+        </div>
+        <div class="about__body">
+          <p class="about__greeting">高校時代からWebデザイナーに憧れ、専門学校でプログラミング言語やホームページ制作の仕組みを学んできました。</p>
+          <p>当時は、ゼロからデザインを生み出す力が求められる時代。まわりのセンスの良さに圧倒され、自分には向いていないのではと感じて、一度はWebの仕事をあきらめました。</p>
+          <p>しかし、AIの登場で状況は大きく変わりました。頭の中にあるイメージや雰囲気を、言葉や参考画像をもとに形にできるようになり、以前は表現しきれなかったアイデアも実現できる時代になりました。</p>
+          <p>今だからこそ、本当にやりたかったWeb制作にもう一度挑戦したい。そんな思いから、AIを活用したホームページ制作を始めました。</p>
+          <p>まだAIに抵抗がある方や、信用しきれないと感じる方も少なくありません。だからこそ私は、AIにすべてを任せるのではなく、目的に合わせて適切にコントロールし、その良さを最大限に引き出すパートナーとして活用しています。</p>
+          <p>AIの力を取り入れることで、<strong>低コスト・短納期</strong>でありながら、想いが伝わるホームページ制作を目指します。また、TikTok・InstagramなどSNS運用の実務経験も活かし、公開後の集客や採用活動までサポートいたします。</p>
+          <div class="about__tags">
+            <span class="tag">採用実務経験あり</span>
+            <span class="tag">SNS運用（TikTok・Instagram）</span>
+            <span class="tag">公式LINE構築</span>
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">GitHub公開対応</span>
+            <span class="tag">AI活用制作</span>
+          </div>
+        </div>
       </div>
-      <a href="/news.html" class="news-detail__back">← お知らせ一覧へ</a>
-    </article>
-  </div>
+      <div style="text-align:center; margin-top:48px;">
+        <a href="/" style="font-size:13px; color:#aaa; text-decoration:none;">← トップページへ戻る</a>
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="footer">
   <div class="container footer__inner">
@@ -105,8 +130,6 @@
   const pt=document.getElementById('page-top');
   window.addEventListener('scroll',()=>pt.classList.toggle('visible',window.scrollY>400));
   pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-  const t=document.querySelector('time'),b=document.querySelector('.news-badge-new');
-  if(t&&b&&(Date.now()-new Date(t.getAttribute('datetime')))/86400000>7)b.style.display='none';
 </script>
 </body>
 </html>
