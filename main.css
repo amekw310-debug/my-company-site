@@ -237,24 +237,27 @@ ul, ol { list-style: none; }
 
 
 .section-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .14em;
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(36px, 5.5vw, 52px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--primary);
-  background: var(--primary-light);
-  padding: 5px 18px;
-  border-radius: 100px;
-  margin-bottom: 14px;
+  color: var(--text);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  margin-bottom: 10px;
+  line-height: 1.1;
 }
 
 .section-title {
-  font-size: clamp(26px, 4vw, 36px);
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.35;
-  margin-bottom: 16px;
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: 500;
+  color: var(--text-sub);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  letter-spacing: .04em;
 }
 
 .section-desc {
@@ -1317,11 +1320,11 @@ ul, ol { list-style: none; }
 }
 
 .contact__title {
-  font-size: clamp(24px, 3.5vw, 36px);
-  font-weight: 700;
-  color: var(--text);
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: 500;
+  color: var(--text-sub);
   margin-bottom: 20px;
-  line-height: 1.35;
+  line-height: 1.5;
 }
 
 .contact__desc {
