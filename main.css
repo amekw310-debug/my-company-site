@@ -487,8 +487,8 @@ ul, ol { list-style: none; }
 .nav-mobile a {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 12px 24px;
+  gap: 1px;
+  padding: 7px 24px;
   color: var(--text);
   border-bottom: 1px solid rgba(255,111,143,.15);
   opacity: 0;
