@@ -310,6 +310,11 @@ ul, ol { list-style: none; }
   transform: translateY(-2px);
 }
 
+.btn--sm {
+  padding: 8px 22px;
+  font-size: 13px;
+}
+
 /* タグ */
 .tag {
   display: inline-block;
