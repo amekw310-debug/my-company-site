@@ -1364,6 +1364,25 @@ ul, ol { list-style: none; }
   margin-bottom: 16px;
 }
 
+.contact__simple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+.contact__simple-text {
+  font-size: 16px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+.contact__simple-note {
+  font-size: 13px;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
 .contact__cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
