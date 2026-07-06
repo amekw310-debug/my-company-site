@@ -30,7 +30,7 @@
 
   --container: 1100px;
 
-  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
 }
 
 html {
@@ -1055,8 +1055,8 @@ ul, ol { list-style: none; }
 }
 
 
-.work-card__img--cafe { background: url('./images/thumb-korea-cafe.jpg') center top / cover no-repeat; }
-.work-card__img--corp { background: url('./images/thumb-it-corporate.jpg') center top / cover no-repeat; }
+.work-card__img--cafe { background: image-set(url('./images/thumb-korea-cafe.webp') type('image/webp'), url('./images/thumb-korea-cafe.jpg') type('image/jpeg')) center top / cover no-repeat; }
+.work-card__img--corp { background: image-set(url('./images/thumb-it-corporate.webp') type('image/webp'), url('./images/thumb-it-corporate.jpg') type('image/jpeg')) center top / cover no-repeat; }
 
 .work-card__link {
   display: inline-block;
