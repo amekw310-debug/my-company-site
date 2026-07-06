@@ -635,6 +635,7 @@ ul, ol { list-style: none; }
   line-height: 1.55;
   letter-spacing: .01em;
   margin-bottom: 24px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.10);
 }
 .hero__accent {
   color: var(--primary);
