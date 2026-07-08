@@ -620,6 +620,11 @@ table {
 }
 
 .doctor__photo img {
+  width: 100%;
+  /* 横長写真でも人物中心の縦構図にトリミングして表示する */
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 30% center;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
