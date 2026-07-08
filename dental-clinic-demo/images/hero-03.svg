@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="レントゲンを確認する先生のイラスト">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f9fd"/><stop offset="1" stop-color="#e3f0f9"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="690" cy="480" r="110" fill="#eaf3fa" opacity="0.8"/>
+  <g fill="none" stroke="#1e4e79" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="250" cy="300" r="75"/>
+    <path d="M155 490q95-95 190 0"/>
+    <path d="M340 320l70-40"/>
+    <rect x="420" y="150" width="240" height="180" rx="16"/>
+  </g>
+  <g fill="none" stroke="#8fbfe0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M540 190c-26 0-42 18-42 40 0 15 6 24 9 35s3 34 13 42c6 4.6 13 1.4 14-6 1-8 1.5-21 6-21s5 13 6 21c1 7.4 8 10.6 14 6 10-8 10-31 13-42s9-20 9-35c0-22-16-40-42-40z"/>
+    <path d="M450 260h30M620 260h20" opacity="0.7"/>
+  </g>
+</svg>

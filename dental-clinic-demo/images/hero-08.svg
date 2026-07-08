@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="手鏡で歯を確認する患者のイラスト">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eaf3fa"/><stop offset="1" stop-color="#dcebf7"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="140" cy="140" r="100" fill="#f4f9fd" opacity="0.9"/>
+  <g fill="none" stroke="#1e4e79" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="300" cy="270" r="85"/>
+    <path d="M190 470q110-100 220 0"/>
+    <path d="M270 305q30 24 60 0" stroke="#8fbfe0"/>
+    <circle cx="560" cy="250" r="70"/>
+    <path d="M560 320v90"/>
+  </g>
+  <g fill="none" stroke="#8fbfe0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M560 215c-16 0-26 11-26 25 0 9 3.5 15 5.5 22s2 21 8 26c3.6 2.9 8 .9 8.6-3.7.6-5 .9-13 3.9-13s3.3 8 3.9 13c.6 4.6 5 6.6 8.6 3.7 6-5 6-19 8-26s5.5-13 5.5-22c0-14-10-25-26-25z"/>
+  </g>
+</svg>

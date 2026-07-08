@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="歯のクリーニングのイラスト">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eaf3fa"/><stop offset="1" stop-color="#e3f0f9"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="120" cy="480" r="100" fill="#f4f9fd" opacity="0.9"/>
+  <g fill="none" stroke="#1e4e79" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M400 130c-56 0-92 36-92 82 0 30 11 48 18 70s7 62 24 76c10 8 22 2.4 24-11 2-14 3.2-37 26-37s24 23 26 37c2 13.4 14 19 24 11 17-14 17-54 24-76s18-40 18-70c0-46-36-82-92-82z"/>
+    <path d="M340 190c10-16 26-26 44-28" stroke="#8fbfe0"/>
+  </g>
+  <path d="M560 180l12 28 28 12-28 12-12 28-12-28-28-12 28-12z" fill="#8fbfe0"/>
+  <path d="M230 200l9 21 21 9-21 9-9 21-9-21-21-9 21-9z" fill="#bcd8ec"/>
+  <path d="M580 380l8 18 18 8-18 8-8 18-8-18-18-8 18-8z" fill="#bcd8ec"/>
+</svg>
