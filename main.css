@@ -1136,7 +1136,7 @@ ul, ol { list-style: none; }
 
 .pricing__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   align-items: stretch;
   margin-bottom: 32px;
@@ -1318,6 +1318,54 @@ ul, ol { list-style: none; }
 .pricing__note-special strong {
   color: var(--primary);
   font-weight: 600;
+}
+
+.pricing-card__price-note {
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+
+.pricing-card__price-prefix {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+  margin-right: 2px;
+  align-self: baseline;
+}
+
+.pricing-card__note {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.pricing__campaign {
+  margin-top: 40px;
+  border: 1.5px solid rgba(255,111,143,.35);
+  border-radius: 12px;
+  padding: 24px 28px;
+  background: var(--primary-light);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing__campaign-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 10px;
+  letter-spacing: .03em;
+}
+
+.pricing__campaign-body {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.85;
+  margin: 0;
 }
 
 @media (max-width: 900px) {
