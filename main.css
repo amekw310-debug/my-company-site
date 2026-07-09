@@ -655,7 +655,15 @@ ul, ol { list-style: none; }
   grid-area: cta;
   display: flex;
   align-items: center;
-  gap: 28px;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+}
+.hero__cta-note {
+  flex-basis: 100%;
+  font-size: 12.5px;
+  color: var(--text-sub);
+  letter-spacing: .02em;
+  margin: 0;
 }
 .cta-primary {
   display: inline-block;
@@ -1757,6 +1765,72 @@ a.news-item__title:hover { color: var(--primary); }
   margin-top: 40px;
 }
 
+/* トップ用 料金ミニカード */
+.pricing-mini {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 980px;
+  margin: 44px auto 0;
+}
+.pricing-mini__item {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 26px 14px 22px;
+  text-align: center;
+}
+.pricing-mini__item--featured {
+  border: 1.5px solid var(--primary);
+}
+.pricing-mini__badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  padding: 3px 14px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.pricing-mini__name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.pricing-mini__price {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+.pricing-mini__price span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-sub);
+  margin-top: 3px;
+}
+@media (max-width: 900px) {
+  .pricing-mini {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+  }
+}
+@media (max-width: 480px) {
+  .pricing-mini {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+}
+
 /* ============================
    フッター
    ============================ */
@@ -1895,6 +1969,7 @@ a.news-item__title:hover { color: var(--primary); }
   .hero__visual { order: 2; width: 100%; display: flex; }
   .hero__stats  { order: 3; width: 100%; justify-content: center; gap: 16px; }
   .hero__cta    { order: 4; width: 100%; justify-content: center; }
+  .hero__cta-note { text-align: center; }
   .hero__body   { max-width: 100%; margin-bottom: 0; }
   .hero__devices { max-width: 300px; margin: 0 auto; }
   .about__grid {
