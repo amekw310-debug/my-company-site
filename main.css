@@ -2002,7 +2002,10 @@ a.news-item__title:hover { color: var(--primary); }
     row-gap: 20px;
   }
   .hero__title {
-    font-size: clamp(28px, 2.9vw, 40px);
+    font-size: clamp(28px, 2.9vw, 36px);
+  }
+  .hero__title-lead {
+    white-space: nowrap;
   }
   .hero__devices {
     transform: scale(1.22);
