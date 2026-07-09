@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#4A4A4A">
-  <title>A@Web Works｜ホームページ制作・採用ページ制作・SNS運用</title>
-  <meta name="description" content="AIを活用したホームページ制作・採用ページ制作・SNS運用を行っています。最短1週間で公開可能。初めての方でも安心してご相談いただけます。">
+  <title>A@Web Works｜工務店・住宅会社専門のWeb制作・SNS運用</title>
+  <meta name="description" content="工務店・住宅会社専門のWeb制作・SNS運用。施工事例が伝わるホームページ制作から継続的なSNS運用まで、集客をワンストップでサポートします。">
   <meta name="robots" content="index, follow">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWDC3SLBV3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PWDC3SLBV3');
+  </script>
 
   <!-- ===== Google Search Console 所有権確認タグ（ここに貼り付け） ===== -->
   <!-- <meta name="google-site-verification" content="ここにcontent値を入れてください"> -->
@@ -16,8 +25,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="A@Web Works｜ホームページ制作・採用ページ制作・SNS運用">
-  <meta property="og:description" content="AIを活用したホームページ制作・採用ページ制作・SNS運用を行っています。最短1週間で公開可能。初めての方でも安心してご相談いただけます。">
+  <meta property="og:title" content="A@Web Works｜工務店・住宅会社専門のWeb制作・SNS運用">
+  <meta property="og:description" content="工務店・住宅会社専門のWeb制作・SNS運用。施工事例が伝わるホームページ制作から継続的なSNS運用まで、集客をワンストップでサポートします。">
   <meta property="og:url" content="https://a-webworks.jp/">
   <meta property="og:image" content="https://a-webworks.jp/images/thumb-korea-cafe.jpg">
   <meta property="og:image:width" content="1280">
@@ -27,14 +36,15 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="A@Web Works｜ホームページ制作・採用ページ制作・SNS運用">
-  <meta name="twitter:description" content="AIを活用したホームページ制作・採用ページ制作・SNS運用を行っています。最短1週間で公開可能。初めての方でも安心してご相談いただけます。">
+  <meta name="twitter:title" content="A@Web Works｜工務店・住宅会社専門のWeb制作・SNS運用">
+  <meta name="twitter:description" content="工務店・住宅会社専門のWeb制作・SNS運用。施工事例が伝わるホームページ制作から継続的なSNS運用まで、集客をワンストップでサポートします。">
   <meta name="twitter:image" content="https://a-webworks.jp/images/thumb-korea-cafe.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=37">
+  <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css?v=71">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -80,7 +90,7 @@
   </svg>
   <div class="splash__text">
     <p class="splash__name">A@Web Works</p>
-    <p class="splash__sub">Web Design / AI / SNS</p>
+    <p class="splash__sub">工務店専門 Web制作 / SNS運用 / 業務効率化</p>
   </div>
   <div class="splash__bar"></div>
 </div>
@@ -88,13 +98,13 @@
 (function(){
   var s=document.getElementById('splash');
   if(!s)return;
-  /* ページ読み込みごとに確実に表示（sessionStorage チェックなし） */
+  if(sessionStorage.getItem('splashShown')){s.remove();return;}
+  sessionStorage.setItem('splashShown','1');
   document.documentElement.style.setProperty('overflow','hidden');
   setTimeout(function(){
     s.classList.add('splash--out');
     setTimeout(function(){
       s.remove();
-      /* インライン overflow を除去し、CSS の overflow-x:hidden を復元 */
       document.documentElement.style.removeProperty('overflow');
     },800);
   },2800);
@@ -114,20 +124,20 @@
 <!-- ========== ヘッダー ========== -->
 <header class="header" id="top">
   <div class="container header__inner">
-    <a href="#top" class="logo">
+    <a href="/" class="logo">
       <svg class="logo__img" viewBox="0 0 90 100" aria-hidden="true"><use href="#logo-mark-shape"/></svg>
       <span class="logo__name">
         <span class="logo__text">A@Web Works</span>
-        <span class="logo__sub">Web Design / AI / SNS</span>
+        <span class="logo__sub">工務店専門 Web制作 / SNS運用 / 業務効率化</span>
       </span>
     </a>
     <nav class="nav" id="nav" aria-label="メインナビゲーション">
-      <a href="#about" class="nav__link">自己紹介</a>
-      <a href="#reasons" class="nav__link">こだわり</a>
-      <a href="#services" class="nav__link">サービス</a>
-      <a href="#pricing" class="nav__link">料金</a>
-      <a href="#works" class="nav__link">実績</a>
-      <a href="#contact" class="nav__link nav__link--cta">お問い合わせ</a>
+      <a href="/about.html" class="nav__link"><span class="nav__en">ABOUT</span><span class="nav__ja">自己紹介</span></a>
+      <a href="/values.html" class="nav__link"><span class="nav__en">CONCEPT</span><span class="nav__ja">こだわり</span></a>
+      <a href="/services.html" class="nav__link"><span class="nav__en">SERVICE</span><span class="nav__ja">サービス</span></a>
+      <a href="/pricing.html" class="nav__link"><span class="nav__en">PRICE</span><span class="nav__ja">料金</span></a>
+      <a href="/works.html" class="nav__link"><span class="nav__en">WORKS</span><span class="nav__ja">制作実績</span></a>
+      <a href="#contact" class="nav__link nav__link--cta"><span class="nav__en">CONTACT</span><span class="nav__ja">お問い合わせ</span></a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-mobile">
       <span></span>
@@ -136,12 +146,14 @@
     </button>
   </div>
   <nav class="nav-mobile" id="nav-mobile" aria-label="モバイルナビゲーション">
-    <a href="#about">自己紹介</a>
-    <a href="#reasons">こだわり</a>
-    <a href="#services">サービス</a>
-    <a href="#pricing">料金</a>
-    <a href="#works">実績</a>
-    <a href="#contact">お問い合わせ</a>
+    <a href="/"><span class="nmenu__en">TOP</span><span class="nmenu__ja">トップ</span></a>
+    <a href="about.html"><span class="nmenu__en">ABOUT</span><span class="nmenu__ja">自己紹介</span></a>
+    <a href="values.html"><span class="nmenu__en">CONCEPT</span><span class="nmenu__ja">こだわり</span></a>
+    <a href="services.html"><span class="nmenu__en">SERVICE</span><span class="nmenu__ja">サービス</span></a>
+    <a href="pricing.html"><span class="nmenu__en">PRICING</span><span class="nmenu__ja">料金</span></a>
+    <a href="/works.html"><span class="nmenu__en">WORKS</span><span class="nmenu__ja">実績</span></a>
+    <a href="news.html"><span class="nmenu__en">NEWS</span><span class="nmenu__ja">お知らせ</span></a>
+    <a href="#contact"><span class="nmenu__en">CONTACT</span><span class="nmenu__ja">お問い合わせ</span></a>
   </nav>
 </header>
 
@@ -164,43 +176,55 @@
       <div class="hero__copy">
         <p class="hero__eyebrow">
           <span class="hero__eyebrow-dot"></span>
-          Web Design ＆ AI Production
+          工務店・住宅会社 専門
         </p>
         <h1 class="hero__title">
-          ホームページで、<br>
-          会社の魅力を<br>
-          <span class="hero__accent">もっと伝える。</span>
+          <span class="hero__title-lead">工務店・住宅会社専門。</span><br>
+          <span class="hero__accent">"集客できるHP"と<br>"続くSNS運用"を</span><br>
+          ワンストップで。
         </h1>
         <p class="hero__body">
-          最短1週間で公開。<br>
-          AIを活用しながら、一社一社に合わせて丁寧に制作します。
+          施工事例が伝わらない。問い合わせが来ない。<br>
+          SNSに手が回らない。<br>
+          そんな工務店の「伝える」を、<br>
+          Web制作からSNS運用まで丸ごとサポートします。
         </p>
       </div>
 
       <!-- デバイスモックアップ -->
       <div class="hero__visual">
-        <img class="hero__devices"
-             src="images/hero-visual.png"
-             alt="PC・スマホ表示イメージ"
-             loading="eager">
+        <picture>
+          <source srcset="images/hero-visual.webp" type="image/webp">
+          <img class="hero__devices"
+               src="images/hero-visual.png"
+               alt="PC・スマホ表示イメージ"
+               loading="eager"
+               fetchpriority="high">
+        </picture>
       </div>
 
       <!-- 3つの特徴 -->
       <div class="hero__stats">
         <div class="hstat">
-          <span class="hstat__icon">⚡</span>
+          <span class="hstat__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </span>
           <span class="hstat__val">最短１週間</span>
           <span class="hstat__key">スピード納品</span>
         </div>
         <span class="hstat__sep"></span>
         <div class="hstat">
-          <span class="hstat__icon">📱</span>
+          <span class="hstat__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </span>
           <span class="hstat__val">スマホ対応</span>
           <span class="hstat__key">PC・スマホ両対応</span>
         </div>
         <span class="hstat__sep"></span>
         <div class="hstat">
-          <span class="hstat__icon">✨</span>
+          <span class="hstat__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-4 8H9c-1-2-4-4-4-8a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/><line x1="10" y1="17" x2="14" y2="17"/></svg>
+          </span>
           <span class="hstat__val">AI 活用</span>
           <span class="hstat__key">高品質デザイン</span>
         </div>
@@ -208,13 +232,7 @@
 
       <!-- CTAボタン -->
       <div class="hero__cta">
-        <a href="#contact" class="cta-primary">無料で相談する</a>
-        <a href="#works" class="cta-ghost">
-          制作実績を見る
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqxCRDyFUUAFV_-FTJHDsc8H8MNnTvSnKbc-D-kbFqGs4n5Q/viewform" target="_blank" rel="noopener noreferrer" class="cta-primary">無料で相談する</a>
       </div>
 
     </div>
@@ -230,9 +248,9 @@
   <section class="section works" id="works">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Works</p>
-        <h2 class="section-title">制作実績</h2>
-        <p class="section-desc">ポートフォリオとして実際に制作したサンプルサイトです。</p>
+        <p class="section-label">WORKS</p>
+        <h2 class="section-title">制作実績。</h2>
+        <p class="section-desc">実際に制作したホームページやサンプルサイトをご紹介します。</p>
       </div>
       <div class="works__grid">
         <article class="work-card">
@@ -257,54 +275,81 @@
             <a href="https://a-webworks.jp/website-practice/it-corporate/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
           </div>
         </article>
+        <article class="work-card">
+          <div class="work-card__img work-card__img--komuten">
+            <div class="work-card__overlay"><span>工務店 / ホームページ</span></div>
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__tag">ホームページ制作</span>
+            <h3 class="work-card__title">工務店「ひだまり工務店」公式サイト</h3>
+            <p class="work-card__desc">地域密着の工務店向け公式サイトを制作。木の温もりを感じるデザインで、施工事例・会社紹介・お問い合わせを一体化しました。</p>
+            <a href="https://amekw310-debug.github.io/-komuten-demo-site/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img work-card__img--dental">
+            <div class="work-card__overlay"><span>歯科クリニック / ホームページ</span></div>
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__tag">ホームページ制作</span>
+            <h3 class="work-card__title">歯科クリニック 公式サイト</h3>
+            <p class="work-card__desc">清潔感のある白×ブルーのデザインで、診療案内・WEB予約導線・スタッフ紹介を一体化した歯科クリニック向け公式サイトを制作しました。</p>
+            <a href="https://amekw310-debug.github.io/dental-clinic-demo/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ========== ③ 自己紹介 ========== -->
+  <!-- ========== ③ 料金プラン ========== -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">PRICING</p>
+        <h2 class="section-title">料金について。</h2>
+        <p class="section-desc">ご予算やご要望に合わせた料金プランをご案内しています。</p>
+      </div>
+      <div class="section__detail-link">
+        <a href="pricing.html" class="cta-primary">詳細をみる</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ④ サービス内容 ========== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">SERVICES</p>
+        <h2 class="section-title">できること。</h2>
+        <p class="section-desc">ホームページ制作を中心に、対応できるサービスをご紹介します。</p>
+      </div>
+      <div class="section__detail-link">
+        <a href="services.html" class="cta-primary">詳細をみる</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ⑤ 自己紹介 ========== -->
   <section class="section about" id="about">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">About</p>
-        <h2 class="section-title">はじめまして</h2>
+        <p class="section-label">ABOUT ME</p>
+        <h2 class="section-title">私について。</h2>
+        <p class="section-desc">ホームページ制作をしている天海のプロフィールや想いをご紹介します。</p>
       </div>
-      <div class="about__grid">
-        <div class="about__photo-wrap">
-          <div class="about__photo">
-            <img src="./profile.jpg" alt="A@Web Works 制作者 天海 のプロフィール写真" class="about__photo-img" width="640" height="853" loading="lazy" decoding="async">
-          </div>
-          <div class="about__name-card">
-            <p class="about__name">天海</p>
-            <p class="about__title">A@Web Works / Webクリエイター</p>
-          </div>
-        </div>
-        <div class="about__body">
-          <p class="about__greeting">高校時代からWebデザイナーに憧れ、専門学校でプログラミング言語やホームページ制作の仕組みを学んできました。</p>
-          <p>当時は、ゼロからデザインを生み出す力が求められる時代。まわりのセンスの良さに圧倒され、自分には向いていないのではと感じて、一度はWebの仕事をあきらめました。</p>
-          <p>しかし、AIの登場で状況は大きく変わりました。頭の中にあるイメージや雰囲気を、言葉や参考画像をもとに形にできるようになり、以前は表現しきれなかったアイデアも実現できる時代になりました。</p>
-          <p>今だからこそ、本当にやりたかったWeb制作にもう一度挑戦したい。そんな思いから、AIを活用したホームページ制作を始めました。</p>
-          <p>まだAIに抵抗がある方や、信用しきれないと感じる方も少なくありません。だからこそ私は、AIにすべてを任せるのではなく、目的に合わせて適切にコントロールし、その良さを最大限に引き出すパートナーとして活用しています。</p>
-          <p>AIの力を取り入れることで、<strong>低コスト・短納期</strong>でありながら、想いが伝わるホームページ制作を目指します。また、TikTok・InstagramなどSNS運用の実務経験も活かし、公開後の集客や採用活動までサポートいたします。</p>
-          <div class="about__tags">
-            <span class="tag">採用実務経験あり</span>
-            <span class="tag">SNS運用（TikTok・Instagram）</span>
-            <span class="tag">公式LINE構築</span>
-            <span class="tag">HTML / CSS</span>
-            <span class="tag">GitHub公開対応</span>
-            <span class="tag">AI活用制作</span>
-          </div>
-        </div>
+      <div class="section__detail-link">
+        <a href="about.html" class="cta-primary">詳細をみる</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== ④ こだわり ========== -->
+  <!-- ========== ⑥ こだわり ========== -->
   <section class="section reasons" id="reasons">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">My Commitment</p>
-        <h2 class="section-title">大切にしていること</h2>
-        <p class="section-desc">お任せいただいたら、こんなことを大切にしながらサポートします。</p>
+        <p class="section-label">MY VALUES</p>
+        <h2 class="section-title">大切にしていること。</h2>
+        <p class="section-desc">制作するうえで大切にしている考え方や、お客様への想いをご紹介します。</p>
       </div>
       <div class="reasons__grid">
 
@@ -372,180 +417,9 @@
             </svg>
           </div>
           <h3 class="reason-card__title">気軽に相談できる距離感</h3>
-          <p class="reason-card__desc">まずはお問い合わせフォームからお気軽にご相談ください。デザインイメージや参考サイトは、メールやチャットで画像・スクリーンショットを共有しながら進められます。初めてホームページを作る方でも安心してご相談ください。</p>
+          <p class="reason-card__desc">まずはお問い合わせフォームからお気軽にご相談ください。デザインイメージや参考サイトは、画像・スクリーンショットを共有しながら進められます。</p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ⑤ サービス内容 ========== -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Services</p>
-        <h2 class="section-title">サービス内容</h2>
-        <p class="section-desc">ご要望に合わせて柔軟にご提案します。まずはお気軽にご相談ください。</p>
-      </div>
-      <div class="services__grid">
-
-        <div class="service-card service-card--featured">
-          <div class="service-card__badge">おすすめ</div>
-          <h3 class="service-card__title">ホームページ制作</h3>
-          <p class="service-card__desc">会社・店舗・個人事業主向けのシンプルで見やすいホームページをAIを活用してスピーディーに制作します。</p>
-          <ul class="service-card__list">
-            <li>トップページ〜会社情報・アクセス</li>
-            <li>スマホ完全対応（レスポンシブ）</li>
-            <li>お問い合わせフォーム設置</li>
-            <li>GitHub・サーバーでの公開対応</li>
-          </ul>
-          <p class="service-card__period">目安：<strong>1〜2週間</strong></p>
-        </div>
-
-        <div class="service-card">
-          <h3 class="service-card__title">採用ページ制作</h3>
-          <p class="service-card__desc">採用に特化したページを制作。「応募したい」と思わせるデザインと、Googleフォームを使った応募導線を構築します。</p>
-          <ul class="service-card__list">
-            <li>仕事内容・職場環境の魅力的な見せ方</li>
-            <li>Googleフォームで応募導線構築</li>
-            <li>公式LINEへの誘導設計</li>
-            <li>TikTok・SNSとの連携提案</li>
-          </ul>
-          <p class="service-card__period">目安：<strong>1週間〜</strong></p>
-        </div>
-
-        <div class="service-card">
-          <h3 class="service-card__title">公開後サポート</h3>
-          <p class="service-card__desc">ホームページ公開後も安心して運用を始められるよう、基本的な使い方やSNSとの連携、お問い合わせ導線の確認をサポートします。</p>
-          <ul class="service-card__list">
-            <li>お問い合わせ導線の確認</li>
-            <li>SNSとの連携</li>
-            <li>更新方法のご案内</li>
-            <li>初期サポート</li>
-          </ul>
-          <p class="service-card__period">目安：<strong>ご相談次第</strong></p>
-        </div>
-
-        <div class="service-card">
-          <h3 class="service-card__title">運用・更新サポート</h3>
-          <p class="service-card__desc">ホームページ公開後の更新や改善、アクセス状況の確認など、成果につながる運用を継続的にサポートします。</p>
-          <ul class="service-card__list">
-            <li>月次更新・修正対応</li>
-            <li>ブログ・お知らせ更新</li>
-            <li>アクセス解析レポート</li>
-            <li>改善提案・ページ追加</li>
-          </ul>
-          <p class="service-card__period">目安：<strong>月額サポートプラン</strong></p>
-        </div>
-
-      </div>
-
-      <div class="services__note">
-        <p>料金は内容・ページ数によって異なります。まずはお気軽にご相談ください。お見積もりは無料です。</p>
-        <a href="#contact" class="btn btn--primary">無料で相談・お見積もり</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ⑥ 料金プラン ========== -->
-  <section class="section pricing" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Pricing</p>
-        <h2 class="section-title">料金プラン</h2>
-        <p class="section-desc">明瞭でシンプルな料金体系です。ページ数・内容によって変わるため、まずはお気軽にご相談ください。</p>
-      </div>
-      <div class="pricing__grid">
-
-        <div class="pricing-card">
-          <div class="pricing-card__head">
-            <p class="pricing-card__name">ライトプラン</p>
-            <p class="pricing-card__tagline">1ページ完結</p>
-            <div class="pricing-card__price">
-              <span class="pricing-card__yen">¥</span>
-              <span class="pricing-card__amount">25,000</span>
-              <span class="pricing-card__from">〜</span>
-            </div>
-          </div>
-          <div class="pricing-card__body">
-            <p class="pricing-card__period">目安：<strong>約5〜7日</strong></p>
-            <ul class="pricing-card__list">
-              <li>1ページホームページ</li>
-              <li>スマホ対応</li>
-              <li>お問い合わせ導線設置</li>
-              <li>SNSリンク設置</li>
-              <li>公開まで対応</li>
-              <li>修正2回まで無料</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="pricing-card pricing-card--featured">
-          <div class="pricing-card__head">
-            <span class="pricing-card__badge">おすすめ</span>
-            <p class="pricing-card__name">スタンダードプラン</p>
-            <p class="pricing-card__tagline">3〜5ページ構成</p>
-            <div class="pricing-card__price">
-              <span class="pricing-card__yen">¥</span>
-              <span class="pricing-card__amount">50,000</span>
-              <span class="pricing-card__from">〜</span>
-            </div>
-          </div>
-          <div class="pricing-card__body">
-            <p class="pricing-card__period">目安：<strong>約1〜2週間</strong></p>
-            <ul class="pricing-card__list">
-              <li>トップ / 会社情報 / サービス 他</li>
-              <li>スマホ対応</li>
-              <li>お問い合わせフォーム設置</li>
-              <li>ホームページ公開まで対応</li>
-              <li>修正2回まで無料</li>
-              <li>公開後1ヶ月サポート付き</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="pricing-card">
-          <div class="pricing-card__head">
-            <p class="pricing-card__name">採用ページプラン</p>
-            <p class="pricing-card__tagline">採用特化デザイン</p>
-            <div class="pricing-card__price">
-              <span class="pricing-card__yen">¥</span>
-              <span class="pricing-card__amount">60,000</span>
-              <span class="pricing-card__from">〜</span>
-            </div>
-          </div>
-          <div class="pricing-card__body">
-            <p class="pricing-card__period">目安：<strong>約2週間</strong></p>
-            <ul class="pricing-card__list">
-              <li>採用ページ制作</li>
-              <li>Googleフォーム応募導線構築</li>
-              <li>公式LINE導線設計</li>
-              <li>TikTok・SNS連携提案</li>
-              <li>スマホ対応</li>
-              <li>修正2回まで無料</li>
-              <li>公開後1ヶ月サポート付き</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-      <div class="pricing__note">
-        <div class="pricing__note-basic">
-          <p>※サーバー・ドメイン契約費は別途必要です。</p>
-          <p>※ご相談・お見積りは無料です。</p>
-        </div>
-        <div class="pricing__note-special">
-          <span class="pricing__note-special-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6F8F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 12 20 22 4 22 4 12"/>
-              <rect x="2" y="7" width="20" height="5"/>
-              <line x1="12" y1="22" x2="12" y2="7"/>
-              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-            </svg>
-          </span>
-          <p>制作実績として掲載にご協力いただける場合は、<strong>特別価格</strong>でご案内しております。</p>
-        </div>
       </div>
     </div>
   </section>
@@ -554,16 +428,14 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact__inner">
-        <p class="section-label">Contact</p>
-        <h2 class="contact__title">まずは気軽にご相談ください</h2>
-        <p class="contact__desc">「ホームページが古い」「採用に困っている」「何から始めればいいかわからない」——そんなお悩みから歓迎です。無理な営業は一切しません。</p>
+        <p class="section-label">CONTACT</p>
+        <h2 class="contact__title">まずはご相談ください。</h2>
+        <p class="contact__desc">ホームページ制作やご相談など、お気軽にお問い合わせください。</p>
 
-        <div class="contact__cards contact__cards--single">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqxCRDyFUUAFV_-FTJHDsc8H8MNnTvSnKbc-D-kbFqGs4n5Q/viewform" target="_blank" rel="noopener noreferrer" class="contact-card">
-            <h3 class="contact-card__title">フォームで相談する</h3>
-            <p class="contact-card__desc">Googleフォームからお問い合わせいただけます。24時間受付中。</p>
-            <span class="contact-card__btn">フォームへ</span>
-          </a>
+        <div class="contact__simple">
+          <p class="contact__simple-text">Googleフォームからお問い合わせ頂けます。</p>
+          <p class="contact__simple-note">24時間受付中</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfqxCRDyFUUAFV_-FTJHDsc8H8MNnTvSnKbc-D-kbFqGs4n5Q/viewform" target="_blank" rel="noopener noreferrer" class="btn btn--primary">フォームへ</a>
         </div>
 
         <div class="contact__flow">
@@ -663,7 +535,7 @@
       <a href="#reasons">こだわり</a>
       <a href="#services">サービス</a>
       <a href="#pricing">料金</a>
-      <a href="#works">実績</a>
+      <a href="/works.html">実績</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
     <div class="footer__social">
@@ -673,6 +545,9 @@
           <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
           <circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/>
         </svg>
+      </a>
+      <a href="https://x.com/aweb0310" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
     </div>
     <p class="footer__copy">© 2026 A@Web Works. All rights reserved.</p>
