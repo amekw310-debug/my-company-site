@@ -151,6 +151,10 @@
   const pt=document.getElementById('page-top');
   window.addEventListener('scroll',()=>pt.classList.toggle('visible',window.scrollY>400));
   pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});
+  },{threshold:0.12});
+  document.querySelectorAll('.work-card').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
