@@ -1,4 +1,27 @@
 /* ===========================
+   デモ通知バー
+=========================== */
+.demo-notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  background: #0d2340;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-align: center;
+  line-height: 36px;
+  height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 16px;
+}
+
+/* ===========================
    ローディング
 =========================== */
 .loader {
@@ -240,7 +263,7 @@ ul { list-style: none; }
 =========================== */
 .header {
   position: fixed;
-  top: 0;
+  top: 36px;
   left: 0;
   width: 100%;
   z-index: 1000;
@@ -397,7 +420,7 @@ ul { list-style: none; }
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: 80px;
+  padding-top: 116px;
   padding-bottom: 80px;
 }
 
@@ -1180,7 +1203,7 @@ ul { list-style: none; }
 =========================== */
 .page-hero {
   background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
-  padding: 140px 0 64px;
+  padding: 176px 0 64px;
   position: relative;
   overflow: hidden;
 }
@@ -1927,7 +1950,7 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-  .page-hero { padding: 120px 0 48px; }
+  .page-hero { padding: 156px 0 48px; }
   .works-grid { grid-template-columns: 1fr; }
   .tech-list { grid-template-columns: repeat(2, 1fr); }
   .flow-steps { grid-template-columns: repeat(3, 1fr); gap: 24px; }
