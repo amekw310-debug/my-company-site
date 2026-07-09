@@ -62,7 +62,7 @@ img { max-width: 100%; display: block; }
 
 /* ── Layout ─────────────────────────── */
 .inner  { max-width: var(--w); margin: 0 auto; padding: 0 28px; }
-.section { padding: 104px 0; }
+.section { padding: 104px 0; scroll-margin-top: 102px; }
 
 .section--plum { background: var(--bg-warm); color: var(--text); }
 
@@ -211,9 +211,23 @@ img { max-width: 100%; display: block; }
 
 .section-desc { margin-top: 12px; font-size: 11.5px; color: rgba(255,255,255,.36); letter-spacing: .04em; }
 
+/* ── Demo Notice ─────────────────────── */
+.demo-notice {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background: var(--strawberry-pale);
+  border-bottom: 1px solid var(--spring-pink);
+  color: var(--text-mid);
+  font-family: var(--font-head);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-align: center;
+  padding: 7px 16px;
+  z-index: 1001;
+}
+
 /* ── Header ──────────────────────────── */
 .header {
-  position: fixed; top: 0; left: 0; width: 100%;
+  position: fixed; top: 34px; left: 0; width: 100%;
   z-index: 100;
   transition: background var(--ease), box-shadow var(--ease);
 }
