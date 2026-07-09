@@ -1995,17 +1995,20 @@ a.news-item__title:hover { color: var(--primary); }
   }
 }
 
-/* PC: ヒーロー左コンテンツを右へオフセット（ロゴと「自己紹介」の中間付近に合わせる） */
+/* PC: ヒーローをロゴの左端ラインまで広げて大きく見せる */
 @media (min-width: 901px) {
   .hero__inner {
-    padding-left: clamp(80px, 15%, 200px);
     row-gap: 20px;
   }
   .hero__title {
-    font-size: clamp(28px, 2.9vw, 36px);
+    font-size: clamp(30px, 3.3vw, 44px);
   }
   .hero__title-lead {
     white-space: nowrap;
+  }
+  .hero__body {
+    font-size: 16px;
+    max-width: 460px;
   }
   .hero__devices {
     transform: scale(1.22);
