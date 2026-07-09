@@ -2000,6 +2000,9 @@ a.news-item__title:hover { color: var(--primary); }
     padding-left: clamp(80px, 15%, 200px);
     row-gap: 20px;
   }
+  .hero__title {
+    font-size: clamp(28px, 2.9vw, 40px);
+  }
   .hero__devices {
     transform: scale(1.22);
     transform-origin: left center;
