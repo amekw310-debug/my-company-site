@@ -430,6 +430,12 @@ ul, ol { list-style: none; }
 .nav__link:hover .nav__ja { color: var(--primary); }
 .nav__link:hover .nav__en { opacity: 1; }
 
+/* PC幅が狭いときはナビの余白を詰めて1行に収める */
+@media (min-width: 901px) and (max-width: 1120px) {
+  .nav { gap: 2px; }
+  .nav__link { padding: 5px 9px; }
+}
+
 .nav__link--cta {
   background: var(--accent);
   padding: 6px 18px;
