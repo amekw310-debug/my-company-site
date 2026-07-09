@@ -2010,6 +2010,10 @@ a.news-item__title:hover { color: var(--primary); }
     font-size: 16px;
     max-width: 460px;
   }
+  /* CTAボタンを本文「SNS運用まで」の真下あたりに配置 */
+  .hero__cta {
+    margin-left: 100px;
+  }
   .hero__devices {
     transform: scale(1.22);
     transform-origin: left center;
