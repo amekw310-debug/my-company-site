@@ -1064,6 +1064,7 @@ ul, ol { list-style: none; }
 .work-card__img--cafe { background: image-set(url('./images/thumb-korea-cafe.webp') type('image/webp'), url('./images/thumb-korea-cafe.jpg') type('image/jpeg')) center top / cover no-repeat; }
 .work-card__img--corp { background: image-set(url('./images/thumb-it-corporate.webp') type('image/webp'), url('./images/thumb-it-corporate.jpg') type('image/jpeg')) center top / cover no-repeat; }
 .work-card__img--komuten { background: image-set(url('./images/thumb-komuten.webp') type('image/webp'), url('./images/thumb-komuten.jpg') type('image/jpeg')) center top / cover no-repeat; }
+.work-card__img--dental  { background: image-set(url('./images/thumb-dental.webp') type('image/webp'), url('./images/thumb-dental.jpg') type('image/jpeg')) center top / cover no-repeat; }
 
 .work-card__link {
   display: inline-block;
