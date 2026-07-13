@@ -454,11 +454,17 @@ ul, ol { list-style: none; }
 .hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 .hamburger span {
   display: block;
@@ -645,6 +651,9 @@ ul, ol { list-style: none; }
 }
 .hero__accent {
   color: var(--primary);
+}
+.hero__title-lead {
+  white-space: nowrap;
 }
 
 .hero__body {
@@ -2027,7 +2036,8 @@ a.news-item__title:hover { color: var(--primary); }
     padding: 100px 0 96px;
   }
   .hero__title {
-    font-size: 30px;
+    /* 1行目「舗装・土木・建設会社専門。」(13文字)が画面幅に収まるサイズに自動調整 */
+    font-size: clamp(20px, 6.8vw, 30px);
   }
   .hero__scroll {
     bottom: 14px;
