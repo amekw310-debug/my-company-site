@@ -1351,6 +1351,30 @@ ul, ol { list-style: none; }
   margin: 4px 0 0;
 }
 
+/* セット割: 単品合計の打ち消し表示 */
+.pricing-card__price-was {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #9E9994;
+  margin: 0 0 2px;
+}
+.pricing-card__price-was s {
+  text-decoration: line-through;
+}
+.pricing-card__off-badge {
+  background: rgba(255,111,143,.12);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: 2px 9px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
 /* 準備中(Coming Soon)カード */
 .pricing-card--soon {
   opacity: .78;
