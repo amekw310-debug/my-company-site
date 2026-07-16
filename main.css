@@ -1019,6 +1019,17 @@ ul, ol { list-style: none; }
   font-weight: 700;
 }
 
+/* 準備中(Coming Soon)サービスカード */
+.service-card--soon {
+  opacity: .78;
+}
+.service-card__badge--soon {
+  background: #9E9994;
+}
+.service-card--soon .service-card__period strong {
+  color: #9E9994;
+}
+
 .service-card__period {
   font-size: 13px;
   color: var(--text-sub);
