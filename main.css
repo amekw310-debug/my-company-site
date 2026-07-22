@@ -1420,6 +1420,43 @@ ul, ol { list-style: none; }
   line-height: 1.7;
 }
 
+/* なぜ今、採用にHPが必要か */
+.why-hp__box {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1.5px solid rgba(255,111,143,.35);
+  border-radius: 20px;
+  background: var(--primary-light);
+  padding: 48px 40px;
+}
+.why-hp__label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+.why-hp__title {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.why-hp__text {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text-sub);
+  margin-bottom: 32px;
+}
+@media (max-width: 640px) {
+  .why-hp__box { padding: 36px 22px; }
+  .why-hp__br { display: none; }
+  .why-hp__text { font-size: 14px; }
+}
+
 .pricing__campaign {
   margin-top: 40px;
   border: 1.5px solid rgba(255,111,143,.35);
