@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-54DCFCLL2R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-54DCFCLL2R');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>お問い合わせ｜長縄工務店</title>
+  <meta name="description" content="長縄工務店（愛知県春日井市）へのお問い合わせページ。舗装・土木工事のご相談・お見積り・採用に関するご質問など、お気軽にご連絡ください。2営業日以内にご返信します。">
+  <meta name="keywords" content="長縄工務店,お問い合わせ,舗装工事相談,土木工事見積もり,春日井市,愛知県,建設会社,採用問い合わせ">
+  <link rel="canonical" href="https://amekw310-debug.github.io/my-company-site/website-practice/naganawa/contact.html">
+  <meta property="og:title" content="お問い合わせ｜長縄工務店">
+  <meta property="og:description" content="長縄工務店（愛知県春日井市）へのお問い合わせページ。舗装・土木工事のご相談・お見積り・採用に関するご質問など、お気軽にご連絡ください。2営業日以内にご返信します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amekw310-debug.github.io/my-company-site/website-practice/naganawa/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7">
+  <style>
+    /* お問い合わせフォーム（自作・サイトデザインに統一） */
+    .contact-form { max-width: 680px; margin: 0 auto; }
+    .contact-form .field { margin-bottom: 24px; }
+    .contact-form label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 8px; color: var(--navy, #17233d); }
+    .contact-form .req,
+    .contact-form .any { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+    .contact-form .req { background: #e11d48; color: #fff; }
+    .contact-form .any { background: #e5e7eb; color: #4b5563; }
+    .contact-form input[type="text"],
+    .contact-form input[type="tel"],
+    .contact-form input[type="email"],
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: inherit;
+      color: #1f2937;
+      background: #fff;
+      box-sizing: border-box;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .contact-form textarea { min-height: 160px; resize: vertical; line-height: 1.7; }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--navy, #17233d);
+      box-shadow: 0 0 0 3px rgba(23,35,61,.12);
+    }
+    .contact-form .submit-row { text-align: center; margin-top: 36px; }
+    .contact-form .privacy { font-size: 13px; color: var(--text-sub, #6b7280); text-align: center; margin-top: 18px; line-height: 1.8; }
+    /* ハニーポット（人間には見えない・bot対策用） */
+    .contact-form .hp-field { position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; }
+    .form-lead { text-align: center; color: var(--text-sub, #6b7280); line-height: 1.9; margin-bottom: 12px; }
+    .form-legend { text-align: center; font-size: 13px; color: var(--text-sub, #6b7280); margin-bottom: 30px; }
+    .form-legend .req { background:#e11d48;color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px; }
+  </style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header" id="top">
+  <div class="inner header-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="長縄工務店 ロゴマーク" class="logo-img">
+      <span class="logo-name">株式会社 長縄工務店</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">TOP</a>
+      <a href="news/index.html">新着情報</a>
+      <a href="business.html">事業内容</a>
+      <a href="works/index.html">施工実績</a>
+      <a href="technology.html">ICT施工・技術力</a>
+      <a href="recruit.html">採用情報</a>
+      <a href="about.html">会社情報</a>
+      <a href="#top" class="nav-active">お問い合わせ</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="index.html">TOP</a>
+    <a href="news/index.html">新着情報</a>
+    <a href="business.html">事業内容</a>
+    <a href="works/index.html">施工実績</a>
+    <a href="technology.html">ICT施工・技術力</a>
+    <a href="recruit.html">採用情報</a>
+    <a href="about.html">会社情報</a>
+    <a href="#top">お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- お問い合わせ -->
+  <section class="section section--gray" id="contact" style="padding-top:160px;">
+    <div class="inner">
+      <div class="section-header">
+        <p class="section-label">Contact Us</p>
+        <h2 class="section-title">お問い合わせ</h2>
+      </div>
+
+      <p class="form-lead">
+        下記フォームにご入力のうえ「確認画面へ進む」を押してください。<br>
+        工事のご相談・お見積り・採用に関するご質問など、お気軽にお問い合わせください。
+      </p>
+      <p class="form-legend"><span class="req">必須</span> は入力必須の項目です。</p>
+
+      <!-- 入力フォーム（送信すると確認画面へ / contact_mail.php phase=check） -->
+      <form class="contact-form" action="contact_mail.php" method="post" novalidate>
+        <input type="hidden" name="phase" value="check">
+        <!-- スパム対策（ハニーポット）：人間には見えない項目。botが入力すると破棄されます。 -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="f-website">ウェブサイト（入力不要）</label>
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="f-name">お名前 <span class="req">必須</span></label>
+          <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="長縄 太郎">
+        </div>
+
+        <div class="field">
+          <label for="f-kana">ふりがな <span class="req">必須</span></label>
+          <input type="text" id="f-kana" name="kana" required placeholder="ながなわ たろう">
+        </div>
+
+        <div class="field">
+          <label for="f-phone">電話番号 <span class="req">必須</span></label>
+          <input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="0568-81-6099">
+        </div>
+
+        <div class="field">
+          <label for="f-email">メールアドレス <span class="req">必須</span></label>
+          <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="example@example.com">
+        </div>
+
+        <div class="field">
+          <label for="f-occupation">会社名・団体名 <span class="any">任意</span></label>
+          <input type="text" id="f-occupation" name="occupation" autocomplete="organization" placeholder="株式会社〇〇">
+        </div>
+
+        <div class="field">
+          <label for="f-education">お問い合わせ種別 <span class="any">任意</span></label>
+          <select id="f-education" name="education">
+            <option value="">選択してください</option>
+            <option value="工事のご相談・お見積り">工事のご相談・お見積り</option>
+            <option value="採用について">採用について</option>
+            <option value="協力会社・お取引について">協力会社・お取引について</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-contents">お問い合わせ内容 <span class="req">必須</span></label>
+          <textarea id="f-contents" name="contents" required placeholder="お問い合わせ内容をご記入ください。"></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-accent btn-lg">確認画面へ進む →</button>
+        </div>
+        <p class="privacy">
+          ご入力いただいた個人情報は、お問い合わせへの対応のみに使用いたします。
+        </p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="inner footer-inner">
+    <div class="footer-sns">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/naganawa_k/" class="footer-sns-link" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.42-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13-.67-.66-1.34-1.07-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-10.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@naganawa_k" class="footer-sns-link" aria-label="TikTok" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+      </a>
+      <!-- LINE -->
+      <a href="https://lin.ee/V9wp3np" class="footer-sns-link" aria-label="LINE" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><mask id="lineMask"><rect width="24" height="24" fill="#fff"/><g stroke="#000" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8.4v4.1h1.9"/><path d="M9.9 8.4v4.1"/><path d="M11.5 12.5V8.4l2.5 4.1V8.4"/><path d="M17.3 8.4h-1.9v4.1h1.9"/><path d="M15.4 10.45h1.6"/></g></mask><path fill="currentColor" mask="url(#lineMask)" d="M12 3C6.75 3 2.5 6.43 2.5 10.66c0 3.79 3.37 6.96 7.92 7.56.31.07.73.2.83.47.09.24.06.61.03.85l-.13.82c-.04.24-.19.94.83.51 1.02-.43 5.5-3.24 7.5-5.54 1.38-1.51 2.04-3.05 2.04-4.76C21.5 6.43 17.25 3 12 3z"/></svg>
+      </a>
+    </div>
+    <p class="footer-address">〒486-0842　愛知県春日井市六軒屋町4丁目63</p>
+    <nav class="footer-nav">
+      <a href="news/index.html">新着情報</a>
+      <a href="business.html">事業内容</a>
+      <a href="works/index.html">施工実績</a>
+      <a href="technology.html">ICT施工・技術力</a>
+      <a href="recruit.html">採用情報</a>
+      <a href="about.html">会社情報</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <p class="footer-copy">© 2026 長縄工務店. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ハンバーガーメニュー
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navMobile.classList.toggle('open');
+  });
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navMobile.classList.remove('open');
+    });
+  });
+
+  // スクロール時ヘッダー背景
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+</script>
+
+<!-- 固定下部バー -->
+<div class="fixed-bottom-bar">
+  <a href="recruit.html#recruit" class="fbb-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span>採用情報</span>
+  </a>
+  <a href="contact.html" class="fbb-item fbb-item--accent">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span>お問い合わせ</span>
+  </a>
+  <a href="tel:0568816099" class="fbb-item">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.48 2 2 0 0 1 3.59 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>0568-81-6099</span>
+  </a>
+</div>
+
+</body>
+</html>
