@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-54DCFCLL2R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-54DCFCLL2R');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="images/logo.png" type="image/png">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <title>長縄工務店｜愛知県春日井市の舗装・土木工事</title>
   <meta name="description" content="長縄工務店は愛知県春日井市を拠点に、舗装工事・土木工事・ICT施工で地域のインフラを支える建設会社です。資本金2,000万円・従業員18名。">
@@ -36,25 +45,28 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho+B1:wght@400;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7">
+  <!-- 施工実績・お知らせ 共通コンポーネント（BEM）。microCMS連携を見据えた枠組み -->
+  <link rel="stylesheet" href="assets/components.css">
 </head>
 <body>
 
 <!-- ローディング画面 -->
 <div id="loading-overlay" class="loading-overlay">
-  <div class="loading-video-bg"></div>
-  <div class="loading-overlay-dark"></div>
-  <div class="loading-content">
-    <img src="images/commitment_to_the_road.png" alt="Commitment to the road." class="loading-catchphrase-img">
-    <p class="loading-label">株式会社 長縄工務店</p>
-  </div>
+  <img src="images/commitment_to_the_road2.png" alt="道へのこだわり Commitment to the road." class="loading-fullbg-img">
+  <div class="loading-content"></div>
   <div class="loading-bar-wrap">
     <div class="loading-bar-inner"></div>
   </div>
 </div>
 
-<!-- ヘッダー -->
+<!-- ============================================================
+     共通ヘッダー START
+     ※全ページ共通。編集時は partials/header.html を「正」とし、
+       全ページの同ブロックへ反映してください（共通化の集約先）。
+       トップ直下のためリンクに ../ は付けません。
+     ============================================================ -->
 <header class="header" id="top">
   <div class="inner header-inner">
     <a href="index.html" class="logo">
@@ -65,6 +77,7 @@
       <a href="index.html" class="nav-active">TOP</a>
       <a href="news/index.html">新着情報</a>
       <a href="business.html">事業内容</a>
+      <a href="works/index.html">施工実績</a>
       <a href="technology.html">ICT施工・技術力</a>
       <a href="recruit.html">採用情報</a>
       <a href="about.html">会社情報</a>
@@ -78,12 +91,14 @@
     <a href="#top">TOP</a>
     <a href="news/index.html">新着情報</a>
     <a href="business.html">事業内容</a>
+    <a href="works/index.html">施工実績</a>
     <a href="technology.html">ICT施工・技術力</a>
     <a href="recruit.html">採用情報</a>
     <a href="about.html">会社情報</a>
     <a href="contact.html">お問い合わせ</a>
   </div>
 </header>
+<!-- 共通ヘッダー END -->
 
 <main>
 
@@ -99,7 +114,7 @@
             <div class="slide-bg slide-bg--1"></div>
             <div class="slide-caption">
               <span class="slide-num">01</span>
-              <p class="slide-text">舗装工事 — 春日井市内 幹線道路アスファルト舗装</p>
+              <p class="slide-text">道路舗装 — フィニッシャーによる高精度アスファルト舗装</p>
             </div>
           </div>
 
@@ -107,7 +122,7 @@
             <div class="slide-bg slide-bg--2"></div>
             <div class="slide-caption">
               <span class="slide-num">02</span>
-              <p class="slide-text">土木工事 — 宅地造成・排水設備整備工事</p>
+              <p class="slide-text">社員紹介 — チームで支える長縄工務店</p>
             </div>
           </div>
 
@@ -115,7 +130,7 @@
             <div class="slide-bg slide-bg--3"></div>
             <div class="slide-caption">
               <span class="slide-num">03</span>
-              <p class="slide-text">ICT施工 — ドローン測量・3Dデータ活用</p>
+              <p class="slide-text">重機 — SAKAI R2-2 タンデムローラーによる締固め</p>
             </div>
           </div>
 
@@ -123,7 +138,7 @@
             <div class="slide-bg slide-bg--4"></div>
             <div class="slide-caption">
               <span class="slide-num">04</span>
-              <p class="slide-text">区画線工事 — 駐車場ライン・交通安全施設</p>
+              <p class="slide-text">重機 — SUMITOMO 油圧ショベルによる掘削工事</p>
             </div>
           </div>
 
@@ -131,7 +146,23 @@
             <div class="slide-bg slide-bg--5"></div>
             <div class="slide-caption">
               <span class="slide-num">05</span>
-              <p class="slide-text">完成風景 — 地域の暮らしを支えるインフラ</p>
+              <p class="slide-text">舗装工事 — チームワークによる丁寧なアスファルト仕上げ</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-bg slide-bg--6"></div>
+            <div class="slide-caption">
+              <span class="slide-num">06</span>
+              <p class="slide-text">施工管理 — 精度にこだわる現場管理</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="slide-bg slide-bg--7"></div>
+            <div class="slide-caption">
+              <span class="slide-num">07</span>
+              <p class="slide-text">舗装工事 — フィニッシャー HA45W による高精度舗装</p>
             </div>
           </div>
 
@@ -146,6 +177,8 @@
           <button class="slider-dot" aria-label="3枚目"></button>
           <button class="slider-dot" aria-label="4枚目"></button>
           <button class="slider-dot" aria-label="5枚目"></button>
+          <button class="slider-dot" aria-label="6枚目"></button>
+          <button class="slider-dot" aria-label="7枚目"></button>
         </div>
       </div>
     </div>
@@ -169,18 +202,24 @@
             道路・駐車場から宅地造成まで、地域のインフラを誠実な姿勢で支えています。
             ICT施工にも積極的に取り組み、次世代の建設現場を目指しています。
           </p>
-          <a href="about.html" class="btn btn-outline">会社案内を詳しく見る →</a>
         </div>
         <div class="about-teaser-img-wrap">
           <img
-            src="images/company_img02.jpg"
-            alt="株式会社 長縄工務店の社屋外観"
+            src="images/ChatGPT Image 2026年7月2日 12_59_50.png"
+            alt="株式会社 長縄工務店 社屋外観"
             class="about-image"
-            data-visual-search="false"
-            data-ms-visual-search="false"
+            draggable="false"
+          />
+          <img
+            src="images/ChatGPT Image 2026年7月2日 13_02_09.png"
+            alt="株式会社 長縄工務店 社内オフィス"
+            class="about-image about-image--second"
             draggable="false"
           />
         </div>
+      </div>
+      <div style="text-align:center; margin-top: 48px;">
+        <a href="about.html" class="btn btn-accent">会社情報を詳しく見る →</a>
       </div>
     </div>
   </section>
@@ -234,45 +273,116 @@
             </svg>
           </div>
           <h3 class="biz-card-title">ICT施工・技術への挑戦</h3>
-          <p class="biz-card-desc">ICT施工・ドローン測量・3Dデータ活用で、建設業の未来を切り拓く取り組みを積極推進。</p>
+          <p class="biz-card-desc">起工測量・データ作成・ICT施工・出来形管理まで完全自社施工（外注ゼロ）。ミリ精度の技術で地域の土木・舗装工事を支えます。</p>
           <span class="biz-card-link">詳しく見る →</span>
         </a>
       </div>
       <div style="text-align:center;margin-top:40px;">
-        <a href="business.html" class="btn btn-outline">事業内容を詳しく見る →</a>
+        <a href="business.html" class="btn btn-accent">事業内容を詳しく見る →</a>
       </div>
     </div>
   </section>
 
-  <!-- お知らせ -->
+  <!-- ============================================================
+       最新のお知らせ（トップ表示：最新3件）
+       ※microCMS連携時は news の最新3件を .news-item で差し込みます。
+         繰り返し単位は下記 <!-- microCMS Loop Start/End --> の1件分。
+       ============================================================ -->
   <section class="section" id="news">
     <div class="inner">
       <div class="section-header">
         <p class="section-label">News</p>
-        <h2 class="section-title">お知らせ</h2>
+        <h2 class="section-title">最新のお知らせ</h2>
       </div>
+
       <ul class="news-list">
+
+        <!-- microCMS Loop Start -->
+        <!-- ↓ この .news-item 1件分を、お知らせの最新3件ぶん繰り返します（現在はダミー） -->
         <li class="news-item">
-          <time class="news-date" datetime="2025-06-01">2025.06.01</time>
-          <span class="news-tag">採用</span>
-          <a href="news/20250601-recruitment.html" class="news-title">2025年度 新卒・中途採用の募集を開始しました</a>
-        </li>
-        <li class="news-item">
-          <time class="news-date" datetime="2025-04-10">2025.04.10</time>
+          <span class="news-date">2026.07.24</span>
           <span class="news-tag news-tag--info">お知らせ</span>
-          <a href="news/20250410-road-construction.html" class="news-title">春日井市内の幹線道路舗装工事が完了しました</a>
+          <a href="news/20260724-renewal.html" class="news-title">ホームページをリニューアルしました</a>
+        </li>
+        <!-- microCMS Loop End -->
+
+        <!-- ↓ 以下はレイアウト確認用ダミー。連携時は上記Loop内が繰り返されます -->
+        <li class="news-item">
+          <span class="news-date">2026.06.10</span>
+          <span class="news-tag news-tag--recruit">採用情報</span>
+          <a href="recruit.html" class="news-title">2027年度 新卒採用のエントリー受付を開始しました</a>
         </li>
         <li class="news-item">
-          <time class="news-date" datetime="2025-03-15">2025.03.15</time>
-          <span class="news-tag news-tag--info">お知らせ</span>
-          <a href="news/20250315-ict-initiative.html" class="news-title">ICT施工導入による生産性向上の取り組みを開始しました</a>
+          <span class="news-date">2026.05.20</span>
+          <span class="news-tag news-tag--company">会社情報</span>
+          <a href="news/index.html" class="news-title">夏季休業期間のお知らせ</a>
         </li>
-        <li class="news-item">
-          <time class="news-date" datetime="2025-01-06">2025.01.06</time>
-          <span class="news-tag news-tag--info">お知らせ</span>
-          <a href="news/20250106-new-year.html" class="news-title">2025年の営業を開始いたしました</a>
-        </li>
+
       </ul>
+
+      <div class="section-more">
+        <a href="news/index.html" class="btn btn-accent">お知らせ一覧へ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       最新の施工実績（トップ表示：最新3件・カード3枚横並び / スマホ縦並び）
+       ※microCMS連携時は works の最新3件を .work-card で差し込みます。
+         繰り返し単位は下記 <!-- microCMS Loop Start/End --> の1件分。
+         カード一覧の表示項目：メイン画像 / 工事名 / 工事種別 / 完成年月
+       ============================================================ -->
+  <section class="section section--gray" id="latest-works">
+    <div class="inner">
+      <div class="section-header">
+        <p class="section-label">Works</p>
+        <h2 class="section-title">最新の施工実績</h2>
+      </div>
+
+      <div class="works-grid">
+
+        <!-- microCMS Loop Start -->
+        <!-- ↓ この .work-card 1件分を、施工実績の最新3件ぶん繰り返します（現在はダミー） -->
+        <a class="work-card" href="works/detail.html">
+          <div class="work-card__image">
+            <img src="images/IMG_3746.jpeg" alt="市道1号線 舗装補修工事">
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__category work-card__category--paving">舗装工事</span>
+            <h3 class="work-card__title">市道1号線 舗装補修工事</h3>
+            <p class="work-card__date">2026年6月 完成</p>
+          </div>
+        </a>
+        <!-- microCMS Loop End -->
+
+        <!-- ↓ 以下はレイアウト確認用ダミー。連携時は上記Loop内が繰り返されます -->
+        <a class="work-card" href="works/detail.html">
+          <div class="work-card__image">
+            <img src="images/IMG_3762.jpeg" alt="春日井市 宅地造成工事">
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__category work-card__category--civil">土木工事</span>
+            <h3 class="work-card__title">春日井市 宅地造成工事</h3>
+            <p class="work-card__date">2026年5月 完成</p>
+          </div>
+        </a>
+
+        <a class="work-card" href="works/detail.html">
+          <div class="work-card__image">
+            <img src="images/IMG_0911.jpeg" alt="県道12号 アスファルト舗装工事">
+          </div>
+          <div class="work-card__body">
+            <span class="work-card__category work-card__category--paving">舗装工事</span>
+            <h3 class="work-card__title">県道12号 アスファルト舗装工事</h3>
+            <p class="work-card__date">2026年3月 完成</p>
+          </div>
+        </a>
+
+      </div><!-- /.works-grid -->
+
+      <div class="section-more">
+        <a href="works/index.html" class="btn btn-accent">施工実績一覧へ →</a>
+      </div>
     </div>
   </section>
 
@@ -284,7 +394,7 @@
         <h2 class="recruit-banner-title">仲間を募集しています</h2>
         <p class="recruit-banner-text">未経験歓迎・月給32万円スタート。ICT施工で建設の未来をつくる仲間を積極採用中です。</p>
       </div>
-      <a href="recruit.html" class="btn btn-accent btn-lg">採用情報を見る →</a>
+      <a href="recruit.html" class="btn btn-accent btn-lg" style="flex-shrink:0; box-sizing:border-box; text-align:center;">採用情報を見る →</a>
     </div>
   </section>
 
@@ -301,7 +411,9 @@
       </p>
       <div class="apply-btns">
         <a href="contact.html" class="btn btn-accent btn-lg">お問い合わせフォーム</a>
-        <a href="tel:0568816099" class="btn btn-white-outline btn-lg">📞 お電話でのご相談</a>
+        <a href="tel:0568816099" class="btn btn-lg" style="background:var(--navy);color:#fff;border-color:var(--navy);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.48 2 2 0 0 1 3.59 1.3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.86a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>お電話でのご相談
+        </a>
       </div>
       <p class="apply-note">
         受付時間：平日 8:00〜17:00　/　メールは24時間受付（2営業日以内にご返信）
@@ -334,11 +446,31 @@
 
 </main>
 
+<!-- ============================================================
+     共通フッター START
+     ※全ページ共通。編集時は partials/footer.html を「正」として反映。
+     ============================================================ -->
 <footer class="footer">
   <div class="inner footer-inner">
+    <div class="footer-sns">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/naganawa_k/" class="footer-sns-link" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.42-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13-.67-.66-1.34-1.07-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.41-10.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@naganawa_k" class="footer-sns-link" aria-label="TikTok" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+      </a>
+      <!-- LINE -->
+      <a href="https://lin.ee/V9wp3np" class="footer-sns-link" aria-label="LINE" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><mask id="lineMask"><rect width="24" height="24" fill="#fff"/><g stroke="#000" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8.4v4.1h1.9"/><path d="M9.9 8.4v4.1"/><path d="M11.5 12.5V8.4l2.5 4.1V8.4"/><path d="M17.3 8.4h-1.9v4.1h1.9"/><path d="M15.4 10.45h1.6"/></g></mask><path fill="currentColor" mask="url(#lineMask)" d="M12 3C6.75 3 2.5 6.43 2.5 10.66c0 3.79 3.37 6.96 7.92 7.56.31.07.73.2.83.47.09.24.06.61.03.85l-.13.82c-.04.24-.19.94.83.51 1.02-.43 5.5-3.24 7.5-5.54 1.38-1.51 2.04-3.05 2.04-4.76C21.5 6.43 17.25 3 12 3z"/></svg>
+      </a>
+    </div>
     <p class="footer-address">〒486-0842　愛知県春日井市六軒屋町4丁目63</p>
     <nav class="footer-nav">
+      <a href="news/index.html">新着情報</a>
       <a href="business.html">事業内容</a>
+      <a href="works/index.html">施工実績</a>
       <a href="technology.html">ICT施工・技術力</a>
       <a href="recruit.html">採用情報</a>
       <a href="about.html">会社情報</a>
@@ -347,6 +479,7 @@
     <p class="footer-copy">© 2026 長縄工務店. All rights reserved.</p>
   </div>
 </footer>
+<!-- 共通フッター END -->
 
 <script>
   // ローディング画面

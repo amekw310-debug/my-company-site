@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<!-- ============================================================
+     施工実績 詳細ページ テンプレート
+     - 将来 microCMS の「施工実績」1記事ごとに、このテンプレートへ
+       値を差し込んで生成する前提の雛形です（静的サンプル1枚）。
+     - 差し込み項目：工事名 / 工事種別 / メイン画像 / 施工写真(複数) /
+       工事内容 / 施工場所 / 完成年月
+     ============================================================ -->
 <head>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-54DCFCLL2R"></script>
@@ -14,22 +21,19 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="../images/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="../images/logo.png">
-  <title>新着情報｜長縄工務店</title>
-  <meta name="description" content="長縄工務店の新着情報・お知らせ一覧。工事実績・採用情報・会社からのお知らせをご覧いただけます。">
+  <!-- ▼microCMS: title に「工事名｜長縄工務店」を差し込み -->
+  <title>市道1号線 舗装補修工事｜施工実績｜長縄工務店</title>
+  <meta name="description" content="長縄工務店の施工実績「市道1号線 舗装補修工事」の詳細ページです。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
-  <!-- 施工実績・お知らせ 共通コンポーネント（BEM）。microCMS連携を見据えた枠組み -->
   <link rel="stylesheet" href="../assets/components.css">
 </head>
 <body>
 
 <!-- ============================================================
-     共通ヘッダー START
-     ※全ページ共通。編集時は partials/header.html を「正」とし、
-       全ページの同ブロックへ反映してください（共通化の集約先）。
-       サブフォルダ配下のためリンクは ../ を付けています。
+     共通ヘッダー START（partials/header.html を正として反映）
      ============================================================ -->
 <header class="header" id="top">
   <div class="inner header-inner">
@@ -39,9 +43,9 @@
     </a>
     <nav class="nav">
       <a href="../index.html">TOP</a>
-      <a href="index.html" class="nav-active">新着情報</a>
+      <a href="../news/index.html">新着情報</a>
       <a href="../business.html">事業内容</a>
-      <a href="../works/index.html">施工実績</a>
+      <a href="index.html" class="nav-active">施工実績</a>
       <a href="../technology.html">ICT施工・技術力</a>
       <a href="../recruit.html">採用情報</a>
       <a href="../about.html">会社情報</a>
@@ -53,9 +57,9 @@
   </div>
   <div class="nav-mobile" id="nav-mobile">
     <a href="../index.html">TOP</a>
-    <a href="index.html">新着情報</a>
+    <a href="../news/index.html">新着情報</a>
     <a href="../business.html">事業内容</a>
-    <a href="../works/index.html">施工実績</a>
+    <a href="index.html">施工実績</a>
     <a href="../technology.html">ICT施工・技術力</a>
     <a href="../recruit.html">採用情報</a>
     <a href="../about.html">会社情報</a>
@@ -66,69 +70,85 @@
 
 <main>
 
-  <section class="section" style="padding-top: 120px;">
+  <section class="section" style="padding-top:120px;">
     <div class="inner">
 
       <!-- パンくず -->
       <nav class="breadcrumb" aria-label="パンくずリスト">
         <a href="../index.html">TOP</a>
         <span class="breadcrumb-sep">›</span>
-        <span>新着情報</span>
+        <a href="index.html">施工実績</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>市道1号線 舗装補修工事</span>
       </nav>
 
-      <div class="section-header">
-        <p class="section-label">News</p>
-        <h2 class="section-title">新着情報</h2>
-      </div>
+      <article class="work-detail">
 
-      <!-- カテゴリ絞り込み（現状は見た目のみ。後でJS/microCMSで機能付与）
-           お知らせカテゴリー：お知らせ / 採用情報 / 会社情報 / その他
-           ※「施工実績」は施工実績ページとして独立のため、ここには含めません。 -->
-      <div class="works-filter">
-        <button class="works-filter__item is-active" type="button">すべて</button>
-        <button class="works-filter__item" type="button">お知らせ</button>
-        <button class="works-filter__item" type="button">採用情報</button>
-        <button class="works-filter__item" type="button">会社情報</button>
-        <button class="works-filter__item" type="button">その他</button>
-      </div>
+        <!-- ▼microCMS: 工事種別（カテゴリ）／色は work-detail__category--paving|civil|other を切替 -->
+        <span class="work-detail__category work-detail__category--paving">舗装工事</span>
+        <!-- ▼microCMS: 工事名（title） -->
+        <h1 class="work-detail__title">市道1号線 舗装補修工事</h1>
 
-      <ul class="news-list">
+        <!-- ▼microCMS: メイン画像（mainImage） -->
+        <div class="work-detail__main-image">
+          <img src="../images/IMG_3746.jpeg" alt="市道1号線 舗装補修工事 メイン写真">
+        </div>
 
-        <!-- microCMS Loop Start -->
-        <!-- ↓ この .news-item 1件分を、お知らせの件数だけ繰り返します（現在はダミー）
-             カテゴリのタグ色は class を差し替え：
-               お知らせ→news-tag--info / 採用情報→news-tag--recruit /
-               会社情報→news-tag--company / その他→news-tag--other -->
-        <li class="news-item">
-          <span class="news-date">2026.07.24</span>
-          <span class="news-tag news-tag--info">お知らせ</span>
-          <a href="20260724-renewal.html" class="news-title">ホームページをリニューアルしました</a>
-        </li>
-        <!-- microCMS Loop End -->
+        <!-- ▼microCMS: 工事概要（工事種別 / 施工場所 / 完成年月） -->
+        <ul class="work-detail__meta">
+          <li class="work-detail__meta-item">
+            <span class="work-detail__meta-label">工事種別</span>
+            <span class="work-detail__meta-value">舗装工事</span>
+          </li>
+          <li class="work-detail__meta-item">
+            <span class="work-detail__meta-label">施工場所</span>
+            <span class="work-detail__meta-value">愛知県春日井市</span>
+          </li>
+          <li class="work-detail__meta-item">
+            <span class="work-detail__meta-label">完成年月</span>
+            <span class="work-detail__meta-value">2026年6月</span>
+          </li>
+        </ul>
 
-        <!-- ↓ 以下はレイアウト確認用ダミー。連携時は上記Loop内が繰り返されます -->
-        <li class="news-item">
-          <span class="news-date">2026.06.10</span>
-          <span class="news-tag news-tag--recruit">採用情報</span>
-          <a href="20260724-renewal.html" class="news-title">2027年度 新卒採用のエントリー受付を開始しました</a>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026.05.20</span>
-          <span class="news-tag news-tag--company">会社情報</span>
-          <a href="20260724-renewal.html" class="news-title">夏季休業期間のお知らせ</a>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026.04.05</span>
-          <span class="news-tag news-tag--info">お知らせ</span>
-          <a href="20260724-renewal.html" class="news-title">春の安全パトロールを実施しました</a>
-        </li>
-        <li class="news-item">
-          <span class="news-date">2026.03.18</span>
-          <span class="news-tag news-tag--other">その他</span>
-          <a href="20260724-renewal.html" class="news-title">地域清掃ボランティアに参加しました</a>
-        </li>
+        <!-- ▼microCMS: 工事内容（content / リッチエディタHTMLをそのまま流し込み） -->
+        <h2 class="work-detail__section-title">工事内容</h2>
+        <div class="work-detail__content">
+          <p>
+            経年劣化により損傷が進んでいた市道1号線の路面について、既設アスファルトの
+            切削オーバーレイによる舗装補修を行いました。フィニッシャーによる高精度な
+            敷きならしと、タンデムローラーによる入念な締固めにより、平坦性の高い走行
+            快適な路面へと生まれ変わりました。
+          </p>
+          <p>
+            交通量の多い路線のため、片側交互通行による安全管理を徹底し、周辺住民の皆さま
+            への影響を最小限に抑えながら工期内に完了いたしました。
+          </p>
+        </div>
 
-      </ul>
+        <!-- ▼microCMS: 施工写真（複数）ギャラリー -->
+        <h2 class="work-detail__section-title">施工写真</h2>
+        <div class="work-detail__gallery">
+          <!-- microCMS Loop Start -->
+          <!-- ↓ この施工写真1枚分を、登録枚数だけ繰り返します（現在はダミー） -->
+          <figure class="work-detail__gallery-item">
+            <img src="../images/IMG_3762.jpeg" alt="施工写真1">
+          </figure>
+          <!-- microCMS Loop End -->
+
+          <!-- ↓ 以下はレイアウト確認用ダミー -->
+          <figure class="work-detail__gallery-item">
+            <img src="../images/IMG_0911.jpeg" alt="施工写真2">
+          </figure>
+          <figure class="work-detail__gallery-item">
+            <img src="../images/IMG_1317.jpeg" alt="施工写真3">
+          </figure>
+        </div>
+
+        <div class="work-detail__back">
+          <a href="index.html" class="btn btn-accent btn-lg">施工実績一覧へ戻る</a>
+        </div>
+
+      </article>
 
     </div>
   </section>
@@ -136,8 +156,7 @@
 </main>
 
 <!-- ============================================================
-     共通フッター START
-     ※全ページ共通。編集時は partials/footer.html を「正」として反映。
+     共通フッター START（partials/footer.html を正として反映）
      ============================================================ -->
 <footer class="footer">
   <div class="inner footer-inner">
@@ -154,9 +173,9 @@
     </div>
     <nav class="footer-nav">
       <a href="../index.html">TOP</a>
-      <a href="index.html">新着情報</a>
+      <a href="../news/index.html">新着情報</a>
       <a href="../business.html">事業内容</a>
-      <a href="../works/index.html">施工実績</a>
+      <a href="index.html">施工実績</a>
       <a href="../technology.html">ICT施工・技術力</a>
       <a href="../recruit.html">採用情報</a>
       <a href="../about.html">会社情報</a>
