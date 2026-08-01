@@ -664,6 +664,10 @@ ul, ol { list-style: none; }
   margin-bottom: 0;
   max-width: 380px;
 }
+.hero__body--industries {
+  margin-top: 14px;
+  font-size: 13px;
+}
 
 /* CTA */
 .hero__cta {
