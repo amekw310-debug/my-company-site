@@ -1144,6 +1144,23 @@ ul, ol { list-style: none; }
   border-radius: 100px;
   margin-bottom: 10px;
 }
+/* 自主制作サンプルであることを示すタグ（グレー系で実案件と区別） */
+.work-card__tag--sample {
+  color: #6B6570;
+  background: #EAE6E2;
+}
+/* 制作事例セクションの注記 */
+.works__notice {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  padding: 12px 18px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  background: #F2EEEA;
+  border-radius: 10px;
+  text-align: center;
+}
 
 .work-card__title {
   font-size: 16px;
