@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=87">
+  <link rel="stylesheet" href="main.css?v=88">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -270,9 +270,16 @@
     root.addEventListener('mouseenter', stopAuto);
     root.addEventListener('mouseleave', startAuto);
     window.addEventListener('resize', function(){ clearTimeout(scrollT); jump(pos); setActive(pos); });
+    // 初期化：transition無効の状態で位置とactiveを確定 → 描画確定後に有効化
     setActive(pos);
-    requestAnimationFrame(function(){ jump(pos); });
-    startAuto();
+    jump(pos);
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        jump(pos);
+        root.classList.add('is-ready');
+        startAuto();
+      });
+    });
   });
 </script>
 </body>

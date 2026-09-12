@@ -1373,6 +1373,8 @@ ul, ol { list-style: none; }
   transform: scale(.94);
   transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .4s ease, box-shadow .4s ease;
 }
+/* 初期化が完了するまでは一切アニメーションさせない（初回のちらつき防止） */
+.works-carousel:not(.is-ready) .work-card { transition: none !important; }
 .works-carousel__track .work-card.is-active {
   opacity: 1;
   transform: scale(1.05);
