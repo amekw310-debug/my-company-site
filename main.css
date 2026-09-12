@@ -1350,6 +1350,76 @@ ul, ol { list-style: none; }
   color: var(--primary);
   background: var(--primary-light);
 }
+/* ===== WORKS カルーセル ===== */
+.works-carousel { --card-w: 84%; position: relative; margin-top: 8px; }
+.works-carousel__viewport { position: relative; }
+.works__grid.works-carousel__track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  margin: 0;
+  padding: 22px calc(50% - var(--card-w) / 2);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.works__grid.works-carousel__track::-webkit-scrollbar { display: none; }
+.works-carousel__track .work-card {
+  flex: 0 0 var(--card-w);
+  scroll-snap-align: center;
+  opacity: .82;
+  transform: scale(.94);
+  transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .4s ease, box-shadow .4s ease;
+}
+.works-carousel__track .work-card.is-active {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+/* 左右矢印 */
+.works-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .2s, box-shadow .2s;
+}
+.works-carousel__arrow svg { width: 20px; height: 20px; }
+.works-carousel__arrow:hover { background: #fff; box-shadow: var(--shadow-md); }
+.works-carousel__arrow:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.works-carousel__arrow--prev { left: 4px; }
+.works-carousel__arrow--next { right: 4px; }
+/* ドット */
+.works-carousel__dots {
+  display: flex; justify-content: center; gap: 8px; margin-top: 18px;
+}
+.works-carousel__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  border: none; padding: 0;
+  background: rgba(46,35,51,.18);
+  cursor: pointer;
+  transition: background .3s, transform .3s;
+}
+.works-carousel__dot.is-active { background: var(--primary); transform: scale(1.25); }
+@media (min-width: 768px) {
+  .works-carousel { --card-w: 400px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .works__grid.works-carousel__track { scroll-behavior: auto; }
+  .works-carousel__track .work-card { transition: none; }
+}
+
 /* 制作事例セクションの注記 */
 .works__notice {
   max-width: 720px;
