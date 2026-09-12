@@ -725,63 +725,96 @@
     observer.observe(el);
   });
 
-  // WORKS カルーセル
+  // WORKS カルーセル（無限ループ：前後にクローンを配置し、境界でアニメOFF瞬間補正）
   document.querySelectorAll('[data-works-carousel]').forEach(function(root){
     const track = root.querySelector('.works-carousel__track');
-    const cards = Array.prototype.slice.call(track.querySelectorAll('.work-card'));
-    if (!cards.length) return;
+    const reals = Array.prototype.slice.call(track.querySelectorAll('.work-card'));
+    const n = reals.length;
     const prev = root.querySelector('.works-carousel__arrow--prev');
     const next = root.querySelector('.works-carousel__arrow--next');
     const dotsWrap = root.querySelector('.works-carousel__dots');
-    let idx = 0, timer = null, resumeTimer = null, scrollT = null;
+    if (n < 2){ reals.forEach(function(c){ c.classList.add('is-active'); }); return; }
+
+    // 前後に実カードのクローンを1セットずつ配置（[clones][reals][clones]）
+    reals.slice().reverse().forEach(function(c){
+      const k = c.cloneNode(true);
+      k.classList.add('is-clone'); k.setAttribute('aria-hidden', 'true');
+      k.querySelectorAll('a').forEach(function(a){ a.tabIndex = -1; });
+      track.insertBefore(k, track.firstChild);
+    });
+    reals.forEach(function(c){
+      const k = c.cloneNode(true);
+      k.classList.add('is-clone'); k.setAttribute('aria-hidden', 'true');
+      k.querySelectorAll('a').forEach(function(a){ a.tabIndex = -1; });
+      track.appendChild(k);
+    });
+    const all = Array.prototype.slice.call(track.querySelectorAll('.work-card')); // 3n枚
+    let pos = n; // 最初の実カード位置
+    let timer = null, resumeTimer = null, scrollT = null;
     const AUTO = 4500, RESUME = 6000;
 
-    const dots = cards.map(function(_, i){
+    // ドットは実件数分だけ
+    const dots = reals.map(function(_, i){
       const b = document.createElement('button');
-      b.className = 'works-carousel__dot';
-      b.type = 'button';
+      b.className = 'works-carousel__dot'; b.type = 'button';
       b.setAttribute('aria-label', (i + 1) + '番目の事例へ');
-      b.addEventListener('click', function(){ goTo(i, true); });
+      b.addEventListener('click', function(){ goTo(n + i, true); });
       dotsWrap.appendChild(b);
       return b;
     });
     function targetLeft(el){ return el.offsetLeft + el.offsetWidth / 2 - track.clientWidth / 2; }
+    function jump(i){ // アニメOFFで瞬間移動
+      const sb = track.style.scrollBehavior;
+      track.style.scrollBehavior = 'auto';
+      track.scrollLeft = targetLeft(all[i]);
+      void track.offsetWidth; // reflow
+      track.style.scrollBehavior = sb || '';
+    }
     function setActive(i){
-      cards.forEach(function(c, j){ c.classList.toggle('is-active', j === i); });
-      dots.forEach(function(d, j){ d.classList.toggle('is-active', j === i); });
+      all.forEach(function(c, j){ c.classList.toggle('is-active', j === i); });
+      const logical = ((i - n) % n + n) % n;
+      dots.forEach(function(d, j){ d.classList.toggle('is-active', j === logical); });
     }
     function goTo(i, user){
-      idx = (i + cards.length) % cards.length;
-      track.scrollTo({ left: targetLeft(cards[idx]), behavior: 'smooth' });
-      setActive(idx);
+      pos = i;
+      track.scrollTo({ left: targetLeft(all[pos]), behavior: 'smooth' });
+      setActive(pos);
       if (user) pause();
     }
     function nearest(){
       const c = track.scrollLeft + track.clientWidth / 2;
-      let best = 0, bd = Infinity;
-      cards.forEach(function(card, j){
+      let best = n, bd = Infinity;
+      all.forEach(function(card, j){
         const d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - c);
         if (d < bd){ bd = d; best = j; }
       });
       return best;
     }
+    // スクロールが落ち着いたら、クローン領域にいれば実カードへ瞬間補正
     track.addEventListener('scroll', function(){
       clearTimeout(scrollT);
-      scrollT = setTimeout(function(){ idx = nearest(); setActive(idx); }, 90);
+      scrollT = setTimeout(function(){
+        let cur = nearest();
+        if (cur >= 2 * n){ cur -= n; jump(cur); }
+        else if (cur < n){ cur += n; jump(cur); }
+        pos = cur;
+        setActive(pos);
+      }, 140);
     }, { passive: true });
-    function startAuto(){ if (!timer) timer = setInterval(function(){ goTo(idx + 1, false); }, AUTO); }
+    function startAuto(){ if (!timer) timer = setInterval(function(){ goTo(pos + 1, false); }, AUTO); }
     function stopAuto(){ clearInterval(timer); timer = null; }
     function pause(){ stopAuto(); clearTimeout(resumeTimer); resumeTimer = setTimeout(startAuto, RESUME); }
-    if (prev) prev.addEventListener('click', function(){ goTo(idx - 1, true); });
-    if (next) next.addEventListener('click', function(){ goTo(idx + 1, true); });
+    if (prev) prev.addEventListener('click', function(){ goTo(pos - 1, true); });
+    if (next) next.addEventListener('click', function(){ goTo(pos + 1, true); });
     ['pointerdown', 'touchstart', 'wheel'].forEach(function(ev){
       track.addEventListener(ev, pause, { passive: true });
     });
     root.addEventListener('mouseenter', stopAuto);
     root.addEventListener('mouseleave', startAuto);
+    window.addEventListener('resize', function(){ clearTimeout(scrollT); jump(pos); setActive(pos); });
 
-    setActive(0);
-    requestAnimationFrame(function(){ track.scrollLeft = targetLeft(cards[0]); });
+    setActive(pos);
+    requestAnimationFrame(function(){ jump(pos); });
     startAuto();
   });
 </script>
