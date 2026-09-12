@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=88">
+  <link rel="stylesheet" href="main.css?v=89">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -725,105 +725,158 @@
     observer.observe(el);
   });
 
-  // WORKS カルーセル（無限ループ：前後にクローンを配置し、境界でアニメOFF瞬間補正）
-  document.querySelectorAll('[data-works-carousel]').forEach(function(root){
+  // WORKS カルーセル（transformベース無限ループ／状態を明確に管理）
+  document.querySelectorAll('[data-works-carousel]').forEach(function(root){ initWorksCarousel(root); });
+  function initWorksCarousel(root){
+    const viewport = root.querySelector('.works-carousel__viewport');
     const track = root.querySelector('.works-carousel__track');
     const reals = Array.prototype.slice.call(track.querySelectorAll('.work-card'));
     const n = reals.length;
-    const prev = root.querySelector('.works-carousel__arrow--prev');
-    const next = root.querySelector('.works-carousel__arrow--next');
+    const prevBtn = root.querySelector('.works-carousel__arrow--prev');
+    const nextBtn = root.querySelector('.works-carousel__arrow--next');
     const dotsWrap = root.querySelector('.works-carousel__dots');
     if (n < 2){ reals.forEach(function(c){ c.classList.add('is-active'); }); return; }
 
-    // 前後に実カードのクローンを1セットずつ配置（[clones][reals][clones]）
-    reals.slice().reverse().forEach(function(c){
+    const TRANS = 'transform .55s cubic-bezier(.22,1,.36,1)';
+    const AUTO = 4500, RESUME = 4000, DUR = 650;
+
+    // 状態
+    let index = n;               // 表示位置（[clones][reals][clones]の中でのindex）。定常は [n, 2n-1]
+    let isAnimating = false;
+    let isDragging = false, dragDecided = false, horiz = false;
+    let startX = 0, startY = 0, baseTx = 0;
+    let autoTimer = null, resumeTimer = null, endGuard = null;
+
+    // 前後に実カードのクローンを1セットずつ配置
+    reals.slice().reverse().forEach(function(c){ track.insertBefore(mkClone(c), track.firstChild); });
+    reals.forEach(function(c){ track.appendChild(mkClone(c)); });
+    function mkClone(c){
       const k = c.cloneNode(true);
       k.classList.add('is-clone'); k.setAttribute('aria-hidden', 'true');
       k.querySelectorAll('a').forEach(function(a){ a.tabIndex = -1; });
-      track.insertBefore(k, track.firstChild);
-    });
-    reals.forEach(function(c){
-      const k = c.cloneNode(true);
-      k.classList.add('is-clone'); k.setAttribute('aria-hidden', 'true');
-      k.querySelectorAll('a').forEach(function(a){ a.tabIndex = -1; });
-      track.appendChild(k);
-    });
+      return k;
+    }
     const all = Array.prototype.slice.call(track.querySelectorAll('.work-card')); // 3n枚
-    let pos = n; // 最初の実カード位置
-    let timer = null, resumeTimer = null, scrollT = null;
-    const AUTO = 4500, RESUME = 6000;
 
     // ドットは実件数分だけ
     const dots = reals.map(function(_, i){
       const b = document.createElement('button');
       b.className = 'works-carousel__dot'; b.type = 'button';
       b.setAttribute('aria-label', (i + 1) + '番目の事例へ');
-      b.addEventListener('click', function(){ goTo(n + i, true); });
+      b.addEventListener('click', function(){ if (!isAnimating) userMove(n + i); });
       dotsWrap.appendChild(b);
       return b;
     });
-    function targetLeft(el){ return el.offsetLeft + el.offsetWidth / 2 - track.clientWidth / 2; }
-    function jump(i){ // アニメOFFで瞬間移動
-      const sb = track.style.scrollBehavior;
-      track.style.scrollBehavior = 'auto';
-      track.scrollLeft = targetLeft(all[i]);
-      void track.offsetWidth; // reflow
-      track.style.scrollBehavior = sb || '';
+
+    function tx(i){ const el = all[i]; return viewport.clientWidth / 2 - (el.offsetLeft + el.offsetWidth / 2); }
+    function apply(i, animate){
+      track.style.transition = animate ? TRANS : 'none';
+      track.style.transform = 'translateX(' + tx(i) + 'px)';
     }
     function setActive(i){
       all.forEach(function(c, j){ c.classList.toggle('is-active', j === i); });
       const logical = ((i - n) % n + n) % n;
       dots.forEach(function(d, j){ d.classList.toggle('is-active', j === logical); });
     }
-    function goTo(i, user){
-      pos = i;
-      track.scrollTo({ left: targetLeft(all[pos]), behavior: 'smooth' });
-      setActive(pos);
-      if (user) pause();
+    function move(to){
+      if (isAnimating) return;            // アニメ中の多重入力は無視（暴走防止）
+      index = to;
+      isAnimating = true;
+      setActive(index);
+      apply(index, true);
+      clearTimeout(endGuard);
+      endGuard = setTimeout(onEnd, DUR);  // transitionend取りこぼしの保険
     }
-    function nearest(){
-      const c = track.scrollLeft + track.clientWidth / 2;
-      let best = n, bd = Infinity;
-      all.forEach(function(card, j){
-        const d = Math.abs(card.offsetLeft + card.offsetWidth / 2 - c);
-        if (d < bd){ bd = d; best = j; }
-      });
-      return best;
+    function onEnd(){
+      if (!isAnimating) return;
+      isAnimating = false;
+      clearTimeout(endGuard);
+      // クローン領域に入っていれば、同じ見た目の本体へ即時・無アニメで補正（継ぎ目を見せない）
+      if (index >= 2 * n || index < n){
+        root.classList.add('is-correcting');
+        index += (index < n ? n : -n);
+        apply(index, false);
+        setActive(index);
+        void track.offsetWidth;           // 反映を確定
+        requestAnimationFrame(function(){ root.classList.remove('is-correcting'); });
+      }
     }
-    // スクロールが落ち着いたら、クローン領域にいれば実カードへ瞬間補正
-    track.addEventListener('scroll', function(){
-      clearTimeout(scrollT);
-      scrollT = setTimeout(function(){
-        let cur = nearest();
-        if (cur >= 2 * n){ cur -= n; jump(cur); }
-        else if (cur < n){ cur += n; jump(cur); }
-        pos = cur;
-        setActive(pos);
-      }, 140);
-    }, { passive: true });
-    function startAuto(){ if (!timer) timer = setInterval(function(){ goTo(pos + 1, false); }, AUTO); }
-    function stopAuto(){ clearInterval(timer); timer = null; }
-    function pause(){ stopAuto(); clearTimeout(resumeTimer); resumeTimer = setTimeout(startAuto, RESUME); }
-    if (prev) prev.addEventListener('click', function(){ goTo(pos - 1, true); });
-    if (next) next.addEventListener('click', function(){ goTo(pos + 1, true); });
-    ['pointerdown', 'touchstart', 'wheel'].forEach(function(ev){
-      track.addEventListener(ev, pause, { passive: true });
+    track.addEventListener('transitionend', function(e){
+      if (e.target === track && e.propertyName === 'transform') onEnd();
     });
-    root.addEventListener('mouseenter', stopAuto);
-    root.addEventListener('mouseleave', startAuto);
-    window.addEventListener('resize', function(){ clearTimeout(scrollT); jump(pos); setActive(pos); });
 
-    // 初期化：transition無効の状態で位置とactiveを確定 → 描画確定後に有効化
-    setActive(pos);
-    jump(pos);
+    // オートプレイ（タイマーは常に1つだけ）
+    function stopAutoplay(){ if (autoTimer){ clearTimeout(autoTimer); autoTimer = null; } }
+    function startAutoplay(){
+      stopAutoplay();
+      if (document.hidden) return;
+      autoTimer = setTimeout(function(){ if (!isDragging && !isAnimating) move(index + 1); startAutoplay(); }, AUTO);
+    }
+    function deferAutoplay(){ stopAutoplay(); clearTimeout(resumeTimer); resumeTimer = setTimeout(startAutoplay, RESUME); }
+
+    function userMove(to){ move(to); deferAutoplay(); }
+    if (prevBtn) prevBtn.addEventListener('click', function(){ if (!isAnimating) userMove(index - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function(){ if (!isAnimating) userMove(index + 1); });
+
+    // ドラッグ／スワイプ（pointer eventsに一本化：touchとの二重発火なし）
+    viewport.addEventListener('pointerdown', function(e){
+      if (e.button != null && e.button !== 0) return;
+      if (isAnimating) onEnd();            // アニメ中なら確定させてから掴む
+      isDragging = true; dragDecided = false; horiz = false;
+      startX = e.clientX; startY = e.clientY; baseTx = tx(index);
+      stopAutoplay(); clearTimeout(resumeTimer);
+    });
+    viewport.addEventListener('pointermove', function(e){
+      if (!isDragging) return;
+      const dx = e.clientX - startX, dy = e.clientY - startY;
+      if (!dragDecided){
+        if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+        horiz = Math.abs(dx) > Math.abs(dy);
+        dragDecided = true;
+        if (!horiz){ isDragging = false; deferAutoplay(); return; } // 縦方向はページスクロールに任せる
+        try { viewport.setPointerCapture(e.pointerId); } catch (_){}
+      }
+      if (horiz){
+        e.preventDefault();
+        const step = (all[1].offsetLeft - all[0].offsetLeft) || 1;
+        const clamped = Math.max(-step, Math.min(step, dx)); // 1枚分までに制限
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(' + (baseTx + clamped) + 'px)';
+      }
+    }, { passive: false });
+    function endDrag(e){
+      if (!isDragging) return;
+      isDragging = false;
+      if (horiz){
+        const dx = (e.clientX || startX) - startX;
+        let s = 0;
+        if (dx <= -40) s = 1; else if (dx >= 40) s = -1;
+        if (s !== 0) move(index + s); else apply(index, true); // 閾値未満は元に戻す
+      }
+      deferAutoplay();
+    }
+    viewport.addEventListener('pointerup', endDrag);
+    viewport.addEventListener('pointercancel', function(){ isDragging = false; horiz = false; apply(index, true); deferAutoplay(); });
+
+    // ホバーで一時停止（PC）／離れたら再開
+    root.addEventListener('mouseenter', function(){ if (!isDragging) stopAutoplay(); });
+    root.addEventListener('mouseleave', function(){ if (!isDragging) startAutoplay(); });
+    // タブ非表示・フォーカス喪失時の安全策
+    document.addEventListener('visibilitychange', function(){ if (document.hidden) stopAutoplay(); else startAutoplay(); });
+    window.addEventListener('blur', function(){ isDragging = false; });
+    window.addEventListener('resize', function(){ apply(index, false); });
+
+    // 初期化：無アニメで位置・activeを確定 → 描画確定後に transition 有効化＋オートプレイ開始
+    setActive(index);
+    apply(index, false);
     requestAnimationFrame(function(){
       requestAnimationFrame(function(){
-        jump(pos);                 // レイアウト確定後に再度中央へ（即時・無アニメ）
+        apply(index, false);
         root.classList.add('is-ready');
-        startAuto();
+        startAutoplay();
       });
     });
-  });
+  }
 </script>
 
 <!-- 日本語を文節単位で改行（全ブラウザ対応 / BudouX） -->

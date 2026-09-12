@@ -1352,29 +1352,26 @@ ul, ol { list-style: none; }
 }
 /* ===== WORKS カルーセル ===== */
 .works-carousel { --card-w: 84%; position: relative; margin-top: 8px; }
-.works-carousel__viewport { position: relative; }
+/* transformベース：viewportで左右をクリップし、track を translateX で動かす */
+.works-carousel__viewport { position: relative; overflow: hidden; }
 .works__grid.works-carousel__track {
   display: flex;
   flex-wrap: nowrap;
   gap: 16px;
   margin: 0;
-  padding: 22px calc(50% - var(--card-w) / 2);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  padding: 30px 0;
+  will-change: transform;
+  touch-action: pan-y;
 }
-.works__grid.works-carousel__track::-webkit-scrollbar { display: none; }
 .works-carousel__track .work-card {
   flex: 0 0 var(--card-w);
-  scroll-snap-align: center;
   opacity: .82;
   transform: scale(.94);
   transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .4s ease, box-shadow .4s ease;
 }
-/* 初期化が完了するまでは一切アニメーションさせない（初回のちらつき防止） */
-.works-carousel:not(.is-ready) .work-card { transition: none !important; }
+/* 初期化前・ループ補正中は一切アニメーションさせない（初回ちらつき／継ぎ目防止） */
+.works-carousel:not(.is-ready) .work-card,
+.works-carousel.is-correcting .work-card { transition: none !important; }
 .works-carousel__track .work-card.is-active {
   opacity: 1;
   transform: scale(1.05);
