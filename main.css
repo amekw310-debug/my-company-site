@@ -1040,6 +1040,94 @@ ul, ol { list-style: none; }
   .pricing-detail__grid { grid-template-columns: 1fr; gap: 20px; }
 }
 
+/* ===== Web運用サポート（個別見積もり帯） ===== */
+.pricing-support {
+  max-width: 900px;
+  margin: 32px auto 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32px 32px 28px;
+}
+.pricing-support__head { text-align: center; margin-bottom: 20px; }
+.pricing-support__service {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.pricing-support__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.pricing-support__price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.pricing-support__desc {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-sub);
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 20px;
+}
+.pricing-support__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 640px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 24px;
+}
+.pricing-support__list li {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  padding-left: 20px;
+}
+.pricing-support__list li::before {
+  content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 700;
+}
+.pricing-support__note {
+  margin-top: 20px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-light);
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .pricing-support { padding: 24px 20px; }
+  .pricing-support__list { grid-template-columns: 1fr; gap: 8px; max-width: 320px; }
+}
+
+/* ===== 自己紹介：これまでのこと（ストーリー） ===== */
+.about__story-lead {
+  margin-top: 28px !important;
+  margin-bottom: 10px !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  color: var(--text-light) !important;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.about__story {
+  font-size: 14px !important;
+  line-height: 1.9 !important;
+  color: var(--text-sub) !important;
+}
+
 /* ===== 法務ページ（プライバシーポリシー等） ===== */
 .container--narrow { max-width: 760px; }
 .legal__body { font-size: 15px; line-height: 2; color: var(--text); }
@@ -1521,6 +1609,18 @@ ul, ol { list-style: none; }
   margin-bottom: 16px;
 }
 
+.pricing-card__service {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
 .pricing-card__price {
   display: flex;
   align-items: baseline;
@@ -1907,6 +2007,85 @@ ul, ol { list-style: none; }
 }
 
 /* ご相談の流れ */
+/* ===== お問い合わせ専用ページ ===== */
+.contact-ok {
+  max-width: 720px;
+  margin: 0 auto 36px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 30px 24px;
+}
+.contact-ok__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 18px;
+}
+.contact-ok__list { list-style: none; margin: 0; padding: 0; }
+.contact-ok__list li {
+  position: relative;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  padding: 9px 0 9px 30px;
+  border-bottom: 1px dashed var(--border);
+}
+.contact-ok__list li:last-child { border-bottom: none; }
+.contact-ok__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  color: var(--primary);
+  font-weight: 700;
+}
+.contact-ok__note {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-light);
+  text-align: center;
+}
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto 44px;
+}
+.contact-method {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 26px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.contact-method__label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.contact-method__text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-sub);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.contact-method .btn { width: 100%; }
+.contact__flow--page .flow-step { opacity: 1; transform: none; }
+@media (max-width: 600px) {
+  .contact-methods { grid-template-columns: 1fr; }
+  .contact-ok { padding: 24px 20px; }
+}
+
 .contact__flow {
   max-width: 600px;
   margin: 0 auto 40px;
