@@ -1473,6 +1473,63 @@ ul, ol { list-style: none; }
   color: var(--primary);
   background: var(--primary-light);
 }
+/* ===== WORKS 詳細（設計で考えたこと）アコーディオン ===== */
+.work-detail {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.work-detail__summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 2px 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+}
+.work-detail__summary::-webkit-details-marker { display: none; }
+.work-detail__summary::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-right: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  transform: rotate(45deg);
+  transition: transform .25s ease;
+  margin-right: 4px;
+}
+.work-detail[open] .work-detail__summary::after { transform: rotate(-135deg); }
+.work-detail__summary:hover { color: var(--primary); }
+.work-detail__list { margin: 4px 0 8px; padding: 0; }
+.work-detail__list > div {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 4px 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+.work-detail__list > div:last-child { border-bottom: none; }
+.work-detail__list dt {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  padding-top: 1px;
+}
+.work-detail__list dd {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-sub);
+}
+@media (max-width: 480px) {
+  .work-detail__list > div { grid-template-columns: 1fr; gap: 2px; }
+  .work-detail__list dt { padding-top: 0; }
+}
 /* ===== WORKS カルーセル ===== */
 .works-carousel { --card-w: 84%; position: relative; margin-top: 8px; }
 /* transformベース：viewportで左右をクリップし、track を translateX で動かす */
@@ -1480,6 +1537,7 @@ ul, ol { list-style: none; }
 .works__grid.works-carousel__track {
   display: flex;
   flex-wrap: nowrap;
+  align-items: flex-start;
   gap: 16px;
   margin: 0;
   padding: 30px 0;
