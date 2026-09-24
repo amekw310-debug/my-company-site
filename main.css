@@ -1426,6 +1426,51 @@ ul, ol { list-style: none; }
 }
 
 /* ============================
+   実務で経験してきたこと（PRACTICAL EXPERIENCE）
+   ============================ */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.exp-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32px 28px;
+  border: none;
+}
+.exp-card__num {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.exp-card__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.exp-card__text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-sub);
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+@media (max-width: 760px) {
+  .exp-grid { grid-template-columns: 1fr; max-width: 440px; gap: 16px; }
+  .exp-card { padding: 26px 24px; }
+}
+
+/* ============================
    ⑤ 制作実績
    ============================ */
 .works {
