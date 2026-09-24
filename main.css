@@ -653,8 +653,11 @@ ul, ol { list-style: none; }
   color: var(--primary);
 }
 .hero__title-lead {
-  white-space: nowrap;
+  /* スマホでは折り返しを許可（PC用のnowrapは @media (min-width:901px) 側で指定） */
+  white-space: normal;
 }
+/* 折り返し時に意味のまとまりを保つ（例:「いなくても。」を分割させない） */
+.hero__title-lead .nobr { white-space: nowrap; }
 
 .hero__body {
   font-size: 15px;
@@ -2819,9 +2822,26 @@ a.news-item__title:hover { color: var(--primary); }
   .hero {
     padding: 100px 0 96px;
   }
+  /* スマホ: Heroテキストを画面幅内に収める（左右余白は .container の16pxを確保） */
+  .hero__copy { max-width: 100%; }
+  .hero__eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    letter-spacing: .10em;
+    font-size: 10.5px;
+  }
   .hero__title {
-    /* 1行目「舗装・土木・建設会社専門。」(13文字)が画面幅に収まるサイズに自動調整 */
-    font-size: clamp(20px, 6.8vw, 30px);
+    /* 見出しは折り返し前提で幅に自動フィット（1文字改行は避けつつインパクト維持） */
+    font-size: clamp(21px, 6.6vw, 30px);
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  .hero__body {
+    overflow-wrap: anywhere;
+    word-break: normal;
   }
   .hero__scroll {
     bottom: 14px;
