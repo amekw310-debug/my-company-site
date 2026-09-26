@@ -1160,6 +1160,127 @@ ul, ol { list-style: none; }
   .pricing-support__list { grid-template-columns: 1fr; gap: 8px; max-width: 320px; }
 }
 
+/* ===== 社外Web担当サポート（月額・強調ブロック） ===== */
+.plan-feature {
+  max-width: 900px;
+  margin: 32px auto 0;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(255,111,143,.14);
+  padding: 32px 32px 28px;
+}
+.plan-feature__head { text-align: center; margin-bottom: 22px; }
+.plan-feature__label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 100px;
+  padding: 4px 16px;
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+.plan-feature__title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.plan-feature__catch { font-size: 14px; line-height: 1.9; color: var(--text-sub); max-width: 620px; margin: 0 auto 16px; }
+.plan-feature__price { display: flex; align-items: baseline; justify-content: center; gap: 4px; color: var(--primary); }
+.plan-feature__prefix { font-size: 15px; font-weight: 700; }
+.plan-feature__amount { font-family: 'Inter', sans-serif; font-size: 40px; font-weight: 800; line-height: 1; letter-spacing: -1px; }
+.plan-feature__unit { font-size: 15px; font-weight: 700; }
+.plan-feature__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 8px;
+}
+.plan-feature__collabel {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.plan-feature__collabel--in { color: var(--primary); }
+.plan-feature__collabel--out { color: #8A8288; }
+.plan-feature__list { list-style: none; margin: 0; padding: 0; }
+.plan-feature__list li {
+  position: relative;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  padding: 6px 0 6px 20px;
+  overflow-wrap: anywhere;
+}
+.plan-feature__list--in li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+.plan-feature__list--out li::before { content: "−"; position: absolute; left: 2px; color: #B0A8AE; font-weight: 700; }
+.plan-feature__note {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+.plan-feature__cta { text-align: center; margin-top: 22px; }
+
+/* ===== スポット対応・追加作業の時間料金 ===== */
+.spot-rates {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 4px auto 0;
+}
+.spot-rate {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  background: var(--bg-section);
+  border-radius: 12px;
+  padding: 16px 26px;
+}
+.spot-rate__time { font-size: 15px; font-weight: 700; color: var(--text); }
+.spot-rate__price { font-size: 20px; font-weight: 800; color: var(--primary); font-family: 'Inter', sans-serif; }
+.spot-rate__price span { font-size: 12px; font-weight: 600; font-family: 'Noto Sans JP', sans-serif; }
+
+/* ===== サーバー・ドメインについて ===== */
+.server-info {
+  max-width: 900px;
+  margin: 32px auto 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32px 32px 28px;
+}
+.server-info__head { text-align: center; margin-bottom: 16px; }
+.server-info__label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: var(--primary); margin-bottom: 6px; }
+.server-info__title { font-size: 18px; font-weight: 700; color: var(--text); }
+.server-info__lead { font-size: 14px; line-height: 1.9; color: var(--text-sub); max-width: 720px; margin: 0 auto 24px; }
+.server-opts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.server-opt {
+  background: var(--bg-section);
+  border-radius: 12px;
+  padding: 20px 18px;
+}
+.server-opt__name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+.server-opt__price { font-size: 18px; font-weight: 800; color: var(--primary); font-family: 'Inter', sans-serif; margin-bottom: 10px; }
+.server-opt__price span { font-size: 11px; font-weight: 600; font-family: 'Noto Sans JP', sans-serif; }
+.server-opt__desc { font-size: 12.5px; line-height: 1.8; color: var(--text-sub); overflow-wrap: anywhere; }
+.server-info__note { margin-top: 20px; font-size: 12px; line-height: 1.8; color: var(--text-light); }
+@media (max-width: 760px) {
+  .plan-feature__cols { grid-template-columns: 1fr; gap: 18px; }
+  .server-opts { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .plan-feature { padding: 26px 22px; }
+  .server-info { padding: 26px 22px; }
+  .plan-feature__amount { font-size: 34px; }
+}
+
 /* ===== 自己紹介：セクション見出し・実務経験リスト・ストーリー ===== */
 .about__subhead {
   margin-top: 28px;
@@ -1763,6 +1884,8 @@ ul, ol { list-style: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
+/* 4項目は2×2で見せる */
+.price-guide__grid--4 { grid-template-columns: repeat(2, 1fr); }
 .price-guide__item {
   background: var(--bg-section);
   border-radius: 12px;
@@ -1770,13 +1893,45 @@ ul, ol { list-style: none; }
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 6px;
 }
 .price-guide__name {
   font-size: 14px;
   font-weight: 700;
   color: var(--text);
+}
+.price-guide__desc {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-sub);
+}
+.price-entry {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 12px 18px;
+  background: var(--primary-light);
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+  text-align: center;
+}
+.price-entry a { color: var(--primary); font-weight: 700; text-decoration: underline; }
+.section-title__free {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 100px;
+  padding: 4px 14px;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 560px) {
+  .section-title__free { display: block; width: max-content; margin: 12px auto 0; font-size: 12px; }
 }
 .price-guide__price {
   font-size: 15px;
@@ -1814,10 +1969,13 @@ ul, ol { list-style: none; }
   background: var(--border);
   margin: 12px auto 0;
 }
-@media (max-width: 640px) {
+.price-guide__item .price-guide__price { margin-top: auto; padding-top: 4px; }
+@media (max-width: 560px) {
   .price-guide { padding: 24px 20px; }
-  .price-guide__grid { grid-template-columns: 1fr; gap: 12px; }
-  .price-guide__item { flex-direction: row; justify-content: space-between; text-align: left; }
+  .price-guide__grid,
+  .price-guide__grid--4 { grid-template-columns: 1fr; gap: 12px; }
+  .price-guide__item { text-align: left; }
+  .price-guide__item .price-guide__price { margin-top: 4px; }
 }
 
 .pricing__grid {
@@ -2113,6 +2271,18 @@ ul, ol { list-style: none; }
   line-height: 2;
   color: var(--text-sub);
   margin-bottom: 32px;
+}
+.why-hp__text--sub {
+  margin-top: -18px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.why-hp__cta-note {
+  margin: 12px 0 0;
+  font-size: 12.5px;
+  color: var(--text-sub);
 }
 @media (max-width: 640px) {
   .why-hp__box { padding: 36px 22px; }
