@@ -2301,7 +2301,7 @@ ul, ol { list-style: none; }
 }
 @media (max-width: 640px) {
   .why-hp__box { padding: 36px 22px; }
-  .why-hp__br { display: none; }
+  /* 見出しは読点で意味単位に改行（PC・スマホ共通で表示） */
   .why-hp__text { font-size: 14px; }
 }
 

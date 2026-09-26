@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=99">
+  <link rel="stylesheet" href="main.css?v=100">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -365,6 +365,22 @@
   const pt=document.getElementById('page-top');
   window.addEventListener('scroll',()=>pt.classList.toggle('visible',window.scrollY>400));
   pt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+<!-- 日本語を文節単位で改行（BudouX） -->
+<script type="module">
+  try {
+    const { loadDefaultJapaneseParser } = await import('https://cdn.jsdelivr.net/npm/budoux@0.6.4/module/index.js');
+    const parser = loadDefaultJapaneseParser();
+    const selector = [
+      '.section-desc', '.price-entry', '.price-guide__lead', '.price-guide__desc',
+      '.pricing-card__tagline', '.pricing-card__list li', '.pricing-card__note',
+      '.plan-feature__catch', '.plan-feature__list li', '.plan-feature__note',
+      '.pricing-support__desc', '.pricing-support__note',
+      '.server-info__lead', '.server-opt__desc', '.server-info__note',
+      '.pricing-detail__col li', '.pricing-detail__meta p', '.pricing__note p'
+    ].join(',');
+    document.querySelectorAll(selector).forEach(el => { el.innerHTML = parser.translateHTMLString(el.innerHTML); });
+  } catch (e) { /* 読み込み失敗時は何もしない */ }
 </script>
 </body>
 </html>

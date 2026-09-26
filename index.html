@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=99">
+  <link rel="stylesheet" href="main.css?v=100">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -907,16 +907,18 @@
     const selector = [
       '.hero__body', '.section-desc',
       '.reason-card__title', '.reason-card__desc',
-      '.service-card__title', '.service-card__desc',
+      '.services-flow__title', '.services-flow__text',
+      '.exp-card__title', '.exp-card__text',
+      '.why-hp__text',
       '.work-card__title', '.work-card__desc',
       '.about__greeting', '.about__body p',
-      '.pricing-card__list li',
+      '.pricing-mini__name',
       '.contact__desc',
       '.faq-item__q', '.faq-item__a p',
       '.services__note p', '.pricing__note p',
       '.flow-step div p',
       '.value-card__text', '.worry-item', '.worries__solution p',
-      '.services-mini__text', '.about-lead__text'
+      '.about-lead__text'
     ].join(',');
     document.querySelectorAll(selector).forEach(el => {
       el.innerHTML = parser.translateHTMLString(el.innerHTML);
