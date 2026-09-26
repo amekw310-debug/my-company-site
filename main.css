@@ -262,6 +262,21 @@ ul, ol { list-style: none; }
   letter-spacing: .04em;
 }
 
+/* ===== 見出し・本文の折り返し品質（1文字残り/不自然な改行の抑制） ===== */
+.hero__title, .section-title, .why-hp__title, .plan-feature__title,
+.server-info__title, .reason-card__title, .exp-card__title,
+.services-flow__title, .work-card__title, .contact__title,
+.value-card__title, .worry-item, .pricing-support__title {
+  text-wrap: balance;
+}
+.hero__body, .why-hp__text, .section-desc, .reason-card__desc,
+.exp-card__text, .services-flow__text, .work-card__desc,
+.about-lead__text, .worries__solution p, .plan-feature__catch,
+.server-info__lead, .server-opt__desc, .contact__desc,
+.contact-ok__list li, .price-guide__desc, .plan-feature__list li {
+  text-wrap: pretty;
+}
+
 .section-desc {
   color: var(--text-sub);
   font-size: 15px;
@@ -657,7 +672,7 @@ ul, ol { list-style: none; }
   white-space: normal;
 }
 /* 折り返し時に意味のまとまりを保つ（例:「いなくても。」を分割させない） */
-.hero__title-lead .nobr { white-space: nowrap; }
+.nobr { white-space: nowrap; }
 
 .hero__body {
   font-size: 15px;
