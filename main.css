@@ -2407,6 +2407,9 @@ ul, ol { list-style: none; }
   font-size: 15px;
   line-height: 1.9;
   margin-bottom: 16px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact__simple {
