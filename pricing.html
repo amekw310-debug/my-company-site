@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=100">
+  <link rel="stylesheet" href="main.css?v=101">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -226,7 +226,14 @@
             </ul>
           </div>
         </div>
-        <p class="plan-feature__note">※更新1回＝原則30分程度で完了する軽微な作業が目安です（複数箇所の大幅修正・新規ページ制作は含みません）。<br>※最低契約期間はありません（継続的な改善のため3ヶ月程度のご利用をおすすめしています）。当月に使用しなかった更新回数の翌月繰越はありません。<br>※他社制作サイト・既存サーバーの場合は、事前にサイトおよびサーバー環境（構造・CMS・更新方法・ログイン情報等）を確認したうえで対応可否をご案内します。</p>
+        <div class="notes">
+          <p class="notes__title">ご利用にあたって</p>
+          <ul class="notes__list">
+            <li><b>更新について</b>：更新1回は、原則30分程度で完了する軽微な作業が目安です（複数箇所の大幅修正・新規ページ制作は含みません）。</li>
+            <li><b>契約について</b>：最低契約期間はありません。当月に使わなかった更新回数の翌月繰越はありません（継続的な改善のため3ヶ月程度のご利用をおすすめしています）。</li>
+            <li><b>他社制作サイト・既存サーバー</b>：事前にサイト・サーバー環境（構造・CMS・更新方法・ログイン情報等）を確認のうえ、対応可否をご案内します。</li>
+          </ul>
+        </div>
         <div class="plan-feature__cta">
           <a href="/contact.html" class="cta-primary">社外Web担当サポートを相談する</a>
         </div>
@@ -276,7 +283,14 @@
             <p class="server-opt__desc">現環境から推奨環境等へ移行。規模・CMS・WordPress有無・DNS・データ量等で変動するため、環境確認後に正式なお見積もりとなります。</p>
           </div>
         </div>
-        <p class="server-info__note">※上記は「A@Web Worksが行う設定・公開作業」の料金です。サーバー・ドメインそのものの利用料は別途実費（お客様名義。各サービス提供会社へ直接お支払い）となります。<br>※XServerは推奨環境であり必須ではありません。既存環境は事前確認が必要です。<br>※メールアカウント・メールデータの移行は基本料金に含みません（必要な場合は別途お見積もり）。環境・サイト規模によって追加費用が発生する場合があります。</p>
+        <div class="notes">
+          <p class="notes__title">サーバーについての注意事項</p>
+          <ul class="notes__list">
+            <li><b>料金の区分</b>：上記は「A@Web Worksが行う設定・公開作業」の料金です。サーバー・ドメインの利用料は別途実費（お客様名義で、各サービス提供会社へ直接お支払い）です。</li>
+            <li><b>推奨環境</b>：XServerは推奨であり必須ではありません。既存環境をご利用の場合は事前確認が必要です。</li>
+            <li><b>メール移行</b>：基本料金には含みません（必要な場合は別途お見積もり）。環境・サイト規模により追加費用が発生する場合があります。</li>
+          </ul>
+        </div>
       </div>
 
       <!-- ホームページ制作プランの詳細 -->
@@ -376,7 +390,8 @@
       '.pricing-card__tagline', '.pricing-card__list li', '.pricing-card__note',
       '.plan-feature__catch', '.plan-feature__list li', '.plan-feature__note',
       '.pricing-support__desc', '.pricing-support__note',
-      '.server-info__lead', '.server-opt__desc', '.server-info__note',
+      '.server-info__lead', '.server-opt__desc',
+      '.notes__list li',
       '.pricing-detail__col li', '.pricing-detail__meta p', '.pricing__note p'
     ].join(',');
     document.querySelectorAll(selector).forEach(el => { el.innerHTML = parser.translateHTMLString(el.innerHTML); });

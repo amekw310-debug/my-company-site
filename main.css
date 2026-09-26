@@ -1237,6 +1237,33 @@ ul, ol { list-style: none; }
 }
 .plan-feature__cta { text-align: center; margin-top: 22px; }
 
+/* 注意事項（見出し＋箇条書き） */
+.notes {
+  margin-top: 20px;
+  text-align: left;
+  background: var(--bg-section);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.notes__title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin: 0 0 8px;
+}
+.notes__list { list-style: none; margin: 0; padding: 0; }
+.notes__list li {
+  position: relative;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-light);
+  padding: 4px 0 4px 15px;
+  text-wrap: pretty;
+}
+.notes__list li + li { border-top: 1px dashed var(--border); margin-top: 4px; padding-top: 8px; }
+.notes__list li::before { content: "・"; position: absolute; left: 0; color: var(--primary); }
+.notes__list b { color: var(--text-sub); font-weight: 700; }
+
 /* ===== スポット対応・追加作業の時間料金 ===== */
 .spot-rates {
   display: flex;
