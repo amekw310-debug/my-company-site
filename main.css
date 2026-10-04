@@ -2886,6 +2886,15 @@ a.news-item__title:hover { color: var(--primary); }
   font-size: 15px;
   letter-spacing: .04em;
 }
+.pricing-mini__supplement {
+  max-width: 760px;
+  margin: 16px auto 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-sub);
+}
+.pricing-mini__supplement strong { color: var(--primary); font-weight: 700; }
 @media (max-width: 640px) {
   .pricing-mini {
     grid-template-columns: 1fr;
@@ -3183,4 +3192,48 @@ a.news-item__title:hover { color: var(--primary); }
     align-items: center;
     text-align: center;
   }
+}
+
+/* ===== スマホ最終調整：余白・カード高さ・固定UIのテンポ（v=104） ===== */
+@media (max-width: 640px) {
+  /* 固定ヘッダーを約17%コンパクトに（ロゴ可読性は維持） */
+  .header__inner { height: 60px; }
+
+  /* スクロールトップボタン：小さく・端に寄せ・影を弱く */
+  .page-top {
+    width: 42px; height: 42px;
+    right: 16px; bottom: 18px;
+    font-size: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.14);
+  }
+
+  /* SERVICES 3カードをコンパクトに */
+  .services-flow { gap: 10px; }
+  .services-flow__step { padding: 20px 20px; }
+  .services-flow__stage { margin-bottom: 10px; }
+  .services-flow__title { margin-bottom: 7px; }
+
+  /* FEATURES カードの縦幅を圧縮 */
+  .reasons__grid { gap: 16px; }
+  .reason-card { padding: 22px 22px; }
+  .reason-card__icon { width: 44px; height: 44px; margin-bottom: 12px; }
+  .reason-card__icon svg { width: 44px; height: 44px; }
+  .reason-card__title { margin-bottom: 8px; }
+
+  /* PRACTICAL EXPERIENCE：英字見出しを縮小＋カード圧縮 */
+  .experience .section-label { font-size: 26px; letter-spacing: .1em; }
+  .exp-grid { gap: 14px; }
+  .exp-card { padding: 22px 22px; }
+  .exp-card__num { font-size: 26px; margin-bottom: 10px; }
+  .exp-card__title { margin-bottom: 7px; }
+
+  /* WORRIES カードの上下paddingを圧縮 */
+  .worries__grid { gap: 10px; }
+  .worry-item { padding: 12px 16px; }
+
+  /* WEB PARTNER 料金サブ行を詰める */
+  .why-hp__text--sub { margin-top: -10px; margin-bottom: 20px; font-size: 14px; }
+
+  /* TOP PRICING 補足 */
+  .pricing-mini__supplement { font-size: 12.5px; }
 }
