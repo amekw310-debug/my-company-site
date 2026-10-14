@@ -3372,3 +3372,25 @@ a.news-item__title:hover { color: var(--primary); }
   /* TOP PRICING 補足 */
   .pricing-mini__supplement { font-size: 12.5px; }
 }
+
+/* ===== WORKS/SERVICES 追加要素（v=108） ===== */
+.works-group__note {
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  margin: -10px auto 20px;
+  max-width: 720px;
+}
+.works-more { text-align: center; margin-top: 8px; }
+.cs-card__permit { font-size: 12px; color: var(--text-light); margin: 0 0 10px; }
+.services-add {
+  max-width: 900px;
+  margin: 20px auto 0;
+  background: var(--bg-section);
+  border-radius: var(--radius-lg);
+  padding: 20px 26px;
+  text-align: center;
+}
+.services-add__label { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.services-add__text { font-size: 13.5px; line-height: 1.9; color: var(--text-sub); max-width: 720px; margin: 0 auto; text-wrap: pretty; }

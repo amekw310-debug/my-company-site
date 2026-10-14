@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=107">
+  <link rel="stylesheet" href="main.css?v=108">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -81,6 +81,7 @@
       <!-- ② 企業での実務経験 -->
       <div class="works-group">
         <h2 class="works-group__title">企業での実務経験</h2>
+        <p class="works-group__note">勤務先で担当した業務であり、A@Web Worksとしての受託案件ではありません。</p>
         <div class="cs-grid">
           <!-- 差し替え時：.cs-card__img の中身を <img> / リンクに置き換え可能 -->
           <article class="cs-card">
@@ -90,7 +91,7 @@
               <h3 class="cs-card__title">建設会社｜Web制作・SNS運用・採用広報</h3>
               <p class="cs-card__label">担当分野</p>
               <ul class="cs-card__fields">
-                <li>ホームページ制作・更新</li>
+                <li>ホームページのリニューアル・更新</li>
                 <li>Instagram・TikTok運用</li>
                 <li>採用広報</li>
                 <li>資料制作</li>
@@ -105,8 +106,9 @@
               <p class="cs-card__label">担当分野</p>
               <ul class="cs-card__fields">
                 <li>Instagram運用</li>
+                <li>インサイト確認</li>
                 <li>販促物制作</li>
-                <li>Web関連業務</li>
+                <li>Web関連サポート</li>
               </ul>
             </div>
           </article>
@@ -127,9 +129,10 @@
               <h3 class="cs-card__title">K.seq STRUCTURAL ESTIMATION</h3>
               <dl class="cs-card__meta">
                 <div><dt>業種</dt><dd>建築積算事業</dd></div>
-                <div><dt>担当業務</dt><dd>サイト構成・デザイン・Web制作・スマートフォン対応・問い合わせ導線の設計</dd></div>
+                <div><dt>担当範囲</dt><dd>サイト構成・デザイン・実装・スマートフォン対応・公開</dd></div>
                 <div><dt>公開方法</dt><dd>GitHub Pages</dd></div>
               </dl>
+              <p class="cs-card__permit">※掲載許可を取得済みの制作案件です。</p>
               <a href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
             </div>
           </article>
@@ -460,7 +463,7 @@
   try {
     const { loadDefaultJapaneseParser } = await import('https://cdn.jsdelivr.net/npm/budoux@0.6.4/module/index.js');
     const parser = loadDefaultJapaneseParser();
-    const selector = ['.section-desc', '.works__notice', '.work-card__title', '.work-card__desc', '.work-detail__list dd', '.cs-card__title', '.cs-card__fields li'].join(',');
+    const selector = ['.section-desc', '.works__notice', '.works-group__note', '.work-card__title', '.work-card__desc', '.work-detail__list dd', '.cs-card__title', '.cs-card__fields li'].join(',');
     document.querySelectorAll(selector).forEach(el => { el.innerHTML = parser.translateHTMLString(el.innerHTML); });
   } catch (e) { /* 読み込み失敗時は何もしない */ }
 </script>
