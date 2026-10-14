@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=106">
+  <link rel="stylesheet" href="main.css?v=107">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -401,9 +401,66 @@
     <div class="container">
       <div class="section-header">
         <p class="section-label">WORKS</p>
-        <h2 class="section-title">制作事例・自主制作。</h2>
-        <p class="section-desc">課題に対して、どのように設計したかをご紹介します。</p>
+        <h2 class="section-title">実績・制作事例。</h2>
+        <p class="section-desc">企業での実務経験からWeb制作事例まで、これまでの取り組みをご紹介します。</p>
       </div>
+
+      <!-- Webサイト制作実績（K.seqを優先表示） -->
+      <div class="works-group">
+        <div class="cs-grid cs-grid--single">
+          <article class="cs-card cs-card--real">
+            <a class="cs-card__thumb" href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" aria-label="K.seq STRUCTURAL ESTIMATION の公開サイトを開く">
+              <!-- スクリーンショット差し替え位置：下の span を <picture><source srcset="images/thumb-kseq.webp" type="image/webp"><img src="images/thumb-kseq.jpg" alt="K.seq STRUCTURAL ESTIMATION 公開サイトのスクリーンショット" loading="lazy"></picture> に置き換え -->
+              <span class="cs-card__thumb-ph"><span class="cs-card__soon">SCREENSHOT 準備中</span></span>
+            </a>
+            <div class="cs-card__body">
+              <span class="cs-card__cat cs-card__cat--web">Webサイト制作実績</span>
+              <h3 class="cs-card__title">K.seq STRUCTURAL ESTIMATION</h3>
+              <dl class="cs-card__meta">
+                <div><dt>業種</dt><dd>建築積算事業</dd></div>
+                <div><dt>担当業務</dt><dd>サイト構成・デザイン・Web制作・スマートフォン対応・問い合わせ導線の設計</dd></div>
+                <div><dt>公開方法</dt><dd>GitHub Pages</dd></div>
+              </dl>
+              <a href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 企業での実務経験 -->
+      <div class="works-group">
+        <div class="cs-grid">
+          <article class="cs-card">
+            <div class="cs-card__img" aria-hidden="true"><span class="cs-card__soon">COMING SOON</span></div>
+            <div class="cs-card__body">
+              <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
+              <h3 class="cs-card__title">建設会社｜Web制作・SNS運用・採用広報</h3>
+              <p class="cs-card__label">担当分野</p>
+              <ul class="cs-card__fields">
+                <li>ホームページ制作・更新</li>
+                <li>Instagram・TikTok運用</li>
+                <li>採用広報</li>
+                <li>資料制作</li>
+              </ul>
+            </div>
+          </article>
+          <article class="cs-card">
+            <div class="cs-card__img" aria-hidden="true"><span class="cs-card__soon">COMING SOON</span></div>
+            <div class="cs-card__body">
+              <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
+              <h3 class="cs-card__title">地域パソコンショップ｜SNS運用・販促物制作</h3>
+              <p class="cs-card__label">担当分野</p>
+              <ul class="cs-card__fields">
+                <li>Instagram運用</li>
+                <li>販促物制作</li>
+                <li>Web関連業務</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 自主制作サンプル -->
       <p class="works__notice">※以下は、想定課題をもとに制作した自主制作サンプルです。</p>
       <div class="works-carousel" data-works-carousel>
         <div class="works-carousel__viewport">
@@ -882,6 +939,7 @@
       '.services__note p', '.pricing__note p',
       '.flow-step div p',
       '.value-card__text', '.worry-item', '.worries__solution p',
+      '.cs-card__title', '.cs-card__meta dd', '.cs-card__fields li',
       '.about-lead__text'
     ].join(',');
     document.querySelectorAll(selector).forEach(el => {
