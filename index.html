@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=108">
+  <link rel="stylesheet" href="main.css?v=109">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -252,43 +252,66 @@
 
   </section>
 
-  <!-- ========== こんなお悩みはありませんか ========== -->
-  <section class="section worries" id="worries">
+  <!-- ========== WORKS（制作実績・企業での実務経験） ========== -->
+  <section class="section works" id="works">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">WORRIES</p>
-        <h2 class="section-title">こんなお悩みはありませんか？</h2>
+        <p class="section-label">WORKS</p>
+        <h2 class="section-title">制作実績・企業での実務経験。</h2>
+        <p class="section-desc">ホームページ制作からSNS運用・広報業務まで、これまでの取り組みをご紹介します。</p>
       </div>
-      <ul class="worries__grid">
-        <li class="worry-item"><span class="worry-item__check" aria-hidden="true">✓</span>ホームページが必要だけど、何から始めればいいか分からない</li>
-        <li class="worry-item"><span class="worry-item__check" aria-hidden="true">✓</span>ホームページを作ったものの、更新できていない</li>
-        <li class="worry-item"><span class="worry-item__check" aria-hidden="true">✓</span>SNSもやりたいが、手が回らない</li>
-        <li class="worry-item"><span class="worry-item__check" aria-hidden="true">✓</span>社内にWebに詳しい人がいない</li>
-        <li class="worry-item"><span class="worry-item__check" aria-hidden="true">✓</span>制作会社に頼んだ後、誰に相談すればいいか分からない</li>
-        <li class="worry-item"><span class="worry-item__check" aria-hidden="true">✓</span>自社の強みや仕事内容を、うまく言葉にできない</li>
-      </ul>
-      <div class="worries__solution">
-        <p>その"Web業務"、社外のWeb担当としてサポートします。お悩みを整理し、無理なく続けられる形をご提案します。</p>
-        <a href="/contact.html" class="cta-primary">まずはWebまわりを相談する</a>
+
+      <div class="works-top">
+        <!-- Webサイト制作実績（K.seqを大きめに配置） -->
+        <article class="cs-card cs-card--real cs-card--feature">
+          <a class="cs-card__thumb" href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" aria-label="K.seq STRUCTURAL ESTIMATION の公開サイトを開く">
+            <picture><source srcset="images/thumb-kseq.webp" type="image/webp"><img src="images/thumb-kseq.jpg" alt="K.seq STRUCTURAL ESTIMATION 公開サイトのスクリーンショット" width="900" height="568" loading="lazy" decoding="async"></picture>
+          </a>
+          <div class="cs-card__body">
+            <span class="cs-card__cat cs-card__cat--web">Webサイト制作実績</span>
+            <h3 class="cs-card__title">K.seq STRUCTURAL ESTIMATION</h3>
+            <dl class="cs-card__meta">
+              <div><dt>業種</dt><dd>建築積算事業</dd></div>
+              <div><dt>担当範囲</dt><dd>サイト構成・デザイン・実装・スマートフォン対応・公開</dd></div>
+              <div><dt>公開方法</dt><dd>GitHub Pages</dd></div>
+            </dl>
+            <p class="cs-card__permit">※掲載許可を取得済みの制作案件です。</p>
+            <a href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
+          </div>
+        </article>
+
+        <!-- 企業での実務経験（コンパクト表示 / Coming Soon維持） -->
+        <div class="works-exp">
+          <article class="cs-card cs-card--compact">
+            <div class="cs-card__body">
+              <div class="cs-card__compact-head">
+                <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
+                <span class="cs-card__soon-badge">COMING SOON</span>
+              </div>
+              <h3 class="cs-card__title">建設会社｜Web制作・SNS運用・採用広報</h3>
+              <p class="cs-card__fields-inline">ホームページのリニューアル・更新／Instagram・TikTok運用／採用広報／資料制作</p>
+            </div>
+          </article>
+          <article class="cs-card cs-card--compact">
+            <div class="cs-card__body">
+              <div class="cs-card__compact-head">
+                <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
+                <span class="cs-card__soon-badge">COMING SOON</span>
+              </div>
+              <h3 class="cs-card__title">地域パソコンショップ｜SNS運用・販促物制作</h3>
+              <p class="cs-card__fields-inline">Instagram運用／インサイト確認／販促物制作／Web関連サポート</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="works-more">
+        <a href="works.html" class="cta-primary">実績一覧を見る</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== 社外Web担当という選択肢 ========== -->
-  <section class="section why-hp">
-    <div class="container">
-      <div class="why-hp__box">
-        <p class="why-hp__label">WEB PARTNER</p>
-        <h2 class="why-hp__title">制作会社ではなく、<br class="why-hp__br">“社外Web担当”という選択肢。</h2>
-        <p class="why-hp__text">「専任のWeb担当者を置くほどではないけれど、ホームページの更新やSNSまで手が回らない。」<br>そんな事業者さまの“社外のWeb担当”として、公開後も継続してサポートします。</p>
-        <p class="why-hp__text why-hp__text--sub">社外Web担当サポート 月額19,800円（税込）</p>
-        <a href="/contact.html" class="cta-primary">まずはWebまわりを相談する</a>
-        <p class="why-hp__cta-note">初回30分無料｜相談内容が決まっていなくてもOK</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ④ サービス内容 ========== -->
+  <!-- ========== SERVICES（提供サービス） ========== -->
   <section class="section services" id="services">
     <div class="container">
       <div class="section-header">
@@ -296,28 +319,27 @@
         <h2 class="section-title">できること。</h2>
         <p class="section-desc">ホームページは「作って終わり」ではありません。<strong>作る → 育てる → 発信する</strong>まで、Webまわりをまとめてお任せいただけます。</p>
       </div>
-      <div class="services-flow">
-        <div class="services-flow__step">
-          <span class="services-flow__stage">作る</span>
-          <h3 class="services-flow__title">ホームページ制作・リニューアル</h3>
-          <p class="services-flow__text">会社・店舗のホームページ制作やリニューアルに対応します。</p>
+      <div class="services-grid">
+        <div class="svc-card">
+          <span class="svc-card__stage">作る</span>
+          <h3 class="svc-card__title">ホームページ制作・リニューアル</h3>
+          <p class="svc-card__text">会社・店舗のホームページ制作やリニューアルに対応します。</p>
         </div>
-        <span class="services-flow__arrow" aria-hidden="true">→</span>
-        <div class="services-flow__step">
-          <span class="services-flow__stage">育てる</span>
-          <h3 class="services-flow__title">更新・保守・運用サポート</h3>
-          <p class="services-flow__text">公開後の更新・改善を継続してサポートします。</p>
+        <div class="svc-card">
+          <span class="svc-card__stage">育てる</span>
+          <h3 class="svc-card__title">更新・保守・運用サポート</h3>
+          <p class="svc-card__text">公開後の更新・改善を継続してサポートします。</p>
         </div>
-        <span class="services-flow__arrow" aria-hidden="true">→</span>
-        <div class="services-flow__step">
-          <span class="services-flow__stage">発信する</span>
-          <h3 class="services-flow__title">InstagramなどのSNS運用</h3>
-          <p class="services-flow__text">InstagramなどのSNS運用・投稿制作をサポートします。</p>
+        <div class="svc-card">
+          <span class="svc-card__stage">発信する</span>
+          <h3 class="svc-card__title">SNS運用（Instagramなど）</h3>
+          <p class="svc-card__text">InstagramなどのSNS運用・投稿制作をサポートします。</p>
         </div>
-      </div>
-      <div class="services-add">
-        <p class="services-add__label">＋ 広報・採用サポート</p>
-        <p class="services-add__text">求人情報の更新、採用広報、案内資料や販促物の制作など、企業の情報発信に関する業務をサポートします。対応内容が決まっていない業務は、ご相談・個別お見積もりで承ります。</p>
+        <div class="svc-card">
+          <span class="svc-card__stage">広げる</span>
+          <h3 class="svc-card__title">広報・採用サポート</h3>
+          <p class="svc-card__text">求人情報の更新・採用広報、案内資料や販促物の制作などをサポートします。内容が決まっていない業務は個別お見積もりで承ります。</p>
+        </div>
       </div>
       <div class="section__detail-link">
         <a href="services.html" class="cta-primary">サービスの詳細をみる</a>
@@ -325,15 +347,18 @@
     </div>
   </section>
 
-  <!-- ========== ⑥ 選ばれる理由 ========== -->
-  <section class="section reasons" id="reasons">
+  <!-- ========== ABOUT / FEATURES（実務経験・強み） ========== -->
+  <section class="section about-features" id="about">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">FEATURES</p>
-        <h2 class="section-title">A@Web Worksが選ばれる理由。</h2>
-        <p class="section-desc">一般的なWeb制作会社ではなく、A@Web Worksに相談する理由をご紹介します。</p>
+        <p class="section-label">ABOUT / FEATURES</p>
+        <h2 class="section-title">実務経験と、選ばれる理由。</h2>
+        <p class="section-desc">建設会社や地域のパソコンショップで、ホームページ更新・SNS運用・採用広報・販促物制作などのWeb業務を実務として担当してきました。制作する側としてだけでなく、会社の中で実際に運用してきた経験をもとにご提案します。</p>
       </div>
-      <div class="reasons__grid">
+      <div class="about-lead">
+        <p class="about-lead__text">中小企業や地域事業者の“社外Web担当”として、内容整理から公開後の運用まで、継続して相談できる存在を目指しています。</p>
+      </div>
+      <div class="reasons__grid" id="reasons">
 
         <div class="reason-card">
           <div class="reason-card__icon">
@@ -369,109 +394,13 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ========== 実務で経験してきたこと ========== -->
-  <section class="section experience" id="experience">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">PRACTICAL EXPERIENCE</p>
-        <h2 class="section-title">実務で経験してきたこと。</h2>
-        <p class="section-desc">建設会社で担当してきたWeb業務です。制作する側としてだけでなく、会社の中で実際に運用してきた経験があります。</p>
-      </div>
-      <div class="exp-grid">
-        <div class="exp-card">
-          <span class="exp-card__num">01</span>
-          <h3 class="exp-card__title">ホームページ運用・改善</h3>
-          <p class="exp-card__text">会社ホームページの更新やページ修正、掲載情報の整理など、公開後の運用を実務として担当してきました。</p>
-        </div>
-        <div class="exp-card">
-          <span class="exp-card__num">02</span>
-          <h3 class="exp-card__title">採用情報の発信</h3>
-          <p class="exp-card__text">求人情報や採用ページなど、会社が求職者へ情報を届けるためのWeb発信に携わってきました。</p>
-        </div>
-        <div class="exp-card">
-          <span class="exp-card__num">03</span>
-          <h3 class="exp-card__title">SNS運用</h3>
-          <p class="exp-card__text">Instagramなどを使った情報発信や、投稿内容の企画・制作・見直しを担当してきました。</p>
-        </div>
+      <div class="section__detail-link">
+        <a href="about.html" class="cta-primary">プロフィールをみる</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== ② 制作事例・自主制作 ========== -->
-  <section class="section works" id="works">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">WORKS</p>
-        <h2 class="section-title">制作実績・企業での実務経験。</h2>
-        <p class="section-desc">ホームページ制作からSNS運用・広報業務まで、これまでの取り組みをご紹介します。</p>
-      </div>
-
-      <!-- Webサイト制作実績（K.seqを優先表示） -->
-      <div class="works-group">
-        <div class="cs-grid cs-grid--single">
-          <article class="cs-card cs-card--real">
-            <a class="cs-card__thumb" href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" aria-label="K.seq STRUCTURAL ESTIMATION の公開サイトを開く">
-              <picture><source srcset="images/thumb-kseq.webp" type="image/webp"><img src="images/thumb-kseq.jpg" alt="K.seq STRUCTURAL ESTIMATION 公開サイトのスクリーンショット" width="900" height="568" loading="lazy" decoding="async"></picture>
-            </a>
-            <div class="cs-card__body">
-              <span class="cs-card__cat cs-card__cat--web">Webサイト制作実績</span>
-              <h3 class="cs-card__title">K.seq STRUCTURAL ESTIMATION</h3>
-              <dl class="cs-card__meta">
-                <div><dt>業種</dt><dd>建築積算事業</dd></div>
-                <div><dt>担当範囲</dt><dd>サイト構成・デザイン・実装・スマートフォン対応・公開</dd></div>
-                <div><dt>公開方法</dt><dd>GitHub Pages</dd></div>
-              </dl>
-              <p class="cs-card__permit">※掲載許可を取得済みの制作案件です。</p>
-              <a href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- 企業での実務経験 -->
-      <div class="works-group">
-        <div class="cs-grid">
-          <article class="cs-card">
-            <div class="cs-card__img" aria-hidden="true"><span class="cs-card__soon">COMING SOON</span></div>
-            <div class="cs-card__body">
-              <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
-              <h3 class="cs-card__title">建設会社｜Web制作・SNS運用・採用広報</h3>
-              <p class="cs-card__label">担当分野</p>
-              <ul class="cs-card__fields">
-                <li>ホームページのリニューアル・更新</li>
-                <li>Instagram・TikTok運用</li>
-                <li>採用広報</li>
-                <li>資料制作</li>
-              </ul>
-            </div>
-          </article>
-          <article class="cs-card">
-            <div class="cs-card__img" aria-hidden="true"><span class="cs-card__soon">COMING SOON</span></div>
-            <div class="cs-card__body">
-              <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
-              <h3 class="cs-card__title">地域パソコンショップ｜SNS運用・販促物制作</h3>
-              <p class="cs-card__label">担当分野</p>
-              <ul class="cs-card__fields">
-                <li>Instagram運用</li>
-                <li>インサイト確認</li>
-                <li>販促物制作</li>
-                <li>Web関連サポート</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="works-more">
-        <a href="works.html" class="cta-primary">実績一覧を見る</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ③ 料金プラン ========== -->
+  <!-- ========== PRICING（料金案内） ========== -->
   <section class="section pricing" id="pricing">
     <div class="container">
       <div class="section-header">
@@ -497,23 +426,6 @@
       <p class="pricing-mini__supplement">継続的な更新・Web相談なら <strong>社外Web担当サポート 月額¥19,800（税込）</strong></p>
       <div class="section__detail-link">
         <a href="pricing.html" class="cta-primary">詳細をみる</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ⑤ 自己紹介 ========== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">ABOUT ME</p>
-        <h2 class="section-title">私について。</h2>
-      </div>
-      <div class="about-lead">
-        <p class="about-lead__text">建設会社でHP更新・SNS運用・採用発信を担当した経験をもとに、中小企業や地域事業者のWeb支援を行っています。</p>
-        <p class="about-lead__text">内容整理から公開後の運用まで、継続して相談できる存在を目指しています。</p>
-      </div>
-      <div class="section__detail-link">
-        <a href="about.html" class="cta-primary">プロフィールをみる</a>
       </div>
     </div>
   </section>
@@ -878,8 +790,7 @@
       '.hero__body', '.section-desc',
       '.reason-card__title', '.reason-card__desc',
       '.services-flow__title', '.services-flow__text', '.services-add__text',
-      '.exp-card__title', '.exp-card__text',
-      '.why-hp__title', '.why-hp__text',
+      '.svc-card__title', '.svc-card__text',
       '.work-card__title', '.work-card__desc',
       '.about__greeting', '.about__body p',
       '.pricing-mini__name',
@@ -888,7 +799,7 @@
       '.services__note p', '.pricing__note p',
       '.flow-step div p',
       '.value-card__text', '.worry-item', '.worries__solution p',
-      '.cs-card__title', '.cs-card__meta dd', '.cs-card__fields li',
+      '.cs-card__title', '.cs-card__meta dd', '.cs-card__fields li', '.cs-card__fields-inline',
       '.about-lead__text'
     ].join(',');
     document.querySelectorAll(selector).forEach(el => {
