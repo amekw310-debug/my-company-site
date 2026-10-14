@@ -2584,7 +2584,7 @@ ul, ol { list-style: none; }
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background: rgba(255,255,255,.85);
+  background: #fff;
   border: none;
   border-radius: var(--radius-lg);
   padding: 32px 24px;
@@ -2593,10 +2593,9 @@ ul, ol { list-style: none; }
   text-align: center;
   transition: all .25s;
   cursor: pointer;
-  backdrop-filter: blur(8px);
 }
 .contact-card:hover {
-  background: rgba(255,255,255,.92);
+  background: #fff;
   transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(156,85,112,.15);
 }
@@ -2787,7 +2786,7 @@ ul, ol { list-style: none; }
 }
 
 .faq-item {
-  background: rgba(255,255,255,.78);
+  background: #fff;
   border: 1px solid rgba(255,111,143,.16);
   border-radius: 14px;
   margin-bottom: 12px;
@@ -3463,4 +3462,18 @@ a.news-item__title:hover { color: var(--primary); }
 .about-features .about-lead { text-align: center; margin-bottom: 36px; }
 @media (max-width: 640px) {
   .about-features .about-lead { margin-bottom: 26px; }
+}
+
+/* ============================================================
+   カード背景の透過修正
+   背景の透かし(.bg-watermark: position:fixed; z-index:0)は、非配置の
+   本文コンテンツより前面に描画されるため、白いカードの上に薄く重なって
+   見えていた。main を独立した重なり文脈にして透かしより前面へ置くことで、
+   不透明なカードが透かしを覆う（セクション余白では従来どおり透かしが見える）。
+   ※レイアウトは不変（position:relative のオフセットなし）。カード自体の
+   　背景色・文字色は変更していない。
+   ============================================================ */
+main {
+  position: relative;
+  z-index: 1;
 }
