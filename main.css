@@ -3381,7 +3381,8 @@ a.news-item__title:hover { color: var(--primary); }
   margin: -10px auto 20px;
   max-width: 720px;
 }
-.works-more { text-align: center; margin-top: 8px; }
+/* WORKS一覧全体の下に独立配置するCTA（個別カードに紐づかない） */
+.works-more { text-align: center; margin-top: 44px; }
 .cs-card__permit { font-size: 12px; color: var(--text-light); margin: 0 0 10px; }
 .services-add {
   max-width: 900px;
@@ -3404,7 +3405,7 @@ a.news-item__title:hover { color: var(--primary); }
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 @media (min-width: 901px) {
   .works-top { grid-template-columns: 1.55fr 1fr; gap: 24px; align-items: start; }
@@ -3456,6 +3457,7 @@ a.news-item__title:hover { color: var(--primary); }
   .svc-card { padding: 18px 16px; border-radius: 16px; }
   .svc-card__title { font-size: 14.5px; }
   .services-grid { gap: 12px; }
+  .works-more { margin-top: 32px; }
 }
 
 /* --- ABOUT / FEATURES 統合セクション：リード文を中央寄せ --- */
