@@ -3394,3 +3394,73 @@ a.news-item__title:hover { color: var(--primary); }
 }
 .services-add__label { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
 .services-add__text { font-size: 13.5px; line-height: 1.9; color: var(--text-sub); max-width: 720px; margin: 0 auto; text-wrap: pretty; }
+
+/* ============================================================
+   TOP リニューアル：WORKSフィーチャー配置 / SERVICES 4カード
+   （index.html専用の新クラス。他ページには影響しません）
+   ============================================================ */
+
+/* --- WORKS: K.seqを大きめ＋実務経験をコンパクトに横並び --- */
+.works-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+@media (min-width: 901px) {
+  .works-top { grid-template-columns: 1.55fr 1fr; gap: 24px; align-items: start; }
+}
+.works-exp { display: flex; flex-direction: column; gap: 16px; }
+
+/* 実務経験カード（コンパクト / Coming Soon維持） */
+.cs-card--compact .cs-card__body { padding: 18px 20px; }
+.cs-card__compact-head {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;
+}
+.cs-card--compact .cs-card__cat { margin-bottom: 0; }
+.cs-card__soon-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .16em;
+  color: var(--text-light);
+  border: 1px solid var(--border); border-radius: 100px; padding: 3px 9px;
+}
+.cs-card--compact .cs-card__title { margin-bottom: 8px; font-size: 15px; }
+.cs-card__fields-inline { font-size: 13px; line-height: 1.8; color: var(--text-sub); margin: 0; }
+
+/* --- SERVICES: 4サービスを 4列（PC）/ 2×2（タブレット・スマホ） --- */
+.services-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 8px;
+}
+@media (min-width: 901px) {
+  .services-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+}
+.svc-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 24px 20px;
+  display: flex; flex-direction: column;
+}
+.svc-card__stage {
+  align-self: flex-start;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  color: var(--primary); background: var(--primary-light);
+  border-radius: 100px; padding: 4px 12px; margin-bottom: 12px;
+}
+.svc-card__title {
+  font-size: 15px; font-weight: 700; color: var(--text);
+  line-height: 1.55; margin-bottom: 8px; text-wrap: balance;
+}
+.svc-card__text { font-size: 13px; line-height: 1.85; color: var(--text-sub); margin: 0; }
+@media (max-width: 640px) {
+  .svc-card { padding: 18px 16px; border-radius: 16px; }
+  .svc-card__title { font-size: 14.5px; }
+  .services-grid { gap: 12px; }
+}
+
+/* --- ABOUT / FEATURES 統合セクション：リード文を中央寄せ --- */
+.about-features .about-lead { text-align: center; margin-bottom: 36px; }
+@media (max-width: 640px) {
+  .about-features .about-lead { margin-bottom: 26px; }
+}
