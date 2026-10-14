@@ -1729,6 +1729,103 @@ ul, ol { list-style: none; }
   color: var(--primary);
   background: var(--primary-light);
 }
+
+/* ===== WORKS：セクション内グループ見出し＆Coming Soonカード枠 ===== */
+.works-group { max-width: 980px; margin: 0 auto 44px; }
+.works-group__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 22px;
+}
+.works-group__title::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  background: var(--primary);
+  margin: 10px auto 0;
+}
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.cs-grid--single {
+  grid-template-columns: minmax(0, 440px);
+  justify-content: center;
+}
+.cs-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cs-card__img {
+  height: 170px;
+  background-image: linear-gradient(135deg, #F2ECE8 0%, #ECE3DE 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+.cs-card__soon {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  color: var(--text-light);
+}
+.cs-card__body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.cs-card__cat {
+  align-self: flex-start;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  letter-spacing: .02em;
+}
+.cs-card__cat--exp { background: var(--bg-section); color: var(--text-sub); border: 1px solid var(--border); }
+.cs-card__cat--web { background: var(--primary-light); color: var(--primary); }
+.cs-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 12px;
+  text-wrap: balance;
+}
+.cs-card__label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-bottom: 6px;
+}
+.cs-card__fields { list-style: none; margin: 0; padding: 0; }
+.cs-card__fields li {
+  position: relative;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  padding: 3px 0 3px 16px;
+}
+.cs-card__fields li::before { content: "・"; position: absolute; left: 0; color: var(--primary); }
+.cs-card__detail { font-size: 13.5px; color: var(--text-light); }
+@media (max-width: 640px) {
+  .works-group { margin-bottom: 36px; }
+  .cs-grid, .cs-grid--single { grid-template-columns: 1fr; gap: 16px; max-width: 420px; margin: 0 auto; }
+  .cs-card__img { height: 150px; }
+}
+
 /* ===== WORKS 詳細（設計で考えたこと）アコーディオン ===== */
 .work-detail {
   margin-top: 14px;

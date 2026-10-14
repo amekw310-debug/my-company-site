@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=105">
+  <link rel="stylesheet" href="main.css?v=106">
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -74,10 +74,65 @@
     <div class="container">
       <div class="section-header">
         <p class="section-label">WORKS</p>
-        <h1 class="section-title">制作事例・自主制作。</h1>
-        <p class="section-desc">課題に対して、どのように設計したかをご紹介します。</p>
+        <h1 class="section-title">実績・制作事例。</h1>
+        <p class="section-desc">企業での実務経験からWeb制作事例まで、これまでの取り組みをご紹介します。</p>
       </div>
-      <p class="works__notice">※以下は、想定課題をもとに制作した自主制作サンプルです。</p>
+
+      <!-- ② 企業での実務経験 -->
+      <div class="works-group">
+        <h2 class="works-group__title">企業での実務経験</h2>
+        <div class="cs-grid">
+          <!-- 差し替え時：.cs-card__img の中身を <img> / リンクに置き換え可能 -->
+          <article class="cs-card">
+            <div class="cs-card__img" aria-hidden="true"><span class="cs-card__soon">COMING SOON</span></div>
+            <div class="cs-card__body">
+              <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
+              <h3 class="cs-card__title">建設会社｜Web制作・SNS運用・採用広報</h3>
+              <p class="cs-card__label">担当分野</p>
+              <ul class="cs-card__fields">
+                <li>ホームページ制作・更新</li>
+                <li>Instagram・TikTok運用</li>
+                <li>採用広報</li>
+                <li>資料制作</li>
+              </ul>
+            </div>
+          </article>
+          <article class="cs-card">
+            <div class="cs-card__img" aria-hidden="true"><span class="cs-card__soon">COMING SOON</span></div>
+            <div class="cs-card__body">
+              <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
+              <h3 class="cs-card__title">地域パソコンショップ｜SNS運用・販促物制作</h3>
+              <p class="cs-card__label">担当分野</p>
+              <ul class="cs-card__fields">
+                <li>Instagram運用</li>
+                <li>販促物制作</li>
+                <li>Web関連業務</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ③ Webサイト制作実績 -->
+      <div class="works-group">
+        <h2 class="works-group__title">Webサイト制作実績</h2>
+        <div class="cs-grid cs-grid--single">
+          <!-- 掲載許可確認後：会社名・ロゴ・URL・サイト画像を追加 -->
+          <article class="cs-card">
+            <div class="cs-card__img" aria-hidden="true"><span class="cs-card__soon">COMING SOON</span></div>
+            <div class="cs-card__body">
+              <span class="cs-card__cat cs-card__cat--web">Webサイト制作事例</span>
+              <h3 class="cs-card__title">建築積算事業｜ホームページ制作</h3>
+              <p class="cs-card__detail">詳細：準備中</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ④ 自主制作サンプル -->
+      <div class="works-group">
+        <h2 class="works-group__title">自主制作サンプル</h2>
+        <p class="works__notice">※以下は、想定課題をもとに制作した自主制作サンプルです。</p>
       <div class="works-carousel" data-works-carousel>
         <div class="works-carousel__viewport">
           <button class="works-carousel__arrow works-carousel__arrow--prev" type="button" aria-label="前の事例へ">
@@ -189,6 +244,7 @@
           </button>
         </div>
         <div class="works-carousel__dots"></div>
+      </div>
       </div>
     </div>
   </section>
@@ -397,7 +453,7 @@
   try {
     const { loadDefaultJapaneseParser } = await import('https://cdn.jsdelivr.net/npm/budoux@0.6.4/module/index.js');
     const parser = loadDefaultJapaneseParser();
-    const selector = ['.section-desc', '.works__notice', '.work-card__title', '.work-card__desc', '.work-detail__list dd'].join(',');
+    const selector = ['.section-desc', '.works__notice', '.work-card__title', '.work-card__desc', '.work-detail__list dd', '.cs-card__title', '.cs-card__fields li'].join(',');
     document.querySelectorAll(selector).forEach(el => { el.innerHTML = parser.translateHTMLString(el.innerHTML); });
   } catch (e) { /* 読み込み失敗時は何もしない */ }
 </script>
