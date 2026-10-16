@@ -83,16 +83,38 @@
         <h2 class="works-group__title">企業での実務経験</h2>
         <p class="works-group__note">勤務先で担当した業務であり、A@Web Worksとしての受託案件ではありません。</p>
         <div class="cs-grid cs-grid--exp">
-          <article class="cs-card">
+          <article class="cs-card cs-card--site">
             <div class="cs-card__body">
-              <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
-              <h3 class="cs-card__title"><span class="nobr">長縄工務店｜</span><span class="nobr">Web制作・</span><span class="nobr">SNS運用・</span><span class="nobr">採用広報</span></h3>
-              <dl class="cs-card__meta">
-                <div><dt>担当範囲</dt><dd>ホームページのリニューアル・更新／Instagram・TikTok運用／採用情報・求人媒体の更新／パンフレット・案内資料制作／Web関連の運用業務</dd></div>
-                <div><dt>実務内容</dt><dd>社内のWeb担当として、ホームページ・SNS・採用広報を横断して担当。microCMSでのNews・Works更新環境やGoogle Search Console対応など、公開後の運用面も担当しました。</dd></div>
-                <div><dt>特徴</dt><dd>制作して終わりではなく、更新・運用・情報発信まで継続して担当した実務経験です。</dd></div>
-              </dl>
-              <p class="cs-card__permit">※掲載許可をいただいて掲載しています。</p>
+              <div class="site-case">
+                <!--
+                  長縄工務店 実績ギャラリー（メイン画像）
+                  現在は実際のサイト画面1枚。追加候補：TOP / 会社概要 / 採用情報 / 施工実績。
+                  追加する場合は images/ に画像を足し、この .site-shot の下に同形式の
+                  <a class="site-shot">…<picture>…</picture></a> を並べる（.site-case をギャラリー化）。
+                -->
+                <a class="site-shot" href="https://naganawa-k.co.jp/" target="_blank" rel="noopener noreferrer" aria-label="株式会社 長縄工務店の公式サイトを別タブで開く">
+                  <picture><source srcset="images/naganawa-site.webp" type="image/webp"><img src="images/naganawa-site.jpg" alt="株式会社 長縄工務店 公式サイトの画面（ヘッダー・施工現場のメインビジュアル・会社紹介）" width="760" height="1162" loading="lazy" decoding="async"></picture>
+                </a>
+                <div class="site-case__text">
+                  <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
+                  <h3 class="cs-card__title">株式会社 長縄工務店</h3>
+                  <p class="site-case__role">ホームページリニューアル・Web運用</p>
+                  <p class="ms-lead">建設会社のホームページリニューアルから、公開後の更新・SNS・採用広報まで担当しました。</p>
+                  <ul class="exp-tags">
+                    <li>HPリニューアル</li>
+                    <li>サイト更新・運用</li>
+                    <li>Instagram・TikTok運用</li>
+                    <li>採用広報</li>
+                    <li>求人情報更新</li>
+                    <li>資料制作</li>
+                    <li>Web関連サポート</li>
+                  </ul>
+                  <div class="ms-links">
+                    <a class="ext-link" href="https://naganawa-k.co.jp/" target="_blank" rel="noopener noreferrer" aria-label="株式会社 長縄工務店の公式サイトを別タブで見る">実際のサイトを見る<svg class="ext-link__ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                  </div>
+                  <p class="cs-card__permit">※掲載許可をいただいて掲載しています。</p>
+                </div>
+              </div>
             </div>
           </article>
           <article class="cs-card cs-card--ms">
@@ -491,7 +513,7 @@
   try {
     const { loadDefaultJapaneseParser } = await import('https://cdn.jsdelivr.net/npm/budoux@0.6.4/module/index.js');
     const parser = loadDefaultJapaneseParser();
-    const selector = ['.section-desc', '.works__notice', '.works-group__note', '.work-card__title', '.work-card__desc', '.work-detail__list dd', '.cs-card__title', '.cs-card__fields li', '.ms-lead'].join(',');
+    const selector = ['.section-desc', '.works__notice', '.works-group__note', '.work-card__title', '.work-card__desc', '.work-detail__list dd', '.cs-card__title', '.cs-card__fields li', '.ms-lead', '.site-case__role'].join(',');
     document.querySelectorAll(selector).forEach(el => { el.innerHTML = parser.translateHTMLString(el.innerHTML); });
   } catch (e) { /* 読み込み失敗時は何もしない */ }
 </script>
