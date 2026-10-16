@@ -106,12 +106,33 @@
                 <li>販促物制作</li>
                 <li>Web関連サポート</li>
               </ul>
-              <!-- 画像ギャラリー：エムズの投稿・販促物の例（差し替え可）。実写真に更新する場合は各 picture の webp/jpg を同名で置き換えてください。想定＝①店頭の様子 ②製品の販促投稿 ③来店案内の投稿 ④サービス紹介の販促物 -->
-              <div class="ms-gallery">
-                <figure><picture><source srcset="images/ms-01-store.webp" type="image/webp"><img src="images/ms-01-store.jpg" alt="パソコンショップエムズの店頭の様子" width="560" height="560" loading="lazy" decoding="async"></picture></figure>
-                <figure><picture><source srcset="images/ms-02-promo.webp" type="image/webp"><img src="images/ms-02-promo.jpg" alt="中古ノートパソコンを紹介する販促投稿の制作例" width="560" height="543" loading="lazy" decoding="async"></picture></figure>
-                <figure><picture><source srcset="images/ms-03-welcome.webp" type="image/webp"><img src="images/ms-03-welcome.jpg" alt="来店を案内するSNS投稿の制作例" width="560" height="534" loading="lazy" decoding="async"></picture></figure>
-                <figure><picture><source srcset="images/ms-04-service.webp" type="image/webp"><img src="images/ms-04-service.jpg" alt="サービス内容を紹介する販促物の制作例" width="560" height="519" loading="lazy" decoding="async"></picture></figure>
+              <!--
+                Instagram最新4投稿 自動表示予定（現在は未実装）
+                現在は固定画像 ms-01〜04 を「表示兼fallback」として表示しています。
+                将来 Meta Instagram API + GitHub Actions + data/instagram.json を実装した際、
+                このギャラリー #ms-instagram-gallery の中身をJSで最新4投稿に差し替えます。
+                差し替え方針：
+                  - JSが data/instagram.json の取得に成功 → #ms-instagram-gallery の innerHTML を
+                    最新4投稿（各 .ms-gallery__item：画像＝ローカル保存画像／リンク href＝投稿permalink／
+                    リール・カルーセルは種別アイコンを重ねる）に置換。
+                  - JSが無い／取得失敗／JSON空 → 下の固定4枚(ms-01〜04)がそのまま残る（fallback）。
+                差し替え対象は、この <div id="ms-instagram-gallery"> の内側（.ms-gallery__item 群）のみ。
+                各リンクの href は、現状は投稿個別URLが不明なため @m.s.gk のプロフィールURL（安全な既知URL）。
+                自動表示実装時に各投稿の permalink へ置き換える。
+              -->
+              <div class="ms-gallery" id="ms-instagram-gallery" data-ig-gallery="pending">
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-01-store.webp" type="image/webp"><img src="images/ms-01-store.jpg" alt="パソコンショップエムズの店頭の様子" width="560" height="560" loading="lazy" decoding="async"></picture></figure>
+                </a>
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-02-promo.webp" type="image/webp"><img src="images/ms-02-promo.jpg" alt="中古ノートパソコンを紹介する販促投稿の制作例" width="560" height="543" loading="lazy" decoding="async"></picture></figure>
+                </a>
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-03-welcome.webp" type="image/webp"><img src="images/ms-03-welcome.jpg" alt="来店を案内するSNS投稿の制作例" width="560" height="534" loading="lazy" decoding="async"></picture></figure>
+                </a>
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-04-service.webp" type="image/webp"><img src="images/ms-04-service.jpg" alt="サービス内容を紹介する販促物の制作例" width="560" height="519" loading="lazy" decoding="async"></picture></figure>
+                </a>
               </div>
               <div class="ms-links">
                 <a class="ms-link ms-link--site" href="https://ms-com.net/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズの公式サイトを別タブで見る">公式サイトを見る<svg class="ms-link__ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>

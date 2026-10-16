@@ -3496,11 +3496,14 @@ main {
 }
 
 .ms-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 16px; }
-.ms-gallery figure {
-  margin: 0; aspect-ratio: 1 / 1; overflow: hidden;
+/* 各タイル＝クリックで別タブ（将来は投稿permalink、現状はプロフィール） */
+.ms-gallery__item {
+  display: block; position: relative; aspect-ratio: 1 / 1; overflow: hidden;
   border-radius: 10px; background: #eef6ec; border: 1px solid var(--border);
 }
-.ms-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ms-gallery__item figure { margin: 0; width: 100%; height: 100%; }
+.ms-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.ms-gallery__item:hover img { transform: scale(1.04); }
 @media (min-width: 641px) {
   .ms-gallery { grid-template-columns: repeat(4, 1fr); gap: 10px; }
 }
