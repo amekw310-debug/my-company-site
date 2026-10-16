@@ -3479,3 +3479,41 @@ main {
   position: relative;
   z-index: 1;
 }
+
+/* ============================================================
+   works.html パソコンショップエムズ実績：担当内容タグ／画像ギャラリー／外部リンク
+   この実績カードのみ緑アクセント（エムズらしさ）。サイト全体のトーンは不変。
+   ============================================================ */
+.cs-grid--exp { align-items: start; }
+
+.ms-lead { font-size: 13.5px; line-height: 1.85; color: var(--text-sub); margin: 0 0 12px; }
+
+.ms-tags { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.ms-tags li {
+  font-size: 11.5px; font-weight: 600;
+  color: #3c7d45; background: #eef6ec; border: 1px solid #d6e9d2;
+  border-radius: 100px; padding: 3px 11px;
+}
+
+.ms-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 0 0 16px; }
+.ms-gallery figure {
+  margin: 0; aspect-ratio: 1 / 1; overflow: hidden;
+  border-radius: 10px; background: #eef6ec; border: 1px solid var(--border);
+}
+.ms-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 641px) {
+  .ms-gallery { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+}
+
+.ms-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 2px 0 14px; }
+.ms-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+  padding: 9px 16px; border-radius: 100px;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.ms-link__ext { flex-shrink: 0; }
+.ms-link--site { color: #fff; background: #5ca75f; }
+.ms-link--site:hover { background: #4f9553; transform: translateY(-1px); }
+.ms-link--insta { color: #3c7d45; background: #fff; border: 1.5px solid #cfe4c9; }
+.ms-link--insta:hover { background: #f3f9f1; transform: translateY(-1px); }

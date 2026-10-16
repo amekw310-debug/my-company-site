@@ -82,7 +82,7 @@
       <div class="works-group">
         <h2 class="works-group__title">企業での実務経験</h2>
         <p class="works-group__note">勤務先で担当した業務であり、A@Web Worksとしての受託案件ではありません。</p>
-        <div class="cs-grid">
+        <div class="cs-grid cs-grid--exp">
           <article class="cs-card">
             <div class="cs-card__body">
               <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
@@ -95,14 +95,28 @@
               <p class="cs-card__permit">※掲載許可をいただいて掲載しています。</p>
             </div>
           </article>
-          <article class="cs-card">
+          <article class="cs-card cs-card--ms">
             <div class="cs-card__body">
               <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
               <h3 class="cs-card__title">パソコンショップエムズ｜SNS運用・販促支援</h3>
-              <dl class="cs-card__meta">
-                <div><dt>担当範囲</dt><dd>Instagram運用／投稿企画・制作／インサイト確認／販促物制作／Web関連サポート</dd></div>
-                <div><dt>運用方針</dt><dd>店舗の認知・問い合わせ・来店につながる発信を意識して運用</dd></div>
-              </dl>
+              <p class="ms-lead">店舗のInstagram運用と販促物の制作を中心に、来店・問い合わせにつながる情報発信をお手伝いしています。</p>
+              <ul class="ms-tags">
+                <li>Instagram運用</li>
+                <li>投稿企画・制作</li>
+                <li>販促物制作</li>
+                <li>Web関連サポート</li>
+              </ul>
+              <!-- 画像ギャラリー：エムズの投稿・販促物の例（差し替え可）。実写真に更新する場合は各 picture の webp/jpg を同名で置き換えてください。想定＝①店頭の様子 ②製品の販促投稿 ③来店案内の投稿 ④サービス紹介の販促物 -->
+              <div class="ms-gallery">
+                <figure><picture><source srcset="images/ms-01-store.webp" type="image/webp"><img src="images/ms-01-store.jpg" alt="パソコンショップエムズの店頭の様子" width="560" height="560" loading="lazy" decoding="async"></picture></figure>
+                <figure><picture><source srcset="images/ms-02-promo.webp" type="image/webp"><img src="images/ms-02-promo.jpg" alt="中古ノートパソコンを紹介する販促投稿の制作例" width="560" height="543" loading="lazy" decoding="async"></picture></figure>
+                <figure><picture><source srcset="images/ms-03-welcome.webp" type="image/webp"><img src="images/ms-03-welcome.jpg" alt="来店を案内するSNS投稿の制作例" width="560" height="534" loading="lazy" decoding="async"></picture></figure>
+                <figure><picture><source srcset="images/ms-04-service.webp" type="image/webp"><img src="images/ms-04-service.jpg" alt="サービス内容を紹介する販促物の制作例" width="560" height="519" loading="lazy" decoding="async"></picture></figure>
+              </div>
+              <div class="ms-links">
+                <a class="ms-link ms-link--site" href="https://ms-com.net/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズの公式サイトを別タブで見る">公式サイトを見る<svg class="ms-link__ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <a class="ms-link ms-link--insta" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで見る">Instagramを見る<svg class="ms-link__ext" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+              </div>
               <p class="cs-card__permit">※掲載許可をいただいて掲載しています。</p>
             </div>
           </article>
@@ -456,7 +470,7 @@
   try {
     const { loadDefaultJapaneseParser } = await import('https://cdn.jsdelivr.net/npm/budoux@0.6.4/module/index.js');
     const parser = loadDefaultJapaneseParser();
-    const selector = ['.section-desc', '.works__notice', '.works-group__note', '.work-card__title', '.work-card__desc', '.work-detail__list dd', '.cs-card__title', '.cs-card__fields li'].join(',');
+    const selector = ['.section-desc', '.works__notice', '.works-group__note', '.work-card__title', '.work-card__desc', '.work-detail__list dd', '.cs-card__title', '.cs-card__fields li', '.ms-lead'].join(',');
     document.querySelectorAll(selector).forEach(el => { el.innerHTML = parser.translateHTMLString(el.innerHTML); });
   } catch (e) { /* 読み込み失敗時は何もしない */ }
 </script>
