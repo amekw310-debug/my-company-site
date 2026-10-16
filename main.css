@@ -3520,3 +3520,49 @@ main {
 .ms-link--site:hover { background: #4f9553; transform: translateY(-1px); }
 .ms-link--insta { color: #3c7d45; background: #fff; border: 1.5px solid #cfe4c9; }
 .ms-link--insta:hover { background: #f3f9f1; transform: translateY(-1px); }
+
+/* ============================================================
+   works.html 長縄工務店実績：実サイト画像＋説明の2カラム（Web制作・リニューアル実績）
+   ブランドは A@Web Works のアイボリー/ピンクを維持（長縄のネイビー/黄緑はテーマにしない）
+   ============================================================ */
+/* 企業での実務経験グループを全幅縦積みに（長縄＝サイト画像主役／エムズ＝SNSギャラリー） */
+.cs-grid--exp { grid-template-columns: 1fr; max-width: 760px; margin: 0 auto; align-items: start; gap: 24px; }
+
+/* 長縄：実サイト画像＋テキストの2カラム（PC）／縦積み（モバイル） */
+.site-case { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 641px) {
+  .site-case { grid-template-columns: 300px 1fr; gap: 22px; align-items: start; }
+}
+.site-shot {
+  display: block; border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--border); box-shadow: var(--shadow-sm); background: #fff;
+}
+.site-shot img { display: block; width: 100%; height: auto; transition: transform .4s ease; }
+.site-shot:hover img { transform: scale(1.02); }
+.site-case__role { font-size: 14px; font-weight: 700; color: var(--primary-dark); margin: 2px 0 10px; }
+
+/* 実務経験タグ（中立色＝ブランド維持。エムズの緑タグとは別デザイン） */
+.exp-tags { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-tags li {
+  font-size: 11.5px; font-weight: 600; color: var(--text-sub);
+  background: var(--bg-section); border: 1px solid var(--border);
+  border-radius: 100px; padding: 3px 11px;
+}
+
+/* 外部サイトリンク（ブランドピンク。エムズの緑ボタンと区別） */
+.ext-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 700; text-decoration: none;
+  padding: 9px 16px; border-radius: 100px;
+  color: #fff; background: var(--primary);
+  transition: background .2s ease, transform .2s ease;
+}
+.ext-link:hover { background: var(--primary-dark); transform: translateY(-1px); }
+.ext-link__ext { flex-shrink: 0; }
+
+/* TOP：長縄コンパクトカードのサイトサムネイル */
+.cs-card__sitethumb {
+  display: block; border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--border); margin-bottom: 12px; background: #fff;
+}
+.cs-card__sitethumb img { display: block; width: 100%; height: auto; }
