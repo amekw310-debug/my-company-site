@@ -300,6 +300,27 @@
               </div>
               <h3 class="cs-card__title">パソコンショップエムズ｜SNS運用・販促支援</h3>
               <p class="cs-card__fields-inline">Instagram運用／投稿企画・制作／インサイト確認／販促物制作／Web関連サポート</p>
+              <!--
+                ◆ Instagram「最新4投稿」自動表示（予定・未実装／Meta認証後に有効化）
+                TOP表示＝スマホ2列×2行／PC4列×1行。works.html の #ms-instagram-gallery と
+                【同じ data/instagram.json・同じローカル画像】を共用（別管理しない）。
+                将来のJSは全ての [data-ig-gallery] を timestamp降順の最新4投稿で再生成（各1サムネイル）。
+                fallback：取得失敗／空／4件未満／JS無効 → 固定4枚(ms-01〜04)。詳細仕様は works.html 側コメント参照。
+              -->
+              <div class="ms-gallery" id="ms-instagram-gallery-top" data-ig-gallery="pending" data-ig-feed="m.s.gk">
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-01-store.webp" type="image/webp"><img src="images/ms-01-store.jpg" alt="パソコンショップエムズの店頭の様子" width="560" height="560" loading="lazy" decoding="async"></picture></figure>
+                </a>
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-02-promo.webp" type="image/webp"><img src="images/ms-02-promo.jpg" alt="中古ノートパソコンを紹介する販促投稿の制作例" width="560" height="543" loading="lazy" decoding="async"></picture></figure>
+                </a>
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-03-welcome.webp" type="image/webp"><img src="images/ms-03-welcome.jpg" alt="来店を案内するSNS投稿の制作例" width="560" height="534" loading="lazy" decoding="async"></picture></figure>
+                </a>
+                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-04-service.webp" type="image/webp"><img src="images/ms-04-service.jpg" alt="サービス内容を紹介する販促物の制作例" width="560" height="519" loading="lazy" decoding="async"></picture></figure>
+                </a>
+              </div>
             </div>
           </article>
         </div>
