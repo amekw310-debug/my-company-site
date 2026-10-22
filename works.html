@@ -129,20 +129,22 @@
                 <li>Web関連サポート</li>
               </ul>
               <!--
-                Instagram最新4投稿 自動表示予定（現在は未実装）
-                現在は固定画像 ms-01〜04 を「表示兼fallback」として表示しています。
-                将来 Meta Instagram API + GitHub Actions + data/instagram.json を実装した際、
-                このギャラリー #ms-instagram-gallery の中身をJSで最新4投稿に差し替えます。
-                差し替え方針：
-                  - JSが data/instagram.json の取得に成功 → #ms-instagram-gallery の innerHTML を
-                    最新4投稿（各 .ms-gallery__item：画像＝ローカル保存画像／リンク href＝投稿permalink／
-                    リール・カルーセルは種別アイコンを重ねる）に置換。
-                  - JSが無い／取得失敗／JSON空 → 下の固定4枚(ms-01〜04)がそのまま残る（fallback）。
-                差し替え対象は、この <div id="ms-instagram-gallery"> の内側（.ms-gallery__item 群）のみ。
-                各リンクの href は、現状は投稿個別URLが不明なため @m.s.gk のプロフィールURL（安全な既知URL）。
-                自動表示実装時に各投稿の permalink へ置き換える。
+                ◆ Instagram「最新4投稿」自動表示（予定・現在は未実装／Meta認証後に有効化）
+                仕様：@m.s.gk の投稿を公開日時(timestamp)の降順で並べ、最新『4投稿』を各1サムネイルで表示。
+                  1枚目=最新投稿／2〜4枚目=それぞれ次に新しい投稿。新規投稿が出たら全体が1つずつ繰り下がり、
+                  常に最新4投稿になる。★1投稿の複数枚を並べるのではなく、別々の4投稿を1枚ずつ。
+                  各投稿の表画像：通常画像=投稿画像／カルーセル=1枚目(表紙)／リール=thumbnail_url(cover)。
+                データ：data/instagram.json を TOP と works.html で【共通利用】（画像もローカル保存を共有し別管理しない）。
+                  配列 posts[] の各要素 = { image:ローカル画像パス, permalink:投稿URL,
+                  type:"image"|"carousel"|"reel", timestamp:公開日時(ISO) }。スキーマ例は data/instagram.sample.json。
+                差し替え：将来のJSが data/instagram.json を取得→timestamp降順ソート→先頭4件で、
+                  全ての [data-ig-gallery]（このギャラリー＋TOPの #ms-instagram-gallery-top）の .ms-gallery__item を
+                  再生成（img=ローカル画像／a href=permalink を別タブ／reel・carousel は種別アイコンを重ねる）。
+                fallback：JSON取得失敗／空／4件未満／JS無効 → 下の固定4枚(ms-01〜04)をそのまま表示。
+                有効化時に触るのは JS・GitHub Action・data/instagram.json のみ（このHTML構造は変更不要）。
+                各リンクの href は現状プロフィールURL（既知・安全）。自動表示時に各投稿 permalink へ置換。
               -->
-              <div class="ms-gallery" id="ms-instagram-gallery" data-ig-gallery="pending">
+              <div class="ms-gallery" id="ms-instagram-gallery" data-ig-gallery="pending" data-ig-feed="m.s.gk">
                 <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
                   <figure class="ms-gallery__fig"><picture><source srcset="images/ms-01-store.webp" type="image/webp"><img src="images/ms-01-store.jpg" alt="パソコンショップエムズの店頭の様子" width="560" height="560" loading="lazy" decoding="async"></picture></figure>
                 </a>
