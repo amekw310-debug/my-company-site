@@ -1,0 +1,80 @@
+name: Instagram feed (エムズ 最新4投稿)
+
+# @m.s.gk の最新Instagram投稿4件を取得して images/ig/ と data/instagram.json を更新する。
+# Meta認証後に IG_ACCESS_TOKEN（GitHub Secrets）を登録すると有効化される。
+# トークン未登録時は何もせず正常終了するため、デプロイも本番表示も壊さない。
+
+on:
+  schedule:
+    - cron: "17 3 * * *"   # 毎日 03:17 UTC（日本時間 昼12:17頃）に更新確認
+  workflow_dispatch:        # 手動実行も可
+
+permissions:
+  contents: write           # data/instagram.json・画像を main へコミットするため
+  actions: write            # 更新後に deploy.yml を起動するため
+
+concurrency:
+  group: instagram-feed
+  cancel-in-progress: false
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: トークン有無を確認（未登録なら安全に終了）
+        id: tok
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$IG_ACCESS_TOKEN" ]; then
+            echo "IG_ACCESS_TOKEN 未登録のため安全に終了します（サイトは固定4枚のまま）。" >> "$GITHUB_STEP_SUMMARY"
+            echo "has_token=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_token=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: チェックアウト
+        if: steps.tok.outputs.has_token == 'true'
+        uses: actions/checkout@v4
+
+      - name: 最新4投稿を取得（失敗してもビルドは止めない）
+        if: steps.tok.outputs.has_token == 'true'
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 scripts/fetch_instagram.py
+
+      - name: アクセストークンの自動更新（任意・GH_PAT がある時だけ）
+        if: steps.tok.outputs.has_token == 'true'
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$GH_PAT" ]; then
+            echo "GH_PAT 未登録のためトークン自動更新はスキップ（約50日ごとに手動で IG_ACCESS_TOKEN を再登録してください）。" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          NEW=$(curl -sS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${IG_ACCESS_TOKEN}" \
+            | python3 -c "import sys,json;print(json.load(sys.stdin).get('access_token',''))" 2>/dev/null || true)
+          if [ -n "$NEW" ]; then
+            printf '%s' "$NEW" | GH_TOKEN="$GH_PAT" gh secret set IG_ACCESS_TOKEN --body-file -
+            echo "アクセストークンを更新しました（有効期限を約60日延長）。" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "トークン更新はスキップ（発行24時間未満など）。" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: 変更があれば main へコミットして本番デプロイ
+        if: steps.tok.outputs.has_token == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A images/ig data/instagram.json
+          if git diff --cached --quiet; then
+            echo "最新4投稿に変更なし（コミットなし）。" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "chore(ig): エムズ 最新4投稿を自動更新"
+          git push origin HEAD:main
+          gh workflow run deploy.yml --ref main
+          echo "最新4投稿を更新し、本番デプロイを起動しました。" >> "$GITHUB_STEP_SUMMARY"
