@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=116">
+  <link rel="stylesheet" href="main.css?v=117">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -254,7 +254,7 @@
   <!-- ========== WORKS（制作実績・企業での実務経験） ========== -->
   <section class="section works" id="works">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="section-label">WORKS</p>
         <h2 class="section-title">見てほしいのは、見た目より“考えたこと”。</h2>
         <p class="section-desc">課題に対して、どのように考え、形にしたかをご紹介します。</p>
@@ -262,7 +262,7 @@
 
       <div class="works-top">
         <!-- Webサイト制作実績（K.seqを大きめに配置） -->
-        <article class="cs-card cs-card--real cs-card--feature">
+        <article class="cs-card cs-card--real cs-card--feature reveal">
           <a class="cs-card__thumb" href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" aria-label="K.seq STRUCTURAL ESTIMATION の公開サイトを開く">
             <picture><source srcset="images/thumb-kseq.webp" type="image/webp"><img src="images/thumb-kseq.jpg" alt="K.seq STRUCTURAL ESTIMATION 公開サイトのスクリーンショット" width="900" height="568" loading="lazy" decoding="async"></picture>
           </a>
@@ -281,7 +281,7 @@
 
         <!-- 企業での実務経験（コンパクト表示 / Coming Soon維持） -->
         <div class="works-exp">
-          <article class="cs-card cs-card--compact">
+          <article class="cs-card cs-card--compact reveal">
             <div class="cs-card__body">
               <!-- 実サイトのサムネイル（Web制作実績として視覚化。詳細は works.html へ） -->
               <a class="cs-card__sitethumb" href="works.html" aria-label="株式会社 長縄工務店の実績を見る">
@@ -294,7 +294,7 @@
               <p class="cs-card__fields-inline">HPリニューアル・更新／SNS運用／採用広報／資料制作／Web運用</p>
             </div>
           </article>
-          <article class="cs-card cs-card--compact">
+          <article class="cs-card cs-card--compact reveal">
             <div class="cs-card__body">
               <div class="cs-card__compact-head">
                 <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
@@ -336,7 +336,7 @@
   <!-- ========== SERVICES（提供サービス） ========== -->
   <section class="section services" id="services">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="section-label">SERVICES</p>
         <h2 class="section-title">で、何を任せられるの？</h2>
         <p class="section-desc">Webまわりを、必要な分だけ単体で任せられます。ホームページをお持ちでなくても、Instagram運用だけのご依頼も歓迎です。</p>
@@ -372,7 +372,7 @@
   <!-- ========== ABOUT / FEATURES（実務経験・強み） ========== -->
   <section class="section about-features" id="about">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="section-label">ABOUT / FEATURES</p>
         <h2 class="section-title">“作る側”だけの話はしません。</h2>
         <p class="section-desc">机上の話だけではありません。建設会社でHP更新・SNS運用・採用広報を実際に担当し、会社側の「Webに手が回らない」事情を分かったうえで提案します。</p>
@@ -425,7 +425,7 @@
   <!-- ========== PRICING（料金案内） ========== -->
   <section class="section pricing" id="pricing">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <p class="section-label">PRICING</p>
         <h2 class="section-title">で、いくらかかるの？</h2>
         <p class="section-desc">ご予算やご要望に合わせた料金プランをご案内しています。</p>
@@ -455,7 +455,7 @@
   <!-- ========== ⑦ お問い合わせ導線 ========== -->
   <section class="contact" id="contact">
     <div class="container">
-      <div class="contact__inner">
+      <div class="contact__inner reveal">
         <p class="section-label">CONTACT</p>
         <h2 class="contact__title">とりあえず、話だけでも。</h2>
         <p class="contact__desc">まだ何を頼むか決まっていなくても大丈夫です。HP、SNS、更新、広報。今必要なことを一緒に整理します。</p>
@@ -667,15 +667,19 @@
     });
   });
 
-  // スクロールアニメーション
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reason-card, .service-card, .work-card, .flow-step, .svc-card').forEach(el => {
-    observer.observe(el);
-  });
+  // スクロールアニメーション（統一リビール）
+  const revealSel = '.reason-card, .service-card, .work-card, .flow-step, .svc-card, .reveal';
+  if (!('IntersectionObserver' in window)) {
+    // 非対応環境では即時表示（内容を必ず見せる）
+    document.querySelectorAll(revealSel).forEach(el => el.classList.add('visible'));
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll(revealSel).forEach(el => observer.observe(el));
+  }
 
   // WORKS カルーセル（transformベース無限ループ／状態を明確に管理）
   document.querySelectorAll('[data-works-carousel]').forEach(function(root){ initWorksCarousel(root); });
