@@ -3747,3 +3747,36 @@ main {
 .acc > summary::after { content: "＋"; color: var(--primary); font-weight: 700; flex-shrink: 0; }
 .acc[open] > summary::after { content: "−"; }
 .acc__inner { padding: 2px 18px 18px; }
+
+/* === 料金ページ 微調整（v=114）：金額視認性／余白／2カラム揃え・CTA／初期設計・セット強調 === */
+/* ① 金額の視認性 */
+.pricing-card__amount { font-size: 42px; }
+.plan-split .pricing-card__amount { font-size: 48px; }
+.pricing-card--featured .pricing-card__amount { color: var(--primary-dark); }
+.pricing-card__unit { text-align: center; font-size: 12px; color: var(--text-sub); margin-top: 5px; }
+
+/* ③ 2カラムの価格を下端で揃える＋セクションCTA */
+.pricing__grid--2 .pricing-card__head { display: flex; flex-direction: column; }
+.pricing__grid--2 .pricing-card__head .pricing-card__price { margin-top: auto; }
+.sec-cta { text-align: center; margin: 24px 0 6px; }
+
+/* ④ 初期設計「0円」とセット注記の強調 */
+.ig-setup { border-width: 2px; }
+.ig-setup__amount { font-size: 34px; }
+.ig-setup__free { font-size: 13px; padding: 5px 16px; margin-top: 10px; }
+.set-note {
+  background: #fff;
+  border: 1px solid var(--primary-light);
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-align: left;
+}
+
+/* ② 余白：非バンド見出しの上に間（バンド内見出しは従来どおり詰める） */
+.pricing-group__title { margin-top: 50px; }
+
+@media (max-width: 560px) {
+  .pricing-card__amount { font-size: 38px; }
+  .plan-split .pricing-card__amount { font-size: 40px; }
+}
