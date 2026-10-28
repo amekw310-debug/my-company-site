@@ -3780,3 +3780,32 @@ main {
   .pricing-card__amount { font-size: 38px; }
   .plan-split .pricing-card__amount { font-size: 40px; }
 }
+
+/* === 料金ページ セクション見出しデザイン（v=115）：番号＋英語小見出し＋大きな日本語＋ピンクアクセント === */
+/* 導入見出し（SERVICE & PRICE / サービス内容と料金） */
+.svc-intro { text-align: center; margin: 6px auto 30px; }
+.svc-intro__en { font-size: 12px; font-weight: 700; letter-spacing: .16em; color: var(--primary); margin-bottom: 8px; }
+.svc-intro__ja { font-size: 30px; font-weight: 700; color: var(--text); line-height: 1.3; text-wrap: balance; }
+
+/* 各サービス見出し（番号＋英語＋日本語） */
+.svc-head {
+  display: flex; align-items: center; gap: 18px;
+  max-width: 900px; margin: 46px auto 16px;
+  padding-bottom: 14px; border-bottom: 2px solid var(--primary-light);
+}
+.svc-head__num {
+  flex-shrink: 0; font-family: 'Inter', sans-serif; font-size: 46px; font-weight: 800;
+  color: var(--primary); line-height: 1; letter-spacing: -1px;
+}
+.svc-head__labels { min-width: 0; }
+.svc-head__en { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--primary); margin-bottom: 3px; }
+.svc-head__ja { font-size: 34px; font-weight: 700; color: var(--text); line-height: 1.25; text-wrap: balance; }
+.price-band--tint .svc-head { margin-top: 6px; border-bottom-color: rgba(255,111,143,.35); }
+/* 見出し直後のリード文の余白を詰める */
+.svc-head + .pricing-group__lead { margin-top: 0; }
+@media (max-width: 640px) {
+  .svc-head { gap: 12px; margin-top: 38px; margin-bottom: 12px; padding-bottom: 10px; }
+  .svc-head__num { font-size: 32px; }
+  .svc-head__ja { font-size: 25px; }
+  .svc-intro__ja { font-size: 24px; }
+}
