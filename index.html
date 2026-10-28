@@ -7,6 +7,7 @@
   <title>建設業・中小企業のホームページ制作｜A@Web Works</title>
   <meta name="description" content="社内にWeb担当者がいない中小企業・地域事業者・個人事業主のWebまわりをまとめてサポート。建設業での実務経験を活かし、ホームページ制作・リニューアルから公開後の更新・保守・SNS運用まで継続してお手伝いします。ご相談・お見積りは無料です。">
   <meta name="robots" content="index, follow">
+  <script>document.documentElement.classList.add('js');</script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWDC3SLBV3"></script>
@@ -44,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=112">
+  <link rel="stylesheet" href="main.css?v=116">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -672,7 +673,7 @@
       if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.reason-card, .service-card, .work-card, .flow-step').forEach(el => {
+  document.querySelectorAll('.reason-card, .service-card, .work-card, .flow-step, .svc-card').forEach(el => {
     observer.observe(el);
   });
 
