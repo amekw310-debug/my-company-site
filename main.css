@@ -3666,3 +3666,84 @@ main {
   .addon__name { font-size: 13px; }
   .addon__price { font-size: 15px; }
 }
+
+/* === 料金ページ レイアウト改善（v=113）：横長紹介型／2カラム比較／初期設計バンド／セット種別／アコーディオン／交互背景 === */
+.price-band--tint {
+  background: var(--bg-section);
+  border-radius: 24px;
+  padding: 30px 26px 24px;
+  margin: 20px 0;
+}
+.price-band--tint .pricing-group__title { margin-top: 4px; }
+@media (max-width: 560px) {
+  .price-band--tint { padding: 22px 14px 16px; border-radius: 18px; margin: 14px 0; }
+}
+
+/* 横長 サービス紹介型（HP制作・社外Web担当） */
+.plan-split {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  background: #fff;
+  border: 2px solid #e8ddd9;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.plan-split__intro { padding: 32px 30px; display: flex; flex-direction: column; }
+.plan-split__panel { padding: 30px 28px; background: linear-gradient(135deg,#fff5f7 0%,#fff 100%); border-left: 2px solid #f0e8e8; }
+.plan-split__label {
+  display: inline-block; align-self: flex-start;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  color: var(--primary); background: var(--primary-light);
+  border-radius: 20px; padding: 4px 12px; margin-bottom: 12px;
+}
+.plan-split__name { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.plan-split__catch { font-size: 13.5px; line-height: 1.9; color: var(--text-sub); margin-bottom: 16px; }
+.plan-split__merits { list-style: none; margin: 0 0 14px; padding: 0; }
+.plan-split__merits li { position: relative; font-size: 13.5px; color: var(--text); padding: 6px 0 6px 22px; line-height: 1.6; }
+.plan-split__merits li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+.plan-split__target { font-size: 12px; color: var(--text-sub); margin-top: auto; }
+.plan-split__priceunit { font-size: 12px; color: var(--text-sub); margin: 4px 0 14px; }
+.plan-split__cta { margin-top: 18px; }
+.plan-split__paneltitle { font-size: 11.5px; font-weight: 700; color: #8A8288; margin-bottom: 8px; }
+.plan-split .pricing-card__price { justify-content: flex-start; }
+@media (max-width: 760px) {
+  .plan-split { grid-template-columns: 1fr; max-width: 460px; }
+  .plan-split__panel { border-left: none; border-top: 2px solid #f0e8e8; }
+  .plan-split__intro, .plan-split__panel { padding: 24px 22px; }
+  .plan-split__target { margin-top: 10px; }
+}
+
+/* 2カラム比較グリッド */
+.pricing__grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-left: auto; margin-right: auto; }
+@media (max-width: 760px) { .pricing__grid--2 { grid-template-columns: 1fr; max-width: 440px; } }
+
+/* Instagram初期設計 共通案内バンド */
+.ig-setup {
+  max-width: 760px; margin: 18px auto 0;
+  display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center;
+  background: #fff; border: 1px dashed var(--primary); border-radius: 16px; padding: 22px 26px;
+}
+.ig-setup__name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.ig-setup__amount { font-family: 'Inter', sans-serif; font-size: 30px; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+.ig-setup__free { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 700; color: #fff; background: var(--primary); border-radius: 100px; padding: 3px 12px; }
+.ig-setup__body { font-size: 12.5px; line-height: 1.85; color: var(--text-sub); }
+.ig-setup__body strong { color: var(--primary-dark); }
+@media (max-width: 560px) { .ig-setup { grid-template-columns: 1fr; gap: 12px; text-align: center; padding: 20px; } .ig-setup__body { text-align: left; } }
+
+/* セット種別タグ・補足 */
+.set-kind { display: inline-block; font-size: 11px; font-weight: 700; border-radius: 20px; padding: 4px 12px; margin-bottom: 10px; letter-spacing: .03em; }
+.set-kind--init { color: #fff; background: var(--accent); }
+.set-kind--monthly { color: var(--primary); background: var(--primary-light); }
+.set-note { max-width: 760px; margin: 16px auto 0; font-size: 12.5px; line-height: 1.8; color: var(--text-sub); text-align: center; }
+.set-note strong { color: var(--text); }
+
+/* アコーディオン（社外Web担当の注意事項・HP制作の詳細） */
+.acc { max-width: 760px; margin: 14px auto 0; border: 1px solid var(--border); border-radius: 12px; background: #fff; overflow: hidden; }
+.acc > summary { cursor: pointer; list-style: none; padding: 14px 18px; font-size: 13.5px; font-weight: 700; color: var(--text); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.acc > summary::-webkit-details-marker { display: none; }
+.acc > summary::after { content: "＋"; color: var(--primary); font-weight: 700; flex-shrink: 0; }
+.acc[open] > summary::after { content: "−"; }
+.acc__inner { padding: 2px 18px 18px; }
