@@ -43,9 +43,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="images/hero-visual.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/thumb-kseq.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=117">
+  <link rel="stylesheet" href="main.css?v=118">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -122,6 +122,17 @@
   </svg>
 </div>
 
+<!-- 背景デコ（大人かわいい：淡ピンクの有機ブロブ・花びら・ドット） -->
+<div class="deco" aria-hidden="true" role="presentation">
+  <div class="deco__grain"></div>
+  <div class="deco__blob deco__blob--1"><svg viewBox="0 0 200 200"><path fill="#FFD9E3" d="M46,-62C59,-52,68,-37,71,-21C74,-5,71,13,63,28C55,43,42,55,26,63C10,71,-9,74,-27,68C-45,62,-62,47,-69,29C-76,11,-73,-10,-64,-27C-55,-44,-40,-57,-23,-66C-6,-75,13,-80,28,-76C43,-72,33,-72,46,-62Z" transform="translate(100 100)"/></svg></div>
+  <div class="deco__blob deco__blob--2"><svg viewBox="0 0 200 200"><path fill="#F4DFD4" d="M42,-58C54,-49,62,-36,67,-21C72,-6,74,11,68,26C62,41,48,54,32,62C16,70,-2,73,-20,68C-38,63,-56,50,-64,33C-72,16,-70,-5,-62,-22C-54,-39,-40,-52,-25,-61C-10,-70,7,-75,22,-72C37,-69,30,-67,42,-58Z" transform="translate(100 100)"/></svg></div>
+  <div class="deco__blob deco__blob--3"><svg viewBox="0 0 200 200"><path fill="#FFE8EF" d="M50,-64C64,-54,73,-37,75,-20C77,-3,72,16,62,31C52,46,37,57,20,64C3,71,-16,74,-32,67C-48,60,-61,43,-67,25C-73,7,-72,-13,-63,-29C-54,-45,-37,-57,-20,-65C-3,-73,15,-77,31,-73C47,-69,36,-74,50,-64Z" transform="translate(100 100)"/></svg></div>
+  <div class="deco__petal" style="top:16%;left:20%"><svg viewBox="0 0 24 24" fill="#FBC6D4"><path d="M12 2C7 7 7 14 12 22C17 14 17 7 12 2Z"/></svg></div>
+  <div class="deco__petal" style="top:34%;left:72%;animation-delay:6s"><svg viewBox="0 0 24 24" fill="#F4B8CA"><path d="M12 2C7 7 7 14 12 22C17 14 17 7 12 2Z"/></svg></div>
+  <div class="deco__petal" style="top:64%;left:38%;animation-delay:11s"><svg viewBox="0 0 24 24" fill="#FFD9E3"><path d="M12 2C7 7 7 14 12 22C17 14 17 7 12 2Z"/></svg></div>
+</div>
+
 <a href="#main" class="skip-link">本文へジャンプ</a>
 
 <!-- ========== ヘッダー ========== -->
@@ -182,10 +193,12 @@
           <span class="hero__eyebrow-dot"></span>
           建設会社でのWeb実務経験を活かし、幅広い業種に対応
         </p>
+        <div class="hero__en">Homepage &amp; Instagram, together.</div>
         <h1 class="hero__title">
           <span class="hero__title-lead"><span class="nobr">ホームページ、</span><span class="nobr">作るだけなら。</span></span><br>
           <span class="hero__accent"><span class="nobr">たぶん、</span><span class="nobr">私じゃなくてもいいです。</span></span>
         </h1>
+        <div class="hero__aline" aria-hidden="true"></div>
         <p class="hero__body">
           <span class="nobr">でも、作った後の更新。</span><span class="nobr">SNS。採用。広報。</span><br>
           <span class="nobr">「誰がやる？」まで</span><span class="nobr">一緒に考えるなら、</span><span class="nobr">話は別です。</span>
@@ -196,16 +209,21 @@
         </p>
       </div>
 
-      <!-- デバイスモックアップ -->
+      <!-- デバイスモックアップ（実在の制作実績を合成） -->
       <div class="hero__visual">
-        <picture>
-          <source srcset="images/hero-visual.webp" type="image/webp">
-          <img class="hero__devices"
-               src="images/hero-visual.png"
-               alt="PC・スマホ表示イメージ"
-               loading="eager"
-               fetchpriority="high">
-        </picture>
+        <div class="hdevs">
+          <span class="hdev__tag hdev__tag--a">実在の制作実績 <b>K.seq</b></span>
+          <div class="hdev hdev--laptop">
+            <div class="hdev__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <picture><source srcset="images/thumb-kseq.webp" type="image/webp"><img src="images/thumb-kseq.jpg" alt="制作実績 K.seq のデスクトップ画面" width="900" height="568" loading="eager" fetchpriority="high"></picture>
+            <div class="hdev__base" aria-hidden="true"></div>
+          </div>
+          <div class="hdev hdev--phone">
+            <div class="hdev__notch" aria-hidden="true"></div>
+            <picture><source srcset="images/naganawa-site.webp" type="image/webp"><img src="images/naganawa-site.jpg" alt="制作実績 長縄工務店 のスマートフォン画面" width="760" height="1162" loading="eager"></picture>
+          </div>
+          <span class="hdev__tag hdev__tag--b">スマホ最適化 <b>長縄工務店</b></span>
+        </div>
       </div>
 
       <!-- 3つの特徴 -->
@@ -238,7 +256,7 @@
       <!-- CTAボタン -->
       <div class="hero__cta">
         <a href="/contact.html" class="cta-primary">ちょっと話を聞いてみる</a>
-        <a href="pricing.html" class="cta-ghost">料金プランを見る<span>→</span></a>
+        <a href="pricing.html" class="cta-ghost">料金プランを見る<svg class="ui-arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <p class="hero__cta-note">初回30分無料｜相談内容が決まっていなくてもOK</p>
       </div>
 
@@ -260,70 +278,70 @@
         <p class="section-desc">課題に対して、どのように考え、形にしたかをご紹介します。</p>
       </div>
 
-      <div class="works-top">
-        <!-- Webサイト制作実績（K.seqを大きめに配置） -->
-        <article class="cs-card cs-card--real cs-card--feature reveal">
-          <a class="cs-card__thumb" href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" aria-label="K.seq STRUCTURAL ESTIMATION の公開サイトを開く">
-            <picture><source srcset="images/thumb-kseq.webp" type="image/webp"><img src="images/thumb-kseq.jpg" alt="K.seq STRUCTURAL ESTIMATION 公開サイトのスクリーンショット" width="900" height="568" loading="lazy" decoding="async"></picture>
-          </a>
-          <div class="cs-card__body">
-            <span class="cs-card__cat cs-card__cat--web">Webサイト制作実績</span>
-            <h3 class="cs-card__title">K.seq STRUCTURAL ESTIMATION</h3>
-            <dl class="cs-card__meta">
+      <div class="works-redesign">
+        <p class="worktag">ホームページ制作実績</p>
+
+        <!-- K.seq：実サイトを大きく -->
+        <div class="hpwork reveal">
+          <div class="hpwork__media">
+            <div class="hpwork__chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            <a href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" aria-label="K.seq STRUCTURAL ESTIMATION の公開サイトを開く">
+              <picture><source srcset="images/thumb-kseq.webp" type="image/webp"><img src="images/thumb-kseq.jpg" alt="K.seq STRUCTURAL ESTIMATION 公開サイトのスクリーンショット" width="900" height="568" loading="lazy" decoding="async"></picture>
+            </a>
+          </div>
+          <div class="hpwork__t">
+            <span class="hpwork__cat">Webサイト制作実績</span>
+            <h3>K.seq STRUCTURAL ESTIMATION</h3>
+            <dl>
               <div><dt>業種</dt><dd>建築積算事業</dd></div>
-              <div><dt>担当範囲</dt><dd>サイト構成・デザイン・実装・スマートフォン対応・公開</dd></div>
+              <div><dt>担当範囲</dt><dd>サイト構成・デザイン・実装・スマホ対応・公開</dd></div>
               <div><dt>公開方法</dt><dd>GitHub Pages</dd></div>
             </dl>
-            <p class="cs-card__permit">※掲載許可を取得済みの制作案件です。</p>
-            <a href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る →</a>
+            <p class="hpwork__permit">※掲載許可を取得済みの制作案件です。</p>
+            <a href="https://amekw310-debug.github.io/estimation-site/" target="_blank" rel="noopener noreferrer" class="work-card__link">サイトを見る<svg class="ui-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
-        </article>
+        </div>
 
-        <!-- 企業での実務経験（コンパクト表示 / Coming Soon維持） -->
-        <div class="works-exp">
-          <article class="cs-card cs-card--compact reveal">
-            <div class="cs-card__body">
-              <!-- 実サイトのサムネイル（Web制作実績として視覚化。詳細は works.html へ） -->
-              <a class="cs-card__sitethumb" href="works.html" aria-label="株式会社 長縄工務店の実績を見る">
-                <picture><source srcset="images/naganawa-thumb.webp" type="image/webp"><img src="images/naganawa-thumb.jpg" alt="株式会社 長縄工務店 公式サイトの画面" width="640" height="510" loading="lazy" decoding="async"></picture>
-              </a>
-              <div class="cs-card__compact-head">
-                <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
-              </div>
-              <h3 class="cs-card__title"><span class="nobr">株式会社 長縄工務店｜</span><span class="nobr">ホームページリニューアル・</span><span class="nobr">Web運用</span></h3>
-              <p class="cs-card__fields-inline">HPリニューアル・更新／SNS運用／採用広報／資料制作／Web運用</p>
-            </div>
-          </article>
-          <article class="cs-card cs-card--compact reveal">
-            <div class="cs-card__body">
-              <div class="cs-card__compact-head">
-                <span class="cs-card__cat cs-card__cat--exp">勤務先での実務経験</span>
-              </div>
-              <h3 class="cs-card__title">パソコンショップエムズ｜SNS運用・販促支援</h3>
-              <p class="cs-card__fields-inline">Instagram運用／投稿企画・制作／インサイト確認／販促物制作／Web関連サポート</p>
-              <!--
-                ◆ Instagram「最新4投稿」自動表示（予定・未実装／Meta認証後に有効化）
-                TOP表示＝スマホ2列×2行／PC4列×1行。works.html の #ms-instagram-gallery と
-                【同じ data/instagram.json・同じローカル画像】を共用（別管理しない）。
-                将来のJSは全ての [data-ig-gallery] を timestamp降順の最新4投稿で再生成（各1サムネイル）。
-                fallback：取得失敗／空／4件未満／JS無効 → 固定4枚(ms-01〜04)。詳細仕様は works.html 側コメント参照。
-              -->
-              <div class="ms-gallery" id="ms-instagram-gallery-top" data-ig-gallery="pending" data-ig-feed="m.s.gk">
-                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
-                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-01-store.webp" type="image/webp"><img src="images/ms-01-store.jpg" alt="パソコンショップエムズの店頭の様子" width="560" height="560" loading="lazy" decoding="async"></picture></figure>
-                </a>
-                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
-                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-02-promo.webp" type="image/webp"><img src="images/ms-02-promo.jpg" alt="中古ノートパソコンを紹介する販促投稿の制作例" width="560" height="543" loading="lazy" decoding="async"></picture></figure>
-                </a>
-                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
-                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-03-welcome.webp" type="image/webp"><img src="images/ms-03-welcome.jpg" alt="来店を案内するSNS投稿の制作例" width="560" height="534" loading="lazy" decoding="async"></picture></figure>
-                </a>
-                <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
-                  <figure class="ms-gallery__fig"><picture><source srcset="images/ms-04-service.webp" type="image/webp"><img src="images/ms-04-service.jpg" alt="サービス内容を紹介する販促物の制作例" width="560" height="519" loading="lazy" decoding="async"></picture></figure>
-                </a>
-              </div>
-            </div>
-          </article>
+        <!-- 長縄工務店：実サイトを大きく（反転レイアウト） -->
+        <div class="hpwork reveal">
+          <div class="hpwork__media">
+            <div class="hpwork__chrome" aria-hidden="true"><i></i><i></i><i></i></div>
+            <a href="works.html" aria-label="株式会社 長縄工務店の実績を見る">
+              <picture><source srcset="images/naganawa-thumb.webp" type="image/webp"><img src="images/naganawa-thumb.jpg" alt="株式会社 長縄工務店 公式サイトの画面" width="640" height="510" loading="lazy" decoding="async"></picture>
+            </a>
+          </div>
+          <div class="hpwork__t">
+            <span class="hpwork__cat">勤務先での実務経験</span>
+            <h3>株式会社 長縄工務店｜ホームページリニューアル・Web運用</h3>
+            <p class="hpwork__chips"><span>HPリニューアル・更新</span><span>SNS運用</span><span>採用広報</span><span>資料制作</span><span>Web運用</span></p>
+            <a href="works.html" class="work-card__link">実績を詳しく見る<svg class="ui-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <!-- SNS・広報支援（見せ方を変えて区別） -->
+        <p class="worktag" style="margin-top:34px;">SNS・広報支援実績</p>
+        <div class="sns-block reveal">
+          <div>
+            <span class="hpwork__cat">勤務先での実務経験</span>
+            <h3>パソコンショップエムズ｜SNS運用・販促支援</h3>
+            <p class="cs-card__fields-inline">Instagram運用／投稿企画・制作／インサイト確認／販促物制作／Web関連サポート</p>
+            <a href="works.html" class="work-card__link">実績を詳しく見る<svg class="ui-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <!-- Instagram「最新4投稿」自動表示の表示先（将来有効化）。js/ig-feed.js が [data-ig-gallery] を最新4投稿で更新／失敗時は固定4枚(ms-01〜04)。works.html の #ms-instagram-gallery と同一 data/instagram.json・同一画像を共用 -->
+          <div class="ms-gallery" id="ms-instagram-gallery-top" data-ig-gallery="pending" data-ig-feed="m.s.gk">
+            <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+              <figure class="ms-gallery__fig"><picture><source srcset="images/ms-01-store.webp" type="image/webp"><img src="images/ms-01-store.jpg" alt="パソコンショップエムズの店頭の様子" width="560" height="560" loading="lazy" decoding="async"></picture></figure>
+            </a>
+            <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+              <figure class="ms-gallery__fig"><picture><source srcset="images/ms-02-promo.webp" type="image/webp"><img src="images/ms-02-promo.jpg" alt="中古ノートパソコンを紹介する販促投稿の制作例" width="560" height="543" loading="lazy" decoding="async"></picture></figure>
+            </a>
+            <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+              <figure class="ms-gallery__fig"><picture><source srcset="images/ms-03-welcome.webp" type="image/webp"><img src="images/ms-03-welcome.jpg" alt="来店を案内するSNS投稿の制作例" width="560" height="534" loading="lazy" decoding="async"></picture></figure>
+            </a>
+            <a class="ms-gallery__item" href="https://www.instagram.com/m.s.gk/" target="_blank" rel="noopener noreferrer" aria-label="パソコンショップエムズのInstagramを別タブで開く">
+              <figure class="ms-gallery__fig"><picture><source srcset="images/ms-04-service.webp" type="image/webp"><img src="images/ms-04-service.jpg" alt="サービス内容を紹介する販促物の制作例" width="560" height="519" loading="lazy" decoding="async"></picture></figure>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -343,21 +361,25 @@
       </div>
       <div class="services-grid">
         <div class="svc-card">
+          <div class="svc-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 20h8"/></svg></div>
           <span class="svc-card__stage">作る</span>
           <h3 class="svc-card__title">ホームページ制作・リニューアル</h3>
           <p class="svc-card__text">会社・店舗のホームページ制作やリニューアルに対応します。</p>
         </div>
         <div class="svc-card">
+          <div class="svc-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V10M12 20V4M18 20v-6"/></svg></div>
           <span class="svc-card__stage">育てる</span>
           <h3 class="svc-card__title">更新・保守・運用サポート</h3>
           <p class="svc-card__text">公開後の更新・改善を継続してサポートします。</p>
         </div>
         <div class="svc-card">
+          <div class="svc-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
           <span class="svc-card__stage">発信する</span>
           <h3 class="svc-card__title">SNS運用（Instagramなど）</h3>
           <p class="svc-card__text">InstagramなどのSNS運用・投稿制作をサポートします。</p>
         </div>
         <div class="svc-card">
+          <div class="svc-card__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l16-6v14L3 13z"/><path d="M8 13v5a2 2 0 0 0 4 0v-3"/></svg></div>
           <span class="svc-card__stage">広げる</span>
           <h3 class="svc-card__title">広報・採用サポート</h3>
           <p class="svc-card__text">求人情報の更新・採用広報、案内資料や販促物の制作などをサポートします。内容が決まっていない業務は個別お見積もりで承ります。</p>

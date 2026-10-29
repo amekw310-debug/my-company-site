@@ -3882,3 +3882,110 @@ html.js .section-header.reveal.visible .section-title::after { transform: scaleX
   html.js .reveal { opacity: 1; transform: none; transition: none; }
   html.js .section-header.reveal .section-title::after { transition: none; transform: scaleX(1); }
 }
+
+/* ============================================================
+   TOP リデザイン（v=118）案A＋B融合：大人かわいい背景／FVデバイス合成／
+   制作実績の大型化・SNS区別／サービス刷新／矢印統一
+   ※既存の文章・料金・リンク・問い合わせ導線は不変。追加スタイルのみ。
+   ============================================================ */
+/* ---- 背景デコ（淡ピンク×有機的） ---- */
+.deco{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.deco__grain{position:absolute;inset:0;background-image:radial-gradient(rgba(122,106,122,.09) 1px,transparent 1.3px);background-size:30px 30px;mask-image:radial-gradient(120% 85% at 50% 0,#000,transparent 72%);opacity:.5}
+.deco__blob{position:absolute;filter:blur(6px);opacity:.5;animation:decoFloat 30s ease-in-out infinite}
+.deco__blob svg{display:block;width:100%}
+.deco__blob--1{top:-140px;right:-90px;width:min(46vw,520px)}
+.deco__blob--2{top:38%;left:-130px;width:min(48vw,560px);opacity:.38;animation-duration:38s;animation-direction:reverse}
+.deco__blob--3{bottom:-150px;right:6%;width:min(34vw,380px);opacity:.34;animation-duration:34s}
+.deco__petal{position:absolute;width:24px;height:24px;opacity:.5;animation:decoPetal 20s linear infinite}
+@keyframes decoFloat{0%,100%{transform:translate(0,0) rotate(0)}50%{transform:translate(26px,-28px) rotate(8deg)}}
+@keyframes decoPetal{0%{transform:translate(0,0) rotate(0);opacity:0}12%{opacity:.55}100%{transform:translate(36px,120px) rotate(170deg);opacity:0}}
+/* セクション間の曲線ディバイダ */
+.wave{position:relative;z-index:1;line-height:0;margin:0}
+.wave svg{display:block;width:100%;height:64px}
+
+/* ---- FV：英字キッカー＋アクセントライン ---- */
+.hero__en{display:block;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(18px,2vw,26px);color:var(--primary);margin:14px 0 4px;opacity:0;animation:heroIn .8s .12s cubic-bezier(.16,1,.3,1) both}
+.hero__aline{width:72px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--primary),var(--sub));margin:20px 0 4px;transform:scaleX(0);transform-origin:left;animation:lineGrow .8s .7s cubic-bezier(.16,1,.3,1) both}
+
+/* ---- FV：レイヤー化デバイス（実スクショ合成） ---- */
+.hero__visual{position:relative}
+.hdevs{position:relative;width:100%;height:clamp(300px,34vw,440px)}
+.hdev{position:absolute;box-shadow:0 30px 64px rgba(46,35,51,.20);border-radius:16px;overflow:hidden;background:#111}
+.hdev--laptop{width:94%;top:34px;left:0;border:10px solid #17171c;border-bottom-width:0;border-radius:16px 16px 5px 5px;opacity:0;transform:translateY(24px);animation:heroPop .9s .5s cubic-bezier(.16,1,.3,1) both}
+.hdev--laptop .hdev__bar{height:24px;background:#f4eef0;display:flex;align-items:center;gap:6px;padding:0 12px}
+.hdev--laptop .hdev__bar i{width:8px;height:8px;border-radius:50%;background:#e3c3cc}
+.hdev--laptop img{width:100%;height:clamp(200px,24vw,300px);object-fit:cover;object-position:top;display:block}
+.hdev--laptop .hdev__base{position:absolute;bottom:-14px;left:-26px;right:-26px;height:14px;background:linear-gradient(#d3cfd1,#aaa6ab);border-radius:0 0 13px 13px}
+.hdev--phone{width:clamp(130px,13vw,172px);right:-8px;bottom:-26px;border:8px solid #17171c;border-radius:30px;opacity:0;transform:translateY(30px) rotate(5deg);animation:heroPop .9s .78s cubic-bezier(.16,1,.3,1) both}
+.hdev--phone .hdev__notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:52px;height:14px;background:#17171c;border-radius:0 0 12px 12px;z-index:2}
+.hdev--phone img{width:100%;height:clamp(240px,27vw,330px);object-fit:cover;object-position:top;display:block}
+@keyframes heroPop{to{opacity:1;transform:translateY(0) rotate(var(--r,0))}}
+.hdev--phone{--r:5deg}
+.hdev__tag{position:absolute;z-index:3;background:#fff;border-radius:11px;padding:7px 12px;box-shadow:0 10px 24px rgba(46,35,51,.14);font-size:11px;font-weight:700;color:var(--text);opacity:0;animation:fadeIn .8s 1.1s both}
+.hdev__tag b{color:var(--primary)}
+.hdev__tag--a{top:12px;left:-14px}
+.hdev__tag--b{bottom:40px;right:-18px}
+@keyframes fadeIn{to{opacity:1}}
+
+/* ---- 制作実績：HP大型非対称ロー ---- */
+.works-redesign{margin-top:8px}
+.works-redesign .worktag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--primary);background:#fff;border:1px solid var(--primary-light);padding:5px 14px;border-radius:100px;margin:0 0 18px}
+.hpwork{display:grid;grid-template-columns:1.22fr .78fr;gap:40px;align-items:center;margin-bottom:48px}
+.hpwork:nth-of-type(even){grid-template-columns:.78fr 1.22fr}
+.hpwork:nth-of-type(even) .hpwork__media{order:2}
+.hpwork__media{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 52px rgba(46,35,51,.16);border:1px solid rgba(0,0,0,.04);background:#fff}
+.hpwork__media .hpwork__chrome{height:28px;background:#f4eef0;display:flex;align-items:center;gap:6px;padding:0 12px}
+.hpwork__media .hpwork__chrome i{width:9px;height:9px;border-radius:50%;background:#e3c3cc}
+.hpwork__media img{width:100%;height:clamp(200px,24vw,300px);object-fit:cover;object-position:top;display:block}
+.hpwork__t h3{font-size:clamp(18px,2.2vw,23px);font-weight:800;margin:2px 0 8px;line-height:1.4}
+.hpwork__cat{display:inline-block;font-size:11px;font-weight:700;color:var(--primary);margin-bottom:8px}
+.hpwork__t dl{margin:0 0 12px}
+.hpwork__t dl div{display:flex;gap:10px;font-size:13px;padding:5px 0;border-bottom:1px dashed var(--border)}
+.hpwork__t dt{color:var(--text-sub);min-width:66px;font-weight:700}
+.hpwork__t dd{color:var(--text);margin:0}
+.hpwork__chips{margin:0 0 12px}
+.hpwork__chips span{display:inline-block;font-size:12px;color:var(--text-sub);border:1px solid #e7dfe2;border-radius:100px;padding:4px 12px;margin:0 6px 6px 0}
+.hpwork__permit{font-size:11px;color:var(--text-light);margin-bottom:10px}
+/* 制作実績：SNS区別ブロック */
+.sns-block{display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center;margin-top:12px}
+.sns-block__grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sns-block__grid a{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1/1;box-shadow:0 12px 28px rgba(46,35,51,.12);display:block}
+.sns-block__grid img{width:100%;height:100%;object-fit:cover;display:block}
+.sns-block__grid a::after{content:"";position:absolute;inset:0;border:2px solid #fff;border-radius:16px;pointer-events:none}
+.sns-block__ins{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:7px;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:2}
+.sns-block__ins svg{width:15px;height:15px;color:#fff}
+.sns-block h3{font-size:clamp(17px,2vw,21px);font-weight:800;margin:2px 0 8px}
+
+/* ---- サービス：アイコン＋段差 ---- */
+.svc-card__ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary-light),#fff);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--primary)}
+.svc-card__ic svg{width:25px;height:25px}
+@media (min-width:901px){ .services-grid .svc-card:nth-child(odd){transform:translateY(16px)} .services-grid .svc-card:nth-child(odd).visible{transform:translateY(16px)} }
+
+/* ---- 矢印：インライン→をSVGに統一（縦センター揃え） ---- */
+.ui-arrow{display:inline-block;vertical-align:middle;width:1em;height:1em;flex:0 0 auto}
+
+/* ---- 英字ラベルのアクセント（Playfair） ---- */
+.section-label{font-family:'Playfair Display',Georgia,serif;font-style:italic}
+
+@media (max-width:900px){
+  .hpwork,.hpwork:nth-of-type(even){grid-template-columns:1fr;gap:16px}
+  .hpwork:nth-of-type(even) .hpwork__media{order:0}
+  .sns-block{grid-template-columns:1fr;gap:18px}
+}
+@media (max-width:640px){
+  .hdev--laptop img{height:200px}.hdev--phone{right:2%}
+  .section-label{font-style:italic}
+}
+@media (prefers-reduced-motion:reduce){
+  .deco__blob,.deco__petal{animation:none}
+  .hero__en{animation:none;opacity:1}.hero__aline{animation:none;transform:scaleX(1)}
+  .hdev--laptop,.hdev--phone,.hdev__tag{animation:none;opacity:1;transform:none}
+  .hdev--phone{transform:rotate(5deg)}
+}
+
+/* v=118 追補：SNS区別ブロックの ms-gallery を2×2／work-card__link の矢印整列・hover */
+.sns-block .ms-gallery{grid-template-columns:repeat(2,1fr);gap:12px;max-width:none}
+.work-card__link{display:inline-flex;align-items:center;gap:6px}
+.work-card__link .ui-arrow{transition:transform .25s}
+.work-card__link:hover .ui-arrow{transform:translateX(3px)}
+.cta-ghost .ui-arrow{transition:transform .25s}
