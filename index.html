@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="images/thumb-kseq.webp" type="image/webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=118">
+  <link rel="stylesheet" href="main.css?v=119">
 
   <!-- 構造化データ -->
   <script type="application/ld+json">
@@ -122,16 +122,22 @@
   </svg>
 </div>
 
-<!-- 背景デコ（大人かわいい：淡ピンクの有機ブロブ・花びら・ドット） -->
-<div class="deco" aria-hidden="true" role="presentation">
-  <div class="deco__grain"></div>
-  <div class="deco__blob deco__blob--1"><svg viewBox="0 0 200 200"><path fill="#FFD9E3" d="M46,-62C59,-52,68,-37,71,-21C74,-5,71,13,63,28C55,43,42,55,26,63C10,71,-9,74,-27,68C-45,62,-62,47,-69,29C-76,11,-73,-10,-64,-27C-55,-44,-40,-57,-23,-66C-6,-75,13,-80,28,-76C43,-72,33,-72,46,-62Z" transform="translate(100 100)"/></svg></div>
-  <div class="deco__blob deco__blob--2"><svg viewBox="0 0 200 200"><path fill="#F4DFD4" d="M42,-58C54,-49,62,-36,67,-21C72,-6,74,11,68,26C62,41,48,54,32,62C16,70,-2,73,-20,68C-38,63,-56,50,-64,33C-72,16,-70,-5,-62,-22C-54,-39,-40,-52,-25,-61C-10,-70,7,-75,22,-72C37,-69,30,-67,42,-58Z" transform="translate(100 100)"/></svg></div>
-  <div class="deco__blob deco__blob--3"><svg viewBox="0 0 200 200"><path fill="#FFE8EF" d="M50,-64C64,-54,73,-37,75,-20C77,-3,72,16,62,31C52,46,37,57,20,64C3,71,-16,74,-32,67C-48,60,-61,43,-67,25C-73,7,-72,-13,-63,-29C-54,-45,-37,-57,-20,-65C-3,-73,15,-77,31,-73C47,-69,36,-74,50,-64Z" transform="translate(100 100)"/></svg></div>
-  <div class="deco__petal" style="top:16%;left:20%"><svg viewBox="0 0 24 24" fill="#FBC6D4"><path d="M12 2C7 7 7 14 12 22C17 14 17 7 12 2Z"/></svg></div>
-  <div class="deco__petal" style="top:34%;left:72%;animation-delay:6s"><svg viewBox="0 0 24 24" fill="#F4B8CA"><path d="M12 2C7 7 7 14 12 22C17 14 17 7 12 2Z"/></svg></div>
-  <div class="deco__petal" style="top:64%;left:38%;animation-delay:11s"><svg viewBox="0 0 24 24" fill="#FFD9E3"><path d="M12 2C7 7 7 14 12 22C17 14 17 7 12 2Z"/></svg></div>
-</div>
+<!-- 背景：ゆるく波打つ格子（CSS格子＋SVG feTurbulence歪み・案2 鮮やかピンク）。旧・花びら/点/ブロブは廃止 -->
+<svg class="wbg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <filter id="wgrid-move" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.009 0.011" numOctaves="2" seed="7" result="n">
+      <animate attributeName="baseFrequency" dur="28s" repeatCount="indefinite" calcMode="spline"
+        values="0.009 0.011;0.012 0.008;0.008 0.012;0.009 0.011" keyTimes="0;0.34;0.68;1"
+        keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="wgrid-static" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="2" seed="7" result="n2"/>
+    <feDisplacementMap in="SourceGraphic" in2="n2" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<div class="wbg" aria-hidden="true" role="presentation"><div class="wbg__grid"></div></div>
 
 <a href="#main" class="skip-link">本文へジャンプ</a>
 
@@ -177,12 +183,12 @@
   <!-- ========== ① ヒーローセクション ========== -->
   <section class="hero" id="hero">
 
-    <!-- 背景: 淡いオーブ -->
+    <!-- 背景: ゆるく波打つ格子（FVは濃いめ・動き）＋文字背後は読みやすさスクリム -->
     <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
       <div class="hero__orb hero__orb--1"></div>
       <div class="hero__orb hero__orb--2"></div>
-      <div class="hero__orb hero__orb--3"></div>
-      <div class="hero__orb hero__orb--4"></div>
+      <div class="hero__scrim"></div>
     </div>
 
     <div class="container hero__inner">
@@ -198,7 +204,6 @@
           <span class="hero__title-lead"><span class="nobr">ホームページ、</span><span class="nobr">作るだけなら。</span></span><br>
           <span class="hero__accent"><span class="nobr">たぶん、</span><span class="nobr">私じゃなくてもいいです。</span></span>
         </h1>
-        <div class="hero__aline" aria-hidden="true"></div>
         <p class="hero__body">
           <span class="nobr">でも、作った後の更新。</span><span class="nobr">SNS。採用。広報。</span><br>
           <span class="nobr">「誰がやる？」まで</span><span class="nobr">一緒に考えるなら、</span><span class="nobr">話は別です。</span>
@@ -271,6 +276,7 @@
 
   <!-- ========== WORKS（制作実績・企業での実務経験） ========== -->
   <section class="section works" id="works">
+    <div class="sec-grid sec-grid--tr" aria-hidden="true"></div>
     <div class="container">
       <div class="section-header reveal">
         <p class="section-label">WORKS</p>
@@ -353,6 +359,7 @@
 
   <!-- ========== SERVICES（提供サービス） ========== -->
   <section class="section services" id="services">
+    <div class="sec-grid sec-grid--bl" aria-hidden="true"></div>
     <div class="container">
       <div class="section-header reveal">
         <p class="section-label">SERVICES</p>
