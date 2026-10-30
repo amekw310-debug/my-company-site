@@ -4008,16 +4008,20 @@ html.js .section-header.reveal.visible .section-title::after { transform: scaleX
   -webkit-mask:radial-gradient(125% 85% at 50% 0%,#000 0%,rgba(0,0,0,.45) 46%,transparent 76%);
           mask:radial-gradient(125% 85% at 50% 0%,#000 0%,rgba(0,0,0,.45) 46%,transparent 76%)}
 
-/* FV：格子を濃いめ＋ゆっくり波打つ（動き）。文字背後はスクリムで可読性確保 */
-.hero__grid{position:absolute;inset:-7%;
+/* FV：ABOUT/FEATURESと同じ淡いピンクの地色（.wbg と同一グラデを再利用）を
+   hero__bg に敷き、固定背景の静止格子を覆って二重化を防止。上部ピンク→下部アイボリー。 */
+.hero__bg{background:radial-gradient(135% 100% at 50% -8%,#FFEFF4 0%,#FCE9EF 42%,rgba(250,247,245,0) 82%)}
+/* FV：格子の濃さ・線色・不透明度は .wbg__grid と同一に揃える（薄く・透明感）。
+   違いは filter を url(#wgrid-move) にして“動き”だけ維持する点のみ。 */
+.hero__grid{position:absolute;inset:-6%;
   background:
-    repeating-linear-gradient(90deg,rgba(var(--wrose),.5) 0 var(--wline),transparent var(--wline) var(--wcell)),
-    repeating-linear-gradient(0deg, rgba(var(--wrose),.5) 0 var(--wline),transparent var(--wline) var(--wcell));
-  filter:url(#wgrid-move);opacity:.9;
-  -webkit-mask:radial-gradient(115% 95% at 62% 42%,#000 10%,rgba(0,0,0,.6) 48%,transparent 82%);
-          mask:radial-gradient(115% 95% at 62% 42%,#000 10%,rgba(0,0,0,.6) 48%,transparent 82%)}
+    repeating-linear-gradient(90deg,rgba(var(--wrose),1) 0 var(--wline),transparent var(--wline) var(--wcell)),
+    repeating-linear-gradient(0deg, rgba(var(--wrose),1) 0 var(--wline),transparent var(--wline) var(--wcell));
+  filter:url(#wgrid-move);opacity:.1;
+  -webkit-mask:radial-gradient(125% 85% at 50% 0%,#000 0%,rgba(0,0,0,.45) 46%,transparent 76%);
+          mask:radial-gradient(125% 85% at 50% 0%,#000 0%,rgba(0,0,0,.45) 46%,transparent 76%)}
 .hero__scrim{position:absolute;inset:0;
-  background:radial-gradient(72% 64% at 36% 46%,rgba(255,250,251,.94) 0%,rgba(255,250,251,.62) 38%,rgba(255,250,251,0) 72%)}
+  background:radial-gradient(72% 64% at 36% 46%,rgba(255,250,251,.78) 0%,rgba(255,250,251,.42) 40%,rgba(255,250,251,0) 72%)}
 
 /* 制作実績・サービス：全面ではなく“角のアクセント”として格子を使用（密度を変えて同一柄を回避） */
 .works,.services{position:relative;overflow:hidden}
@@ -4037,8 +4041,7 @@ html.js .section-header.reveal.visible .section-title::after { transform: scaleX
 
 /* スマホ：FVスクリムを中央寄りにして全幅テキストを読みやすく、角アクセントは控えめに */
 @media (max-width:760px){
-  .hero__scrim{background:radial-gradient(90% 62% at 50% 44%,rgba(255,250,251,.94) 0%,rgba(255,250,251,.6) 44%,rgba(255,250,251,0) 78%)}
-  .hero__grid{opacity:.8}
+  .hero__scrim{background:radial-gradient(90% 62% at 50% 44%,rgba(255,250,251,.8) 0%,rgba(255,250,251,.44) 44%,rgba(255,250,251,0) 78%)}
   .sec-grid{width:min(62vw,320px);height:min(62vw,320px);opacity:.11}
 }
 
