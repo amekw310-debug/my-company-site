@@ -3953,7 +3953,7 @@ html.js .section-header.reveal.visible .section-title::after { transform: scaleX
 /* ---- サービス：アイコン＋段差 ---- */
 .svc-card__ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--primary-light),#fff);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--primary)}
 .svc-card__ic svg{width:25px;height:25px}
-@media (min-width:901px){ .services-grid .svc-card:nth-child(odd){transform:translateY(16px)} .services-grid .svc-card:nth-child(odd).visible{transform:translateY(16px)} }
+/* v=121：旧・奇数カードの段差(translateY 16px)は廃止し4枚を揃える（下の統一ルール参照） */
 
 /* ---- 矢印：インライン→をSVGに統一（縦センター揃え） ---- */
 .ui-arrow{display:inline-block;vertical-align:middle;width:1em;height:1em;flex:0 0 auto}
@@ -4048,4 +4048,55 @@ html.js .section-header.reveal.visible .section-title::after { transform: scaleX
 /* 動きを抑える設定：格子は静止（波打ちアニメを止める） */
 @media (prefers-reduced-motion:reduce){
   .hero__grid{filter:url(#wgrid-static)}
+}
+
+/* ============================================================
+   v=121  背景統一：WORKS / SERVICES / PRICING を ABOUT/FEATURES と
+   同じ「淡いピンク格子＋上部ピンク→下部アイボリー」の世界観に統一。
+   内容は白×淡ピンク枠の角丸カードに収めて可読性を確保。
+   ※文章・料金・画像・リンク・機能・ABOUT自体は不変。カード化と背景のみ。
+   ============================================================ */
+:root{
+  --card-pink:   rgba(255,111,143,.28);  /* 柔らかい淡ピンクの枠線（ショッキングピンクにしない） */
+  --card-shadow: 0 6px 24px rgba(46,35,51,.06); /* ごく薄く上品な影 */
+}
+
+/* 不透明な地色を外し、固定の .wbg（ABOUTと共通の淡ピンク→アイボリー）を透過表示。
+   これで3セクションとABOUTの色味・グラデ・格子が共通化し、境界が途切れない。 */
+.works, .services, .pricing{ background:transparent; }
+/* 角アクセント格子を配置できるよう position/overflow を付与（PRICINGを追加） */
+.works, .services, .pricing{ position:relative; overflow:hidden; }
+.pricing .container{ position:relative; z-index:1; }
+
+/* ---- SERVICES：4枚のカードを統一（淡ピンク枠・段差解消で高さと配置を揃える） ---- */
+.svc-card{ background:#fff; border:1px solid var(--card-pink); border-radius:18px; box-shadow:var(--card-shadow); }
+
+/* ---- PRICING：3枚を白×淡ピンク枠に統一。おすすめ(featured)は従来どおり強調を維持 ---- */
+.pricing-mini__item{ border:1px solid var(--card-pink); box-shadow:var(--card-shadow); }
+.pricing-mini__item--featured{ border:1.5px solid var(--primary); } /* おすすめは主張を強く（維持） */
+/* 補足説明は薄い角丸の案内枠に入れて背景に埋もれないように */
+.pricing-mini__supplement{
+  background:#fff; border:1px solid var(--card-pink); border-radius:16px;
+  padding:14px 22px; box-shadow:var(--card-shadow);
+}
+
+/* ---- WORKS：画像は主役のまま、右側の案件説明を白カード化して可読性を確保 ---- */
+.hpwork__t{
+  background:#fff; border:1px solid var(--card-pink); border-radius:18px;
+  padding:24px 26px; box-shadow:var(--card-shadow);
+}
+/* SNS区別ブロック：左の説明テキストもカード化（右の投稿ギャラリーは画像のまま） */
+.sns-block > div:first-child{
+  background:#fff; border:1px solid var(--card-pink); border-radius:18px;
+  padding:24px 26px; box-shadow:var(--card-shadow);
+}
+
+/* ---- 単調さ回避（濃淡・範囲の変化）：PRICINGにも控えめな角アクセント ---- */
+.pricing .sec-grid--tr{ opacity:.10; width:min(40vw,380px); height:min(40vw,380px); }
+
+/* ---- スマホ最適化：カード余白と背景柄・はみ出し対策 ---- */
+@media (max-width:640px){
+  .hpwork__t, .sns-block > div:first-child{ padding:20px 18px; }
+  .pricing-mini__supplement{ padding:14px 16px; }
+  .svc-card{ border-radius:16px; }
 }
