@@ -3041,7 +3041,12 @@ a.news-item__title:hover { color: var(--primary); }
    ============================ */
 .footer {
   position: relative;
-  background: var(--bg-section);
+  /* v=122：上は透明（直前FAQの淡いアイボリーと自然接続）→下はTOP(FV)同等のピンクへ。
+     急な境界・帯を作らず、ページ末尾でTOPのピンクが徐々に戻る。既存カラーを使用。 */
+  background: linear-gradient(180deg,
+    rgba(255,239,244,0) 0%,
+    #FCE9EF 55%,
+    #FFEFF4 100%);
   padding: 48px 0 32px;
   overflow: hidden;
 }
@@ -4100,3 +4105,28 @@ html.js .section-header.reveal.visible .section-title::after { transform: scaleX
   .pricing-mini__supplement{ padding:14px 16px; }
   .svc-card{ border-radius:16px; }
 }
+
+/* ============================================================
+   v=122  フッター背景：ページ末尾でTOP(FV)の淡ピンク波打ち格子が徐々に戻る
+   ・色はTOPと同じ既存カラー、格子は同一トークン＋#wgrid-moveを再利用
+   ・上部はほぼ不可視→下部でFV同程度の濃さに（新デザインの格子は作らない）
+   ・pointer-events:none でリンク操作を妨げない／reduced-motionで静止
+   ============================================================ */
+.footer__grid{
+  --wcell:58px; --wline:2px; --wrose:242,78,114;   /* TOPと統一（大きさ・線幅・色味） */
+  position:absolute; inset:-6%; pointer-events:none; z-index:0;
+  background:
+    repeating-linear-gradient(90deg,rgba(var(--wrose),1) 0 var(--wline),transparent var(--wline) var(--wcell)),
+    repeating-linear-gradient(0deg, rgba(var(--wrose),1) 0 var(--wline),transparent var(--wline) var(--wcell));
+  filter:url(#wgrid-move); opacity:.1;                /* FV(.hero__grid)と同程度の濃さ */
+  -webkit-mask:linear-gradient(180deg,transparent 0%,transparent 30%,rgba(0,0,0,.5) 62%,#000 100%);
+          mask:linear-gradient(180deg,transparent 0%,transparent 30%,rgba(0,0,0,.5) 62%,#000 100%);
+}
+@media (max-width:900px){ .footer__grid{--wcell:46px;--wline:1.8px} }
+@media (max-width:560px){ .footer__grid{--wcell:38px;--wline:1.6px} }
+
+/* 視認性：下部のピンク上でもSNSボタン・コピーが読みやすいよう微調整（デザインは不変） */
+.footer__social-link{ background:#fff; border:1px solid var(--card-pink); }
+.footer__copy{ color:var(--text-sub); }
+
+@media (prefers-reduced-motion:reduce){ .footer__grid{filter:url(#wgrid-static)} }
